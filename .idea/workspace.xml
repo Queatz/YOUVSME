@@ -18,35 +18,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6f8b33ab-f1b9-415c-b45b-01abbcbe0928" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/restfb_1_19_0.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/backend/src/main/java/youvsme/com/youvsme/backend/Grab.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/backend/src/main/java/youvsme/com/youvsme/backend/api/Api.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/backend/src/main/java/youvsme/com/youvsme/backend/api/ChallengeEndpoint.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/backend/src/main/java/youvsme/com/youvsme/backend/api/MeActiveChallengeEndpoint.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/backend/src/main/java/youvsme/com/youvsme/backend/api/MeEndpoint.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/backend/src/main/java/youvsme/com/youvsme/backend/api/MeFriendsEndpoint.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/backend/src/main/java/youvsme/com/youvsme/backend/api/RootAbstractEndpoint.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/backend/src/main/java/youvsme/com/youvsme/backend/models/ChallengeModel.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/backend/src/main/java/youvsme/com/youvsme/backend/models/Model.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/backend/src/main/java/youvsme/com/youvsme/backend/models/QuestionModel.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/backend/src/main/java/youvsme/com/youvsme/backend/models/UserModel.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/backend/src/main/java/youvsme/com/youvsme/backend/services/JsonService.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/backend/src/main/java/youvsme/com/youvsme/backend/services/ModelService.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/backend/src/main/java/youvsme/com/youvsme/backend/services/UserService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.10/taskArtifacts/cache.properties.lock" afterPath="$PROJECT_DIR$/.gradle/2.10/taskArtifacts/cache.properties.lock" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.10/taskArtifacts/fileHashes.bin" afterPath="$PROJECT_DIR$/.gradle/2.10/taskArtifacts/fileHashes.bin" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.10/taskArtifacts/fileSnapshots.bin" afterPath="$PROJECT_DIR$/.gradle/2.10/taskArtifacts/fileSnapshots.bin" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.10/taskArtifacts/taskArtifacts.bin" afterPath="$PROJECT_DIR$/.gradle/2.10/taskArtifacts/taskArtifacts.bin" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Roadmap.txt" afterPath="$PROJECT_DIR$/Roadmap.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/app.iml" afterPath="$PROJECT_DIR$/app/app.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/youvsme/com/youvsme/Entrance.java" afterPath="$PROJECT_DIR$/app/src/main/java/youvsme/com/youvsme/Entrance.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/youvsme/com/youvsme/services/BattleSearchService.java" afterPath="$PROJECT_DIR$/app/src/main/java/youvsme/com/youvsme/services/BattleSearchService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/youvsme/com/youvsme/services/UserService.java" afterPath="$PROJECT_DIR$/app/src/main/java/youvsme/com/youvsme/services/UserService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/backend/backend.iml" afterPath="$PROJECT_DIR$/backend/backend.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/backend/build.gradle" afterPath="$PROJECT_DIR$/backend/build.gradle" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/backend/src/main/java/youvsme/com/youvsme/backend/MyServlet.java" afterPath="$PROJECT_DIR$/backend/src/main/java/youvsme/com/youvsme/backend/MyServlet.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/backend/src/main/java/youvsme/com/youvsme/backend/api/MeFriendsEndpoint.java" afterPath="$PROJECT_DIR$/backend/src/main/java/youvsme/com/youvsme/backend/api/MeFriendsEndpoint.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/backend/src/main/java/youvsme/com/youvsme/backend/models/UserModel.java" afterPath="$PROJECT_DIR$/backend/src/main/java/youvsme/com/youvsme/backend/models/UserModel.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/backend/src/main/java/youvsme/com/youvsme/backend/services/UserService.java" afterPath="$PROJECT_DIR$/backend/src/main/java/youvsme/com/youvsme/backend/services/UserService.java" />
     </list>
     <ignored path="YOUVSME.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -74,11 +50,21 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="Roadmap.txt" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Roadmap.txt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-14.4">
+              <caret line="30" column="7" selection-start-line="30" selection-start-column="7" selection-end-line="30" selection-end-column="7" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="MeFriendsEndpoint.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/backend/src/main/java/youvsme/com/youvsme/backend/api/MeFriendsEndpoint.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-8.4">
-              <caret line="14" column="0" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
+            <state vertical-scroll-proportion="-15.333333">
+              <caret line="43" column="0" selection-start-line="43" selection-start-column="0" selection-end-line="43" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -86,38 +72,13 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MeEndpoint.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/backend/src/main/java/youvsme/com/youvsme/backend/api/MeEndpoint.java">
+      <file leaf-file-name="ModelService.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/backend/src/main/java/youvsme/com/youvsme/backend/services/ModelService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.55026454">
-              <caret line="35" column="21" selection-start-line="35" selection-start-column="21" selection-end-line="35" selection-end-column="21" />
+            <state vertical-scroll-proportion="0.1796875">
+              <caret line="23" column="12" selection-start-line="23" selection-start-column="12" selection-end-line="23" selection-end-column="12" />
               <folding>
                 <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="UserService.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/backend/src/main/java/youvsme/com/youvsme/backend/services/UserService.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-15.933333">
-              <caret line="40" column="60" selection-start-line="40" selection-start-column="60" selection-end-line="40" selection-end-column="60" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="User.class" pinned="false" current-in-tab="false">
-        <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.restfb/restfb/1.19.0/480737a7027c940becd6325faa5e4e27eb23578c/restfb-1.19.0.jar!/com/restfb/types/User.class">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-4.516667">
-              <caret line="484" column="24" selection-start-line="484" selection-start-column="24" selection-end-line="484" selection-end-column="24" />
-              <folding>
-                <element signature="e#12461#12462#0" expanded="true" />
-                <element signature="e#12496#12497#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -126,70 +87,37 @@
       <file leaf-file-name="UserModel.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/backend/src/main/java/youvsme/com/youvsme/backend/models/UserModel.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-21.0">
-              <caret line="35" column="16" selection-start-line="35" selection-start-column="16" selection-end-line="35" selection-end-column="16" />
+            <state vertical-scroll-proportion="-13.2">
+              <caret line="32" column="16" selection-start-line="32" selection-start-column="16" selection-end-line="32" selection-end-column="16" />
               <folding>
-                <element signature="e#284#285#0" expanded="true" />
-                <element signature="e#316#317#0" expanded="true" />
-                <element signature="e#366#367#0" expanded="true" />
-                <element signature="e#408#409#0" expanded="true" />
-                <element signature="e#443#444#0" expanded="true" />
-                <element signature="e#474#475#0" expanded="true" />
-                <element signature="e#522#523#0" expanded="true" />
-                <element signature="e#562#563#0" expanded="true" />
-                <element signature="e#599#600#0" expanded="true" />
-                <element signature="e#632#633#0" expanded="true" />
-                <element signature="e#684#685#0" expanded="true" />
-                <element signature="e#728#729#0" expanded="true" />
-                <element signature="e#901#902#0" expanded="true" />
-                <element signature="e#942#943#0" expanded="true" />
+                <element signature="e#716#717#0" expanded="true" />
+                <element signature="e#760#761#0" expanded="true" />
+                <element signature="e#1014#1015#0" expanded="true" />
+                <element signature="e#1050#1051#0" expanded="true" />
+                <element signature="e#1108#1109#0" expanded="true" />
+                <element signature="e#1158#1159#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ChallengeModel.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/backend/src/main/java/youvsme/com/youvsme/backend/models/ChallengeModel.java">
+      <file leaf-file-name="UserService.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/backend/src/main/java/youvsme/com/youvsme/backend/services/UserService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-3.0">
-              <caret line="5" column="41" selection-start-line="5" selection-start-column="41" selection-end-line="5" selection-end-column="41" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="JsonService.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/backend/src/main/java/youvsme/com/youvsme/backend/services/JsonService.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-6.6">
-              <caret line="11" column="90" selection-start-line="11" selection-start-column="90" selection-end-line="11" selection-end-column="90" />
-              <folding>
-                <element signature="e#325#326#0" expanded="true" />
-                <element signature="e#367#368#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ModelService.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/backend/src/main/java/youvsme/com/youvsme/backend/services/ModelService.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-15.9">
-              <caret line="41" column="0" selection-start-line="41" selection-start-column="0" selection-end-line="42" selection-end-column="0" />
+            <state vertical-scroll-proportion="-7.1">
+              <caret line="51" column="42" selection-start-line="51" selection-start-column="42" selection-end-line="51" selection-end-column="42" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#2385#2386#0" expanded="true" />
-                <element signature="e#2435#2436#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Model.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/backend/src/main/java/youvsme/com/youvsme/backend/models/Model.java">
+      <file leaf-file-name="MeEndpoint.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/backend/src/main/java/youvsme/com/youvsme/backend/api/MeEndpoint.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-6.0">
-              <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
+            <state vertical-scroll-proportion="-9.333333">
+              <caret line="47" column="19" selection-start-line="47" selection-start-column="19" selection-end-line="47" selection-end-column="19" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -2512,25 +2440,25 @@
         <option value="$PROJECT_DIR$/app/src/main/java/youvsme/com/youvsme/services/BattleSearchService.java" />
         <option value="$PROJECT_DIR$/backend/build.gradle" />
         <option value="$PROJECT_DIR$/backend/src/main/java/youvsme/com/youvsme/backend/models/data.java" />
-        <option value="$PROJECT_DIR$/Roadmap.txt" />
         <option value="$PROJECT_DIR$/backend/src/main/java/youvsme/com/youvsme/backend/api/Me.java" />
         <option value="$PROJECT_DIR$/backend/src/main/java/youvsme/com/youvsme/backend/api/MeApi.java" />
         <option value="$PROJECT_DIR$/backend/src/main/java/youvsme/com/youvsme/backend/api/Root.java" />
         <option value="$PROJECT_DIR$/backend/src/main/java/youvsme/com/youvsme/backend/api/ChallengeEndpoint.java" />
         <option value="$PROJECT_DIR$/backend/src/main/java/youvsme/com/youvsme/backend/Grab.java" />
-        <option value="$PROJECT_DIR$/backend/src/main/java/youvsme/com/youvsme/backend/api/MeFriendsEndpoint.java" />
         <option value="$PROJECT_DIR$/backend/src/main/java/youvsme/com/youvsme/backend/api/MeActiveChallengeEndpoint.java" />
         <option value="$PROJECT_DIR$/backend/src/main/java/youvsme/com/youvsme/backend/MyServlet.java" />
         <option value="$PROJECT_DIR$/backend/src/main/java/youvsme/com/youvsme/backend/api/RootAbstractEndpoint.java" />
         <option value="$PROJECT_DIR$/backend/src/main/java/youvsme/com/youvsme/backend/models/Model.java" />
         <option value="$PROJECT_DIR$/backend/src/main/java/youvsme/com/youvsme/backend/api/Api.java" />
-        <option value="$PROJECT_DIR$/backend/src/main/java/youvsme/com/youvsme/backend/api/MeEndpoint.java" />
         <option value="$PROJECT_DIR$/backend/src/main/java/youvsme/com/youvsme/backend/models/QuestionModel.java" />
         <option value="$PROJECT_DIR$/backend/src/main/java/youvsme/com/youvsme/backend/models/ChallengeModel.java" />
-        <option value="$PROJECT_DIR$/backend/src/main/java/youvsme/com/youvsme/backend/models/UserModel.java" />
-        <option value="$PROJECT_DIR$/backend/src/main/java/youvsme/com/youvsme/backend/services/UserService.java" />
         <option value="$PROJECT_DIR$/backend/src/main/java/youvsme/com/youvsme/backend/services/ModelService.java" />
         <option value="$PROJECT_DIR$/backend/src/main/java/youvsme/com/youvsme/backend/services/JsonService.java" />
+        <option value="$PROJECT_DIR$/Roadmap.txt" />
+        <option value="$PROJECT_DIR$/backend/src/main/java/youvsme/com/youvsme/backend/api/MeEndpoint.java" />
+        <option value="$PROJECT_DIR$/backend/src/main/java/youvsme/com/youvsme/backend/models/UserModel.java" />
+        <option value="$PROJECT_DIR$/backend/src/main/java/youvsme/com/youvsme/backend/services/UserService.java" />
+        <option value="$PROJECT_DIR$/backend/src/main/java/youvsme/com/youvsme/backend/api/MeFriendsEndpoint.java" />
       </list>
     </option>
   </component>
@@ -2702,6 +2630,16 @@
         <subPane subId="Project Files">
           <PATH>
             <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="app">
               <option name="myItemId" value="" />
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
@@ -3156,6 +3094,13 @@
       <option name="number" value="Default" />
       <updated>1456210604390</updated>
     </task>
+    <task id="LOCAL-00001" summary="Basic backend">
+      <created>1456418741613</created>
+      <option name="number" value="00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1456418741613</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TodoView">
@@ -3174,7 +3119,7 @@
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.19167112" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.46774194" sideWeight="0.49786553" order="12" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19585253" sideWeight="0.49786553" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Android Model" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="true" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32949308" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -3203,6 +3148,12 @@
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
+    <option name="CHECK_NEW_TODO" value="false" />
+    <MESSAGE value="Basic backend" />
+    <option name="LAST_COMMIT_MESSAGE" value="Basic backend" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -3513,14 +3464,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Roadmap.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-11.4">
-          <caret line="28" column="46" selection-start-line="28" selection-start-column="4" selection-end-line="28" selection-end-column="46" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/backend/src/main/java/youvsme/com/youvsme/backend/api/ChallengeEndpoint.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-7.8">
@@ -3580,34 +3523,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/backend/src/main/java/youvsme/com/youvsme/backend/models/Model.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-6.0">
-          <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/backend/src/main/java/youvsme/com/youvsme/backend/models/ChallengeModel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-3.0">
-          <caret line="5" column="41" selection-start-line="5" selection-start-column="41" selection-end-line="5" selection-end-column="41" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/backend/src/main/java/youvsme/com/youvsme/backend/api/MeFriendsEndpoint.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-8.4">
-          <caret line="14" column="0" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.restfb/restfb/1.19.0/480737a7027c940becd6325faa5e4e27eb23578c/restfb-1.19.0.jar!/com/restfb/types/FacebookType.class">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.5729443">
@@ -3632,32 +3547,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/backend/src/main/java/youvsme/com/youvsme/backend/models/UserModel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-21.0">
-          <caret line="35" column="16" selection-start-line="35" selection-start-column="16" selection-end-line="35" selection-end-column="16" />
-          <folding>
-            <element signature="e#284#285#0" expanded="true" />
-            <element signature="e#316#317#0" expanded="true" />
-            <element signature="e#366#367#0" expanded="true" />
-            <element signature="e#408#409#0" expanded="true" />
-            <element signature="e#443#444#0" expanded="true" />
-            <element signature="e#474#475#0" expanded="true" />
-            <element signature="e#522#523#0" expanded="true" />
-            <element signature="e#562#563#0" expanded="true" />
-            <element signature="e#599#600#0" expanded="true" />
-            <element signature="e#632#633#0" expanded="true" />
-            <element signature="e#684#685#0" expanded="true" />
-            <element signature="e#728#729#0" expanded="true" />
-            <element signature="e#901#902#0" expanded="true" />
-            <element signature="e#942#943#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.restfb/restfb/1.19.0/480737a7027c940becd6325faa5e4e27eb23578c/restfb-1.19.0.jar!/com/restfb/types/User.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-4.516667">
+        <state vertical-scroll-proportion="0.5669456">
           <caret line="484" column="24" selection-start-line="484" selection-start-column="24" selection-end-line="484" selection-end-column="24" />
           <folding>
             <element signature="e#12461#12462#0" expanded="true" />
@@ -3666,10 +3558,82 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/backend/src/main/java/youvsme/com/youvsme/backend/services/JsonService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.5730337">
+          <caret line="17" column="5" selection-start-line="17" selection-start-column="5" selection-end-line="17" selection-end-column="5" />
+          <folding>
+            <element signature="e#325#326#0" expanded="true" />
+            <element signature="e#367#368#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/src/main/java/youvsme/com/youvsme/backend/models/ChallengeModel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.16853933">
+          <caret line="5" column="41" selection-start-line="5" selection-start-column="41" selection-end-line="5" selection-end-column="41" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Roadmap.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-14.4">
+          <caret line="30" column="7" selection-start-line="30" selection-start-column="7" selection-end-line="30" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/src/main/java/youvsme/com/youvsme/backend/models/Model.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.47191012">
+          <caret line="14" column="0" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/src/main/java/youvsme/com/youvsme/backend/models/UserModel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-13.2">
+          <caret line="32" column="16" selection-start-line="32" selection-start-column="16" selection-end-line="32" selection-end-column="16" />
+          <folding>
+            <element signature="e#716#717#0" expanded="true" />
+            <element signature="e#760#761#0" expanded="true" />
+            <element signature="e#1014#1015#0" expanded="true" />
+            <element signature="e#1050#1051#0" expanded="true" />
+            <element signature="e#1108#1109#0" expanded="true" />
+            <element signature="e#1158#1159#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/src/main/java/youvsme/com/youvsme/backend/api/MeFriendsEndpoint.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-15.333333">
+          <caret line="43" column="0" selection-start-line="43" selection-start-column="0" selection-end-line="43" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/backend/src/main/java/youvsme/com/youvsme/backend/services/UserService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-15.933333">
-          <caret line="40" column="60" selection-start-line="40" selection-start-column="60" selection-end-line="40" selection-end-column="60" />
+        <state vertical-scroll-proportion="-7.1">
+          <caret line="51" column="42" selection-start-line="51" selection-start-column="42" selection-end-line="51" selection-end-column="42" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/src/main/java/youvsme/com/youvsme/backend/api/MeEndpoint.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-9.333333">
+          <caret line="47" column="19" selection-start-line="47" selection-start-column="19" selection-end-line="47" selection-end-column="19" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -3678,31 +3642,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/backend/src/main/java/youvsme/com/youvsme/backend/services/ModelService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-15.9">
-          <caret line="41" column="0" selection-start-line="41" selection-start-column="0" selection-end-line="42" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#2385#2386#0" expanded="true" />
-            <element signature="e#2435#2436#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/backend/src/main/java/youvsme/com/youvsme/backend/services/JsonService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-6.6">
-          <caret line="11" column="90" selection-start-line="11" selection-start-column="90" selection-end-line="11" selection-end-column="90" />
-          <folding>
-            <element signature="e#325#326#0" expanded="true" />
-            <element signature="e#367#368#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/backend/src/main/java/youvsme/com/youvsme/backend/api/MeEndpoint.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.55026454">
-          <caret line="35" column="21" selection-start-line="35" selection-start-column="21" selection-end-line="35" selection-end-column="21" />
+        <state vertical-scroll-proportion="0.1796875">
+          <caret line="23" column="12" selection-start-line="23" selection-start-column="12" selection-end-line="23" selection-end-column="12" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

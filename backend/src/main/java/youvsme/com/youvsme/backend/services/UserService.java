@@ -4,6 +4,7 @@ import com.restfb.DefaultFacebookClient;
 import com.restfb.FacebookClient;
 import com.restfb.Version;
 import com.restfb.types.User;
+import com.sun.istack.internal.NotNull;
 import com.sun.istack.internal.Nullable;
 
 import youvsme.com.youvsme.backend.models.UserModel;
@@ -16,7 +17,8 @@ public class UserService {
     @Nullable
     public UserModel userFromToken(@Nullable String token, @Nullable String facebookToken) {
         if (token != null) {
-            UserModel user = ModelService.get(UserModel.class).filter("token", token).first().now();
+            UserModel user = ModelService.get(UserModel.class)
+                    .filter("token", token).first().now();
 
             if (user != null) {
                 return user;
@@ -24,7 +26,8 @@ public class UserService {
         }
 
         if (facebookToken != null) {
-            UserModel user = ModelService.get(UserModel.class).filter("facebookToken", facebookToken).first().now();
+            UserModel user = ModelService.get(UserModel.class)
+                    .filter("facebookToken", facebookToken).first().now();
 
             if (user == null) {
                 FacebookClient facebookClient = new DefaultFacebookClient(facebookToken, Version.LATEST);
@@ -35,15 +38,8 @@ public class UserService {
                     return null;
                 }
 
-                UserModel newUser = ModelService.create(UserModel.class);
-                newUser.setFirstName(facebookUser.getFirstName());
-                newUser.setLastName(facebookUser.getLastName());
-                newUser.setFacebookId(facebookUser.getId());
-
-                if (facebookUser.getPicture() != null) {
-                    newUser.setFacebookPictureUrl(facebookUser.getPicture().getUrl());
-                }
-
+                UserModel newUser = userFromFacebookUser(facebookUser);
+                newUser.setFacebookToken(facebookToken);
                 ModelService.save(newUser);
 
                 return newUser;
@@ -51,5 +47,26 @@ public class UserService {
         }
 
         return null;
+    }
+
+    public UserModel userFromFacebookUser(User facebookUser) {
+        // Try to find existing facebook user without token
+        // (usually created from a friend of someone else)
+        UserModel newUser = ModelService.get(UserModel.class)
+                .filter("facebookId", facebookUser.getId()).first().now();
+
+        if (newUser == null) {
+            newUser = ModelService.create(UserModel.class);
+            newUser.setFacebookId(facebookUser.getId());
+        }
+
+        newUser.setFirstName(facebookUser.getFirstName());
+        newUser.setLastName(facebookUser.getLastName());
+
+        if (facebookUser.getPicture() != null) {
+            newUser.setFacebookPictureUrl(facebookUser.getPicture().getUrl());
+        }
+
+        return newUser;
     }
 }

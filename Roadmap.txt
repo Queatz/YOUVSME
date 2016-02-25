@@ -26,7 +26,7 @@
 
 ======= API ========
 
-[ ] /me (login, who am i, save Facebook token)
+[X] /me (login, who am i, save Facebook token)
 [ ] /me/friends?q=A
 [ ] /me/active-challenge -> {status: 'finished', question: A, choices: [A, B, C, D]}
 [ ] /challenge?partner=A&wager=B&note=C

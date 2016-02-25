@@ -7,7 +7,8 @@ public class UserModel extends Model {
     public String firstName;
     public String lastName;
     public String facebookId;
-    private String facebookPictureUrl;
+    public String facebookPictureUrl;
+    public String facebookToken;
 
     public String getFirstName() {
         return firstName;
@@ -39,5 +40,13 @@ public class UserModel extends Model {
 
     public String getFacebookPictureUrl() {
         return facebookPictureUrl;
+    }
+
+    public String getFacebookToken() {
+        return facebookToken;
+    }
+
+    public void setFacebookToken(String facebookToken) {
+        this.facebookToken = facebookToken;
     }
 }
