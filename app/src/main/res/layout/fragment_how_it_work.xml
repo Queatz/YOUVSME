@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Entrance">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingBottom="24dp"
+        android:paddingLeft="24dp"
+        android:paddingRight="24dp"
+        android:paddingTop="24dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_centerInParent="true">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/red_button"
+                android:textStyle="bold"
+                android:textAlignment="center"
+                android:textSize="40sp"
+                android:paddingBottom="20dp"
+                android:layout_centerVertical="true"
+                android:text="How it Works" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/text_gray"
+                android:textAlignment="center"
+                android:textSize="21sp"
+                android:layout_centerVertical="true"
+                android:paddingBottom="100dp"
+                android:text="You'll answer 5 questions about yourself. Then answer 5 questions about your opponent. The player who is best at guessing what their opponent chose will win." />
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+</RelativeLayout>

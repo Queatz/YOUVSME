@@ -1,0 +1,146 @@
+
+======= GAME PREPARATIONS ========
+
+Gather Facebook name and photo upon login
+Add back header to how it works screen
+
+Search for opponent screen, header search, back button, list from facebook, headers A, B, C, ..., w/photo
+Show selected opponent, battle button, back button
+
+Make a wager step, back button, what, note, send wager, skip wager
+
+Wager sent, icon, begin game button
+
+======= GAME BEGINS ========
+
+Question 1, question text, a., b., c., d., (= hamburger menu?), 5 questions
+
+Now answer opponent's questions screen, Let's Go, back button (goes where?)
+
+>>> Answer their questions
+
+You're finished. screen, see who won, back
+
+Final Results screen, your score, opponent score, main text, hint text, play again button, hamburger menu, title
+
+Your opponent has not finished yet, back button, hint text, send kick in face button, wait patently
+
+You kicked opponent screen, hint text, back button
+
+======= FEATURES ========
+
+Push notifications.
+    1. Jenny finished, see who won
+    2. Jeff has challenged you to a wager
+
+======= API ========
+
+/me (login, who am i)
+/active-challenge -> {status: 'finished', question: A, choices: [A, B, C, D]}
+/challenge?wager=A&note=B
+/answer/A?chose=B
+/kick
+
+======= DATABASE ========
+
+
+
+
+======= WEBSITE ========
+
+Add question page.
+
+
+
+
+
+# YOUVSME
+
+
+Features:
+
+Facebook Login
+Find Friends from Facebook API
+Battle Them
+Push Notifications / Notify them via Facebook
+Questions API + Repository
+Screen Changing / Fragments / Activities
+
+
+Screens:
+
+Opening
+	+ How it Works
+
+Search for Your Opponent
+Battle This Opponent
+	+ Make a Wager!
+	+ Begin Game
+
+Questions 1, 2, 3, 4, 5
+Now You Answer
+You're finished.
+
+Score card + Aanxiaoben smoked you. / You smoked Aanxiaoben.
+Your opponent has not finished.
+
+
+
+Pending wagers if opponent doesn't have the app yet (Jeff challenged you to a wager!)
+If they have the app, send them a push notification
+
+
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+Jeff-able web api entry for new questions and answers
+
+
+
+
+
+
+
+
+In the Air Above Portland
+=========================
+
+# Other
+
+Do Bi-Weekly Passion Projects
+
+Upcoming Projects on Village:
+
+1) Short Film About a Homeless Girl in the Golden Gate Park
+	| You'll play the role of Emma as she struggles to make friends with people.
+	| You'll be paid $300.
+2) The Cute Little Nude Photo Book (sent to 44 candidates so far.  You'll be paid $250.)
+    | You'll meet up at 7am, 9am, 12pm, 3pm, 5pm, 7pm, 9pm, and 11pm.
+3) Short Music Video with Guitar
+
+Interested? Go to San Francisco's passion portal.
+
+Parties
+-------
+
+Tea Variety Party at Julia Zharhova's
+Dec 13th - 19th
+ [oo] Topless Friendly [:)] Smiles guarenteed.
+
+Not intersted in recieving these emails? Take yourself off the list.
+
+
+
+passionprojects.com
+
+
+
+# Village
+
+Badges (Endorsements) / Groups / Teams
+======================================
+
+% Gurenteed 100% Always Nude Friendly
+O Gurenteed 100% Organic
+@ Dog Friendly!
+
+
