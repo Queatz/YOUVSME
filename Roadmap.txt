@@ -1,49 +1,58 @@
 
 ======= GAME PREPARATIONS ========
 
-Gather Facebook name and photo upon login
-Add back header to how it works screen
-
-Search for opponent screen, header search, back button, list from facebook, headers A, B, C, ..., w/photo
-Show selected opponent, battle button, back button
-
-Make a wager step, back button, what, note, send wager, skip wager
-
-Wager sent, icon, begin game button
+[ ] Gather Facebook name and photo upon login
+[ ] Add  back header  to how it works screen
+[ ] Search for opponent screen, header search, back button, list from facebook, headers A, B, C, ..., w/photo
+[ ] Show selected opponent, battle button, back button
+[ ] Make a wager step, back button, what, note, send wager, skip wager
+[ ] Wager sent, icon, begin game button
 
 ======= GAME BEGINS ========
 
-Question 1, question text, a., b., c., d., (= hamburger menu?), 5 questions
-
-Now answer opponent's questions screen, Let's Go, back button (goes where?)
-
->>> Answer their questions
-
-You're finished. screen, see who won, back
-
-Final Results screen, your score, opponent score, main text, hint text, play again button, hamburger menu, title
-
-Your opponent has not finished yet, back button, hint text, send kick in face button, wait patently
-
-You kicked opponent screen, hint text, back button
+[ ] Question 1, question text, a., b., c., d., (= hamburger menu?), 5 questions
+[ ] Now answer opponent's questions screen, Let's Go, back button (goes where?)
+[ ] >>> Answer their questions
+[ ] You're finished. screen, see who won, back
+[ ] Final Results screen, your score, opponent score, main text, hint text, play again button, hamburger menu, title
+[ ] Your opponent has not finished yet, back button, hint text, send kick in face button, wait patently
+[ ] You kicked opponent screen, hint text, back button
 
 ======= FEATURES ========
 
-Push notifications.
-    1. Jenny finished, see who won
-    2. Jeff has challenged you to a wager
+[ ] Push notifications.
+    [ ] 1. Jenny finished, see who won
+    [ ] 2. Jeff has challenged you to a wager
 
 ======= API ========
 
-/me (login, who am i)
-/active-challenge -> {status: 'finished', question: A, choices: [A, B, C, D]}
-/challenge?wager=A&note=B
-/answer/A?chose=B
-/kick
+[ ] /me (login, who am i, save Facebook token)
+[ ] /me/friends?q=A
+[ ] /me/active-challenge -> {status: 'finished', question: A, choices: [A, B, C, D]}
+[ ] /challenge?partner=A&wager=B&note=C
+[ ] /challenge/A/answer/B?chose=C
+[ ] /challenge/kick-in-the-face/A
 
 ======= DATABASE ========
 
+user {
+    id
+    facebook_id
+    facebook_refresh_token
+    name
+    photo
+}
 
+challenge {
+    id
+    status: 'FINISHED'
+    player_1_questions: [A, B, C, D]
+    player_2_questions: [A, B, C, D]
+    player_1
+    player_2
+    wager
+    wager_note
+}
 
 
 ======= WEBSITE ========

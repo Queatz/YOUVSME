@@ -6,17 +6,9 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-
-import com.facebook.CallbackManager;
-import com.facebook.FacebookCallback;
-import com.facebook.FacebookException;
-import com.facebook.login.LoginManager;
-import com.facebook.login.LoginResult;
-import com.google.common.collect.ImmutableSet;
 
 import youvsme.com.youvsme.fragments.EntranceFragment;
 import youvsme.com.youvsme.fragments.HowItWorksFragment;
@@ -34,7 +26,6 @@ public class Entrance extends AppCompatActivity
         super.onCreate(savedInstanceState);
 
         UserService.getInstance().initialize(getApplicationContext());
-        //BattleSearchService.getInstance().preload();
 
         setContentView(R.layout.activity_entrance);
 
@@ -50,32 +41,10 @@ public class Entrance extends AppCompatActivity
 
         View facebookButton = findViewById(R.id.facebook_button);
 
-        CallbackManager callbackManager = CallbackManager.Factory.create();
-
-        LoginManager.getInstance().registerCallback(callbackManager,
-                new FacebookCallback<LoginResult>() {
-                    @Override
-                    public void onSuccess(LoginResult loginResult) {
-                        // App code
-                        Log.d("YOUVSME", "Logged in: " + loginResult.getAccessToken());
-                    }
-
-                    @Override
-                    public void onCancel() {
-                        // App code
-                    }
-
-                    @Override
-                    public void onError(FacebookException exception) {
-                        // App code
-                    }
-                });
-
         facebookButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                LoginManager.getInstance().logInWithReadPermissions(Entrance.this,
-                        ImmutableSet.of("public_profile", "user_friends"));
+                UserService.facebookLogin(Entrance.this);
             }
         });
 

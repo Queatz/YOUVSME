@@ -37,6 +37,9 @@ public class BattleSearchService {
     List<Opponent> opponents;
 
     public void preload() {
+
+
+        // TODO move to server
         new GraphRequest(
                 AccessToken.getCurrentAccessToken(),
                 "/me/friends",

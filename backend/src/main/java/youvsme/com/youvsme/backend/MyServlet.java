@@ -7,24 +7,33 @@
 package youvsme.com.youvsme.backend;
 
 import java.io.IOException;
+import java.util.Arrays;
+import java.util.List;
+
 import javax.servlet.http.*;
+
+import youvsme.com.youvsme.backend.api.RootAbstractEndpoint;
 
 public class MyServlet extends HttpServlet {
     @Override
-    public void doGet(HttpServletRequest req, HttpServletResponse resp)
-            throws IOException {
-        resp.setContentType("text/plain");
-        resp.getWriter().println("Please use the form to POST to this url");
+    public void doGet(HttpServletRequest req, HttpServletResponse resp) throws IOException {
+        direct("GET", req, resp);
     }
 
     @Override
-    public void doPost(HttpServletRequest req, HttpServletResponse resp)
-            throws IOException {
-        String name = req.getParameter("name");
-        resp.setContentType("text/plain");
-        if(name == null) {
-            resp.getWriter().println("Please enter a name");
-        }
-        resp.getWriter().println("Hello " + name);
+    public void doPost(HttpServletRequest req, HttpServletResponse resp) throws IOException {
+        direct("POST", req, resp);
+    }
+
+    private void direct(String method, HttpServletRequest req, HttpServletResponse resp) throws IOException {
+        resp.setContentType("application/json");
+        resp.setCharacterEncoding("UTF-8");
+
+        String[] pathRaw = req.getRequestURI().split("/");
+
+        // Skip initial /api/
+        List<String> path = Arrays.asList(pathRaw).subList(3, pathRaw.length);
+
+        Grab.grab(RootAbstractEndpoint.class).serve(method, path, req, resp);
     }
 }
