@@ -22,7 +22,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textColor="@color/red_button"
+                android:textColor="@color/red"
                 android:textStyle="bold"
                 android:textAlignment="center"
                 android:textSize="40sp"
@@ -33,7 +33,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textColor="@color/text_gray"
+                android:textColor="@color/grayText"
                 android:textAlignment="center"
                 android:textSize="21sp"
                 android:layout_centerVertical="true"

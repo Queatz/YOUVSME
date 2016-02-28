@@ -4,6 +4,8 @@
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
 
-    <color name="red_button">#CE0D0E</color>
-    <color name="text_gray">#2F3A3C</color>
+    <color name="red">#CE0D0E</color>
+    <color name="grayText">#2F3A3C</color>
+    <color name="lightGrayText">#B1B1B1</color>
+    <color name="almostBlack">#303B3D</color>
 </resources>

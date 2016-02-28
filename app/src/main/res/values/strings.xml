@@ -7,4 +7,13 @@
     <string name="action_settings">Settings</string>
 
     <string name="facebook_app_id">1722924587943577</string>
+    <string name="search_for_your_opponent">Search for Your Opponent!</string>
+    <string name="wager_sent">Wager Sent</string>
+    <string name="begin_the_game">Begin the Game</string>
+    <string name="back">Back</string>
+    <string name="send_wager">Send Wager</string>
+    <string name="make_a_wager">Make a Wager</string>
+    <string name="what">What</string>
+    <string name="note">Note</string>
+    <string name="battle_this_opponent">Battle this Opponent</string>
 </resources>

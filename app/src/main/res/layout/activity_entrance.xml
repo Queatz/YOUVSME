@@ -19,11 +19,11 @@
         android:paddingTop="24dp">
 
         <TextView
-            android:id="@+id/facebook_button"
+            android:id="@+id/facebookButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/red_button"
-            android:drawableStart="@drawable/facebook"
+            android:drawableLeft="@drawable/facebook"
             android:text="Log in with Facebook"
             android:padding="20dp"
             android:textSize="24sp"
@@ -36,9 +36,9 @@
             android:layout_width="wrap_content"
             android:layout_centerHorizontal="true"
             android:layout_height="wrap_content"
-            android:layout_above="@+id/facebook_button"
+            android:layout_above="@+id/facebookButton"
             android:layout_margin="20dp"
-            android:textColor="@color/text_gray"
+            android:textColor="@color/grayText"
             android:text="HOW DOES IT WORK?"
             android:textSize="14sp"
             android:textStyle="bold"
