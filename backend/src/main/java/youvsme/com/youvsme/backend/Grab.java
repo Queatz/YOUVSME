@@ -16,7 +16,6 @@ public class Grab {
     }
 
     @SuppressWarnings("unchecked")
-//    @Nonnull
     public static <T> T grab(Class<T> clazz) {
         if (!singletons.containsKey(clazz)) {
             try {

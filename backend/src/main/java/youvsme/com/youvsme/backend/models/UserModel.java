@@ -1,14 +1,19 @@
 package youvsme.com.youvsme.backend.models;
 
+import com.googlecode.objectify.annotation.Entity;
+import com.googlecode.objectify.annotation.Index;
+
 /**
  * Created by jacob on 2/25/16.
  */
+
+@Entity
 public class UserModel extends Model {
-    public String firstName;
-    public String lastName;
-    public String facebookId;
+    @Index public String firstName;
+    @Index public String lastName;
+    @Index public String facebookId;
+    @Index public String facebookToken;
     public String facebookPictureUrl;
-    public String facebookToken;
 
     public String getFirstName() {
         return firstName;

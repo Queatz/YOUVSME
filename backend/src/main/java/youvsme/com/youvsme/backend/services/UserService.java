@@ -2,6 +2,7 @@ package youvsme.com.youvsme.backend.services;
 
 import com.restfb.DefaultFacebookClient;
 import com.restfb.FacebookClient;
+import com.restfb.Parameter;
 import com.restfb.Version;
 import com.restfb.types.User;
 
@@ -29,10 +30,13 @@ public class UserService {
             UserModel user = ModelService.get(UserModel.class)
                     .filter("facebookToken", facebookToken).first().now();
 
-            if (user == null) {
+            if (user != null) {
+                return user;
+            } else {
                 FacebookClient facebookClient = new DefaultFacebookClient(facebookToken, Version.LATEST);
 
-                User facebookUser = facebookClient.fetchObject("me", User.class);
+                User facebookUser = facebookClient.fetchObject("me", User.class,
+                        Parameter.with("fields", "id,first_name,last_name,picture.width(512).height(512)"));
 
                 if (facebookUser == null) {
                     return null;

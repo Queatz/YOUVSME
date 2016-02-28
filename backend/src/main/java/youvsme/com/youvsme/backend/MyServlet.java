@@ -9,6 +9,8 @@ package youvsme.com.youvsme.backend;
 import java.io.IOException;
 import java.util.Arrays;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 import javax.servlet.http.*;
 
@@ -37,7 +39,7 @@ public class MyServlet extends HttpServlet {
         }
 
         // Skip initial /api/
-        List<String> path = Arrays.asList(pathRaw).subList(3, pathRaw.length);
+        List<String> path = Arrays.asList(pathRaw).subList(2, pathRaw.length);
 
         Grab.grab(RootAbstractEndpoint.class).serve(method, path, req, resp);
     }

@@ -22,7 +22,7 @@ import youvsme.com.youvsme.models.Opponent;
 public class BattleSearchService {
 
     private static BattleSearchService instance;
-    public static BattleSearchService getInstance() {
+    public static BattleSearchService use() {
         if (instance == null) {
             synchronized (BattleSearchService.class) {
                 if (instance == null) {
