@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import youvsme.com.youvsme.backend.Grab;
 import youvsme.com.youvsme.backend.models.UserModel;
+import youvsme.com.youvsme.backend.services.JsonService;
 import youvsme.com.youvsme.backend.services.UserService;
 
 /**
@@ -50,7 +51,7 @@ public class MeEndpoint implements Api {
                 if (me == null) {
                     resp.setStatus(HttpServletResponse.SC_NOT_FOUND);
                 } else {
-                    resp.getWriter().write(Json.json(me));
+                    resp.getWriter().write(Grab.grab(JsonService.class).json(me));
                 }
 
                 return;

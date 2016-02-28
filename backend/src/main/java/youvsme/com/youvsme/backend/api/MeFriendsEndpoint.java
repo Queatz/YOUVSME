@@ -15,6 +15,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import youvsme.com.youvsme.backend.Grab;
 import youvsme.com.youvsme.backend.models.UserModel;
+import youvsme.com.youvsme.backend.services.JsonService;
 import youvsme.com.youvsme.backend.services.UserService;
 
 /**
@@ -42,6 +43,6 @@ public class MeFriendsEndpoint implements Api {
             friends.add(userService.userFromFacebookUser(facebookFriend));
         }
 
-        resp.getWriter().write(Json.json(friends));
+        resp.getWriter().write(Grab.grab(JsonService.class).json(friends));
     }
 }

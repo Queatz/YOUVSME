@@ -27,7 +27,7 @@
 ======= API ========
 
 [X] /me (login, who am i, save Facebook token)
-[ ] /me/friends?q=A
+[X] /me/friends
 [ ] /me/active-challenge -> {status: 'finished', question: A, choices: [A, B, C, D]}
 [ ] /challenge?partner=A&wager=B&note=C
 [ ] /challenge/A/answer/B?chose=C
@@ -54,6 +54,14 @@ challenge {
     wager_note
 }
 
+question {
+
+}
+
+======= DEVOPS ========
+
+[ ] Deploy api server
+[ ] Deploy add question website
 
 ======= WEBSITE ========
 

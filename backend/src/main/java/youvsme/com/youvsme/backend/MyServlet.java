@@ -31,6 +31,11 @@ public class MyServlet extends HttpServlet {
 
         String[] pathRaw = req.getRequestURI().split("/");
 
+        if (pathRaw.length < 3) {
+            resp.setStatus(HttpServletResponse.SC_BAD_REQUEST);
+            return;
+        }
+
         // Skip initial /api/
         List<String> path = Arrays.asList(pathRaw).subList(3, pathRaw.length);
 

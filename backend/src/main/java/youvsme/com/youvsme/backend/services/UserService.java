@@ -4,8 +4,8 @@ import com.restfb.DefaultFacebookClient;
 import com.restfb.FacebookClient;
 import com.restfb.Version;
 import com.restfb.types.User;
-import com.sun.istack.internal.NotNull;
-import com.sun.istack.internal.Nullable;
+
+import javax.annotation.Nullable;
 
 import youvsme.com.youvsme.backend.models.UserModel;
 
