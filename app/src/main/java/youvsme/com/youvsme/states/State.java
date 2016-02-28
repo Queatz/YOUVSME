@@ -12,7 +12,7 @@ public interface State {
     void show(final AppCompatActivity activity);
 
     /**
-     * Called when the user presses back.
+     * Called when the user requested to go back.
      *
      * @return true if the state handled the back press, or false if the system should handle it.
      */

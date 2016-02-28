@@ -1,20 +1,8 @@
 package youvsme.com.youvsme.services;
 
-import android.util.Log;
+import com.loopj.android.http.AsyncHttpResponseHandler;
 
-import com.facebook.AccessToken;
-import com.facebook.GraphRequest;
-import com.facebook.GraphResponse;
-import com.facebook.HttpMethod;
-
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
-
-import java.util.ArrayList;
-import java.util.List;
-
-import youvsme.com.youvsme.models.Opponent;
+import cz.msebera.android.httpclient.Header;
 
 /**
  * Created by jacob on 2/23/16.
@@ -34,38 +22,17 @@ public class BattleSearchService {
         return instance;
     }
 
-    List<Opponent> opponents;
-
     public void preload() {
+        ApiService.use().get("opponents", null, new AsyncHttpResponseHandler() {
+            @Override
+            public void onSuccess(int statusCode, Header[] headers, byte[] responseBody) {
+                // Adds all opponents
+            }
 
-
-        // TODO move to server
-        new GraphRequest(
-                AccessToken.getCurrentAccessToken(),
-                "/me/friends",
-                null,
-                HttpMethod.GET,
-                new GraphRequest.Callback() {
-                    public void onCompleted(GraphResponse response) {
-                        Log.d("YOUVSME", "Got opponents: " + response.getRawResponse());
-
-                        opponents = new ArrayList<>();
-                        JSONArray json = response.getJSONArray();
-
-                        for (int i = 0; i < json.length(); i++) {
-                            try {
-                                JSONObject user = json.getJSONObject(i);
-                                opponents.add(new Opponent(
-                                        user.getString("id"),
-                                        user.getString("first_name"),
-                                        user.getString("last_name")
-                                ));
-                            } catch (JSONException e) {
-                                e.printStackTrace();
-                            }
-                        }
-                    }
-                }
-        ).executeAsync();
+            @Override
+            public void onFailure(int statusCode, Header[] headers, byte[] responseBody, Throwable error) {
+                // We didn't find any opponents
+            }
+        });
     }
 }

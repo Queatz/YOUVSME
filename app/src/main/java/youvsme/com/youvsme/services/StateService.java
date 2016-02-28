@@ -35,7 +35,7 @@ public class StateService {
             case NO_OPPONENT:
             case ANSWERING_QUESTIONS:
             case WAITING_FOR_OPPONENT:
-            case GAME_FINISHED:
+            case LAST_GAME_FINISHED:
             default:
         }
 
