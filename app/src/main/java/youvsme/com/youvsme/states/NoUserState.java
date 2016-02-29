@@ -38,6 +38,8 @@ public class NoUserState implements State {
 
         View facebookButton = activity.findViewById(R.id.facebookButton);
 
+        UserService.use().initialize();
+
         facebookButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

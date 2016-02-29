@@ -1,5 +1,6 @@
 package youvsme.com.youvsme.services;
 
+import android.content.Context;
 import android.content.SharedPreferences;
 import android.preference.PreferenceManager;
 import android.support.annotation.Nullable;
@@ -28,16 +29,16 @@ public class GameService {
         return instance;
     }
 
-    private YOUVSMEApp app;
+    private Context context;
     private SharedPreferences preferences;
 
-    public void initialize(YOUVSMEApp youvsmeApp) {
-        app = youvsmeApp;
-        preferences = PreferenceManager.getDefaultSharedPreferences(app);
+    public void initialize(Context context) {
+        this.context = context;
+        preferences = PreferenceManager.getDefaultSharedPreferences(context);
     }
 
-    public YOUVSMEApp getApp() {
-        return app;
+    public Context context() {
+        return context;
     }
 
     public enum GameState {

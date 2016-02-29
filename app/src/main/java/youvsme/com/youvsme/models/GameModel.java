@@ -19,7 +19,6 @@ public class GameModel extends RealmObject {
     @Index
     private String id;
 
-    @Index
     private UserModel user;
     private UserModel opponent;
 

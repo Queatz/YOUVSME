@@ -1,7 +1,5 @@
 package youvsme.com.youvsme.services;
 
-import android.content.Context;
-
 import io.realm.Realm;
 
 /**
@@ -26,7 +24,7 @@ public class RealmService {
 
     public Realm get() {
         if (realm == null || realm.isClosed()) {
-            realm = Realm.getInstance(GameService.use().getApp());
+            realm = Realm.getInstance(GameService.use().context());
         }
 
         return realm;

@@ -1,5 +1,6 @@
 package youvsme.com.youvsme.services;
 
+import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 
@@ -13,6 +14,8 @@ import youvsme.com.youvsme.util.Config;
 public class StateService {
 
     private static StateService instance;
+    private AppCompatActivity activity;
+
     public static StateService use() {
         if (instance == null) {
             synchronized (StateService.class) {
@@ -28,9 +31,17 @@ public class StateService {
     private State activeState;
 
     public void setActivity(final AppCompatActivity activity) {
+        this.activity = activity;
+
+        loadInitialState();
+    }
+
+    public void loadInitialState() {
+        State state = null;
+
         switch (GameService.use().getState()) {
             case NO_USER:
-                activeState = new NoUserState();
+                state = new NoUserState();
                 break;
             case NO_OPPONENT:
             case ANSWERING_QUESTIONS:
@@ -39,11 +50,16 @@ public class StateService {
             default:
         }
 
-        if (activeState == null) {
+        if (state == null) {
             Log.w(Config.LOGGER, "No state found for active game state. Activity will not be initialized.");
             return;
         }
 
+        go(state);
+    }
+
+    public void go(@NonNull final State state) {
+        activeState = state;
         activeState.show(activity);
     }
 
@@ -53,5 +69,9 @@ public class StateService {
         } else {
             return activeState.back();
         }
+    }
+
+    public State getState() {
+        return activeState;
     }
 }

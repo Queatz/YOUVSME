@@ -7,6 +7,7 @@
 [ ] Show selected opponent, battle button, back button
 [ ] Make a wager step, back button, what, note, send wager, skip wager
 [ ] Wager sent, icon, begin game button
+[ ] Loading spinner before going to search opponent state
 
 ======= GAME BEGINS ========
 

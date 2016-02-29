@@ -15,6 +15,7 @@ import com.loopj.android.http.AsyncHttpResponseHandler;
 import com.loopj.android.http.RequestParams;
 
 import cz.msebera.android.httpclient.Header;
+import youvsme.com.youvsme.states.SearchForOpponentState;
 import youvsme.com.youvsme.util.Config;
 
 /**
@@ -38,11 +39,11 @@ public class UserService {
     CallbackManager facebookCallbackManager = null;
 
     private void prepareForFacebookLogin() {
-        if (facebookCallbackManager == null) {
+        if (facebookCallbackManager != null) {
             return;
         }
 
-        FacebookSdk.sdkInitialize(GameService.use().getApp());
+        FacebookSdk.sdkInitialize(GameService.use().context());
         facebookCallbackManager = CallbackManager.Factory.create();
 
         LoginManager.getInstance().registerCallback(facebookCallbackManager,
@@ -59,6 +60,9 @@ public class UserService {
                             @Override
                             public void onSuccess(int statusCode, Header[] headers, byte[] responseBody) {
                                 Log.d(Config.LOGGER, "/me -> " + ( responseBody == null ? "-null-" : new String(responseBody)));
+
+                                // TODO not jest like dis yo'
+                                StateService.use().go(new SearchForOpponentState());
                             }
 
                             @Override
@@ -91,5 +95,9 @@ public class UserService {
 
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         facebookCallbackManager.onActivityResult(requestCode, resultCode, data);
+    }
+
+    public void initialize() {
+        prepareForFacebookLogin();
     }
 }
