@@ -16,4 +16,5 @@
     <string name="what">What</string>
     <string name="note">Note</string>
     <string name="battle_this_opponent">Battle this Opponent</string>
+    <string name="fullname">%1$s %2$s</string>
 </resources>

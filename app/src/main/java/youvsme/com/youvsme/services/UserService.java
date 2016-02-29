@@ -3,6 +3,7 @@ package youvsme.com.youvsme.services;
 import android.app.Activity;
 import android.content.Intent;
 import android.util.Log;
+import android.widget.Toast;
 
 import com.facebook.CallbackManager;
 import com.facebook.FacebookCallback;
@@ -11,12 +12,12 @@ import com.facebook.FacebookSdk;
 import com.facebook.login.LoginManager;
 import com.facebook.login.LoginResult;
 import com.google.common.collect.ImmutableSet;
-import com.loopj.android.http.AsyncHttpResponseHandler;
 import com.loopj.android.http.RequestParams;
 
-import cz.msebera.android.httpclient.Header;
+import youvsme.com.youvsme.models.UserModel;
 import youvsme.com.youvsme.states.SearchForOpponentState;
 import youvsme.com.youvsme.util.Config;
+import youvsme.com.youvsme.util.RealmObjectResponseHandler;
 
 /**
  * Created by jacob on 2/23/16.
@@ -56,18 +57,21 @@ public class UserService {
                         RequestParams params = new RequestParams();
                         params.add(Config.PARAM_FACEBOOK_TOKEN, loginResult.getAccessToken().getToken());
 
-                        ApiService.use().get("me", params, new AsyncHttpResponseHandler() {
+                        ApiService.use().get("me", params, new RealmObjectResponseHandler<UserModel>() {
                             @Override
-                            public void onSuccess(int statusCode, Header[] headers, byte[] responseBody) {
-                                Log.d(Config.LOGGER, "/me -> " + ( responseBody == null ? "-null-" : new String(responseBody)));
+                            public void success(UserModel user) {
+                                if (user != null) {
+                                    GameService.use()
+                                            .setMyUserId(user.getId())
+                                            .setMyUserToken(user.getToken());
 
-                                // TODO not jest like dis yo'
-                                StateService.use().go(new SearchForOpponentState());
+                                    StateService.use().go(new SearchForOpponentState());
+                                }
                             }
 
                             @Override
-                            public void onFailure(int statusCode, Header[] headers, byte[] responseBody, Throwable error) {
-                                Log.d(Config.LOGGER, "/me -[fail]-> " + ( responseBody == null ? "-null-" : new String(responseBody)));
+                            public void failure(int statusCode, String response) {
+                                Toast.makeText(GameService.use().context(), "There was an error. Bummer.", Toast.LENGTH_SHORT).show();
                             }
                         });
                     }

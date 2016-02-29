@@ -3,13 +3,26 @@ package youvsme.com.youvsme.services;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.preference.PreferenceManager;
+import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
+import android.util.Log;
+import android.widget.Toast;
 
+import com.loopj.android.http.RequestParams;
+
+import java.util.List;
+import java.util.logging.Logger;
+
+import io.realm.RealmList;
+import io.realm.RealmResults;
 import io.realm.Sort;
 import youvsme.com.youvsme.YOUVSMEApp;
 import youvsme.com.youvsme.models.GameModel;
 import youvsme.com.youvsme.models.UserModel;
+import youvsme.com.youvsme.states.SearchForOpponentState;
 import youvsme.com.youvsme.util.Config;
+import youvsme.com.youvsme.util.RealmListResponseHandler;
+import youvsme.com.youvsme.util.RealmObjectResponseHandler;
 
 /**
  * Created by jacob on 2/28/16.
@@ -17,6 +30,7 @@ import youvsme.com.youvsme.util.Config;
 public class GameService {
 
     private static GameService instance;
+
     public static GameService use() {
         if (instance == null) {
             synchronized (GameService.class) {
@@ -91,20 +105,61 @@ public class GameService {
     }
 
     @Nullable
+    public RealmResults<UserModel> getFriends() {
+        String myToken = myUserToken();
+
+        if (myToken == null || myUserId() == null) {
+            Log.w(Config.LOGGER, "Tried to get friends but no user");
+            return null;
+        }
+
+        RequestParams params = new RequestParams();
+        params.put(Config.PARAM_TOKEN, myToken);
+
+        ApiService.use().get("me/friends", params, new RealmListResponseHandler<UserModel>() {
+            @Override
+            public void success(List<UserModel> user) {
+                Log.w(Config.LOGGER, "found users");
+                // They'll've been added to the realm by here
+            }
+
+            @Override
+            public void failure(int statusCode, String response) {
+                Toast.makeText(GameService.use().context(), "There was an error. Bummer.", Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        return RealmService.use().get()
+                .where(UserModel.class)
+                .notEqualTo("id", myUserId())
+                .findAllSorted("firstName", Sort.ASCENDING);
+    }
+
+    @Nullable
     public GameModel latestGame() {
         if (myUserId() == null) {
             return null;
         }
 
-        return RealmService.use().get()
+        RealmResults<GameModel> games = RealmService.use().get()
                 .where(GameModel.class)
                 .equalTo("user.id", myUserId())
                 .notEqualTo("state", GameModel.GAME_STATE_FINISHED)
-                .findAllSorted("started", Sort.DESCENDING).first();
+                .findAllSorted("started", Sort.DESCENDING);
+
+        if (games.isEmpty()) {
+            return null;
+        }
+
+        return games.first();
     }
 
     @Nullable
     public UserModel currentUser() {
+        if (myUserId() == null) {
+            return null;
+        }
+
         return RealmService.use().get()
                 .where(UserModel.class)
                 .equalTo("id", myUserId())
@@ -119,5 +174,15 @@ public class GameService {
     @Nullable
     public String myUserToken() {
         return preferences.getString(Config.PREF_MY_USER_TOKEN, null);
+    }
+
+    public GameService setMyUserId(final String myUserId) {
+        preferences.edit().putString(Config.PREF_MY_USER_ID, myUserId).apply();
+        return this;
+    }
+
+    public GameService setMyUserToken(final String myUserToken) {
+        preferences.edit().putString(Config.PREF_MY_USER_TOKEN, myUserToken).apply();
+        return this;
     }
 }

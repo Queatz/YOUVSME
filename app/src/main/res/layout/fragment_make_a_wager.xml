@@ -8,6 +8,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
+        android:background="@color/white"
         android:elevation="2dp">
 
         <ImageButton
@@ -66,6 +67,8 @@
                 android:paddingBottom="18dp"
                 android:textColorHint="@color/lightGrayText"
                 android:textColor="@color/almostBlack"
+                android:textAlignment="gravity"
+                android:gravity="top"
                 android:hint="Ex. Loser buys cheetos" />
 
         </LinearLayout>
@@ -95,16 +98,20 @@
                 android:paddingBottom="18dp"
                 android:textColorHint="@color/lightGrayText"
                 android:textColor="@color/almostBlack"
+                android:textAlignment="gravity"
+                android:gravity="top"
                 android:hint="Ex. I'm talking the big bag.  You know the one.  The real deal." />
 
         </LinearLayout>
 
     </LinearLayout>
 
-    <RelativeLayout
+    <LinearLayout
         android:id="@+id/bottomLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center_horizontal"
         android:layout_alignParentBottom="true"
         android:paddingLeft="24dp"
         android:paddingRight="24dp"
@@ -124,9 +131,7 @@
         <Button style="@style/Widget.AppCompat.Button.Borderless"
             android:id="@+id/skipWagerButton"
             android:layout_width="wrap_content"
-            android:layout_centerHorizontal="true"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/beginGameButton"
             android:layout_margin="10dp"
             android:textColor="@color/grayText"
             android:text="SKIP WAGER"
@@ -134,6 +139,6 @@
             android:textStyle="bold"
             android:textAlignment="center" />
 
-    </RelativeLayout>
+    </LinearLayout>
 
 </RelativeLayout>

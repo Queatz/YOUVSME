@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 
 import youvsme.com.youvsme.states.NoUserState;
+import youvsme.com.youvsme.states.SearchForOpponentState;
 import youvsme.com.youvsme.states.State;
 import youvsme.com.youvsme.util.Config;
 
@@ -44,9 +45,13 @@ public class StateService {
                 state = new NoUserState();
                 break;
             case NO_OPPONENT:
+                state = new SearchForOpponentState();
             case ANSWERING_QUESTIONS:
+
             case WAITING_FOR_OPPONENT:
+
             case LAST_GAME_FINISHED:
+
             default:
         }
 

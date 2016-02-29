@@ -4,6 +4,9 @@ import com.loopj.android.http.AsyncHttpClient;
 import com.loopj.android.http.RequestParams;
 import com.loopj.android.http.ResponseHandlerInterface;
 
+import youvsme.com.youvsme.models.GameModel;
+import youvsme.com.youvsme.util.RealmObjectResponseHandler;
+
 /**
  * Created by jacob on 2/27/16.
  */
@@ -32,5 +35,9 @@ public class ApiService {
 
     public void get(String path, RequestParams params, ResponseHandlerInterface callback) {
         client.get(apiBase + path, params, callback);
+    }
+
+    public void post(String path, RequestParams params, ResponseHandlerInterface callback) {
+        client.post(apiBase + path, params, callback);
     }
 }

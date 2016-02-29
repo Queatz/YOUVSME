@@ -13,7 +13,8 @@ public class UserModel extends Model {
     @Index public String lastName;
     @Index public String facebookId;
     @Index public String facebookToken;
-    public String facebookPictureUrl;
+    @Index public String token;
+    public String pictureUrl;
 
     public String getFirstName() {
         return firstName;
@@ -39,12 +40,12 @@ public class UserModel extends Model {
         this.facebookId = facebookId;
     }
 
-    public void setFacebookPictureUrl(String facebookPictureUrl) {
-        this.facebookPictureUrl = facebookPictureUrl;
+    public void setPictureUrl(String pictureUrl) {
+        this.pictureUrl = pictureUrl;
     }
 
-    public String getFacebookPictureUrl() {
-        return facebookPictureUrl;
+    public String getPictureUrl() {
+        return pictureUrl;
     }
 
     public String getFacebookToken() {
@@ -53,5 +54,13 @@ public class UserModel extends Model {
 
     public void setFacebookToken(String facebookToken) {
         this.facebookToken = facebookToken;
+    }
+
+    public String getToken() {
+        return token;
+    }
+
+    public void setToken(String token) {
+        this.token = token;
     }
 }

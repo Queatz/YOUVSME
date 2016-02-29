@@ -8,12 +8,18 @@ import com.restfb.types.User;
 
 import javax.annotation.Nullable;
 
+import youvsme.com.youvsme.backend.Util;
 import youvsme.com.youvsme.backend.models.UserModel;
 
 /**
  * Created by jacob on 2/25/16.
  */
 public class UserService {
+
+    @Nullable
+    public UserModel userFromToken(@Nullable String token) {
+        return userFromToken(token, null);
+    }
 
     @Nullable
     public UserModel userFromToken(@Nullable String token, @Nullable String facebookToken) {
@@ -44,6 +50,7 @@ public class UserService {
 
                 UserModel newUser = userFromFacebookUser(facebookUser);
                 newUser.setFacebookToken(facebookToken);
+                newUser.setToken(Util.newRandomToken());
                 ModelService.save(newUser);
 
                 return newUser;
@@ -61,14 +68,14 @@ public class UserService {
 
         if (newUser == null) {
             newUser = ModelService.create(UserModel.class);
+
             newUser.setFacebookId(facebookUser.getId());
-        }
+            newUser.setFirstName(facebookUser.getFirstName());
+            newUser.setLastName(facebookUser.getLastName());
 
-        newUser.setFirstName(facebookUser.getFirstName());
-        newUser.setLastName(facebookUser.getLastName());
-
-        if (facebookUser.getPicture() != null) {
-            newUser.setFacebookPictureUrl(facebookUser.getPicture().getUrl());
+            if (facebookUser.getPicture() != null) {
+                newUser.setPictureUrl(facebookUser.getPicture().getUrl());
+            }
         }
 
         return newUser;

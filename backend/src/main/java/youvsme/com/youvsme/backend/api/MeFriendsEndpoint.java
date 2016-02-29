@@ -17,6 +17,7 @@ import youvsme.com.youvsme.backend.Grab;
 import youvsme.com.youvsme.backend.models.UserModel;
 import youvsme.com.youvsme.backend.services.JsonService;
 import youvsme.com.youvsme.backend.services.UserService;
+import youvsme.com.youvsme.backend.views.UserModelView;
 
 /**
  * Created by jacob on 2/25/16.
@@ -26,7 +27,7 @@ public class MeFriendsEndpoint implements Api {
 
     @Override
     public void serve(String method, List<String> path, HttpServletRequest req, HttpServletResponse resp) throws IOException {
-        UserModel me = Grab.grab(UserService.class).userFromToken(req.getParameter("token"), req.getParameter("facebookToken"));
+        UserModel me = Grab.grab(UserService.class).userFromToken(req.getParameter("token"));
 
         if (me == null) {
             resp.setStatus(HttpServletResponse.SC_NOT_FOUND);
@@ -37,10 +38,12 @@ public class MeFriendsEndpoint implements Api {
         FacebookClient facebookClient = new DefaultFacebookClient(me.getFacebookToken(), Version.LATEST);
         Connection<User> facebookFriends = facebookClient.fetchConnection("me/friends", User.class);
 
-        List<UserModel> friends = new ArrayList<>();
+        List<UserModelView> friends = new ArrayList<>();
 
         for(User facebookFriend : facebookFriends.getData()) {
-            friends.add(userService.userFromFacebookUser(facebookFriend));
+            UserModel user = userService.userFromFacebookUser(facebookFriend);
+
+            friends.add(new UserModelView(user));
         }
 
         resp.getWriter().write(Grab.grab(JsonService.class).json(friends));

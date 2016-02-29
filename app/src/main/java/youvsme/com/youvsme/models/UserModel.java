@@ -2,6 +2,7 @@ package youvsme.com.youvsme.models;
 
 import io.realm.RealmObject;
 import io.realm.annotations.Index;
+import io.realm.annotations.PrimaryKey;
 import io.realm.annotations.RealmClass;
 
 /**
@@ -10,19 +11,14 @@ import io.realm.annotations.RealmClass;
 
 @RealmClass
 public class UserModel extends RealmObject {
-    @Index
+    @PrimaryKey
     private String id;
     private String firstName;
     private String lastName;
     private String pictureUrl;
+    private String token;
 
     public UserModel() {}
-
-    public UserModel(String firstName, String lastName, String pictureUrl) {
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.pictureUrl = pictureUrl;
-    }
 
     public String getId() {
         return id;
@@ -54,5 +50,13 @@ public class UserModel extends RealmObject {
 
     public void setPictureUrl(String pictureUrl) {
         this.pictureUrl = pictureUrl;
+    }
+
+    public String getToken() {
+        return token;
+    }
+
+    public void setToken(String token) {
+        this.token = token;
     }
 }

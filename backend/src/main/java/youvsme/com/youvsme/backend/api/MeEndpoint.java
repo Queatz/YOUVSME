@@ -12,6 +12,7 @@ import youvsme.com.youvsme.backend.Grab;
 import youvsme.com.youvsme.backend.models.UserModel;
 import youvsme.com.youvsme.backend.services.JsonService;
 import youvsme.com.youvsme.backend.services.UserService;
+import youvsme.com.youvsme.backend.views.UserModelView;
 
 /**
  * Created by jacob on 2/25/16.
@@ -51,7 +52,7 @@ public class MeEndpoint implements Api {
                 if (me == null) {
                     resp.setStatus(HttpServletResponse.SC_NOT_FOUND);
                 } else {
-                    resp.getWriter().write(Grab.grab(JsonService.class).json(me));
+                    resp.getWriter().write(Grab.grab(JsonService.class).json(new UserModelView(me, true)));
                 }
 
                 return;

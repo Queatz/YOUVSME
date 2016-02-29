@@ -4,6 +4,7 @@ import java.util.Date;
 
 import io.realm.RealmObject;
 import io.realm.annotations.Index;
+import io.realm.annotations.PrimaryKey;
 import io.realm.annotations.RealmClass;
 
 /**
@@ -16,7 +17,7 @@ public class GameModel extends RealmObject {
     public static final String GAME_STATE_WAITING_FOR_OPPONENT = "waiting";
     public static final String GAME_STATE_FINISHED = "finished";
 
-    @Index
+    @PrimaryKey
     private String id;
 
     private UserModel user;

@@ -11,6 +11,7 @@ import android.widget.EditText;
 import youvsme.com.youvsme.R;
 import youvsme.com.youvsme.services.StateService;
 import youvsme.com.youvsme.states.SearchForOpponentState;
+import youvsme.com.youvsme.util.Helpers;
 
 /**
  * Created by jacob on 2/28/16.
@@ -44,6 +45,8 @@ public class MakeAWagerFragment extends Fragment {
                 ((SearchForOpponentState) StateService.use().getState()).skipWager();
             }
         });
+
+        Helpers.keyboard(view.findViewById(R.id.wagerWhat), true);
 
         return view;
     }

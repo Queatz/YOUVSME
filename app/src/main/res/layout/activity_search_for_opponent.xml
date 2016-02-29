@@ -3,7 +3,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".activities.Entrance">
+    tools:context=".activities.Entrance"
+    android:background="@color/white">
 
     <FrameLayout
         android:id="@+id/fragment"
