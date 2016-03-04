@@ -1,13 +1,41 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center_vertical"
+    android:padding="12dp">
 
     <TextView
-        android:id="@+id/friendName"
+        android:id="@+id/letter"
+        android:layout_width="48dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="0"
+        android:textColor="@color/red"
+        android:textSize="28sp"
+        android:padding="8dp"
+        android:text="A"/>
+
+    <TextView
+        android:id="@+id/name"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:gravity="center_vertical"
         android:textColor="@color/almostBlack"
+        android:text="Mai Pham"
+        android:textSize="18sp"
         android:padding="16dp" />
+
+    <com.makeramen.roundedimageview.RoundedImageView
+        android:id="@+id/picture"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_weight="0"
+        android:layout_margin="8dp"
+        android:scaleType="centerCrop"
+        android:src="@color/placeholder"
+        app:riv_corner_radius="48dp" />
 
 </LinearLayout>

@@ -5,8 +5,9 @@
     <color name="colorAccent">#CE0D0E</color>
 
     <color name="red">#CE0D0E</color>
-    <color name="white">#FFFFFF</color>
+    <color name="white">#EDEEF2</color>
     <color name="grayText">#2F3A3C</color>
+    <color name="placeholder">#DCDCDC</color>
     <color name="lightGrayText">#B1B1B1</color>
     <color name="almostBlack">#303B3D</color>
 </resources>

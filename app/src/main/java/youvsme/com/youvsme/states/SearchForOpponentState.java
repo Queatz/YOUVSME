@@ -6,6 +6,7 @@ import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 
+import com.google.common.base.Strings;
 import com.loopj.android.http.RequestParams;
 
 import youvsme.com.youvsme.R;
@@ -79,7 +80,11 @@ public class SearchForOpponentState implements State {
         ApiService.use().post("challenge", params, new RealmObjectResponseHandler<GameModel>() {
             @Override
             public void success(GameModel response) {
-                showFragment(wagerSentFragment);
+                if (Strings.isNullOrEmpty(what)) {
+                    beginGame();
+                } else  {
+                    showFragment(wagerSentFragment);
+                }
             }
 
             @Override

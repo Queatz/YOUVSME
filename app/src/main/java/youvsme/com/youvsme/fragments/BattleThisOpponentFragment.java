@@ -9,6 +9,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.makeramen.roundedimageview.RoundedImageView;
+import com.squareup.picasso.Picasso;
 
 import youvsme.com.youvsme.R;
 import youvsme.com.youvsme.models.UserModel;
@@ -40,22 +41,29 @@ public class BattleThisOpponentFragment extends Fragment {
             }
         });
 
+        decorateView(view);
+
         return view;
     }
 
     public void setOpponent(UserModel opponent) {
         this.opponent = opponent;
 
-        if (getView() == null) {
+        if (getView() != null) {
+            decorateView(getView());
+        }
+    }
+
+    private void decorateView(View view) {
+        if (opponent == null) {
             return;
         }
 
-        TextView opponentName = (TextView) getView().findViewById(R.id.opponentName);
+        TextView opponentName = (TextView) view.findViewById(R.id.opponentName);
         opponentName.setText(getString(R.string.fullname, opponent.getFirstName(), opponent.getLastName()));
 
-        RoundedImageView opponentPicture = (RoundedImageView) getView().findViewById(R.id.opponentPicture));
+        RoundedImageView opponentPicture = (RoundedImageView) view.findViewById(R.id.opponentPicture);
         Picasso.with(getContext()).load(opponent.getPictureUrl()).into(opponentPicture);
-        // TODO when tapping on the opponent picture, anticipate explosion thereof
-
+        // TODO when tapping on the opponent picture, anticipate slow-motion explosion thereof
     }
 }

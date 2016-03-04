@@ -1,5 +1,33 @@
 
 
+
+
+==== MVP Remaining Items ====
+
+[ ] Remaining Game Screens (answer questions, review scores, intermittent screens)
+[ ] Questions API for Jeff to input (materializecss.com)
+[ ] me/device?deviceToken=00000000 Endpoint
+[X] Save devices to server & send pushes to them from server
+[ ] Push Notification for:
+    [ ] 1) kicking in the face
+    [ ] 2) Jeff Challenged You To A Wager
+    [ ] 3) Jenny finished answering; See who won.
+
+[ ] GET /me/challenge -> [{id: '123', status: 'waiting', opponent: {_opponent_}, questions: [{text: '', choices: [A, B, C, D]}]}]
+[ ] POST /challenge?opponent=A[&wager=B&note=C]
+[ ] POST /challenge/A/choose-answer?choice=B
+[ ] POST /challenge/A/kick-in-the-face
+[ ] Update icons to hires !important
+
+
+
+
+
+
+
+
+
+
 ++ Scratchpad ++
 
 Login /me returns user model
@@ -47,7 +75,7 @@ opponent adapter
 ======= API ========
 
 [X] /me (login, who am i, save Facebook token)
-[ ] /me/friends
+[X] /me/friends
 [ ] /me/active-challenge -> {status: 'finished', question: A, choices: [A, B, C, D]}
 [ ] /challenge?partner=A&wager=B&note=C
 [ ] /challenge/A/answer/B?chose=C
@@ -66,16 +94,31 @@ user {
 challenge {
     id
     status: 'FINISHED'
-    player_1_questions: [A, B, C, D]
-    player_2_questions: [A, B, C, D]
-    player_1
-    player_2
     wager
     wager_note
 }
 
-question {
+challenge_player {
+    challengeId
+    playerId
+    answers: [A, B, C, D]
+}
 
+question {
+    id
+    text
+}
+
+answer_choice {
+    id
+    questionId
+    order: A
+    text
+}
+
+device {
+    userId
+    deviceToken
 }
 
 ======= DEVOPS ========

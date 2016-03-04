@@ -33,7 +33,9 @@ public class OpponentSearchFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         final View view = inflater.inflate(R.layout.fragment_opponent_search, null);
 
-        view.findViewById(R.id.opponentSearch).setOnClickListener(new View.OnClickListener() {
+        final View opponentSearch = view.findViewById(R.id.opponentSearch);
+
+        opponentSearch.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 // filter list
@@ -47,7 +49,7 @@ public class OpponentSearchFragment extends Fragment {
             }
         });
 
-        Helpers.keyboard(view.findViewById(R.id.opponentSearch), true);
+        Helpers.keyboard(opponentSearch, true);
 
         final ListView opponents = (ListView) view.findViewById(R.id.opponentsList);
         RealmResults<UserModel> friends = GameService.use().getFriends();
@@ -57,6 +59,7 @@ public class OpponentSearchFragment extends Fragment {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 ((SearchForOpponentState) StateService.use().getState()).selectOpponent((UserModel) opponents.getAdapter().getItem(position));
+                Helpers.keyboard(opponentSearch, false);
             }
         });
 

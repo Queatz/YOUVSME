@@ -4,7 +4,10 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
+
+import com.squareup.picasso.Picasso;
 
 import io.realm.RealmBaseAdapter;
 import io.realm.RealmResults;
@@ -25,11 +28,22 @@ public class FriendsAdapter extends RealmBaseAdapter<UserModel> {
             convertView = LayoutInflater.from(context).inflate(R.layout.adapter_item_friend, null);
         }
 
-        TextView friendName = (TextView) convertView.findViewById(R.id.friendName);
+        final TextView friendName = (TextView) convertView.findViewById(R.id.name);
+        final TextView letterView = (TextView) convertView.findViewById(R.id.letter);
+        final ImageView pictureView = (ImageView) convertView.findViewById(R.id.picture);
 
-        UserModel friend = getItem(position);
+        final UserModel friend = getItem(position);
+        final String letter = friend.getFirstName().substring(0, 1).toUpperCase();
+
+        if (position == 0 || !letter.equals(getItem(position - 1).getFirstName().substring(0, 1).toUpperCase())) {
+            letterView.setVisibility(View.VISIBLE);
+            letterView.setText(letter);
+        } else {
+            letterView.setVisibility(View.INVISIBLE);
+        }
 
         friendName.setText(context.getString(R.string.fullname, friend.getFirstName(), friend.getLastName()));
+        Picasso.with(context).load(friend.getPictureUrl()).into(pictureView);
 
         return convertView;
     }

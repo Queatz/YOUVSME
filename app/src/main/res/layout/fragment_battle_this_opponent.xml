@@ -45,12 +45,12 @@
 
         <com.makeramen.roundedimageview.RoundedImageView
             android:id="@+id/opponentPicture"
-            android:layout_width="128dp"
-            android:layout_height="128dp"
+            android:layout_width="154dp"
+            android:layout_height="154dp"
             android:layout_margin="16dp"
-            app:riv_corner_radius="64dp"
+            app:riv_corner_radius="154dp"
             android:src="@drawable/red_button"
-            app:riv_border_width="10dp"
+            app:riv_border_width="12dp"
             app:riv_border_color="@color/lightGrayText" />
 
         <TextView
