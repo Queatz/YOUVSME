@@ -1,5 +1,4 @@
 apply plugin: 'com.android.application'
-apply plugin: 'com.google.gms.google-services'
 
 android {
     compileSdkVersion 23
@@ -34,3 +33,5 @@ dependencies {
     compile 'com.makeramen:roundedimageview:2.2.1'
     compile 'com.squareup.picasso:picasso:2.5.2'
 }
+
+apply plugin: 'com.google.gms.google-services'

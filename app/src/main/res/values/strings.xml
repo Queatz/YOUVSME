@@ -17,4 +17,16 @@
     <string name="note">Note</string>
     <string name="battle_this_opponent">Battle this Opponent</string>
     <string name="fullname">%1$s %2$s</string>
+    <string name="lets_go">Let\'s Go</string>
+    <string name="now_answer_your_opponents_questions">Now answer\nyour opponent\'s\nquestions</string>
+    <string name="youre_finished">You\'re finished.</string>
+    <string name="you_fought_well">You fought well.</string>
+    <string name="see_who_won">See Who Won</string>
+    <string name="your_opponent_has_not_finished_answering_their_questions_yet">Your opponent has not finished answering their questions yet.</string>
+    <string name="send_kick_in_the_face">Send Kick in the Face</string>
+    <string name="your_opponent_who_is_likely_scared_of_you_has_been_kicked_in_the_face">Your opponent, who is likely scared of you, has been kicked in the face.</string>
+    <string name="we_ll_notify_you_when_they_ve_completed_their_answers">We\'ll notify you when they\'ve completed their answers.</string>
+    <string name="your_time_will_come">Your time will come.</string>
+    <string name="play_again">Play Again</string>
+    <string name="final_results">Final Results</string>
 </resources>

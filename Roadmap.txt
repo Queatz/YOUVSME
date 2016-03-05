@@ -5,13 +5,13 @@
 ==== MVP Remaining Items ====
 
 [ ] Remaining Game Screens (answer questions, review scores, intermittent screens)
-[ ] Questions API for Jeff to input (materializecss.com)
 [ ] me/device?deviceToken=00000000 Endpoint
 [X] Save devices to server & send pushes to them from server
 [ ] Push Notification for:
     [ ] 1) kicking in the face
     [ ] 2) Jeff Challenged You To A Wager
     [ ] 3) Jenny finished answering; See who won.
+[ ] Questions API for Jeff to input (materializecss.com)
 
 [ ] GET /me/challenge -> [{id: '123', status: 'waiting', opponent: {_opponent_}, questions: [{text: '', choices: [A, B, C, D]}]}]
 [ ] POST /challenge?opponent=A[&wager=B&note=C]
@@ -105,15 +105,13 @@ challenge_player {
 }
 
 question {
-    id
-    text
-}
-
-answer_choice {
-    id
-    questionId
-    order: A
-    text
+    id: ''
+    text: ''
+    a: ''
+    b: ''
+    c: ''
+    d: ''
+    correct: 'c'
 }
 
 device {
