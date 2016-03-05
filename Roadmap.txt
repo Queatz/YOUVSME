@@ -4,7 +4,7 @@
 
 ==== MVP Remaining Items ====
 
-[ ] Remaining Game Screens (answer questions, review scores, intermittent screens)
+[X] Remaining Game Screens (answer questions, review scores, intermittent screens)
 [ ] me/device?deviceToken=00000000 Endpoint
 [X] Save devices to server & send pushes to them from server
 [ ] Push Notification for:

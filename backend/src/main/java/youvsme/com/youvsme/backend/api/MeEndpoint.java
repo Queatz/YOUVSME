@@ -22,6 +22,7 @@ public class MeEndpoint implements Api {
 
     static {
         mappings.put("friends", Grab.grab(MeFriendsEndpoint.class));
+        mappings.put("device", Grab.grab(MeDeviceEndpoint.class));
         mappings.put("active-challenge", Grab.grab(MeActiveChallengeEndpoint.class));
     }
 

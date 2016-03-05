@@ -27,7 +27,7 @@ public class MeFriendsEndpoint implements Api {
 
     @Override
     public void serve(String method, List<String> path, HttpServletRequest req, HttpServletResponse resp) throws IOException {
-        UserModel me = Grab.grab(UserService.class).userFromToken(req.getParameter("token"));
+        UserModel me = userService.userFromToken(req.getParameter("token"));
 
         if (me == null) {
             resp.setStatus(HttpServletResponse.SC_NOT_FOUND);
