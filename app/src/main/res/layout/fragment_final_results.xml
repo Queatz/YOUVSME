@@ -82,7 +82,7 @@
                 android:orientation="vertical">
 
                 <TextView
-                    android:id="@+id/oppoentsFinalScore"
+                    android:id="@+id/opponentsFinalScore"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:gravity="center"
@@ -105,6 +105,7 @@
         </LinearLayout>
 
         <TextView
+            android:id="@+id/winnerText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textAlignment="center"
@@ -115,6 +116,7 @@
             android:gravity="center" />
 
         <TextView
+            android:id="@+id/loserText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textAlignment="center"
@@ -137,7 +139,7 @@
         android:paddingTop="24dp">
 
         <TextView
-            android:id="@+id/beginGameButton"
+            android:id="@+id/playAgainButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/red_button"

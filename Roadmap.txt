@@ -1,25 +1,47 @@
 
 
+IP
+OP
+IP OP
+IP OP OA
+IP OP IA
+IP OP IA OA
+
+
+User opens app:
+
+(A) No challenges ever
+    -> search -> wager -> question1,2,3,4 -> (B)
+
+(B) Active challenge, waiting for opponent
+    letsgo -> kick
+           -> quit
+
+(C) Active challenge, opponent done
+    -> answer1,2,3,4 -> foughtwell -> scorecard
+
+(D) Active challenge, you're not done
+    -> question2,3,4 -> (B,C)
+
+(E) Opponent done after you
+    -> foughtwell -> scorecard
+
+(F) No active challenge
+    -> scorecard of past challenge
+
+
 
 
 ==== MVP Remaining Items ====
 
-[X] Remaining Game Screens (answer questions, review scores, intermittent screens)
-[ ] me/device?deviceToken=00000000 Endpoint
-[X] Save devices to server & send pushes to them from server
-[ ] Push Notification for:
-    [ ] 1) kicking in the face
-    [ ] 2) Jeff Challenged You To A Wager
-    [ ] 3) Jenny finished answering; See who won.
-[ ] Questions API for Jeff to input (materializecss.com)
+[ ] Questions API for input (materializecss.com)
 
 [ ] GET /me/challenge -> [{id: '123', status: 'waiting', opponent: {_opponent_}, questions: [{text: '', choices: [A, B, C, D]}]}]
-[ ] POST /challenge?opponent=A[&wager=B&note=C]
-[ ] POST /challenge/A/choose-answer?choice=B
-[ ] POST /challenge/A/kick-in-the-face
-[ ] Update icons to hires !important
+[ ] POST /question/A?choose=B
+[ ] Update facebook icon to hires !important
+[ ] Hook up opponent search
 
-
+[ ] Wager reminder screen
 
 
 

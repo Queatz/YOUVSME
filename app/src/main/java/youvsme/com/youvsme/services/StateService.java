@@ -4,6 +4,7 @@ import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 
+import youvsme.com.youvsme.states.GameState;
 import youvsme.com.youvsme.states.NoUserState;
 import youvsme.com.youvsme.states.SearchForOpponentState;
 import youvsme.com.youvsme.states.State;
@@ -46,18 +47,13 @@ public class StateService {
                 break;
             case NO_OPPONENT:
                 state = new SearchForOpponentState();
-            case ANSWERING_QUESTIONS:
-
+                break;
+            case PICKING_ANSWERS:
             case WAITING_FOR_OPPONENT:
-
             case LAST_GAME_FINISHED:
-
-            default:
-        }
-
-        if (state == null) {
-            Log.w(Config.LOGGER, "No state found for active game state. Activity will not be initialized.");
-            return;
+            case GUESSING_OPPONENTS_ANSWERS:
+                state = new GameState();
+                break;
         }
 
         go(state);

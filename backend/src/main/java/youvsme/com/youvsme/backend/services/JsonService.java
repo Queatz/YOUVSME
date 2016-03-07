@@ -15,7 +15,6 @@ public class JsonService {
         gson = new GsonBuilder().setDateFormat(DateFormat.LONG, DateFormat.LONG).create();
     }
 
-
     public String json(Object object) {
         return gson.toJson(object);
     }

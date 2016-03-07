@@ -14,6 +14,7 @@ public class UserModel extends Model {
     @Index public String facebookId;
     @Index public String facebookToken;
     @Index public String token;
+    public String gender;
     public String pictureUrl;
 
     public String getFirstName() {
@@ -30,6 +31,14 @@ public class UserModel extends Model {
 
     public void setLastName(String lastName) {
         this.lastName = lastName;
+    }
+
+    public String getGender() {
+        return gender;
+    }
+
+    public void setGender(String gender) {
+        this.gender = gender;
     }
 
     public String getFacebookId() {

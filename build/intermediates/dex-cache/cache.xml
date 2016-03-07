@@ -5,14 +5,21 @@
         jar="/home/jacob/Documents/Projects/YOUVSME/app/build/intermediates/transforms/instantRunSlicer/debug/jars/1/5/main_slice.jar"
         jumboMode="false"
         revision="23.0.2"
-        sha1="f24c1733c065dc3efe12fa73e811165202d5fa27">
+        sha1="73f11efd5b233b77eed84ea7e01f5470cff43025">
         <dex dex="/home/jacob/Documents/Projects/YOUVSME/app/build/intermediates/transforms/dex/debug/folders/1000/5/main_slice_fd302a1e233dfcafd67bf9523bde875599bd7599/classes.dex" />
+    </item>
+    <item
+        jar="/home/jacob/Documents/Projects/YOUVSME/app/build/intermediates/transforms/instantRunSlicer/debug/jars/1/1a/dependencies.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="b4ea78255372134b4a864661710f75d1e888574a">
+        <dex dex="/home/jacob/Documents/Projects/YOUVSME/app/build/intermediates/transforms/dex/debug/folders/1000/1a/dependencies_b21c12e04a1e4fdde28d50b23d70513f4d363048/classes.dex" />
     </item>
     <item
         jar="/home/jacob/Documents/Projects/YOUVSME/app/build/intermediates/transforms/instantRunSlicer/debug/jars/1/5/main_sliceb.jar"
         jumboMode="false"
         revision="23.0.2"
-        sha1="6206561db4ff15f6a4cea3ee257a1472ca763bf0">
+        sha1="5ae33d38773dd31e6d429e0e8e7c99f0f768a940">
         <dex dex="/home/jacob/Documents/Projects/YOUVSME/app/build/intermediates/transforms/dex/debug/folders/1000/5/main_sliceb_46aa9688991a471657f0cadc9eab634185bb1173/classes.dex" />
     </item>
 

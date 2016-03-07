@@ -7,6 +7,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
+import android.widget.Toast;
+
+import com.google.common.base.Strings;
 
 import youvsme.com.youvsme.R;
 import youvsme.com.youvsme.services.StateService;
@@ -27,6 +30,11 @@ public class MakeAWagerFragment extends Fragment {
             public void onClick(View v) {
                 final String wagerWhat = ((EditText) view.findViewById(R.id.wagerWhat)).getText().toString();
                 final String wagerNote = ((EditText) view.findViewById(R.id.wagerNote)).getText().toString();
+
+                if (Strings.isNullOrEmpty(wagerWhat)) {
+                    Toast.makeText(getContext(), getString(R.string.no_wager), Toast.LENGTH_SHORT).show();
+                    return;
+                }
 
                 ((SearchForOpponentState) StateService.use().getState()).setWager(wagerWhat, wagerNote);
             }

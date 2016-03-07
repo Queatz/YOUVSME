@@ -64,7 +64,7 @@
         android:paddingTop="24dp">
 
         <TextView
-            android:id="@+id/beginGameButton"
+            android:id="@+id/letsGoButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/red_button"

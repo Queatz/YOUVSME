@@ -42,7 +42,7 @@ public class UserService {
                 FacebookClient facebookClient = new DefaultFacebookClient(facebookToken, Version.LATEST);
 
                 User facebookUser = facebookClient.fetchObject("me", User.class,
-                        Parameter.with("fields", "id,first_name,last_name,picture.width(512).height(512)"));
+                        Parameter.with("fields", "id,first_name,last_name,gender,picture.width(512).height(512)"));
 
                 if (facebookUser == null) {
                     return null;
@@ -68,14 +68,15 @@ public class UserService {
 
         if (newUser == null) {
             newUser = ModelService.create(UserModel.class);
-
             newUser.setFacebookId(facebookUser.getId());
-            newUser.setFirstName(facebookUser.getFirstName());
-            newUser.setLastName(facebookUser.getLastName());
+        }
 
-            if (facebookUser.getPicture() != null) {
-                newUser.setPictureUrl(facebookUser.getPicture().getUrl());
-            }
+        newUser.setGender(facebookUser.getGender());
+        newUser.setFirstName(facebookUser.getFirstName());
+        newUser.setLastName(facebookUser.getLastName());
+
+        if (facebookUser.getPicture() != null) {
+            newUser.setPictureUrl(facebookUser.getPicture().getUrl());
         }
 
         return newUser;

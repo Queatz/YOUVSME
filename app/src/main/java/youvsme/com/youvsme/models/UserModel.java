@@ -17,6 +17,7 @@ public class UserModel extends RealmObject {
     private String lastName;
     private String pictureUrl;
     private String token;
+    private String gender;
 
     public UserModel() {}
 
@@ -58,5 +59,13 @@ public class UserModel extends RealmObject {
 
     public void setToken(String token) {
         this.token = token;
+    }
+
+    public String getGender() {
+        return gender;
+    }
+
+    public void setGender(String gender) {
+        this.gender = gender;
     }
 }

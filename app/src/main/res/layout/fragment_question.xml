@@ -73,7 +73,7 @@
                 android:textSize="32sp" />
 
             <TextView
-                android:id="@+id/choiceA"
+                android:id="@+id/choiceAText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="left"
@@ -107,7 +107,7 @@
                 android:textSize="32sp" />
 
             <TextView
-                android:id="@+id/choiceB"
+                android:id="@+id/choiceBText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="left"
@@ -141,7 +141,7 @@
                 android:textSize="32sp" />
 
             <TextView
-                android:id="@+id/choiceC"
+                android:id="@+id/choiceCText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="left"
@@ -175,7 +175,7 @@
                 android:textSize="32sp" />
 
             <TextView
-                android:id="@+id/choiceD"
+                android:id="@+id/choiceDText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="left"

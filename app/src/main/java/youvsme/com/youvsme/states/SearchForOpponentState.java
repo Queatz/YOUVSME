@@ -17,6 +17,8 @@ import youvsme.com.youvsme.fragments.WagerSentFragment;
 import youvsme.com.youvsme.models.GameModel;
 import youvsme.com.youvsme.models.UserModel;
 import youvsme.com.youvsme.services.ApiService;
+import youvsme.com.youvsme.services.GameService;
+import youvsme.com.youvsme.services.StateService;
 import youvsme.com.youvsme.util.Config;
 import youvsme.com.youvsme.util.RealmObjectResponseHandler;
 
@@ -32,6 +34,8 @@ public class SearchForOpponentState implements State {
     private MakeAWagerFragment makeAWagerFragment = new MakeAWagerFragment();
     private WagerSentFragment wagerSentFragment = new WagerSentFragment();
     private AppCompatActivity activity;
+
+    private UserModel opponent;
 
     @Override
     public void show(AppCompatActivity activity) {
@@ -60,6 +64,7 @@ public class SearchForOpponentState implements State {
     }
 
     public void selectOpponent(UserModel opponent) {
+        this.opponent = opponent;
         battleThisOpponentFragment.setOpponent(opponent);
         showFragment(battleThisOpponentFragment);
     }
@@ -73,16 +78,22 @@ public class SearchForOpponentState implements State {
     }
 
     public void setWager(final String what, final String note) {
+        if (opponent == null) {
+            Log.w(Config.LOGGER, "Can't start a challenge without an opponent");
+            return;
+        }
+
         RequestParams params = new RequestParams();
         params.put(Config.PARAM_WAGER_WHAT, what);
         params.put(Config.PARAM_WAGER_NOTE, note);
+        params.put(Config.PARAM_OPPONENT, opponent.getId());
 
         ApiService.use().post("challenge", params, new RealmObjectResponseHandler<GameModel>() {
             @Override
             public void success(GameModel response) {
                 if (Strings.isNullOrEmpty(what)) {
                     beginGame();
-                } else  {
+                } else {
                     showFragment(wagerSentFragment);
                 }
             }
@@ -95,12 +106,14 @@ public class SearchForOpponentState implements State {
     }
 
     public void beginGame() {
-        // Go to questions state
+        GameState gameState = new GameState();
+        gameState.itBegins();
+        StateService.use().go(gameState);
     }
 
     public void backButton() {
         if(!back()) {
-            // Close app
+            activity.onBackPressed();
         }
     }
 }

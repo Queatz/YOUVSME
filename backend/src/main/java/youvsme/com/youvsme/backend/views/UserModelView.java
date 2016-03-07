@@ -11,16 +11,18 @@ public class UserModelView {
     public String lastName;
     public String token;
     public String pictureUrl;
+    public String gender;
 
-    public UserModelView(UserModel user) {
+    public UserModelView(final UserModel user) {
         this(user, false);
     }
 
-    public UserModelView(UserModel user, boolean includesToken) {
+    public UserModelView(final UserModel user, boolean includesToken) {
         id = user.getId();
         firstName = user.getFirstName();
         lastName = user.getLastName();
         pictureUrl = user.getPictureUrl();
+        gender = user.getGender();
 
         if (includesToken) {
             token = user.getToken();

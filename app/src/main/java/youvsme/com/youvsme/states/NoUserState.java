@@ -70,4 +70,8 @@ public class NoUserState implements State {
         transaction.replace(R.id.fragment, fragment);
         transaction.commit();
     }
+
+    public void backButton() {
+        back();
+    }
 }

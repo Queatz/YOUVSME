@@ -6,6 +6,8 @@
 
 package youvsme.com.youvsme.backend;
 
+import com.google.api.client.http.HttpMethods;
+
 import java.io.IOException;
 import java.util.Arrays;
 import java.util.List;
@@ -19,12 +21,12 @@ import youvsme.com.youvsme.backend.api.RootAbstractEndpoint;
 public class MyServlet extends HttpServlet {
     @Override
     public void doGet(HttpServletRequest req, HttpServletResponse resp) throws IOException {
-        direct("GET", req, resp);
+        direct(HttpMethods.GET, req, resp);
     }
 
     @Override
     public void doPost(HttpServletRequest req, HttpServletResponse resp) throws IOException {
-        direct("POST", req, resp);
+        direct(HttpMethods.POST, req, resp);
     }
 
     private void direct(String method, HttpServletRequest req, HttpServletResponse resp) throws IOException {

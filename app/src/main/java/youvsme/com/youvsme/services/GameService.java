@@ -3,26 +3,22 @@ package youvsme.com.youvsme.services;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.preference.PreferenceManager;
-import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.util.Log;
 import android.widget.Toast;
 
+import com.loopj.android.http.AsyncHttpResponseHandler;
 import com.loopj.android.http.RequestParams;
 
 import java.util.List;
-import java.util.logging.Logger;
 
-import io.realm.RealmList;
+import cz.msebera.android.httpclient.Header;
 import io.realm.RealmResults;
 import io.realm.Sort;
-import youvsme.com.youvsme.YOUVSMEApp;
 import youvsme.com.youvsme.models.GameModel;
 import youvsme.com.youvsme.models.UserModel;
-import youvsme.com.youvsme.states.SearchForOpponentState;
 import youvsme.com.youvsme.util.Config;
 import youvsme.com.youvsme.util.RealmListResponseHandler;
-import youvsme.com.youvsme.util.RealmObjectResponseHandler;
 
 /**
  * Created by jacob on 2/28/16.
@@ -56,10 +52,34 @@ public class GameService {
     }
 
     public enum GameState {
+        /**
+         * User is not signed in at all.
+         */
         NO_USER,
+
+        /**
+         * User is signed in but has never started a game.
+         */
         NO_OPPONENT,
-        ANSWERING_QUESTIONS,
+
+        /**
+         * User is picking answers to questions.
+         */
+        PICKING_ANSWERS,
+
+        /**
+         * User is guessing opponents answers.
+         */
+        GUESSING_OPPONENTS_ANSWERS,
+
+        /**
+         * User is waiting for opponent to finish up.
+         */
         WAITING_FOR_OPPONENT,
+
+        /**
+         * The last game was finished. User can see the last game's score.
+         */
         LAST_GAME_FINISHED
     }
 
@@ -82,12 +102,12 @@ public class GameService {
 
         switch (game.getState()) {
             case GameModel.GAME_STATE_STARTED:
-                return GameState.ANSWERING_QUESTIONS;
+                return GameState.PICKING_ANSWERS;
             case GameModel.GAME_STATE_WAITING_FOR_OPPONENT:
                 return GameState.WAITING_FOR_OPPONENT;
             case GameModel.GAME_STATE_FINISHED:
             default:
-                if (userHasClickedPlayAgain()) {
+                if (userHasSeenFinalResults()) {
                     return GameState.NO_OPPONENT;
                 } else {
                     return GameState.LAST_GAME_FINISHED;
@@ -95,13 +115,34 @@ public class GameService {
         }
     }
 
-    // TODO make sure this gets set to false when the game finishes
+    public boolean userHasSeenFinalResults() {
+        return preferences.getBoolean(Config.PREF_USER_HAS_SEEN_FINAL_RESULTS, false);
+    }
+
     public boolean userHasClickedPlayAgain() {
-        return preferences.getBoolean(Config.PREF_PLAY_AGAIN, false);
+        return preferences.getBoolean(Config.PREF_USER_HAS_CLICKED_PLAY_AGAIN, false);
+    }
+
+    public void setUserHasSeenFinalResults(boolean value) {
+        preferences.edit().putBoolean(Config.PREF_USER_HAS_SEEN_FINAL_RESULTS, value).apply();
     }
 
     public void setUserHasClickedPlayAgain(boolean value) {
-        preferences.edit().putBoolean(Config.PREF_PLAY_AGAIN, value).apply();
+        preferences.edit().putBoolean(Config.PREF_USER_HAS_CLICKED_PLAY_AGAIN, value).apply();
+    }
+
+    public void sendKickInTheFaceReminder(final GameModel game, final Runnable callback) {
+        ApiService.use().get("challenge/" + game.getId() + "/kick-in-the-face", null, new AsyncHttpResponseHandler() {
+            @Override
+            public void onSuccess(int statusCode, Header[] headers, byte[] responseBody) {
+                callback.run();
+            }
+
+            @Override
+            public void onFailure(int statusCode, Header[] headers, byte[] responseBody, Throwable error) {
+                Toast.makeText(context(), "Your roundhouse kick to the face failed due to a network issue. Yor kick to the face, however, was glorious.", Toast.LENGTH_LONG).show();
+            }
+        });
     }
 
     @Nullable
@@ -144,7 +185,6 @@ public class GameService {
         RealmResults<GameModel> games = RealmService.use().get()
                 .where(GameModel.class)
                 .equalTo("user.id", myUserId())
-                .notEqualTo("state", GameModel.GAME_STATE_FINISHED)
                 .findAllSorted("started", Sort.DESCENDING);
 
         if (games.isEmpty()) {

@@ -1,5 +1,7 @@
 package youvsme.com.youvsme.backend.api;
 
+import com.google.api.client.http.HttpMethods;
+
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.List;
@@ -8,6 +10,7 @@ import java.util.Map;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import youvsme.com.youvsme.backend.Config;
 import youvsme.com.youvsme.backend.Grab;
 import youvsme.com.youvsme.backend.models.UserModel;
 import youvsme.com.youvsme.backend.services.JsonService;
@@ -23,7 +26,7 @@ public class MeEndpoint implements Api {
     static {
         mappings.put("friends", Grab.grab(MeFriendsEndpoint.class));
         mappings.put("device", Grab.grab(MeDeviceEndpoint.class));
-        mappings.put("active-challenge", Grab.grab(MeActiveChallengeEndpoint.class));
+        mappings.put("challenge", Grab.grab(MeChallengeEndpoint.class));
     }
 
     private boolean mapped(String method, List<String> path, HttpServletRequest req, HttpServletResponse resp) {
@@ -33,6 +36,7 @@ public class MeEndpoint implements Api {
             } catch (IOException e) {
                 e.printStackTrace();
             }
+
             return true;
         }
 
@@ -46,15 +50,16 @@ public class MeEndpoint implements Api {
         }
 
         switch (method) {
-            case "GET":
+            case HttpMethods.GET:
                 UserModel me = Grab.grab(UserService.class)
-                        .userFromToken(req.getParameter("token"), req.getParameter("facebookToken"));
+                        .userFromToken(req.getParameter(Config.PARAM_TOKEN), req.getParameter(Config.PARAM_FACEBOOK_TOKEN));
 
                 if (me == null) {
                     resp.setStatus(HttpServletResponse.SC_NOT_FOUND);
-                } else {
-                    resp.getWriter().write(Grab.grab(JsonService.class).json(new UserModelView(me, true)));
+                    return;
                 }
+
+                resp.getWriter().write(Grab.grab(JsonService.class).json(new UserModelView(me, true)));
 
                 return;
         }

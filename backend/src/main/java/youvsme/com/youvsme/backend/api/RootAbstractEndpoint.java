@@ -40,6 +40,8 @@ public class RootAbstractEndpoint implements Api {
             return;
         }
 
+        resp.setStatus(HttpServletResponse.SC_NOT_FOUND);
+
         throw new RuntimeException("no");
     }
 }

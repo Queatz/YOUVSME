@@ -6,16 +6,22 @@ android {
 
     defaultConfig {
         applicationId "youvsme.com.youvsme"
-        minSdkVersion 16
-        targetSdkVersion 23
         versionCode 1
         versionName "1.0"
+
+        minSdkVersion 16
+        targetSdkVersion 23
+
+        multiDexEnabled true
     }
     buildTypes {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
+    }
+    dexOptions {
+        javaMaxHeapSize "4g"
     }
 }
 
@@ -28,10 +34,11 @@ dependencies {
     compile 'com.loopj.android:android-async-http:1.4.9'
     compile 'com.google.guava:guava:19.0'
     compile 'com.google.code.gson:gson:2.4'
-    compile 'com.google.android.gms:play-services:8.4.0'
+    compile 'com.google.android.gms:play-services-gcm:8.4.0'
     compile 'io.realm:realm-android:0.87.5'
     compile 'com.makeramen:roundedimageview:2.2.1'
     compile 'com.squareup.picasso:picasso:2.5.2'
+    compile 'com.android.support:multidex:1.0.1'
 }
 
 apply plugin: 'com.google.gms.google-services'

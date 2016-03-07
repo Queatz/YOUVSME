@@ -49,7 +49,7 @@ public class MyGcmListenerService extends GcmListenerService {
 
         Uri defaultSoundUri = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION);
         NotificationCompat.Builder notificationBuilder = new NotificationCompat.Builder(this)
-                .setSmallIcon(R.drawable.ic_media_pause)
+                .setSmallIcon(R.drawable.ic_arrow_back_white_24dp)
                 .setContentTitle("You have been on the receiving end of a devastating blow from Jeff.")
                 .setContentText(message)
                 .setAutoCancel(true)

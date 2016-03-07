@@ -29,4 +29,17 @@
     <string name="your_time_will_come">Your time will come.</string>
     <string name="play_again">Play Again</string>
     <string name="final_results">Final Results</string>
+    <string name="no_wager">Set a wager, or skip it.</string>
+    <string name="question_x">Questions %1$d</string>
+    <string name="answer_x">Answer %1$d</string>
+    <string name="you_defeated_them">You defeated %1$s!</string>
+    <string name="no_match">%1$s was no match for your power.</string>
+    <string name="they_smoked_you">%1$s smoked you.</string>
+    <string name="equilibrium">The equilibrium will not last very long.</string>
+    <string name="youve_tied">You\'ve tied.</string>
+    <string name="they_challenged_you">%1$s challenged you.</string>
+    <string name="they_challenged_you_to_a_wager">%1$s challenged you to a wager!</string>
+    <string name="they_finished">%1$s finished answering. Now answer theirs.</string>
+    <string name="kicked_you">%1$s has kicked you in the face.</string>
+    <string name="this_we_know">This is likely due to the slow nature of your life's pace.</string>
 </resources>
