@@ -34,72 +34,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6f8b33ab-f1b9-415c-b45b-01abbcbe0928" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/youvsme/com/youvsme/fragments/FinalResultsFragment.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/youvsme/com/youvsme/fragments/GameStateFragment.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/youvsme/com/youvsme/fragments/LetsGoFragment.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/youvsme/com/youvsme/fragments/QuestionFragment.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/youvsme/com/youvsme/fragments/ScaredOpponentFragment.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/youvsme/com/youvsme/fragments/SeeWhoWonFragment.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/youvsme/com/youvsme/fragments/SendKickInTheFaceFragment.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/youvsme/com/youvsme/models/QuestionModel.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/youvsme/com/youvsme/services/PushService.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/youvsme/com/youvsme/states/GameState.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/backend/src/main/java/youvsme/com/youvsme/backend/models/ChallengeUserQuestionModel.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/backend/src/main/java/youvsme/com/youvsme/backend/push/ChallengePush.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/backend/src/main/java/youvsme/com/youvsme/backend/push/FinishedAnsweringPush.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/backend/src/main/java/youvsme/com/youvsme/backend/push/KickInTheFacePush.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/backend/src/main/java/youvsme/com/youvsme/backend/push/Push.java" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/main/res/drawable/ic_arrow_back_white_24dp.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-hdpi/ic_arrow_back_white_24dp.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-hdpi/ic_launcher.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-mdpi/ic_arrow_back_white_24dp.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-mdpi/ic_launcher.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xhdpi/ic_arrow_back_white_24dp.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xhdpi/ic_launcher.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xxhdpi/ic_arrow_back_white_24dp.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xxhdpi/ic_launcher.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xxxhdpi/ic_arrow_back_white_24dp.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/backend/src/main/java/youvsme/com/youvsme/backend/api/MeActiveChallengeEndpoint.java" afterPath="$PROJECT_DIR$/backend/src/main/java/youvsme/com/youvsme/backend/api/MeChallengeEndpoint.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.10/taskArtifacts/cache.properties.lock" afterPath="$PROJECT_DIR$/.gradle/2.10/taskArtifacts/cache.properties.lock" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.10/taskArtifacts/fileHashes.bin" afterPath="$PROJECT_DIR$/.gradle/2.10/taskArtifacts/fileHashes.bin" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.10/taskArtifacts/fileSnapshots.bin" afterPath="$PROJECT_DIR$/.gradle/2.10/taskArtifacts/fileSnapshots.bin" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.10/taskArtifacts/outputFileStates.bin" afterPath="$PROJECT_DIR$/.gradle/2.10/taskArtifacts/outputFileStates.bin" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.10/taskArtifacts/taskArtifacts.bin" afterPath="$PROJECT_DIR$/.gradle/2.10/taskArtifacts/taskArtifacts.bin" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/generated/mockable-android-23.jar" afterPath="$PROJECT_DIR$/build/generated/mockable-android-23.jar" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Roadmap.txt" afterPath="$PROJECT_DIR$/Roadmap.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/app.iml" afterPath="$PROJECT_DIR$/app/app.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build.gradle" afterPath="$PROJECT_DIR$/app/build.gradle" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/youvsme/com/youvsme/MyGcmListenerService.java" afterPath="$PROJECT_DIR$/app/src/main/java/youvsme/com/youvsme/MyGcmListenerService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/youvsme/com/youvsme/fragments/HowItWorksFragment.java" afterPath="$PROJECT_DIR$/app/src/main/java/youvsme/com/youvsme/fragments/HowItWorksFragment.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/youvsme/com/youvsme/fragments/MakeAWagerFragment.java" afterPath="$PROJECT_DIR$/app/src/main/java/youvsme/com/youvsme/fragments/MakeAWagerFragment.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/youvsme/com/youvsme/models/UserModel.java" afterPath="$PROJECT_DIR$/app/src/main/java/youvsme/com/youvsme/models/UserModel.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/youvsme/com/youvsme/models/GameModel.java" afterPath="$PROJECT_DIR$/app/src/main/java/youvsme/com/youvsme/models/GameModel.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/youvsme/com/youvsme/services/GameService.java" afterPath="$PROJECT_DIR$/app/src/main/java/youvsme/com/youvsme/services/GameService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/youvsme/com/youvsme/services/StateService.java" afterPath="$PROJECT_DIR$/app/src/main/java/youvsme/com/youvsme/services/StateService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/youvsme/com/youvsme/states/NoUserState.java" afterPath="$PROJECT_DIR$/app/src/main/java/youvsme/com/youvsme/states/NoUserState.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/youvsme/com/youvsme/states/SearchForOpponentState.java" afterPath="$PROJECT_DIR$/app/src/main/java/youvsme/com/youvsme/states/SearchForOpponentState.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/youvsme/com/youvsme/util/Config.java" afterPath="$PROJECT_DIR$/app/src/main/java/youvsme/com/youvsme/util/Config.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_final_results.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_final_results.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_how_it_work.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_how_it_work.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_lets_go.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_lets_go.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_question.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_question.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_see_who_won.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_see_who_won.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/youvsme/com/youvsme/services/PushService.java" afterPath="$PROJECT_DIR$/app/src/main/java/youvsme/com/youvsme/services/PushService.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/youvsme/com/youvsme/states/GameState.java" afterPath="$PROJECT_DIR$/app/src/main/java/youvsme/com/youvsme/states/GameState.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" afterPath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/backend/src/main/java/youvsme/com/youvsme/backend/Config.java" afterPath="$PROJECT_DIR$/backend/src/main/java/youvsme/com/youvsme/backend/Config.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/backend/src/main/java/youvsme/com/youvsme/backend/MyServlet.java" afterPath="$PROJECT_DIR$/backend/src/main/java/youvsme/com/youvsme/backend/MyServlet.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/backend/src/main/java/youvsme/com/youvsme/backend/api/ChallengeEndpoint.java" afterPath="$PROJECT_DIR$/backend/src/main/java/youvsme/com/youvsme/backend/api/ChallengeEndpoint.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/backend/src/main/java/youvsme/com/youvsme/backend/api/MeDeviceEndpoint.java" afterPath="$PROJECT_DIR$/backend/src/main/java/youvsme/com/youvsme/backend/api/MeDeviceEndpoint.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/backend/src/main/java/youvsme/com/youvsme/backend/api/MeEndpoint.java" afterPath="$PROJECT_DIR$/backend/src/main/java/youvsme/com/youvsme/backend/api/MeEndpoint.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/backend/src/main/java/youvsme/com/youvsme/backend/api/RootAbstractEndpoint.java" afterPath="$PROJECT_DIR$/backend/src/main/java/youvsme/com/youvsme/backend/api/RootAbstractEndpoint.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/backend/src/main/java/youvsme/com/youvsme/backend/models/ChallengeModel.java" afterPath="$PROJECT_DIR$/backend/src/main/java/youvsme/com/youvsme/backend/models/ChallengeModel.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/backend/src/main/java/youvsme/com/youvsme/backend/models/QuestionModel.java" afterPath="$PROJECT_DIR$/backend/src/main/java/youvsme/com/youvsme/backend/models/QuestionModel.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/backend/src/main/java/youvsme/com/youvsme/backend/models/UserModel.java" afterPath="$PROJECT_DIR$/backend/src/main/java/youvsme/com/youvsme/backend/models/UserModel.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/backend/src/main/java/youvsme/com/youvsme/backend/services/JsonService.java" afterPath="$PROJECT_DIR$/backend/src/main/java/youvsme/com/youvsme/backend/services/JsonService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/backend/src/main/java/youvsme/com/youvsme/backend/services/UserService.java" afterPath="$PROJECT_DIR$/backend/src/main/java/youvsme/com/youvsme/backend/services/UserService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/backend/src/main/java/youvsme/com/youvsme/backend/views/UserModelView.java" afterPath="$PROJECT_DIR$/backend/src/main/java/youvsme/com/youvsme/backend/views/UserModelView.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build.gradle" afterPath="$PROJECT_DIR$/build.gradle" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/dex-cache/cache.xml" afterPath="$PROJECT_DIR$/build/intermediates/dex-cache/cache.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/backend/src/main/java/youvsme/com/youvsme/backend/push/FinishedAnsweringPush.java" afterPath="$PROJECT_DIR$/backend/src/main/java/youvsme/com/youvsme/backend/push/FinishedAnsweringPush.java" />
     </list>
     <ignored path="YOUVSME.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -130,9 +72,22 @@
       <file leaf-file-name="Roadmap.txt" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Roadmap.txt">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.37543452">
-              <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
+            <state vertical-scroll-proportion="-0.59096175">
+              <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ChallengeModel.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/backend/src/main/java/youvsme/com/youvsme/backend/models/ChallengeModel.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="16" column="28" selection-start-line="16" selection-start-column="28" selection-end-line="16" selection-end-column="28" />
+              <folding>
+                <element signature="e#575#576#0" expanded="true" />
+                <element signature="e#603#604#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -2619,22 +2574,18 @@
         <option value="$PROJECT_DIR$/backend/src/main/java/youvsme/com/youvsme/backend/MyServlet.java" />
         <option value="$PROJECT_DIR$/backend/src/main/java/youvsme/com/youvsme/backend/api/MeDeviceEndpoint.java" />
         <option value="$PROJECT_DIR$/backend/src/main/java/youvsme/com/youvsme/backend/api/MeEndpoint.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/youvsme/com/youvsme/models/GameModel.java" />
         <option value="$PROJECT_DIR$/backend/src/main/java/youvsme/com/youvsme/backend/models/KnowMeModel.java" />
         <option value="$PROJECT_DIR$/backend/src/main/java/youvsme/com/youvsme/backend/models/QuestionModel.java" />
         <option value="$PROJECT_DIR$/backend/src/main/java/youvsme/com/youvsme/backend/models/ChallengeUserModel.java" />
         <option value="$PROJECT_DIR$/backend/src/main/java/youvsme/com/youvsme/backend/models/ChallengeQuestionModel.java" />
         <option value="$PROJECT_DIR$/backend/src/main/java/youvsme/com/youvsme/backend/models/ChallengeUserQuestionModel.java" />
-        <option value="$PROJECT_DIR$/backend/src/main/java/youvsme/com/youvsme/backend/models/ChallengeModel.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/youvsme/com/youvsme/fragments/MakeAWagerFragment.java" />
         <option value="$PROJECT_DIR$/backend/src/main/java/youvsme/com/youvsme/backend/services/JsonService.java" />
         <option value="$PROJECT_DIR$/backend/src/main/java/youvsme/com/youvsme/backend/push/Push.java" />
         <option value="$PROJECT_DIR$/backend/src/main/java/youvsme/com/youvsme/backend/Config.java" />
-        <option value="$PROJECT_DIR$/backend/src/main/java/youvsme/com/youvsme/backend/push/FinishedAnsweringPush.java" />
         <option value="$PROJECT_DIR$/backend/src/main/java/youvsme/com/youvsme/backend/push/KickInTheFacePush.java" />
         <option value="$PROJECT_DIR$/backend/src/main/java/youvsme/com/youvsme/backend/push/ChallengePush.java" />
         <option value="$PROJECT_DIR$/backend/src/main/java/youvsme/com/youvsme/backend/api/ChallengeEndpoint.java" />
-        <option value="$PROJECT_DIR$/backend/src/main/java/youvsme/com/youvsme/backend/api/MeChallengeEndpoint.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/youvsme/com/youvsme/states/SearchForOpponentState.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/youvsme/com/youvsme/services/StateService.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/youvsme/com/youvsme/fragments/GameStateFragment.java" />
@@ -2648,8 +2599,6 @@
         <option value="$PROJECT_DIR$/app/src/main/java/youvsme/com/youvsme/fragments/SendKickInTheFaceFragment.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/youvsme/com/youvsme/fragments/SeeWhoWonFragment.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/youvsme/com/youvsme/util/Config.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/youvsme/com/youvsme/services/GameService.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/youvsme/com/youvsme/states/GameState.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/fragment_final_results.xml" />
         <option value="$PROJECT_DIR$/backend/src/main/java/youvsme/com/youvsme/backend/models/UserModel.java" />
         <option value="$PROJECT_DIR$/backend/src/main/java/youvsme/com/youvsme/backend/services/UserService.java" />
@@ -2657,8 +2606,14 @@
         <option value="$PROJECT_DIR$/app/src/main/java/youvsme/com/youvsme/models/UserModel.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/youvsme/com/youvsme/fragments/FinalResultsFragment.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/values/strings.xml" />
-        <option value="$PROJECT_DIR$/Roadmap.txt" />
+        <option value="$PROJECT_DIR$/backend/src/main/java/youvsme/com/youvsme/backend/push/FinishedAnsweringPush.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/youvsme/com/youvsme/services/PushService.java" />
+        <option value="$PROJECT_DIR$/Roadmap.txt" />
+        <option value="$PROJECT_DIR$/app/src/main/java/youvsme/com/youvsme/models/GameModel.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/youvsme/com/youvsme/services/GameService.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/youvsme/com/youvsme/states/GameState.java" />
+        <option value="$PROJECT_DIR$/backend/src/main/java/youvsme/com/youvsme/backend/models/ChallengeModel.java" />
+        <option value="$PROJECT_DIR$/backend/src/main/java/youvsme/com/youvsme/backend/api/MeChallengeEndpoint.java" />
       </list>
     </option>
   </component>
@@ -2692,18 +2647,25 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane">
+      <pane id="ProjectPane">
         <subPane>
           <PATH>
             <PATH_ELEMENT>
               <option name="myItemId" value="YOUVSME" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewProjectNode" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="YOUVSME" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="YOUVSME" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
-      </pane>
-      <pane id="Scratches">
-        <subPane />
       </pane>
       <pane id="Scope">
         <subPane subId="Project Files">
@@ -2735,6 +2697,16 @@
             <PATH_ELEMENT USER_OBJECT="app">
               <option name="myItemId" value="" />
               <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
+      <pane id="PackagesPane">
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="YOUVSME" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewProjectNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
@@ -3087,33 +3059,16 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="ProjectPane">
-        <subPane>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="YOUVSME" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="YOUVSME" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="YOUVSME" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-        </subPane>
+      <pane id="Scratches">
+        <subPane />
       </pane>
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="settings.editor.selected.configurable" value="instant.run" />
+    <property name="settings.editor.selected.configurable" value="configurable.group.appearance" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
     <property name="device.picker.selection" value="JDM5T15A06005626" />
-    <property name="SearchEverywhereHistoryKey" value="roadm&#9;FILE&#9;file:///home/jacob/Documents/Projects/YOUVSME/Roadmap.txt&#10;lets&#9;FILE&#9;file:///home/jacob/Documents/Projects/YOUVSME/app/src/main/res/layout/fragment_lets_go.xml&#10;con&#9;FILE&#9;file:///home/jacob/Documents/Projects/YOUVSME/app/src/main/java/youvsme/com/youvsme/util/Config.java&#10;road&#9;FILE&#9;file:///home/jacob/Documents/Projects/YOUVSME/Roadmap.txt&#10;Con&#9;FILE&#9;file:///home/jacob/Documents/Projects/YOUVSME/app/src/main/java/youvsme/com/youvsme/util/Config.java&#10;colo&#9;FILE&#9;file:///home/jacob/Documents/Projects/YOUVSME/app/src/main/res/values/colors.xml&#10;how&#9;FILE&#9;file:///home/jacob/Documents/Projects/YOUVSME/app/src/main/res/layout/fragment_how_it_work.xml&#10;color&#9;FILE&#9;file:///home/jacob/Documents/Projects/YOUVSME/app/src/main/res/values/colors.xml&#10;bui&#9;FILE&#9;file:///home/jacob/Documents/Projects/YOUVSME/app/build.gradle&#10;build&#9;FILE&#9;file:///home/jacob/Documents/Projects/YOUVSME/backend/build.gradle&#10;roadma&#9;FILE&#9;file:///home/jacob/Documents/Projects/YOUVSME/Roadmap.txt&#10;AndroidMa&#9;FILE&#9;file:///home/jacob/Documents/Projects/YOUVSME/app/src/main/AndroidManifest.xml&#10;.git&#9;FILE&#9;file:///home/jacob/Documents/Projects/YOUVSME/.gitignore&#10;.giti&#9;FILE&#9;file:///home/jacob/Documents/Projects/YOUVSME/app/.gitignore&#10;val&#9;FILE&#9;file:///home/jacob/Documents/Projects/YOUVSME/app/build/intermediates/res/merged/debug/values/values.xml&#10;Road&#9;FILE&#9;file:///home/jacob/Documents/Projects/YOUVSME/Roadmap.txt&#10;build.&#9;FILE&#9;file:///home/jacob/Documents/Projects/YOUVSME/app/build.gradle&#10;send&#9;FILE&#9;file:///home/jacob/Documents/Projects/YOUVSME/app/src/main/res/drawable/ic_send_white_48px.xml&#10;ANdroidma&#9;FILE&#9;file:///home/jacob/Documents/Projects/YOUVSME/app/src/main/AndroidManifest.xml&#10;ANdroidMa&#9;FILE&#9;file:///home/jacob/Documents/Projects/YOUVSME/app/src/main/AndroidManifest.xml&#10;UserS&#9;FILE&#9;file:///home/jacob/Documents/Projects/YOUVSME/backend/src/main/java/youvsme/com/youvsme/backend/services/UserService.java&#10;roota&#9;FILE&#9;file:///home/jacob/Documents/Projects/YOUVSME/backend/src/main/java/youvsme/com/youvsme/backend/api/RootAbstractEndpoint.java&#10;ANdroidMan&#9;FILE&#9;file:///home/jacob/Documents/Projects/YOUVSME/app/src/main/AndroidManifest.xml" />
+    <property name="SearchEverywhereHistoryKey" value="&#9;FILE&#9;file:///home/jacob/Documents/Projects/YOUVSME/app/src/main/java/youvsme/com/youvsme/services/PushService.java&#10;roadm&#9;FILE&#9;file:///home/jacob/Documents/Projects/YOUVSME/Roadmap.txt&#10;lets&#9;FILE&#9;file:///home/jacob/Documents/Projects/YOUVSME/app/src/main/res/layout/fragment_lets_go.xml&#10;con&#9;FILE&#9;file:///home/jacob/Documents/Projects/YOUVSME/app/src/main/java/youvsme/com/youvsme/util/Config.java&#10;road&#9;FILE&#9;file:///home/jacob/Documents/Projects/YOUVSME/Roadmap.txt&#10;Con&#9;FILE&#9;file:///home/jacob/Documents/Projects/YOUVSME/app/src/main/java/youvsme/com/youvsme/util/Config.java&#10;colo&#9;FILE&#9;file:///home/jacob/Documents/Projects/YOUVSME/app/src/main/res/values/colors.xml&#10;how&#9;FILE&#9;file:///home/jacob/Documents/Projects/YOUVSME/app/src/main/res/layout/fragment_how_it_work.xml&#10;color&#9;FILE&#9;file:///home/jacob/Documents/Projects/YOUVSME/app/src/main/res/values/colors.xml&#10;bui&#9;FILE&#9;file:///home/jacob/Documents/Projects/YOUVSME/app/build.gradle&#10;build&#9;FILE&#9;file:///home/jacob/Documents/Projects/YOUVSME/backend/build.gradle&#10;roadma&#9;FILE&#9;file:///home/jacob/Documents/Projects/YOUVSME/Roadmap.txt&#10;AndroidMa&#9;FILE&#9;file:///home/jacob/Documents/Projects/YOUVSME/app/src/main/AndroidManifest.xml&#10;.git&#9;FILE&#9;file:///home/jacob/Documents/Projects/YOUVSME/.gitignore&#10;.giti&#9;FILE&#9;file:///home/jacob/Documents/Projects/YOUVSME/app/.gitignore&#10;val&#9;FILE&#9;file:///home/jacob/Documents/Projects/YOUVSME/app/build/intermediates/res/merged/debug/values/values.xml&#10;Road&#9;FILE&#9;file:///home/jacob/Documents/Projects/YOUVSME/Roadmap.txt&#10;build.&#9;FILE&#9;file:///home/jacob/Documents/Projects/YOUVSME/app/build.gradle&#10;send&#9;FILE&#9;file:///home/jacob/Documents/Projects/YOUVSME/app/src/main/res/drawable/ic_send_white_48px.xml&#10;ANdroidma&#9;FILE&#9;file:///home/jacob/Documents/Projects/YOUVSME/app/src/main/AndroidManifest.xml&#10;ANdroidMa&#9;FILE&#9;file:///home/jacob/Documents/Projects/YOUVSME/app/src/main/AndroidManifest.xml&#10;UserS&#9;FILE&#9;file:///home/jacob/Documents/Projects/YOUVSME/backend/src/main/java/youvsme/com/youvsme/backend/services/UserService.java&#10;roota&#9;FILE&#9;file:///home/jacob/Documents/Projects/YOUVSME/backend/src/main/java/youvsme/com/youvsme/backend/api/RootAbstractEndpoint.java&#10;ANdroidMan&#9;FILE&#9;file:///home/jacob/Documents/Projects/YOUVSME/app/src/main/AndroidManifest.xml" />
   </component>
   <component name="RecentsManager">
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
@@ -3615,7 +3570,13 @@
       <option name="project" value="LOCAL" />
       <updated>1457219264849</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Game flow and push notifications">
+      <created>1457325828341</created>
+      <option name="number" value="00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1457325828341</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TodoView">
@@ -3633,11 +3594,9 @@
     <layout>
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.28388473" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3047404" sideWeight="0.49786553" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Android Model" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="true" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2704826" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Android Monitor" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2020202" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Captures" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.54401803" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -3652,13 +3611,15 @@
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32884398" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20971185" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39955106" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.69809204" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.28388473" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2704826" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39955106" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -3686,7 +3647,8 @@
     <MESSAGE value="Select opponent" />
     <MESSAGE value="Adds game play layout files" />
     <MESSAGE value="Add me/device endpoint" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add me/device endpoint" />
+    <MESSAGE value="Game flow and push notifications" />
+    <option name="LAST_COMMIT_MESSAGE" value="Game flow and push notifications" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -3695,28 +3657,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/youvsme/com/youvsme/fragments/MakeAWagerFragment.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="56" column="64" selection-start-line="56" selection-start-column="64" selection-end-line="56" selection-end-column="64" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1317#1345#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/backend/src/main/java/youvsme/com/youvsme/backend/services/JsonService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.34408602">
-          <caret line="19" column="5" selection-start-line="19" selection-start-column="5" selection-end-line="19" selection-end-column="5" />
-          <folding>
-            <element signature="e#390#391#0" expanded="false" />
-            <element signature="e#432#433#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/backend/src/main/java/youvsme/com/youvsme/backend/api/MeEndpoint.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.98030126">
@@ -3733,44 +3673,26 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/backend/src/main/java/youvsme/com/youvsme/backend/api/ChallengeEndpoint.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5828505">
-          <caret line="95" column="45" selection-start-line="95" selection-start-column="45" selection-end-line="95" selection-end-column="45" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/backend/src/main/java/youvsme/com/youvsme/backend/api/MeChallengeEndpoint.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6465817">
-          <caret line="45" column="19" selection-start-line="45" selection-start-column="19" selection-end-line="45" selection-end-column="19" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_send_kick_in_the_face.xml">
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.47014925">
           <caret line="21" column="1" selection-start-line="21" selection-start-column="1" selection-end-line="21" selection-end-column="1" />
           <folding />
         </state>
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_wager_sent.xml">
       <provider editor-type-id="android-designer">
         <state />
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_wager_sent.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.31343284">
           <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
           <folding />
         </state>
-      </provider>
-      <provider editor-type-id="android-designer">
-        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/youvsme/com/youvsme/states/NoUserState.java">
@@ -3801,10 +3723,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.33256084">
           <caret line="107" column="11" selection-start-line="107" selection-start-column="11" selection-end-line="107" selection-end-column="11" />
-          <folding>
-            <element signature="e#3902#3903#0" expanded="false" />
-            <element signature="e#3928#3929#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -3838,17 +3756,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/backend/src/main/java/youvsme/com/youvsme/backend/models/ChallengeModel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="26" column="27" selection-start-line="26" selection-start-column="27" selection-end-line="26" selection-end-column="27" />
-          <folding>
-            <element signature="e#575#576#0" expanded="false" />
-            <element signature="e#603#604#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/youvsme/com/youvsme/fragments/GameStateFragment.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.21505377">
@@ -3866,14 +3773,14 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_question.xml">
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.95212764">
           <caret line="182" column="49" selection-start-line="182" selection-start-column="49" selection-end-line="182" selection-end-column="49" />
           <folding />
         </state>
-      </provider>
-      <provider editor-type-id="android-designer">
-        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/youvsme/com/youvsme/fragments/HowItWorksFragment.java">
@@ -3885,25 +3792,25 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_lets_go.xml">
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.41223404">
           <caret line="58" column="44" selection-start-line="58" selection-start-column="44" selection-end-line="58" selection-end-column="44" />
           <folding />
         </state>
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_scared_opponent.xml">
       <provider editor-type-id="android-designer">
         <state />
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_scared_opponent.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.3966942">
           <caret line="16" column="34" selection-start-line="16" selection-start-column="34" selection-end-line="16" selection-end-column="34" />
           <folding />
         </state>
-      </provider>
-      <provider editor-type-id="android-designer">
-        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/youvsme/com/youvsme/states/State.java">
@@ -3928,7 +3835,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.32329085">
           <caret line="722" column="15" selection-start-line="722" selection-start-column="15" selection-end-line="722" selection-end-column="15" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -3944,14 +3850,14 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_see_who_won.xml">
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.6393035">
           <caret line="75" column="17" selection-start-line="75" selection-start-column="17" selection-end-line="75" selection-end-column="17" />
           <folding />
         </state>
-      </provider>
-      <provider editor-type-id="android-designer">
-        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/youvsme/com/youvsme/fragments/SeeWhoWonFragment.java">
@@ -3988,35 +3894,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.45886442">
           <caret line="24" column="50" selection-start-line="24" selection-start-column="50" selection-end-line="24" selection-end-column="50" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/youvsme/com/youvsme/models/GameModel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6245655">
-          <caret line="56" column="18" selection-start-line="56" selection-start-column="18" selection-end-line="56" selection-end-column="18" />
-          <folding>
-            <element signature="e#1156#1157#0" expanded="true" />
-            <element signature="e#1184#1185#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/youvsme/com/youvsme/services/GameService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.64542294">
-          <caret line="124" column="0" selection-start-line="124" selection-start-column="0" selection-end-line="124" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/youvsme/com/youvsme/states/GameState.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.8539977">
-          <caret line="193" column="5" selection-start-line="193" selection-start-column="5" selection-end-line="193" selection-end-column="5" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -4071,14 +3948,14 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_final_results.xml">
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.57462686">
           <caret line="115" column="39" selection-start-line="115" selection-start-column="39" selection-end-line="115" selection-end-column="39" />
           <folding />
         </state>
-      </provider>
-      <provider editor-type-id="android-designer">
-        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/youvsme/com/youvsme/fragments/FinalResultsFragment.java">
@@ -4122,60 +3999,139 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/youvsme/com/youvsme/util/Config.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/strings.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.4797219">
-          <caret line="23" column="49" selection-start-line="23" selection-start-column="31" selection-end-line="23" selection-end-column="49" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/backend/src/main/java/youvsme/com/youvsme/backend/push/KickInTheFacePush.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.3128621">
-          <caret line="15" column="0" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.11414392">
+          <caret line="10" column="49" selection-start-line="10" selection-start-column="49" selection-end-line="10" selection-end-column="49" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/backend/src/main/java/youvsme/com/youvsme/backend/push/FinishedAnsweringPush.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.14600232">
-          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+        <state vertical-scroll-proportion="0.33487833">
+          <caret line="17" column="0" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/backend/src/main/java/youvsme/com/youvsme/backend/push/ChallengePush.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.14600232">
+        <state vertical-scroll-proportion="0.31517962">
+          <caret line="16" column="1" selection-start-line="16" selection-start-column="1" selection-end-line="16" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/src/main/java/youvsme/com/youvsme/backend/push/KickInTheFacePush.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.13789108">
           <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/strings.xml">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/youvsme/com/youvsme/util/Config.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.9478908">
-          <caret line="43" column="89" selection-start-line="43" selection-start-column="85" selection-end-line="43" selection-end-column="89" />
+        <state vertical-scroll-proportion="0.21668598">
+          <caret line="11" column="0" selection-start-line="6" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/src/main/java/youvsme/com/youvsme/backend/services/PushService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.45307067">
+          <caret line="34" column="50" selection-start-line="34" selection-start-column="50" selection-end-line="34" selection-end-column="50" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/youvsme/com/youvsme/services/PushService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.7520278">
-          <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.21668598">
+          <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
           <folding>
-            <element signature="e#1916#1956#0" expanded="true" />
+            <element signature="imports" expanded="true" />
+            <element signature="e#1656#1690#0" expanded="true" />
+            <element signature="e#1748#1788#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/youvsme/com/youvsme/fragments/BattleThisOpponentFragment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.42873695">
+          <caret line="46" column="5" selection-start-line="46" selection-start-column="5" selection-end-line="46" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/youvsme/com/youvsme/models/GameModel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.26071844">
+          <caret line="20" column="15" selection-start-line="20" selection-start-column="15" selection-end-line="20" selection-end-column="15" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/youvsme/com/youvsme/services/GameService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.33256084">
+          <caret line="72" column="8" selection-start-line="72" selection-start-column="8" selection-end-line="72" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/youvsme/com/youvsme/states/GameState.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.1216686">
+          <caret line="54" column="12" selection-start-line="54" selection-start-column="12" selection-end-line="54" selection-end-column="12" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#2692#2693#0" expanded="true" />
+            <element signature="e#2759#2760#0" expanded="true" />
+            <element signature="e#2888#2889#0" expanded="true" />
+            <element signature="e#2910#2911#0" expanded="true" />
+            <element signature="e#5862#6010#0" expanded="true" />
+            <element signature="e#6009#6010#0" expanded="true" />
+            <element signature="e#6344#6345#0" expanded="true" />
+            <element signature="e#6390#6391#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/src/main/java/youvsme/com/youvsme/backend/api/ChallengeEndpoint.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="1.1645423">
+          <caret line="87" column="4" selection-start-line="87" selection-start-column="4" selection-end-line="87" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/src/main/java/youvsme/com/youvsme/backend/models/ChallengeModel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="16" column="28" selection-start-line="16" selection-start-column="28" selection-end-line="16" selection-end-column="28" />
+          <folding>
+            <element signature="e#575#576#0" expanded="true" />
+            <element signature="e#603#604#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/src/main/java/youvsme/com/youvsme/backend/api/MeChallengeEndpoint.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.13904983">
+          <caret line="22" column="13" selection-start-line="22" selection-start-column="13" selection-end-line="22" selection-end-column="13" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Roadmap.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.37543452">
-          <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
+        <state vertical-scroll-proportion="-0.59096175">
+          <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
           <folding />
         </state>
       </provider>

@@ -7,9 +7,11 @@ import youvsme.com.youvsme.backend.Config;
  */
 public class FinishedAnsweringPush extends Push {
     public String user;
+    public boolean isComplete;
 
-    public FinishedAnsweringPush(String user) {
+    public FinishedAnsweringPush(String user, boolean isComplete) {
         super(Config.PUSH_FINISHED_ANSWERING);
         this.user = user;
+        this.isComplete = isComplete;
     }
 }

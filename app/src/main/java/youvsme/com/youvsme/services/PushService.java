@@ -51,8 +51,16 @@ public class PushService {
                                 : R.string.they_challenged_you_to_a_wager, opponentName)).build();
                 break;
             case Config.PUSH_FINISHED_ANSWERING:
+                int resource;
+
+                if (push.has("isComplete") && push.get("isComplete").getAsBoolean()) {
+                    resource = R.string.they_finished_see_who_won;
+                } else {
+                    resource = R.string.they_finished_now_answer_theirs;
+                }
+
                 notification = nn()
-                        .setContentTitle(context.getString(R.string.they_finished, opponentName))
+                        .setContentTitle(context.getString(resource, opponentName))
                         .build();
                 break;
             case Config.PUSH_KICK_IN_THE_FACE:

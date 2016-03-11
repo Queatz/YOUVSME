@@ -39,7 +39,8 @@
     <string name="youve_tied">You\'ve tied.</string>
     <string name="they_challenged_you">%1$s challenged you.</string>
     <string name="they_challenged_you_to_a_wager">%1$s challenged you to a wager!</string>
-    <string name="they_finished">%1$s finished answering. Now answer theirs.</string>
+    <string name="they_finished_now_answer_theirs">%1$s finished answering yours. Now answer theirs.</string>
+    <string name="they_finished_see_who_won">%1$s finished answering yours. See who won.</string>
     <string name="kicked_you">%1$s has kicked you in the face.</string>
     <string name="this_we_know">This is likely due to the slow nature of your life's pace.</string>
 </resources>

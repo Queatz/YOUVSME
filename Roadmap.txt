@@ -1,36 +1,47 @@
 
 
-IP
-OP
-IP OP
-IP OP OA
-IP OP IA
-IP OP IA OA
+From my perspective:
+
+PICKING_ANSWERS
+• [I answer my questions]
+    | server: { 'picks': [3, 2, 0, 1] }
+    | push -> Jeff challenged you
+    | me: questions, kick in the face
+    | op: [sees wager,] answers questions
+
+WAITING_FOR_OPPONENT
+
+GUESSING_OPPONENTS_ANSWERS
+• [They answer theirs --> They answer mine]
+    | server: { 'picks': [3, 2, 0, 1], 'answers': [3, 0, 0, 1] }
+    | push -> Sarah finished answering
+    | me: answers, won
+    | op: kick in the face
+
+LAST_GAME_FINISHED
+• [I answer theirs --> Done]
+    | server: { 'answers': [3, 2, 0, 1] }
+    | push --> Jeff finished answering
+    | me: done, play again
+    | op: done, play again
 
 
-User opens app:
-
-(A) No challenges ever
-    -> search -> wager -> question1,2,3,4 -> (B)
-
-(B) Active challenge, waiting for opponent
-    letsgo -> kick
-           -> quit
-
-(C) Active challenge, opponent done
-    -> answer1,2,3,4 -> foughtwell -> scorecard
-
-(D) Active challenge, you're not done
-    -> question2,3,4 -> (B,C)
-
-(E) Opponent done after you
-    -> foughtwell -> scorecard
-
-(F) No active challenge
-    -> scorecard of past challenge
+====================================================================================================
+Need Design
+    • Wager review screen (how the opponent sees the wager)
 
 
+    +------------------------------------------------------------------------------------+
+    |            state           |       opponent view       |           my view         |
+    |----------------------------|---------------------------|---------------------------|
+    |• [I answer my questions]   |        sees wager         |     kick in the face      |
+    |• [They answer theirs       |       kick in the face    |      see who won          |
+    |   They answer mine]        |                           |                           |
+    |• [I answer theirs          |       see who won         |       play again          |
+    |   Done]                    |                           |                           |
+    +------------------------------------------------------------------------------------+
 
+====================================================================================================
 
 ==== MVP Remaining Items ====
 

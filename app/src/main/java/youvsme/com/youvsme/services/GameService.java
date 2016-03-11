@@ -63,19 +63,9 @@ public class GameService {
         NO_OPPONENT,
 
         /**
-         * User is picking answers to questions.
+         * User is in an active game.
          */
-        PICKING_ANSWERS,
-
-        /**
-         * User is guessing opponents answers.
-         */
-        GUESSING_OPPONENTS_ANSWERS,
-
-        /**
-         * User is waiting for opponent to finish up.
-         */
-        WAITING_FOR_OPPONENT,
+        IN_GAME,
 
         /**
          * The last game was finished. User can see the last game's score.
@@ -102,9 +92,9 @@ public class GameService {
 
         switch (game.getState()) {
             case GameModel.GAME_STATE_STARTED:
-                return GameState.PICKING_ANSWERS;
             case GameModel.GAME_STATE_WAITING_FOR_OPPONENT:
-                return GameState.WAITING_FOR_OPPONENT;
+            case GameModel.GAME_STATE_GUESSING_OPPONENTS_ANSWERS:
+                return GameState.IN_GAME;
             case GameModel.GAME_STATE_FINISHED:
             default:
                 if (userHasSeenFinalResults()) {

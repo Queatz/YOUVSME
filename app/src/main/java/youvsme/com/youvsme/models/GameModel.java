@@ -15,6 +15,7 @@ import io.realm.annotations.RealmClass;
 public class GameModel extends RealmObject {
     public static final String GAME_STATE_STARTED = "started";
     public static final String GAME_STATE_WAITING_FOR_OPPONENT = "waiting";
+    public static final String GAME_STATE_GUESSING_OPPONENTS_ANSWERS = "answering";
     public static final String GAME_STATE_FINISHED = "finished";
 
     @PrimaryKey
