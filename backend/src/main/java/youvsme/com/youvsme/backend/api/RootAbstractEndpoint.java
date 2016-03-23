@@ -19,6 +19,7 @@ public class RootAbstractEndpoint implements Api {
     static {
         mappings.put("me", Grab.grab(MeEndpoint.class));
         mappings.put("challenge", Grab.grab(ChallengeEndpoint.class));
+        mappings.put("question", Grab.grab(QuestionEndpoint.class));
     }
 
     private boolean mapped(String method, List<String> path, HttpServletRequest req, HttpServletResponse resp) {
