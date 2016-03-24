@@ -88,7 +88,7 @@ public class SearchForOpponentState implements State {
         params.put(Config.PARAM_WAGER_NOTE, note);
         params.put(Config.PARAM_OPPONENT, opponent.getId());
 
-        ApiService.use().post("challenge", params, new RealmObjectResponseHandler<GameModel>() {
+        ApiService.use().post("game", params, new RealmObjectResponseHandler<GameModel>() {
             @Override
             public void success(GameModel response) {
                 if (Strings.isNullOrEmpty(what)) {

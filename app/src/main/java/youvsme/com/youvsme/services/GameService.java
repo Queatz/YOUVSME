@@ -16,9 +16,11 @@ import cz.msebera.android.httpclient.Header;
 import io.realm.RealmResults;
 import io.realm.Sort;
 import youvsme.com.youvsme.models.GameModel;
+import youvsme.com.youvsme.models.QuestionModel;
 import youvsme.com.youvsme.models.UserModel;
 import youvsme.com.youvsme.util.Config;
 import youvsme.com.youvsme.util.RealmListResponseHandler;
+import youvsme.com.youvsme.util.RealmObjectResponseHandler;
 
 /**
  * Created by jacob on 2/28/16.
@@ -122,7 +124,7 @@ public class GameService {
     }
 
     public void sendKickInTheFaceReminder(final GameModel game, final Runnable callback) {
-        ApiService.use().get("challenge/" + game.getId() + "/kick-in-the-face", null, new AsyncHttpResponseHandler() {
+        ApiService.use().get("game/" + game.getId() + "/kick-in-the-face", null, new AsyncHttpResponseHandler() {
             @Override
             public void onSuccess(int statusCode, Header[] headers, byte[] responseBody) {
                 callback.run();
@@ -131,6 +133,50 @@ public class GameService {
             @Override
             public void onFailure(int statusCode, Header[] headers, byte[] responseBody, Throwable error) {
                 Toast.makeText(context(), "Your roundhouse kick to the face failed due to a network issue. Yor kick to the face, however, was glorious.", Toast.LENGTH_LONG).show();
+            }
+        });
+    }
+
+    public void loadGame(final Runnable callback) {
+        ApiService.use().get("me/game", null, new RealmObjectResponseHandler<GameModel>() {
+            @Override
+            public void success(GameModel response) {
+                callback.run();
+            }
+
+            @Override
+            public void failure(int statusCode, String response) {
+
+            }
+        });
+    }
+
+    public void answerQuestion(QuestionModel question, int answer, final Runnable callback) {
+        // TODO: if this is the last one, send network
+
+        ApiService.use().post("game/" + question.getGame().getId() + "/answer/" + question.getId() + "/" + answer, null, new AsyncHttpResponseHandler() {
+            @Override
+            public void onSuccess(int statusCode, Header[] headers, byte[] responseBody) {
+                callback.run();
+            }
+
+            @Override
+            public void onFailure(int statusCode, Header[] headers, byte[] responseBody, Throwable error) {
+            }
+        });
+    }
+
+    public void guessAnswer(QuestionModel question, int guess, final Runnable callback) {
+        // TODO: if this is the last one, send network
+
+        ApiService.use().post("game/" + question.getGame().getId() + "/guess/" + question.getId() + "/" + guess, null, new AsyncHttpResponseHandler() {
+            @Override
+            public void onSuccess(int statusCode, Header[] headers, byte[] responseBody) {
+                callback.run();
+            }
+
+            @Override
+            public void onFailure(int statusCode, Header[] headers, byte[] responseBody, Throwable error) {
             }
         });
     }

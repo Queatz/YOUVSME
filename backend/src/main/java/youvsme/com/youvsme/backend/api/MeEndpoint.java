@@ -15,7 +15,7 @@ import youvsme.com.youvsme.backend.Grab;
 import youvsme.com.youvsme.backend.models.UserModel;
 import youvsme.com.youvsme.backend.services.JsonService;
 import youvsme.com.youvsme.backend.services.UserService;
-import youvsme.com.youvsme.backend.views.UserModelView;
+import youvsme.com.youvsme.backend.views.UserView;
 
 /**
  * Created by jacob on 2/25/16.
@@ -26,7 +26,7 @@ public class MeEndpoint implements Api {
     static {
         mappings.put("friends", Grab.grab(MeFriendsEndpoint.class));
         mappings.put("device", Grab.grab(MeDeviceEndpoint.class));
-        mappings.put("challenge", Grab.grab(MeChallengeEndpoint.class));
+        mappings.put("game", Grab.grab(MeGameEndpoint.class));
     }
 
     private boolean mapped(String method, List<String> path, HttpServletRequest req, HttpServletResponse resp) {
@@ -59,7 +59,7 @@ public class MeEndpoint implements Api {
                     return;
                 }
 
-                resp.getWriter().write(Grab.grab(JsonService.class).json(new UserModelView(me, true)));
+                resp.getWriter().write(Grab.grab(JsonService.class).json(new UserView(me, true)));
 
                 return;
         }

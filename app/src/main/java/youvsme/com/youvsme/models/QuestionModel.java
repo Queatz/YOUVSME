@@ -26,7 +26,7 @@ public class QuestionModel extends RealmObject {
      *
      * @value JSON array of questions.
      */
-    public String questionOptions;
+    public String choices;
 
     /**
      * The chosen answer, by the user.
@@ -70,12 +70,12 @@ public class QuestionModel extends RealmObject {
         this.questionText = questionText;
     }
 
-    public String getQuestionOptions() {
-        return questionOptions;
+    public String getChoices() {
+        return choices;
     }
 
-    public void setQuestionOptions(String questionOptions) {
-        this.questionOptions = questionOptions;
+    public void setChoices(String choices) {
+        this.choices = choices;
     }
 
     public Integer getChosenAnswer() {

@@ -4,7 +4,7 @@ App remaining to-do:
 [ ] Update facebook icon to hires !important
 [ ] Show proposed wager screen to opponent
 [ ] Hook up opponent search to realm
-[ ] Call /me/challenge
+[ ] Call /me/game
 
 Server remaining to-do:
 

@@ -17,7 +17,7 @@ import youvsme.com.youvsme.backend.Grab;
 import youvsme.com.youvsme.backend.models.UserModel;
 import youvsme.com.youvsme.backend.services.JsonService;
 import youvsme.com.youvsme.backend.services.UserService;
-import youvsme.com.youvsme.backend.views.UserModelView;
+import youvsme.com.youvsme.backend.views.UserView;
 
 /**
  * Created by jacob on 2/25/16.
@@ -38,12 +38,12 @@ public class MeFriendsEndpoint implements Api {
         FacebookClient facebookClient = new DefaultFacebookClient(me.getFacebookToken(), Version.LATEST);
         Connection<User> facebookFriends = facebookClient.fetchConnection("me/friends", User.class);
 
-        List<UserModelView> friends = new ArrayList<>();
+        List<UserView> friends = new ArrayList<>();
 
         for(User facebookFriend : facebookFriends.getData()) {
             UserModel user = userService.userFromFacebookUser(facebookFriend);
 
-            friends.add(new UserModelView(user));
+            friends.add(new UserView(user));
         }
 
         resp.getWriter().write(Grab.grab(JsonService.class).json(friends));

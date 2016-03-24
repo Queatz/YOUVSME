@@ -2,6 +2,7 @@ package youvsme.com.youvsme.models;
 
 import java.util.Date;
 
+import io.realm.RealmList;
 import io.realm.RealmObject;
 import io.realm.annotations.Index;
 import io.realm.annotations.PrimaryKey;
@@ -20,16 +21,9 @@ public class GameModel extends RealmObject {
 
     @PrimaryKey
     private String id;
-
     private UserModel user;
     private UserModel opponent;
-
-    @Index
-    private String state;
-
-    @Index
-    private Date started;
-    private Date finished;
+    private RealmList<QuestionModel> questions;
 
     public String getId() {
         return id;
@@ -55,27 +49,11 @@ public class GameModel extends RealmObject {
         this.opponent = opponent;
     }
 
-    public String getState() {
-        return state;
+    public RealmList<QuestionModel> getQuestions() {
+        return questions;
     }
 
-    public void setState(String state) {
-        this.state = state;
-    }
-
-    public Date getStarted() {
-        return started;
-    }
-
-    public void setStarted(Date started) {
-        this.started = started;
-    }
-
-    public Date getFinished() {
-        return finished;
-    }
-
-    public void setFinished(Date finished) {
-        this.finished = finished;
+    public void setQuestions(RealmList<QuestionModel> questions) {
+        this.questions = questions;
     }
 }
