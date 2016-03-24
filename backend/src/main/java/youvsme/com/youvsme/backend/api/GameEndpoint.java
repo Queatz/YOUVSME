@@ -14,7 +14,7 @@ import javax.servlet.http.HttpServletResponse;
 import youvsme.com.youvsme.backend.Config;
 import youvsme.com.youvsme.backend.Grab;
 import youvsme.com.youvsme.backend.models.GameModel;
-import youvsme.com.youvsme.backend.models.GameUserQuestionModel;
+import youvsme.com.youvsme.backend.models.GameQuestionModel;
 import youvsme.com.youvsme.backend.models.QuestionModel;
 import youvsme.com.youvsme.backend.models.UserModel;
 import youvsme.com.youvsme.backend.push.ChallengePush;
@@ -80,7 +80,7 @@ public class GameEndpoint implements Api {
                                 .get(QuestionModel.class, Integer.toString(new Random().nextInt(totalQuestions)));
 
                         for (UserModel user : new UserModel[] {me, opponent}) {
-                            GameUserQuestionModel answer = ModelService.create(GameUserQuestionModel.class);
+                            GameQuestionModel answer = ModelService.create(GameQuestionModel.class);
                             answer.setUser(user);
                             answer.setGame(game);
                             answer.setQuestion(question);
@@ -124,7 +124,7 @@ public class GameEndpoint implements Api {
 
                         // /game/10/answer/10/3
                         else if ("answer".equals(path.get(1))) {
-                            GameUserQuestionModel question = ModelService.get(GameUserQuestionModel.class)
+                            GameQuestionModel question = ModelService.get(GameQuestionModel.class)
                                     .filter("game", game)
                                     .filter("user", me)
                                     .filter("id", path.get(2))
@@ -142,7 +142,7 @@ public class GameEndpoint implements Api {
                         }
                         // /game/10/guess/10/3
                         else if ("guess".equals(path.get(1))) {
-                            GameUserQuestionModel question = ModelService.get(GameUserQuestionModel.class)
+                            GameQuestionModel question = ModelService.get(GameQuestionModel.class)
                                     .filter("game", game)
                                     .filter("id", path.get(2))
                                     .first().now();
@@ -166,13 +166,13 @@ public class GameEndpoint implements Api {
     }
 
     private void notifyDone(UserModel me, GameModel game) {
-        List<GameUserQuestionModel> questions = ModelService.get(GameUserQuestionModel.class)
+        List<GameQuestionModel> questions = ModelService.get(GameQuestionModel.class)
                 .filter("game", game).list();
 
         boolean isComplete = true;
         boolean anyGuessed = false;
 
-        for (GameUserQuestionModel q : questions) {
+        for (GameQuestionModel q : questions) {
             if (me.getId().equals(q.getUser().getId())) {
                 if(q.getChosenAnswer() == null) {
                     // Not done choosing yet

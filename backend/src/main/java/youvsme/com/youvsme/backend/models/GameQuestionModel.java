@@ -7,7 +7,7 @@ import com.googlecode.objectify.annotation.Index;
  * Created by jacob on 3/5/16.
  */
 @Entity
-public class GameUserQuestionModel extends Model {
+public class GameQuestionModel extends Model {
     @Index public UserModel user;
     @Index public GameModel game;
     public QuestionModel question;

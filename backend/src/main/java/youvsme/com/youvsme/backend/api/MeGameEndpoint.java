@@ -11,8 +11,6 @@ import javax.servlet.http.HttpServletResponse;
 import youvsme.com.youvsme.backend.Config;
 import youvsme.com.youvsme.backend.Grab;
 import youvsme.com.youvsme.backend.models.GameModel;
-import youvsme.com.youvsme.backend.models.GameUserQuestionModel;
-import youvsme.com.youvsme.backend.models.QuestionModel;
 import youvsme.com.youvsme.backend.models.UserModel;
 import youvsme.com.youvsme.backend.services.JsonService;
 import youvsme.com.youvsme.backend.services.ModelService;

@@ -14,13 +14,11 @@ import io.realm.annotations.RealmClass;
 
 @RealmClass
 public class GameModel extends RealmObject {
-    public static final String GAME_STATE_STARTED = "started";
-    public static final String GAME_STATE_WAITING_FOR_OPPONENT = "waiting";
-    public static final String GAME_STATE_GUESSING_OPPONENTS_ANSWERS = "answering";
-    public static final String GAME_STATE_FINISHED = "finished";
 
     @PrimaryKey
     private String id;
+    private String wager;
+    private String wagerNote;
     private UserModel user;
     private UserModel opponent;
     private RealmList<QuestionModel> questions;
@@ -31,6 +29,22 @@ public class GameModel extends RealmObject {
 
     public void setId(String id) {
         this.id = id;
+    }
+
+    public String getWager() {
+        return wager;
+    }
+
+    public void setWager(String wager) {
+        this.wager = wager;
+    }
+
+    public String getWagerNote() {
+        return wagerNote;
+    }
+
+    public void setWagerNote(String wagerNote) {
+        this.wagerNote = wagerNote;
     }
 
     public UserModel getUser() {

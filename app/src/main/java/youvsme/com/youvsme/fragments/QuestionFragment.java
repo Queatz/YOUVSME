@@ -127,10 +127,10 @@ public class QuestionFragment extends GameStateFragment {
 
         if (isMyQuestion) {
             title.setText(getString(R.string.question_x, questionNumber));
-            questionText.setText(nameInject(question.getQuestionText(), null));
+            questionText.setText(nameInject(question.getText(), null));
         } else {
             title.setText(getString(R.string.answer_x, questionNumber));
-            questionText.setText(nameInject(question.getQuestionText(), game.getOpponent().getFirstName()));
+            questionText.setText(nameInject(question.getText(), game.getOpponent().getFirstName()));
         }
 
         choiceAText.setText(choices.get(0));

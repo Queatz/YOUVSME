@@ -13,6 +13,7 @@ import com.loopj.android.http.RequestParams;
 import java.util.List;
 
 import cz.msebera.android.httpclient.Header;
+import io.realm.Realm;
 import io.realm.RealmResults;
 import io.realm.Sort;
 import youvsme.com.youvsme.models.GameModel;
@@ -26,6 +27,11 @@ import youvsme.com.youvsme.util.RealmObjectResponseHandler;
  * Created by jacob on 2/28/16.
  */
 public class GameService {
+
+    public static final String GAME_STATE_STARTED = "started";
+    public static final String GAME_STATE_WAITING_FOR_OPPONENT = "waiting";
+    public static final String GAME_STATE_GUESSING_OPPONENTS_ANSWERS = "answering";
+    public static final String GAME_STATE_FINISHED = "finished";
 
     private static GameService instance;
 
@@ -92,19 +98,81 @@ public class GameService {
 
         // Great, they already have a game going with somebody
 
-        switch (game.getState()) {
-            case GameModel.GAME_STATE_STARTED:
-            case GameModel.GAME_STATE_WAITING_FOR_OPPONENT:
-            case GameModel.GAME_STATE_GUESSING_OPPONENTS_ANSWERS:
-                return GameState.IN_GAME;
-            case GameModel.GAME_STATE_FINISHED:
-            default:
-                if (userHasSeenFinalResults()) {
-                    return GameState.NO_OPPONENT;
-                } else {
-                    return GameState.LAST_GAME_FINISHED;
-                }
+        boolean gameNotFinished = false;
+
+        for (QuestionModel q : game.getQuestions()) {
+            if (q.getChosenAnswer() == null || q.getOpponentsGuess() == null) {
+                gameNotFinished = true;
+                break;
+            }
         }
+
+        if (gameNotFinished) {
+            return GameState.IN_GAME;
+        }
+
+        if (userHasSeenFinalResults()) {
+            return GameState.NO_OPPONENT;
+        } else {
+            return GameState.LAST_GAME_FINISHED;
+        }
+    }
+
+    public String inferGameState() {
+        GameModel game = latestGame();
+
+        if (game == null) {
+            return null;
+        }
+
+        boolean stillAnswering = false;
+        boolean stillGuessing = false;
+        boolean opponentStillGuessing = false;
+        boolean opponentStillAnswering = false;
+
+        for (QuestionModel q : game.getQuestions()) {
+            if (myUserId().equals(q.getUser().getId())) {
+                if (q.getChosenAnswer() == null) {
+                    stillAnswering = true;
+                }
+
+                if (q.getOpponentsGuess() == null) {
+                    opponentStillGuessing = true;
+                }
+            } else {
+                if (q.getChosenAnswer() == null) {
+                    opponentStillAnswering = true;
+                }
+
+                if (q.getOpponentsGuess() == null) {
+                    stillGuessing = true;
+                }
+            }
+        }
+
+        // I need to answer questions.
+        if (stillAnswering) {
+            return GAME_STATE_STARTED;
+        }
+
+        // I'm done, they need to answer questions.
+        if (opponentStillAnswering) {
+            return GAME_STATE_WAITING_FOR_OPPONENT;
+        }
+
+        // Both of us have answered, now I need to guess theirs.
+        if (stillGuessing) {
+            return GAME_STATE_GUESSING_OPPONENTS_ANSWERS;
+        }
+
+        // I'm completely done, they need to finish guessing.
+        if (opponentStillGuessing) {
+            return GAME_STATE_WAITING_FOR_OPPONENT;
+        }
+
+        // Both of us are completely done.
+        return GAME_STATE_FINISHED;
+
     }
 
     public boolean userHasSeenFinalResults() {
@@ -152,9 +220,13 @@ public class GameService {
     }
 
     public void answerQuestion(QuestionModel question, int answer, final Runnable callback) {
-        // TODO: if this is the last one, send network
+        Realm realm = RealmService.use().get();
 
-        ApiService.use().post("game/" + question.getGame().getId() + "/answer/" + question.getId() + "/" + answer, null, new AsyncHttpResponseHandler() {
+        realm.beginTransaction();
+        question.setChosenAnswer(answer);
+        realm.commitTransaction();
+
+        ApiService.use().post("game/" + latestGame().getId() + "/answer/" + question.getId() + "/" + answer, null, new AsyncHttpResponseHandler() {
             @Override
             public void onSuccess(int statusCode, Header[] headers, byte[] responseBody) {
                 callback.run();
@@ -167,9 +239,13 @@ public class GameService {
     }
 
     public void guessAnswer(QuestionModel question, int guess, final Runnable callback) {
-        // TODO: if this is the last one, send network
+        Realm realm = RealmService.use().get();
 
-        ApiService.use().post("game/" + question.getGame().getId() + "/guess/" + question.getId() + "/" + guess, null, new AsyncHttpResponseHandler() {
+        realm.beginTransaction();
+        question.setOpponentsGuess(guess);
+        realm.commitTransaction();
+
+        ApiService.use().post("game/" + latestGame().getId() + "/guess/" + question.getId() + "/" + guess, null, new AsyncHttpResponseHandler() {
             @Override
             public void onSuccess(int statusCode, Header[] headers, byte[] responseBody) {
                 callback.run();

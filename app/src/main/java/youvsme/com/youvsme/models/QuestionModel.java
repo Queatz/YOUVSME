@@ -13,13 +13,15 @@ public class QuestionModel extends RealmObject {
     @PrimaryKey
     private String id;
 
-    public GameModel game;
+    /**
+     * The user that is supposed to give an answer to this question.
+     */
     public UserModel user;
 
     /**
      * The text of the question.
      */
-    public String questionText;
+    public String text;
 
     /**
      * The options of the question.
@@ -46,14 +48,6 @@ public class QuestionModel extends RealmObject {
         this.id = id;
     }
 
-    public GameModel getGame() {
-        return game;
-    }
-
-    public void setGame(GameModel game) {
-        this.game = game;
-    }
-
     public UserModel getUser() {
         return user;
     }
@@ -62,12 +56,12 @@ public class QuestionModel extends RealmObject {
         this.user = user;
     }
 
-    public String getQuestionText() {
-        return questionText;
+    public String getText() {
+        return text;
     }
 
-    public void setQuestionText(String questionText) {
-        this.questionText = questionText;
+    public void setText(String text) {
+        this.text = text;
     }
 
     public String getChoices() {

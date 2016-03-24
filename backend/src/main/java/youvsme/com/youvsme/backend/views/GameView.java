@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import youvsme.com.youvsme.backend.models.GameModel;
-import youvsme.com.youvsme.backend.models.GameUserQuestionModel;
+import youvsme.com.youvsme.backend.models.GameQuestionModel;
 import youvsme.com.youvsme.backend.models.UserModel;
 import youvsme.com.youvsme.backend.services.ModelService;
 
@@ -36,12 +36,12 @@ public class GameView {
             this.opponent = new UserView(u);
         }
 
-        List<GameUserQuestionModel> questions = ModelService
-                .get(GameUserQuestionModel.class)
+        List<GameQuestionModel> questions = ModelService
+                .get(GameQuestionModel.class)
                 .filter("game", game)
                 .list();
 
-        for (GameUserQuestionModel q : questions) {
+        for (GameQuestionModel q : questions) {
             this.questions.add(new QuestionView(q));
         }
     }

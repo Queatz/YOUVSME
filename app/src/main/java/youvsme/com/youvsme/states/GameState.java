@@ -49,17 +49,17 @@ public class GameState implements State {
             return;
         }
 
-        switch (game.getState()) {
-            case GameModel.GAME_STATE_STARTED:
+        switch (GameService.use().inferGameState()) {
+            case GameService.GAME_STATE_STARTED:
                 showFragment(questionFragment);
                 break;
-            case GameModel.GAME_STATE_WAITING_FOR_OPPONENT:
+            case GameService.GAME_STATE_WAITING_FOR_OPPONENT:
                 showFragment(sendKickInTheFaceFragment);
                 break;
-            case GameModel.GAME_STATE_GUESSING_OPPONENTS_ANSWERS:
+            case GameService.GAME_STATE_GUESSING_OPPONENTS_ANSWERS:
                 showFragment(questionFragment);
                 break;
-            case GameModel.GAME_STATE_FINISHED:
+            case GameService.GAME_STATE_FINISHED:
                 if (GameService.use().userHasSeenFinalResults()) {
                     showFragment(finalResultsFragment);
                 } else {
