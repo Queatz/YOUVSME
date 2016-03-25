@@ -19,6 +19,7 @@ import cz.msebera.android.httpclient.Header;
 import io.realm.Realm;
 import io.realm.RealmResults;
 import io.realm.Sort;
+import youvsme.com.youvsme.R;
 import youvsme.com.youvsme.models.GameModel;
 import youvsme.com.youvsme.models.QuestionModel;
 import youvsme.com.youvsme.models.UserModel;
@@ -208,7 +209,7 @@ public class GameService {
         return filterQuestions(new QuestionFilter() {
             @Override
             public boolean pass(GameModel game, QuestionModel question) {
-                return !question.getUser().getId().equals(game.getUser().getId())
+                return question.getUser().getId().equals(game.getUser().getId())
                         && question.getOpponentsGuess() == null;
             }
         });
@@ -220,7 +221,7 @@ public class GameService {
         return filterQuestions(new QuestionFilter() {
             @Override
             public boolean pass(GameModel game, QuestionModel question) {
-                return question.getUser().getId().equals(game.getUser().getId())
+                return !question.getUser().getId().equals(game.getUser().getId())
                         && question.getOpponentsGuess() == null;
             }
         });
@@ -300,18 +301,8 @@ public class GameService {
         });
     }
 
-    public void loadGame(final Runnable callback) {
-        ApiService.use().get("me/game", null, new RealmObjectResponseHandler<GameModel>() {
-            @Override
-            public void success(GameModel response) {
-                callback.run();
-            }
-
-            @Override
-            public void failure(int statusCode, String response) {
-
-            }
-        });
+    public void loadGame(final RealmObjectResponseHandler<GameModel> callback) {
+        ApiService.use().get("me/game", null, callback);
     }
 
     public void answerQuestion(QuestionModel question, int answer) {

@@ -124,12 +124,10 @@ public class GameEndpoint implements Api {
                         // /game/10/answer/10/3
                         else if ("answer".equals(path.get(1))) {
                             GameQuestionModel question = ModelService.get(GameQuestionModel.class)
-                                    .filter("game", game)
-                                    .filter("user", me)
-                                    .filter("id", path.get(2))
-                                    .first().now();
+                                    .id(path.get(2)).now();
 
-                            if (question == null) {
+                            // Authenticate
+                            if (question == null || !question.getGame().get().getUsers().contains(ModelService.ref(me))) {
                                 resp.setStatus(HttpServletResponse.SC_NOT_FOUND);
                                 return;
                             }
@@ -142,11 +140,10 @@ public class GameEndpoint implements Api {
                         // /game/10/guess/10/3
                         else if ("guess".equals(path.get(1))) {
                             GameQuestionModel question = ModelService.get(GameQuestionModel.class)
-                                    .filter("game", game)
-                                    .filter("id", path.get(2))
-                                    .first().now();
+                                    .id(path.get(2)).now();
 
-                            if (question == null) {
+                            // Authenticate
+                            if (question == null || !question.getGame().get().getUsers().contains(ModelService.ref(me))) {
                                 resp.setStatus(HttpServletResponse.SC_NOT_FOUND);
                                 return;
                             }

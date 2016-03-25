@@ -110,21 +110,26 @@ public class GameState implements State {
         // TODO don't show my opponent's answers at all until they have finished all of them
         // TODO could be done on the server
 
-        // No more actions for me to take
         boolean iAmDone = myQuestionsRemaining.size() == 0 && opponentsAnswersUnguessed.size() == 0;
-
-        // No more actions for the opponent to take
         boolean opponentIsDone = opponentsQuestionsRemaining.size() == 0 && myAnswersUnguessed.size() == 0;
 
         if (iAmDone && opponentIsDone) {
             GameService.use().setUserHasSeenFinalResults(false);
             showFragment(seeWhoWonFragment);
-        } else if (iAmDone) {
-            if (currentFragment == letsGoFragment) {
-                showFragment(sendKickInTheFaceFragment);
-            } else {
-                showFragment(letsGoFragment);
-            }
+            return;
+
+        }
+
+        if (myQuestionsRemaining.size() > 0) {
+            showFragment(questionFragment);
+        }
+
+        if (opponentsAnswersUnguessed.size() == 5) {
+            showFragment(letsGoFragment);
+        } else if (opponentsQuestionsRemaining.size() > 0) {
+            showFragment(sendKickInTheFaceFragment);
+        } else if (opponentsAnswersUnguessed.size() == 0 && myAnswersUnguessed.size() > 0) {
+            showFragment(sendKickInTheFaceFragment);
         } else {
             showFragment(questionFragment);
         }
@@ -159,7 +164,11 @@ public class GameState implements State {
      * User wants to gooooooo.
      */
     public void letsGo() {
-        showFragment(questionFragment);
+        if (GameService.use().opponentsQuestionsRemaining().size() > 0) {
+            showFragment(sendKickInTheFaceFragment);
+        } else {
+            showFragment(questionFragment);
+        }
     }
 
     private void showFragment(final GameStateFragment fragment) {

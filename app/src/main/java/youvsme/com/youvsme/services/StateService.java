@@ -40,7 +40,7 @@ public class StateService {
 
         loadInitialState();
 
-        ApiService.use().get("me/game", null, new RealmObjectResponseHandler<GameModel>() {
+        GameService.use().loadGame(new RealmObjectResponseHandler<GameModel>() {
             @Override
             public void success(GameModel response) {
                 loadInitialState();
@@ -48,7 +48,7 @@ public class StateService {
 
             @Override
             public void failure(int statusCode, String response) {
-                Toast.makeText(activity, "Connection to your opponent was severed due to unknown forces.", Toast.LENGTH_SHORT).show();
+                Toast.makeText(activity, "Connection to your opponent was severed due to unknown forces in your surroundings.", Toast.LENGTH_SHORT).show();
             }
         });
     }

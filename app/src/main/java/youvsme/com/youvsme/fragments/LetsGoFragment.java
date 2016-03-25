@@ -22,7 +22,7 @@ public class LetsGoFragment extends GameStateFragment {
         view.findViewById(R.id.backButton).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                StateService.use().getState().back();
+                StateService.use().getState().backPressed();
             }
         });
 

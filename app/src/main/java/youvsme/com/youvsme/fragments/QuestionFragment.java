@@ -119,12 +119,16 @@ public class QuestionFragment extends GameStateFragment {
             isMyQuestion = false;
             questionNumber = 5 - opponentsAnswersUnguessed.size() + 1;
         } else {
-            return; // idk wth
+            Log.w(Config.LOGGER, "Nothing to do here, skipping.");
+            ((GameState) StateService.use().getState()).next();
+            return;
         }
 
         List<String> choices = JsonService.json(question.getChoices(), new TypeToken<List<String>>() {}.getType());
 
         if (choices.size() < 4) {
+            Log.w(Config.LOGGER, "Got question with less than 4 choices, dying.");
+            ((GameState) StateService.use().getState()).next();
             return;
         }
 
