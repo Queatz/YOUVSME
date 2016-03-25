@@ -122,6 +122,7 @@ public class GameState implements State {
 
         if (myQuestionsRemaining.size() > 0) {
             showFragment(questionFragment);
+            return;
         }
 
         if (opponentsAnswersUnguessed.size() == 5) {
