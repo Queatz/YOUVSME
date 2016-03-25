@@ -119,7 +119,7 @@ public class QuestionFragment extends GameStateFragment {
             return; // idk wth
         }
 
-        List<String> choices = JsonService.json(question.getQuestionOptions(), new TypeToken<List<String>>() {}.getType());
+        List<String> choices = JsonService.json(question.getChoices(), new TypeToken<List<String>>() {}.getType());
 
         if (choices.size() < 4) {
             return;

@@ -5,6 +5,7 @@ import com.loopj.android.http.RequestParams;
 import com.loopj.android.http.ResponseHandlerInterface;
 
 import youvsme.com.youvsme.models.GameModel;
+import youvsme.com.youvsme.util.Config;
 import youvsme.com.youvsme.util.RealmObjectResponseHandler;
 
 /**
@@ -34,10 +35,26 @@ public class ApiService {
     }
 
     public void get(String path, RequestParams params, ResponseHandlerInterface callback) {
+        params = injectToken(params);
         client.get(apiBase + path, params, callback);
     }
 
     public void post(String path, RequestParams params, ResponseHandlerInterface callback) {
+        params = injectToken(params);
         client.post(apiBase + path, params, callback);
+    }
+
+    private RequestParams injectToken(RequestParams params) {
+        if (params == null) {
+            params = new RequestParams();
+        }
+
+        if (params.has(Config.PARAM_TOKEN) || params.has(Config.PARAM_FACEBOOK_TOKEN)) {
+            return params;
+        }
+
+        params.put(Config.PARAM_TOKEN, GameService.use().myUserToken());
+
+        return params;
     }
 }

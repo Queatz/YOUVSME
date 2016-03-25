@@ -33,7 +33,7 @@ public class FriendsAdapter extends RealmBaseAdapter<UserModel> {
         final ImageView pictureView = (ImageView) convertView.findViewById(R.id.picture);
 
         final UserModel friend = getItem(position);
-        final String letter = friend.getFirstName().substring(0, 1).toUpperCase();
+        final String letter = friend.getFirstName() == null ? "" : friend.getFirstName().substring(0, 1).toUpperCase();
 
         if (position == 0 || !letter.equals(getItem(position - 1).getFirstName().substring(0, 1).toUpperCase())) {
             letterView.setVisibility(View.VISIBLE);

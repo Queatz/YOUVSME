@@ -3,6 +3,7 @@ package youvsme.com.youvsme.backend.api;
 import com.restfb.Connection;
 import com.restfb.DefaultFacebookClient;
 import com.restfb.FacebookClient;
+import com.restfb.Parameter;
 import com.restfb.Version;
 import com.restfb.types.User;
 
@@ -36,7 +37,8 @@ public class MeFriendsEndpoint implements Api {
 
         // TODO don't hit facebook again if we refreshed their friends within the minute already
         FacebookClient facebookClient = new DefaultFacebookClient(me.getFacebookToken(), Version.LATEST);
-        Connection<User> facebookFriends = facebookClient.fetchConnection("me/friends", User.class);
+        Connection<User> facebookFriends = facebookClient.fetchConnection("me/friends", User.class,
+                Parameter.with("fields", "id,first_name,last_name,gender,picture.width(512).height(512)"));
 
         List<UserView> friends = new ArrayList<>();
 

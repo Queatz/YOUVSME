@@ -21,18 +21,4 @@ public class BattleSearchService {
 
         return instance;
     }
-
-    public void preload() {
-        ApiService.use().get("opponents", null, new AsyncHttpResponseHandler() {
-            @Override
-            public void onSuccess(int statusCode, Header[] headers, byte[] responseBody) {
-                // Adds all opponents
-            }
-
-            @Override
-            public void onFailure(int statusCode, Header[] headers, byte[] responseBody, Throwable error) {
-                // We didn't find any opponents
-            }
-        });
-    }
 }

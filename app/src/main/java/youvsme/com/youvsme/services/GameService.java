@@ -192,7 +192,7 @@ public class GameService {
     }
 
     public void sendKickInTheFaceReminder(final GameModel game, final Runnable callback) {
-        ApiService.use().get("game/" + game.getId() + "/kick-in-the-face", null, new AsyncHttpResponseHandler() {
+        ApiService.use().post("game/" + game.getId() + "/kick-in-the-face", null, new AsyncHttpResponseHandler() {
             @Override
             public void onSuccess(int statusCode, Header[] headers, byte[] responseBody) {
                 callback.run();
@@ -266,10 +266,7 @@ public class GameService {
             return null;
         }
 
-        RequestParams params = new RequestParams();
-        params.put(Config.PARAM_TOKEN, myToken);
-
-        ApiService.use().get("me/friends", params, new RealmListResponseHandler<UserModel>() {
+        ApiService.use().get("me/friends", null, new RealmListResponseHandler<UserModel>() {
             @Override
             public void success(List<UserModel> user) {
                 Log.w(Config.LOGGER, "found users");
@@ -297,7 +294,7 @@ public class GameService {
         RealmResults<GameModel> games = RealmService.use().get()
                 .where(GameModel.class)
                 .equalTo("user.id", myUserId())
-                .findAllSorted("started", Sort.DESCENDING);
+                .findAllSorted("created", Sort.DESCENDING);
 
         if (games.isEmpty()) {
             return null;

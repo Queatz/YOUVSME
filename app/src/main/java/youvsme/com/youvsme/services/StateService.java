@@ -48,10 +48,8 @@ public class StateService {
             case NO_OPPONENT:
                 state = new SearchForOpponentState();
                 break;
-            case PICKING_ANSWERS:
-            case WAITING_FOR_OPPONENT:
+            case IN_GAME:
             case LAST_GAME_FINISHED:
-            case GUESSING_OPPONENTS_ANSWERS:
                 state = new GameState();
                 break;
         }

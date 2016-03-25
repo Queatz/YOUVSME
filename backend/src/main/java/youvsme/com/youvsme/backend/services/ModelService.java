@@ -11,8 +11,10 @@ import java.util.Date;
 import java.util.Random;
 
 import youvsme.com.youvsme.backend.models.GameModel;
+import youvsme.com.youvsme.backend.models.GameQuestionModel;
 import youvsme.com.youvsme.backend.models.Model;
 import youvsme.com.youvsme.backend.models.QuestionModel;
+import youvsme.com.youvsme.backend.models.UserDeviceModel;
 import youvsme.com.youvsme.backend.models.UserModel;
 
 /**
@@ -25,6 +27,8 @@ public class ModelService {
         ObjectifyService.register(GameModel.class);
         ObjectifyService.register(UserModel.class);
         ObjectifyService.register(QuestionModel.class);
+        ObjectifyService.register(UserDeviceModel.class);
+        ObjectifyService.register(GameQuestionModel.class);
     }
 
     public static <T extends Model> T create(Class<T> type) {

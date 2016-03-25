@@ -54,7 +54,7 @@ public class GameEndpoint implements Api {
                     final String wagerNote = req.getParameter(Config.PARAM_WAGER_NOTE);
                     final String opponentId = req.getParameter(Config.PARAM_OPPONENT);
 
-                    UserModel opponent = ModelService.get(UserModel.class).filter("id", opponentId).first().now();
+                    UserModel opponent = ModelService.get(UserModel.class).id(opponentId).now();
 
                     if (opponent == null) {
                         resp.setStatus(HttpServletResponse.SC_NOT_FOUND);
@@ -75,7 +75,7 @@ public class GameEndpoint implements Api {
                     int totalQuestions = ModelService.get(QuestionModel.class).count();
 
                     // TODO not fail-safe, demands existence of all question IDs 0-count
-                    for (int i = 0; i < 4; i++) {
+                    for (int i = 0; i < 5; i++) {
                         QuestionModel question = ModelService
                                 .get(QuestionModel.class, Integer.toString(new Random().nextInt(totalQuestions)));
 
@@ -98,7 +98,7 @@ public class GameEndpoint implements Api {
 
                 // POST to a game
 
-                if (path.size() > 0) {
+                else if (path.size() > 0) {
                     GameModel game = ModelService.get(GameModel.class)
                             .filter("id", path.get(0))
                             .filter("users", me)

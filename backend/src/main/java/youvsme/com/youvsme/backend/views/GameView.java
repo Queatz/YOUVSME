@@ -1,6 +1,7 @@
 package youvsme.com.youvsme.backend.views;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 import youvsme.com.youvsme.backend.models.GameModel;
@@ -18,6 +19,7 @@ public class GameView {
     public UserView user;
     public UserView opponent;
     public List<QuestionView> questions;
+    public Date created;
 
     public GameView(final UserModel me, final GameModel game) {
         this.id = game.getId();
@@ -25,6 +27,7 @@ public class GameView {
         this.wagerNote = game.getWagerNote();
         this.questions = new ArrayList<>();
         this.user = new UserView(me);
+        this.created = game.created;
 
         final List<UserModel> users = game.getUsers();
 

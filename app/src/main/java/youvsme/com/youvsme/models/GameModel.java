@@ -22,6 +22,7 @@ public class GameModel extends RealmObject {
     private UserModel user;
     private UserModel opponent;
     private RealmList<QuestionModel> questions;
+    private Date created;
 
     public String getId() {
         return id;
@@ -69,5 +70,13 @@ public class GameModel extends RealmObject {
 
     public void setQuestions(RealmList<QuestionModel> questions) {
         this.questions = questions;
+    }
+
+    public Date getCreated() {
+        return created;
+    }
+
+    public void setCreated(Date created) {
+        this.created = created;
     }
 }

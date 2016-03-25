@@ -39,7 +39,7 @@ public class UserService {
             if (user != null) {
                 return user;
             } else {
-                FacebookClient facebookClient = new DefaultFacebookClient(facebookToken, Version.LATEST);
+                FacebookClient facebookClient = new DefaultFacebookClient(facebookToken, Version.VERSION_2_5);
 
                 User facebookUser = facebookClient.fetchObject("me", User.class,
                         Parameter.with("fields", "id,first_name,last_name,gender,picture.width(512).height(512)"));

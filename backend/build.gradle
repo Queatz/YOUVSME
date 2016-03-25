@@ -29,7 +29,7 @@ dependencies {
     compile 'com.googlecode.objectify:objectify:5.1.8'
     compile 'com.google.code.gson:gson:2.4'
     compile 'org.apache.commons:commons-lang3:3.0'
-    compile 'com.restfb:restfb:1.19.0'
+    compile 'com.restfb:restfb:1.20.0'
     compile 'com.ganyo:gcm-server:1.0.2'
 }
 
