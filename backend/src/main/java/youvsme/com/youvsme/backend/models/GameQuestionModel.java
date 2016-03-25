@@ -1,5 +1,6 @@
 package youvsme.com.youvsme.backend.models;
 
+import com.googlecode.objectify.Ref;
 import com.googlecode.objectify.annotation.Entity;
 import com.googlecode.objectify.annotation.Index;
 
@@ -8,33 +9,33 @@ import com.googlecode.objectify.annotation.Index;
  */
 @Entity
 public class GameQuestionModel extends Model {
-    @Index public UserModel user;
-    @Index public GameModel game;
-    public QuestionModel question;
+    @Index public Ref<UserModel> user;
+    @Index public Ref<GameModel> game;
+    public Ref<QuestionModel> question;
     public Integer chosenAnswer;
     public Integer opponentsGuess;
 
-    public UserModel getUser() {
+    public Ref<UserModel> getUser() {
         return user;
     }
 
-    public void setUser(UserModel user) {
+    public void setUser(Ref<UserModel> user) {
         this.user = user;
     }
 
-    public GameModel getGame() {
+    public Ref<GameModel> getGame() {
         return game;
     }
 
-    public void setGame(GameModel game) {
+    public void setGame(Ref<GameModel> game) {
         this.game = game;
     }
 
-    public QuestionModel getQuestion() {
+    public Ref<QuestionModel> getQuestion() {
         return question;
     }
 
-    public void setQuestion(QuestionModel question) {
+    public void setQuestion(Ref<QuestionModel> question) {
         this.question = question;
     }
 

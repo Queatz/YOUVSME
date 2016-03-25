@@ -3,6 +3,7 @@ package youvsme.com.youvsme.backend.api;
 import com.google.api.client.http.HttpMethods;
 import com.google.common.base.Strings;
 import com.google.common.collect.ImmutableList;
+import com.googlecode.objectify.Ref;
 
 import java.io.IOException;
 import java.util.List;
@@ -25,6 +26,7 @@ import youvsme.com.youvsme.backend.services.JsonService;
 import youvsme.com.youvsme.backend.services.ModelService;
 import youvsme.com.youvsme.backend.services.PushService;
 import youvsme.com.youvsme.backend.services.UserService;
+import youvsme.com.youvsme.backend.views.GameView;
 
 /**
  * Created by jacob on 2/25/16.
@@ -64,7 +66,7 @@ public class GameEndpoint implements Api {
                     // TODO check that they are friends?
 
                     final GameModel game = ModelService.create(GameModel.class);
-                    game.setUsers(ImmutableList.of(me, opponent));
+                    game.setUsers(ImmutableList.of(ModelService.ref(me), ModelService.ref(opponent)));
                     game.setActive(true);
                     game.setWager(wager);
                     game.setWagerNote(wagerNote);
@@ -81,9 +83,9 @@ public class GameEndpoint implements Api {
 
                         for (UserModel user : new UserModel[] {me, opponent}) {
                             GameQuestionModel answer = ModelService.create(GameQuestionModel.class);
-                            answer.setUser(user);
-                            answer.setGame(game);
-                            answer.setQuestion(question);
+                            answer.setUser(ModelService.ref(user));
+                            answer.setGame(ModelService.ref(game));
+                            answer.setQuestion(ModelService.ref(question));
                             ModelService.save(answer);
                         }
                     }
@@ -91,7 +93,7 @@ public class GameEndpoint implements Api {
                     Grab.grab(PushService.class).send(opponent,
                             new ChallengePush(me.getFirstName(), !Strings.isNullOrEmpty(wager)));
 
-                    resp.getWriter().write(Grab.grab(JsonService.class).json(game));
+                    resp.getWriter().write(Grab.grab(JsonService.class).json(new GameView(me, game)));
 
                     return;
                 }
@@ -113,12 +115,12 @@ public class GameEndpoint implements Api {
                         if ("kick-in-the-face".equals(path.get(1))) {
                             Push push = new KickInTheFacePush(me.getFirstName());
 
-                            for (UserModel opponent : game.getUsers()) {
-                                if (me.getId().equals(opponent.getId())) {
+                            for (Ref<UserModel> opponent : game.getUsers()) {
+                                if (me.getId().equals(opponent.getKey().getName())) {
                                     continue;
                                 }
 
-                                Grab.grab(PushService.class).send(opponent, push);
+                                Grab.grab(PushService.class).send(opponent.get(), push);
                             }
                         }
 
@@ -173,7 +175,7 @@ public class GameEndpoint implements Api {
         boolean anyGuessed = false;
 
         for (GameQuestionModel q : questions) {
-            if (me.getId().equals(q.getUser().getId())) {
+            if (me.getId().equals(q.getUser().getKey().getName())) {
                 if(q.getChosenAnswer() == null) {
                     // Not done choosing yet
                     return;
@@ -193,12 +195,12 @@ public class GameEndpoint implements Api {
 
         Push push = new FinishedAnsweringPush(me.getFirstName(), isComplete);
 
-        for (UserModel opponent : game.getUsers()) {
-            if (me.getId().equals(opponent.getId())) {
+        for (Ref<UserModel> opponent : game.getUsers()) {
+            if (me.getId().equals(opponent.getKey().getName())) {
                 continue;
             }
 
-            Grab.grab(PushService.class).send(opponent, push);
+            Grab.grab(PushService.class).send(opponent.get(), push);
         }
     }
 }

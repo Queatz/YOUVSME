@@ -1,5 +1,6 @@
 package youvsme.com.youvsme.backend.models;
 
+import com.googlecode.objectify.Ref;
 import com.googlecode.objectify.annotation.Entity;
 import com.googlecode.objectify.annotation.Index;
 
@@ -8,14 +9,14 @@ import com.googlecode.objectify.annotation.Index;
  */
 @Entity
 public class UserDeviceModel extends Model {
-    @Index public UserModel user;
+    @Index public Ref<UserModel> user;
     @Index public String deviceToken;
 
-    public UserModel getUser() {
+    public Ref<UserModel> getUser() {
         return user;
     }
 
-    public void setUser(UserModel user) {
+    public void setUser(Ref<UserModel> user) {
         this.user = user;
     }
 

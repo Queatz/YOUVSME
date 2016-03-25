@@ -2,6 +2,8 @@ package youvsme.com.youvsme.fragments;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.v4.app.ActivityCompat;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -9,21 +11,28 @@ import android.widget.TextView;
 
 import com.google.gson.reflect.TypeToken;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import youvsme.com.youvsme.R;
+import youvsme.com.youvsme.activities.Entrance;
 import youvsme.com.youvsme.models.GameModel;
 import youvsme.com.youvsme.models.QuestionModel;
 import youvsme.com.youvsme.services.GameService;
 import youvsme.com.youvsme.services.JsonService;
 import youvsme.com.youvsme.services.RealmService;
 import youvsme.com.youvsme.services.StateService;
+import youvsme.com.youvsme.states.GameState;
 import youvsme.com.youvsme.states.SearchForOpponentState;
+import youvsme.com.youvsme.util.Config;
 
 /**
  * Created by jacob on 3/5/16.
  */
 public class QuestionFragment extends GameStateFragment {
+
+    private QuestionModel question;
+
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -32,7 +41,7 @@ public class QuestionFragment extends GameStateFragment {
         view.findViewById(R.id.backButton).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                ((SearchForOpponentState) StateService.use().getState()).backButton();
+                ((GameState) StateService.use().getState()).backPressed();
             }
         });
 
@@ -69,6 +78,13 @@ public class QuestionFragment extends GameStateFragment {
             }
         });
 
+        view.post(new Runnable() {
+            @Override
+            public void run() {
+                update();
+            }
+        });
+
         return view;
     }
 
@@ -88,21 +104,8 @@ public class QuestionFragment extends GameStateFragment {
         final TextView choiceCText = (TextView) view.findViewById(R.id.choiceCText);
         final TextView choiceDText = (TextView) view.findViewById(R.id.choiceDText);
 
-        QuestionModel question;
-
-        // How many out of the 5 questions I need to pick answers for I have left
-        List<QuestionModel> myQuestionsRemaining = RealmService.use().get().where(QuestionModel.class)
-                .equalTo("game.id", game.getId())
-                .equalTo("user.id", GameService.use().myUserId())
-                .isNull("chosenAnswer")
-                .findAll();
-
-        // How many questions out of their 5 questions I haven't guessed yet
-        List<QuestionModel> opponentsAnswersUnguessed = RealmService.use().get().where(QuestionModel.class)
-                .equalTo("game.id", game.getId())
-                .equalTo("user.id", game.getOpponent().getId())
-                .isNull("opponentsGuess")
-                .findAll();
+        List<QuestionModel> myQuestionsRemaining = GameService.use().myQuestionsRemaining();
+        List<QuestionModel> opponentsAnswersUnguessed = GameService.use().opponentsAnswersUnguessed();
 
         boolean isMyQuestion;
         int questionNumber;
@@ -140,7 +143,13 @@ public class QuestionFragment extends GameStateFragment {
     }
 
     private void choose(int choice) {
+        if (question == null) {
+            Log.w(Config.LOGGER, "Tried to answer without a question, skipping.");
+            ((GameState) StateService.use().getState()).next();
+            return;
+        }
 
+        ((GameState) StateService.use().getState()).answerQuestion(question, choice);
     }
 
     private String nameInject(String text, String name) {

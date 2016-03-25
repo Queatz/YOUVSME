@@ -33,6 +33,13 @@ public class LetsGoFragment extends GameStateFragment {
             }
         });
 
+        view.post(new Runnable() {
+            @Override
+            public void run() {
+                update();
+            }
+        });
+
         return view;
     }
 

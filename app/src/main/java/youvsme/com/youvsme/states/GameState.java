@@ -81,7 +81,7 @@ public class GameState implements State {
     /**
      * User is ready for the next question.
      */
-    public void answerQustion(QuestionModel question, int answer) {
+    public void answerQuestion(QuestionModel question, int answer) {
         next();
     }
 
@@ -89,34 +89,10 @@ public class GameState implements State {
      * User wants to move forward.
      */
     public void next() {
-
-        // How many out of the 5 questions I need to pick answers for I have left
-        List<QuestionModel> myQuestionsRemaining = RealmService.use().get().where(QuestionModel.class)
-                .equalTo("game.id", game.getId())
-                .equalTo("user.id", GameService.use().myUserId())
-                .isNull("chosenAnswer")
-                .findAll();
-
-        // How many out of the 5 questions my opponent needs to pick answers for they have left
-        List<QuestionModel> opponentsQuestionsRemaining = RealmService.use().get().where(QuestionModel.class)
-                .equalTo("game.id", game.getId())
-                .equalTo("user.id", game.getOpponent().getId())
-                .isNull("chosenAnswer")
-                .findAll();
-
-        // How many questions out of my 5 questions the opponent hasn't guessed yet
-        List<QuestionModel> myAnswersUnguessed = RealmService.use().get().where(QuestionModel.class)
-                .equalTo("game.id", game.getId())
-                .equalTo("user.id", GameService.use().myUserId())
-                .isNull("opponentsGuess")
-                .findAll();
-
-        // How many questions out of their 5 questions I haven't guessed yet
-        List<QuestionModel> opponentsAnswersUnguessed = RealmService.use().get().where(QuestionModel.class)
-                .equalTo("game.id", game.getId())
-                .equalTo("user.id", game.getOpponent().getId())
-                .isNull("opponentsGuess")
-                .findAll();
+        List<QuestionModel> myQuestionsRemaining = GameService.use().myQuestionsRemaining();
+        List<QuestionModel> opponentsQuestionsRemaining = GameService.use().opponentsQuestionsRemaining();
+        List<QuestionModel> myAnswersUnguessed = GameService.use().myAnswersUnguessed();
+        List<QuestionModel> opponentsAnswersUnguessed = GameService.use().opponentsAnswersUnguessed();
 
         // TODO don't show my opponent's answers at all until they have finished all of them
         // TODO could be done on the server
@@ -196,5 +172,9 @@ public class GameState implements State {
     public void playAgain() {
         GameService.use().setUserHasClickedPlayAgain(true);
         StateService.use().go(new SearchForOpponentState());
+    }
+
+    public void backPressed() {
+        activity.onBackPressed();
     }
 }

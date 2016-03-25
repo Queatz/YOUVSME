@@ -41,6 +41,13 @@ public class FinalResultsFragment extends GameStateFragment {
             }
         });
 
+        view.post(new Runnable() {
+            @Override
+            public void run() {
+                update();
+            }
+        });
+
         return view;
     }
 
@@ -77,11 +84,9 @@ public class FinalResultsFragment extends GameStateFragment {
         int usersCorrect = 0;
         int opponentsCorrect = 0;
 
-        List<QuestionModel> myQuestions = RealmService.use().get().where(QuestionModel.class)
-                .equalTo("game.id", game.getId()).equalTo("user.id", me.getId()).findAll();
+        List<QuestionModel> myQuestions = GameService.use().myQuestions();
 
-        List<QuestionModel> opponentsQuestions = RealmService.use().get().where(QuestionModel.class)
-                .equalTo("game.id", game.getId()).equalTo("user.id", opponent.getId()).findAll();
+        List<QuestionModel> opponentsQuestions = GameService.use().opponentsQuestions();
 
         // Aggregate user's correct guesses
         for (QuestionModel question : opponentsQuestions) {

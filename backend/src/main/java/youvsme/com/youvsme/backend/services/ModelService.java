@@ -4,6 +4,7 @@ import com.googlecode.objectify.Key;
 import com.googlecode.objectify.Objectify;
 import com.googlecode.objectify.ObjectifyFactory;
 import com.googlecode.objectify.ObjectifyService;
+import com.googlecode.objectify.Ref;
 import com.googlecode.objectify.cmd.LoadType;
 import com.googlecode.objectify.cmd.Query;
 
@@ -104,5 +105,9 @@ public class ModelService {
 
     public static <T> Key<T> key(Class<T> type, String id) {
         return Key.create(type, id);
+    }
+
+    public static <T> Ref<T> ref(T object) {
+        return Ref.create(object);
     }
 }

@@ -1,5 +1,7 @@
 package youvsme.com.youvsme.backend.models;
 
+import com.googlecode.objectify.Key;
+import com.googlecode.objectify.Ref;
 import com.googlecode.objectify.annotation.Entity;
 import com.googlecode.objectify.annotation.Index;
 
@@ -12,7 +14,7 @@ import java.util.List;
 @Entity
 public class GameModel extends Model {
     @Index public boolean active;
-    @Index public List<UserModel> users;
+    @Index public List<Ref<UserModel>> users;
     public String wager;
     public String wagerNote;
 
@@ -24,11 +26,11 @@ public class GameModel extends Model {
         this.active = active;
     }
 
-    public List<UserModel> getUsers() {
+    public List<Ref<UserModel>> getUsers() {
         return users;
     }
 
-    public void setUsers(List<UserModel> users) {
+    public void setUsers(List<Ref<UserModel>> users) {
         this.users = users;
     }
 

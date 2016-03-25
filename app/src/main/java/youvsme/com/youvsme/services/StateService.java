@@ -3,12 +3,15 @@ package youvsme.com.youvsme.services;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
+import android.widget.Toast;
 
+import youvsme.com.youvsme.models.GameModel;
 import youvsme.com.youvsme.states.GameState;
 import youvsme.com.youvsme.states.NoUserState;
 import youvsme.com.youvsme.states.SearchForOpponentState;
 import youvsme.com.youvsme.states.State;
 import youvsme.com.youvsme.util.Config;
+import youvsme.com.youvsme.util.RealmObjectResponseHandler;
 
 /**
  * Created by jacob on 2/28/16.
@@ -36,6 +39,18 @@ public class StateService {
         this.activity = activity;
 
         loadInitialState();
+
+        ApiService.use().get("me/game", null, new RealmObjectResponseHandler<GameModel>() {
+            @Override
+            public void success(GameModel response) {
+                loadInitialState();
+            }
+
+            @Override
+            public void failure(int statusCode, String response) {
+                Toast.makeText(activity, "Connection to your opponent was severed due to unknown forces.", Toast.LENGTH_SHORT).show();
+            }
+        });
     }
 
     public void loadInitialState() {

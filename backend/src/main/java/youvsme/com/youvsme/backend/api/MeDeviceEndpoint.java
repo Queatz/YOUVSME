@@ -53,7 +53,7 @@ public class MeDeviceEndpoint implements Api {
         // Register as new device if not already
         if (deviceModel != null) {
             deviceModel = ModelService.create(UserDeviceModel.class);
-            deviceModel.setUser(me);
+            deviceModel.setUser(ModelService.ref(me));
             deviceModel.setDeviceToken(deviceToken);
             ModelService.save(deviceModel);
         }

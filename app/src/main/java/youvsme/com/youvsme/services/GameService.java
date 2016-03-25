@@ -3,13 +3,16 @@ package youvsme.com.youvsme.services;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.preference.PreferenceManager;
+import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.util.Log;
 import android.widget.Toast;
 
+import com.google.common.collect.ImmutableList;
 import com.loopj.android.http.AsyncHttpResponseHandler;
 import com.loopj.android.http.RequestParams;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import cz.msebera.android.httpclient.Header;
@@ -172,6 +175,98 @@ public class GameService {
 
         // Both of us are completely done.
         return GAME_STATE_FINISHED;
+
+    }
+
+    // How many out of the 5 questions I need to pick answers for I have left
+    @NonNull
+    public List<QuestionModel> myQuestionsRemaining() {
+        return filterQuestions(new QuestionFilter() {
+            @Override
+            public boolean pass(GameModel game, QuestionModel question) {
+                return question.getUser().getId().equals(game.getUser().getId())
+                        && question.getChosenAnswer() == null;
+            }
+        });
+    }
+
+    // How many out of the 5 questions my opponent needs to pick answers for they have left
+    @NonNull
+    public List<QuestionModel> opponentsQuestionsRemaining() {
+        return filterQuestions(new QuestionFilter() {
+            @Override
+            public boolean pass(GameModel game, QuestionModel question) {
+                return !question.getUser().getId().equals(game.getUser().getId())
+                        && question.getChosenAnswer() == null;
+            }
+        });
+    }
+
+    // How many questions out of my 5 questions the opponent hasn't guessed yet
+    @NonNull
+    public List<QuestionModel> myAnswersUnguessed() {
+        return filterQuestions(new QuestionFilter() {
+            @Override
+            public boolean pass(GameModel game, QuestionModel question) {
+                return !question.getUser().getId().equals(game.getUser().getId())
+                        && question.getOpponentsGuess() == null;
+            }
+        });
+    }
+
+    // How many questions out of their 5 questions I haven't guessed yet
+    @NonNull
+    public List<QuestionModel> opponentsAnswersUnguessed() {
+        return filterQuestions(new QuestionFilter() {
+            @Override
+            public boolean pass(GameModel game, QuestionModel question) {
+                return question.getUser().getId().equals(game.getUser().getId())
+                        && question.getOpponentsGuess() == null;
+            }
+        });
+    }
+
+    @NonNull
+    public List<QuestionModel> myQuestions() {
+        return filterQuestions(new QuestionFilter() {
+            @Override
+            public boolean pass(GameModel game, QuestionModel question) {
+                return question.getUser().getId().equals(game.getUser().getId());
+            }
+        });
+    }
+
+    @NonNull
+    public List<QuestionModel> opponentsQuestions() {
+        return filterQuestions(new QuestionFilter() {
+            @Override
+            public boolean pass(GameModel game, QuestionModel question) {
+                return !question.getUser().getId().equals(game.getUser().getId());
+            }
+        });
+    }
+
+    private interface QuestionFilter {
+        boolean pass(GameModel game, QuestionModel question);
+    }
+
+    @NonNull
+    private List<QuestionModel> filterQuestions(QuestionFilter filter) {
+        final GameModel game = latestGame();
+
+        if (game == null) {
+            return ImmutableList.of();
+        }
+
+        final List<QuestionModel> questions = new ArrayList<>();
+
+        for (QuestionModel question : game.getQuestions()) {
+            if (filter.pass(game, question)) {
+                questions.add(question);
+            }
+        }
+
+        return questions;
 
     }
 

@@ -1,5 +1,8 @@
 package youvsme.com.youvsme.backend.views;
 
+import com.google.appengine.repackaged.com.google.common.collect.ImmutableList;
+import com.googlecode.objectify.Ref;
+
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -29,7 +32,11 @@ public class GameView {
         this.user = new UserView(me);
         this.created = game.created;
 
-        final List<UserModel> users = game.getUsers();
+        final List<UserModel> users = new ArrayList<>();
+
+        for (Ref<UserModel> ref : game.getUsers()) {
+            users.add(ref.get());
+        }
 
         for (UserModel u : users) {
             if (me.getId().equals(u.getId())) {

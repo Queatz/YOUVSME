@@ -20,9 +20,9 @@ public class QuestionView {
 
     public QuestionView(GameQuestionModel question) {
         this.id = question.getId();
-        this.text = question.getQuestion().getText();
-        this.user = new UserView(question.getUser());
-        this.choices = Grab.grab(JsonService.class).json(question.getQuestion().getChoices());
+        this.text = question.getQuestion().get().getText();
+        this.user = new UserView(question.getUser().get());
+        this.choices = Grab.grab(JsonService.class).json(question.getQuestion().get().getChoices());
         this.chosenAnswer = question.getChosenAnswer();
         this.opponentsGuess = question.getOpponentsGuess();
     }
