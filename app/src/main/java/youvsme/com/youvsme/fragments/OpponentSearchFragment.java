@@ -45,7 +45,7 @@ public class OpponentSearchFragment extends Fragment {
         view.findViewById(R.id.backButton).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                ((SearchForOpponentState) StateService.use().getState()).backButton();
+                ((SearchForOpponentState) StateService.use().getState()).backPressed();
             }
         });
 

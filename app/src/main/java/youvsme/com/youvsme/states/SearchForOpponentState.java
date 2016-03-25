@@ -111,7 +111,8 @@ public class SearchForOpponentState implements State {
         StateService.use().go(gameState);
     }
 
-    public void backButton() {
+    @Override
+    public void backPressed() {
         if(!back()) {
             activity.onBackPressed();
         }

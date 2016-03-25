@@ -113,11 +113,11 @@ public class QuestionFragment extends GameStateFragment {
         if (myQuestionsRemaining.size() != 0) {
             question = myQuestionsRemaining.get(0);
             isMyQuestion = true;
-            questionNumber = 5 - myQuestionsRemaining.size();
+            questionNumber = 5 - myQuestionsRemaining.size() + 1;
         } else if (opponentsAnswersUnguessed.size() != 0) {
             question = opponentsAnswersUnguessed.get(0);
             isMyQuestion = false;
-            questionNumber = 5 - opponentsAnswersUnguessed.size();
+            questionNumber = 5 - opponentsAnswersUnguessed.size() + 1;
         } else {
             return; // idk wth
         }

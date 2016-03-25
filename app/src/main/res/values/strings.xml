@@ -30,7 +30,7 @@
     <string name="play_again">Play Again</string>
     <string name="final_results">Final Results</string>
     <string name="no_wager">Set a wager, or skip it.</string>
-    <string name="question_x">Questions %1$d</string>
+    <string name="question_x">Question %1$d</string>
     <string name="answer_x">Answer %1$d</string>
     <string name="you_defeated_them">You defeated %1$s!</string>
     <string name="no_match">%1$s was no match for your power.</string>

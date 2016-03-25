@@ -101,12 +101,9 @@ public class GameEndpoint implements Api {
                 // POST to a game
 
                 else if (path.size() > 0) {
-                    GameModel game = ModelService.get(GameModel.class)
-                            .filter("id", path.get(0))
-                            .filter("users", me)
-                            .first().now();
+                    GameModel game = ModelService.get(GameModel.class).id(path.get(0)).now();
 
-                    if (game == null) {
+                    if (game == null || !game.getUsers().contains(ModelService.ref(me))) {
                         resp.setStatus(HttpServletResponse.SC_NOT_FOUND);
                         return;
                     }

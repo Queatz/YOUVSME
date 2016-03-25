@@ -19,12 +19,15 @@ public class SendKickInTheFaceFragment extends GameStateFragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         final View view = inflater.inflate(R.layout.fragment_send_kick_in_the_face, null);
 
-        view.findViewById(R.id.backButton).setOnClickListener(new View.OnClickListener() {
+        View.OnClickListener back = new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                StateService.use().getState().back();
+                StateService.use().getState().backPressed();
             }
-        });
+        };
+
+        view.findViewById(R.id.backButton).setOnClickListener(back);
+        view.findViewById(R.id.waitPatientlyButton).setOnClickListener(back);
 
         view.findViewById(R.id.sendKickInTheFaceButton).setOnClickListener(new View.OnClickListener() {
             @Override

@@ -314,7 +314,7 @@ public class GameService {
         });
     }
 
-    public void answerQuestion(QuestionModel question, int answer, final Runnable callback) {
+    public void answerQuestion(QuestionModel question, int answer) {
         Realm realm = RealmService.use().get();
 
         realm.beginTransaction();
@@ -324,7 +324,6 @@ public class GameService {
         ApiService.use().post("game/" + latestGame().getId() + "/answer/" + question.getId() + "/" + answer, null, new AsyncHttpResponseHandler() {
             @Override
             public void onSuccess(int statusCode, Header[] headers, byte[] responseBody) {
-                callback.run();
             }
 
             @Override
@@ -333,7 +332,7 @@ public class GameService {
         });
     }
 
-    public void guessAnswer(QuestionModel question, int guess, final Runnable callback) {
+    public void guessAnswer(QuestionModel question, int guess) {
         Realm realm = RealmService.use().get();
 
         realm.beginTransaction();
@@ -343,7 +342,6 @@ public class GameService {
         ApiService.use().post("game/" + latestGame().getId() + "/guess/" + question.getId() + "/" + guess, null, new AsyncHttpResponseHandler() {
             @Override
             public void onSuccess(int statusCode, Header[] headers, byte[] responseBody) {
-                callback.run();
             }
 
             @Override

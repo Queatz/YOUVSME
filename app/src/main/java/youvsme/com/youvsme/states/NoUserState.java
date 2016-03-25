@@ -71,7 +71,10 @@ public class NoUserState implements State {
         transaction.commit();
     }
 
-    public void backButton() {
-        back();
+    @Override
+    public void backPressed() {
+        if(!back()) {
+            activity.onBackPressed();
+        }
     }
 }

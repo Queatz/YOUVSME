@@ -51,7 +51,12 @@ public class GameState implements State {
 
         switch (GameService.use().inferGameState()) {
             case GameService.GAME_STATE_STARTED:
-                showFragment(questionFragment);
+                if (GameService.use().myQuestionsRemaining().size() == 0
+                        && GameService.use().opponentsQuestionsRemaining().size() != 0) {
+                    //showFragment(theWagerIsSet);
+                } else {
+                    showFragment(questionFragment);
+                }
                 break;
             case GameService.GAME_STATE_WAITING_FOR_OPPONENT:
                 showFragment(sendKickInTheFaceFragment);
@@ -82,6 +87,14 @@ public class GameState implements State {
      * User is ready for the next question.
      */
     public void answerQuestion(QuestionModel question, int answer) {
+        boolean isMine = question.getUser().getId().equals(game.getUser().getId());
+
+        if (isMine) {
+            GameService.use().answerQuestion(question, answer);
+        } else {
+            GameService.use().guessAnswer(question, answer);
+        }
+
         next();
     }
 
@@ -112,10 +125,8 @@ public class GameState implements State {
             } else {
                 showFragment(letsGoFragment);
             }
-        } else if (myQuestionsRemaining.size() != 0) { // Still need to pick my answers
-            showFragment(null /* The wager is set: {{wager}} First, answer 5 questions. */);
-        } else if (opponentsAnswersUnguessed.size() != 0) {
-            showFragment(questionFragment); // Still need to answer theirs
+        } else {
+            showFragment(questionFragment);
         }
     }
 
@@ -162,10 +173,6 @@ public class GameState implements State {
 
     @Override
     public boolean back() {
-        if (currentFragment == null) {
-            return true; // TODO some go back?
-        }
-
         return false;
     }
 
@@ -174,7 +181,10 @@ public class GameState implements State {
         StateService.use().go(new SearchForOpponentState());
     }
 
+    @Override
     public void backPressed() {
-        activity.onBackPressed();
+        if(!back()) {
+            activity.onBackPressed();
+        }
     }
 }
