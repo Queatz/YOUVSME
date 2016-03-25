@@ -115,7 +115,7 @@ public class GameService {
             return GameState.IN_GAME;
         }
 
-        if (userHasSeenFinalResults()) {
+        if (userHasClickedPlayAgain()) {
             return GameState.NO_OPPONENT;
         } else {
             return GameState.LAST_GAME_FINISHED;
