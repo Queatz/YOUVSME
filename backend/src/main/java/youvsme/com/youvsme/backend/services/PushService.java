@@ -18,10 +18,10 @@ import youvsme.com.youvsme.backend.models.UserModel;
  */
 public class PushService {
 
-    public void send(UserModel toUser, Object message) {
+    public void send(UserModel toUser, Object data) {
 
         Sender sender = new Sender(Config.GCM_API_KEY);
-        Message msg = new Message.Builder().addData("data", Grab.grab(JsonService.class).json(message)).build();
+        Message msg = new Message.Builder().addData("data", Grab.grab(JsonService.class).json(data)).build();
 
         List<UserDeviceModel> userDevices = ModelService.get(UserDeviceModel.class).filter("user", toUser).list();
         for (UserDeviceModel device : userDevices) {

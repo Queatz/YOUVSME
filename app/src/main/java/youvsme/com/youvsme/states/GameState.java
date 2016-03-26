@@ -7,6 +7,7 @@ import android.support.v7.app.AppCompatActivity;
 
 import java.util.List;
 
+import io.realm.Realm;
 import youvsme.com.youvsme.R;
 import youvsme.com.youvsme.fragments.FinalResultsFragment;
 import youvsme.com.youvsme.fragments.GameStateFragment;
@@ -49,6 +50,8 @@ public class GameState implements State {
             return;
         }
 
+        GameService.use().setUserHasClickedPlayAgain(false);
+
         switch (GameService.use().inferGameState()) {
             case GameService.GAME_STATE_STARTED:
                 if (GameService.use().myQuestionsRemaining().size() == 0
@@ -81,6 +84,7 @@ public class GameState implements State {
      */
     public void itBegins() {
         GameService.use().setUserHasSeenFinalResults(false);
+        GameService.use().setUserHasClickedPlayAgain(false);
     }
 
     /**

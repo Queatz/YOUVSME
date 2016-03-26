@@ -39,7 +39,7 @@ public class MeDeviceEndpoint implements Api {
             return;
         }
 
-        final String deviceToken = req.getParameter(Config.PARAM_TOKEN);
+        final String deviceToken = req.getParameter(Config.PARAM_DEVICE_TOKEN);
 
         // No device token supplied
         if (Strings.isNullOrEmpty(deviceToken)) {
@@ -51,7 +51,7 @@ public class MeDeviceEndpoint implements Api {
                 .filter("user", me).filter("deviceToken", deviceToken).first().now();
 
         // Register as new device if not already
-        if (deviceModel != null) {
+        if (deviceModel == null) {
             deviceModel = ModelService.create(UserDeviceModel.class);
             deviceModel.setUser(ModelService.ref(me));
             deviceModel.setDeviceToken(deviceToken);

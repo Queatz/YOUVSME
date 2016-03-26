@@ -1,10 +1,12 @@
 package youvsme.com.youvsme.services;
 
+import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.widget.Toast;
 
+import youvsme.com.youvsme.RegistrationIntentService;
 import youvsme.com.youvsme.models.GameModel;
 import youvsme.com.youvsme.states.GameState;
 import youvsme.com.youvsme.states.NoUserState;
@@ -40,6 +42,9 @@ public class StateService {
 
         loadInitialState();
 
+        Intent intent = new Intent(activity, RegistrationIntentService.class);
+        activity.startService(intent);
+
         if (GameService.use().currentUser() != null) {
             GameService.use().loadGame(new RealmObjectResponseHandler<GameModel>() {
                 @Override
@@ -70,6 +75,10 @@ public class StateService {
                 state = new GameState();
                 break;
         }
+
+//        if (StateService.use().getState() != null && state.getClass().equals(StateService.use().getState().getClass())) {
+//            return;
+//        }
 
         go(state);
     }

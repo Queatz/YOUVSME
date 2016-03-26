@@ -90,9 +90,6 @@ public class GameEndpoint implements Api {
                         }
                     }
 
-                    Grab.grab(PushService.class).send(opponent,
-                            new ChallengePush(me.getFirstName(), !Strings.isNullOrEmpty(wager)));
-
                     resp.getWriter().write(Grab.grab(JsonService.class).json(new GameView(me, game)));
 
                     return;
@@ -167,6 +164,7 @@ public class GameEndpoint implements Api {
 
         boolean isComplete = true;
         boolean anyGuessed = false;
+        boolean opponentStarted = false;
 
         for (GameQuestionModel q : questions) {
             if (me.getId().equals(q.getUser().getKey().getName())) {
@@ -174,11 +172,19 @@ public class GameEndpoint implements Api {
                     // Not done choosing yet
                     return;
                 }
+
+                if (q.getOpponentsGuess() != null) {
+                    opponentStarted = true;
+                }
             } else {
                 if (q.getOpponentsGuess() == null) {
                     isComplete = false;
                 } else {
                     anyGuessed = true;
+                }
+
+                if (q.getChosenAnswer() != null) {
+                    opponentStarted = true;
                 }
             }
         }
@@ -187,7 +193,13 @@ public class GameEndpoint implements Api {
             return;
         }
 
-        Push push = new FinishedAnsweringPush(me.getFirstName(), isComplete);
+        Push push;
+
+        if (!opponentStarted) {
+            push = new ChallengePush(me.getFirstName(), !Strings.isNullOrEmpty(game.getWager()));
+        } else {
+            push = new FinishedAnsweringPush(me.getFirstName(), isComplete);
+        }
 
         for (Ref<UserModel> opponent : game.getUsers()) {
             if (me.getId().equals(opponent.getKey().getName())) {

@@ -2,12 +2,15 @@ package youvsme.com.youvsme.services;
 
 import android.app.Notification;
 import android.app.NotificationManager;
+import android.app.PendingIntent;
 import android.content.Context;
+import android.content.Intent;
 import android.support.v4.app.NotificationCompat;
 
 import com.google.gson.JsonObject;
 
 import youvsme.com.youvsme.R;
+import youvsme.com.youvsme.activities.Entrance;
 import youvsme.com.youvsme.util.Config;
 
 /**
@@ -47,26 +50,26 @@ public class PushService {
             case Config.PUSH_NEW_CHALLENGE:
                 notification = nn().setContentTitle(context.getString(
                         push.get("isWager").getAsBoolean()
-                                ? R.string.they_challenged_you
-                                : R.string.they_challenged_you_to_a_wager, opponentName)).build();
+                                ? R.string.they_challenged_you_to_a_wager
+                                : R.string.they_challenged_you, opponentName)).build();
                 break;
             case Config.PUSH_FINISHED_ANSWERING:
                 int resource;
 
                 if (push.has("isComplete") && push.get("isComplete").getAsBoolean()) {
-                    resource = R.string.they_finished_see_who_won;
+                    resource = R.string.see_who_won_subtext;
                 } else {
-                    resource = R.string.they_finished_now_answer_theirs;
+                    resource = R.string.now_answer_theirs_subtext;
                 }
 
                 notification = nn()
-                        .setContentTitle(context.getString(resource, opponentName))
+                        .setContentTitle(context.getString(R.string.they_finished, opponentName))
+                        .setContentText(context.getString(resource))
                         .build();
                 break;
             case Config.PUSH_KICK_IN_THE_FACE:
                 notification = nn()
-                        .setContentTitle(context.getString(R.string.kicked_you, opponentName))
-                        .setContentText(context.getString(R.string.this_we_know))
+                        .setContentTitle(context.getString(R.string.they_have_thrown_the_gauntlet_down, opponentName))
                         .build();
                 break;
             default:
@@ -82,10 +85,17 @@ public class PushService {
     }
 
     private NotificationCompat.Builder nn() {
+        Intent intent = new Intent(GameService.use().context(), Entrance.class);
+        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        PendingIntent pendingIntent = PendingIntent.getActivity(GameService.use().context(), 0, intent,
+                PendingIntent.FLAG_ONE_SHOT);
+
+
         return new NotificationCompat.Builder(GameService.use().context())
                 .setDefaults(Notification.DEFAULT_ALL)
                 .setAutoCancel(true)
                 .setSmallIcon(R.mipmap.ic_launcher)
-                .setPriority(Notification.PRIORITY_DEFAULT);
+                .setPriority(Notification.PRIORITY_DEFAULT)
+                .setContentIntent(pendingIntent);
     }
 }

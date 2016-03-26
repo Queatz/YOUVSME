@@ -21,4 +21,3 @@ public class MyInstanceIDListenerService extends InstanceIDListenerService {
         startService(intent);
     }
 }
-

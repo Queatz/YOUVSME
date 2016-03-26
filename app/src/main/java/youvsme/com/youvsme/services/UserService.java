@@ -14,7 +14,9 @@ import com.facebook.login.LoginResult;
 import com.google.common.collect.ImmutableSet;
 import com.loopj.android.http.RequestParams;
 
+import youvsme.com.youvsme.models.GameModel;
 import youvsme.com.youvsme.models.UserModel;
+import youvsme.com.youvsme.states.GameState;
 import youvsme.com.youvsme.states.SearchForOpponentState;
 import youvsme.com.youvsme.util.Config;
 import youvsme.com.youvsme.util.RealmObjectResponseHandler;
@@ -65,7 +67,7 @@ public class UserService {
                                             .setMyUserId(user.getId())
                                             .setMyUserToken(user.getToken());
 
-                                    StateService.use().go(new SearchForOpponentState());
+                                    playGames();
                                 }
                             }
 
@@ -88,6 +90,24 @@ public class UserService {
                         // App code
                     }
                 });
+    }
+
+    private void playGames() {
+        GameService.use().loadGame(new RealmObjectResponseHandler<GameModel>() {
+            @Override
+            public void success(GameModel response) {
+                if (response == null || response.getId() == null) {
+                    StateService.use().go(new SearchForOpponentState());
+                } else {
+                    StateService.use().go(new GameState());
+                }
+            }
+
+            @Override
+            public void failure(int statusCode, String response) {
+                StateService.use().go(new SearchForOpponentState());
+            }
+        });
     }
 
     public void facebookLogin(Activity activity) {

@@ -97,7 +97,7 @@
                 android:layout_height="wrap_content"
                 android:paddingTop="24dp"
                 android:paddingBottom="18dp"
-                android:inputType="textCapSentences"
+                android:inputType="textCapSentences|textMultiLine"
                 android:textColorHint="@color/lightGrayText"
                 android:textColor="@color/almostBlack"
                 android:textAlignment="gravity"

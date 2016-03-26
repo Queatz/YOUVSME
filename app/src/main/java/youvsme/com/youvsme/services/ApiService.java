@@ -1,9 +1,11 @@
 package youvsme.com.youvsme.services;
 
 import com.loopj.android.http.AsyncHttpClient;
+import com.loopj.android.http.AsyncHttpResponseHandler;
 import com.loopj.android.http.RequestParams;
 import com.loopj.android.http.ResponseHandlerInterface;
 
+import cz.msebera.android.httpclient.Header;
 import youvsme.com.youvsme.models.GameModel;
 import youvsme.com.youvsme.util.Config;
 import youvsme.com.youvsme.util.RealmObjectResponseHandler;
@@ -30,16 +32,36 @@ public class ApiService {
 
     AsyncHttpClient client;
 
+    private static ResponseHandlerInterface doNothingHandler = new AsyncHttpResponseHandler() {
+        @Override
+        public void onSuccess(int statusCode, Header[] headers, byte[] responseBody) {
+
+        }
+
+        @Override
+        public void onFailure(int statusCode, Header[] headers, byte[] responseBody, Throwable error) {
+
+        }
+    };
+
     public ApiService() {
         client = new AsyncHttpClient();
     }
 
     public void get(String path, RequestParams params, ResponseHandlerInterface callback) {
+        if (callback == null) {
+            callback = doNothingHandler;
+        }
+
         params = injectToken(params);
         client.get(apiBase + path, params, callback);
     }
 
     public void post(String path, RequestParams params, ResponseHandlerInterface callback) {
+        if (callback == null) {
+            callback = doNothingHandler;
+        }
+
         params = injectToken(params);
         client.post(apiBase + path, params, callback);
     }

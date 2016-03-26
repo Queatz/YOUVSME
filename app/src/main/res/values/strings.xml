@@ -35,12 +35,12 @@
     <string name="you_defeated_them">You defeated %1$s!</string>
     <string name="no_match">%1$s was no match for your power.</string>
     <string name="they_smoked_you">%1$s smoked you.</string>
-    <string name="equilibrium">The equilibrium will not last very long.</string>
+    <string name="equilibrium">The equilibrium will not last.</string>
     <string name="youve_tied">You\'ve tied.</string>
-    <string name="they_challenged_you">%1$s challenged you.</string>
-    <string name="they_challenged_you_to_a_wager">%1$s challenged you to a wager!</string>
-    <string name="they_finished_now_answer_theirs">%1$s finished answering yours. Now answer theirs.</string>
-    <string name="they_finished_see_who_won">%1$s finished answering yours. See who won.</string>
-    <string name="kicked_you">%1$s has thrown the gauntlet down.</string>
-    <string name="this_we_know">This is likely due to the slow nature of your life\'s pace.</string>
+    <string name="they_challenged_you">%1$s challenged you</string>
+    <string name="they_challenged_you_to_a_wager">%1$s challenged you to a wager</string>
+    <string name="they_finished">%1$s finished answering</string>
+    <string name="now_answer_theirs_subtext">Now answer theirs</string>
+    <string name="see_who_won_subtext">See who won</string>
+    <string name="they_have_thrown_the_gauntlet_down">%1$s has thrown the gauntlet down</string>
 </resources>
