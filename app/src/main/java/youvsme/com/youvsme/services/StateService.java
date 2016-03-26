@@ -56,6 +56,7 @@ public class StateService {
                 @Override
                 public void failure(int statusCode, String response) {
                     if (statusCode == HttpStatus.SC_NOT_FOUND) {
+                        go(new SearchForOpponentState());
                         return;
                     }
 
