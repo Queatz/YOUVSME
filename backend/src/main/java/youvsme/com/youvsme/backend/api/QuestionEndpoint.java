@@ -1,5 +1,7 @@
 package youvsme.com.youvsme.backend.api;
 
+import com.google.api.client.repackaged.com.google.common.base.Strings;
+
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
@@ -20,9 +22,21 @@ public class QuestionEndpoint implements Api {
         QuestionModel question = ModelService.create(QuestionModel.class);
         question.setText(req.getParameter("text"));
 
+        if (Strings.isNullOrEmpty(question.getText())) {
+            resp.setStatus(HttpServletResponse.SC_BAD_REQUEST);
+            return;
+        }
+
         List<String> choices = new ArrayList<>();
         for (String c : new String[] { "a", "b", "c", "d" }) {
-            choices.add(req.getParameter(c));
+            String choice = req.getParameter(c);
+
+            if (Strings.isNullOrEmpty(choice)) {
+                resp.setStatus(HttpServletResponse.SC_BAD_REQUEST);
+                return;
+            }
+
+            choices.add(choice);
         }
 
         question.setChoices(choices);

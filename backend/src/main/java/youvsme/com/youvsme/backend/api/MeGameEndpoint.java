@@ -41,7 +41,7 @@ public class MeGameEndpoint implements Api {
         }
 
         GameModel game = ModelService.get(GameModel.class)
-                .filter("users", me).filter("active", true).first().now();
+                .order("-created").filter("users", me).first().now();
 
         if (game == null) {
             resp.setStatus(HttpServletResponse.SC_NOT_FOUND);

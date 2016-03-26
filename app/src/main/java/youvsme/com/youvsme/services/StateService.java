@@ -6,6 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.widget.Toast;
 
+import cz.msebera.android.httpclient.HttpStatus;
 import youvsme.com.youvsme.RegistrationIntentService;
 import youvsme.com.youvsme.models.GameModel;
 import youvsme.com.youvsme.states.GameState;
@@ -54,6 +55,10 @@ public class StateService {
 
                 @Override
                 public void failure(int statusCode, String response) {
+                    if (statusCode == HttpStatus.SC_NOT_FOUND) {
+                        return;
+                    }
+
                     Toast.makeText(activity, "Connection to your opponent was severed due to unknown forces in your surroundings.", Toast.LENGTH_SHORT).show();
                 }
             });

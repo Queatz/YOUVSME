@@ -2,6 +2,7 @@ package youvsme.com.youvsme.backend.models;
 
 import com.googlecode.objectify.annotation.Id;
 import com.googlecode.objectify.annotation.Ignore;
+import com.googlecode.objectify.annotation.Index;
 
 import java.util.Date;
 
@@ -11,7 +12,7 @@ import java.util.Date;
 public class Model {
     public @Id String id;
     public @Ignore String localId;
-    public Date created;
+    @Index public Date created;
 
     @Override
     public boolean equals(Object other) {

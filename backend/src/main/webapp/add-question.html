@@ -1,0 +1,98 @@
+<!doctype html>
+
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>YOUVSME - Question Repository - Add New</title>
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/css/materialize.min.css">
+        <script src="http://code.jquery.com/jquery-2.2.2.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/js/materialize.min.js"></script>
+        <script>
+            function save() {
+                var textInput = $('#question_text');
+                var choiceAInput = $('#choice_a');
+                var choiceBInput = $('#choice_b');
+                var choiceCInput = $('#choice_c');
+                var choiceDInput = $('#choice_d');
+
+                $.post('/api/question', {
+                    text: textInput.val(),
+                    a: choiceAInput.val(),
+                    b: choiceBInput.val(),
+                    c: choiceCInput.val(),
+                    d: choiceDInput.val()
+                }, function (data) {
+                    Materialize.toast('Question recorded', 3000, 'rounded')
+                    textInput.val('');
+                    choiceAInput.val('');
+                    choiceBInput.val('');
+                    choiceCInput.val('');
+                    choiceDInput.val('');
+                }, 'text');
+            }
+        </script>
+    </head>
+
+    <body class="grey lighten-4">
+        <div class="container">
+            <br />
+            <h4 class="center-align red-text"><b>YOUVSME</b></h4>
+            <br />
+            <div class="row">
+                <div class="col offset-s3 s6">
+                    <div class="card">
+                        <div class="card-content">
+                            <div class="row">
+                                <div class="input-field col s12">
+                                    <i class="material-icons prefix">mode_edit</i>
+                                    <textarea id="question_text" class="materialize-textarea"></textarea>
+                                    <label for="question_text">Add a Question</label>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="input-field col s12">
+                                    <div class="flow-text prefix red-text">
+                                        a.
+                                    </div>
+                                    <input id="choice_a" type="text">
+                                    <label class="active" for="choice_a">Choice A</label>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="input-field col s12">
+                                    <div class="flow-text prefix red-text">
+                                        b.
+                                    </div>
+                                    <input id="choice_b" type="text">
+                                    <label class="active" for="choice_b">Choice B</label>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="input-field col s12">
+                                    <div class="flow-text prefix red-text">
+                                        c.
+                                    </div>
+                                    <input id="choice_c" type="text">
+                                    <label class="active" for="choice_c">Choice C</label>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="input-field col s12">
+                                    <div class="flow-text prefix red-text">
+                                        d.
+                                    </div>
+                                    <input id="choice_d" type="text">
+                                    <label class="active" for="choice_d">Choice D</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-action center-align">
+                            <a href="#" onclick="save();">Add Question</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

@@ -343,9 +343,7 @@ public class GameService {
 
     @Nullable
     public RealmResults<UserModel> getFriends() {
-        String myToken = myUserToken();
-
-        if (myToken == null || myUserId() == null) {
+        if (myUserId() == null) {
             Log.w(Config.LOGGER, "Tried to get friends but no user");
             return null;
         }

@@ -7,8 +7,12 @@
 package youvsme.com.youvsme.backend;
 
 import com.google.api.client.http.HttpMethods;
+import com.google.api.client.util.IOUtils;
 
+import java.io.File;
+import java.io.FileInputStream;
 import java.io.IOException;
+import java.io.InputStreamReader;
 import java.util.Arrays;
 import java.util.List;
 import java.util.logging.Level;
@@ -30,19 +34,34 @@ public class MyServlet extends HttpServlet {
     }
 
     private void direct(String method, HttpServletRequest req, HttpServletResponse resp) throws IOException {
-        resp.setContentType("application/json");
         resp.setCharacterEncoding("UTF-8");
 
         String[] pathRaw = req.getRequestURI().split("/");
 
-        if (pathRaw.length < 3) {
+        if (pathRaw.length < 2) {
             resp.setStatus(HttpServletResponse.SC_BAD_REQUEST);
             return;
         }
 
-        // Skip initial /api/
-        List<String> path = Arrays.asList(pathRaw).subList(2, pathRaw.length);
+        if ("add-question".equals(pathRaw[1])) {
+            String relativeWebPath = "./add-question.html";
+            String absoluteFilePath = getServletContext().getRealPath(relativeWebPath);
+            File file = new File(absoluteFilePath);
+            IOUtils.copy(new FileInputStream(file), resp.getOutputStream());
+            resp.setContentType("text/html");
 
-        Grab.grab(RootAbstractEndpoint.class).serve(method, path, req, resp);
+        } else if("api".equals(pathRaw[1])) {
+            if (pathRaw.length < 3) {
+                resp.setStatus(HttpServletResponse.SC_BAD_REQUEST);
+                return;
+            }
+
+            resp.setContentType("application/json");
+
+            // Skip initial /api/
+            List<String> path = Arrays.asList(pathRaw).subList(2, pathRaw.length);
+
+            Grab.grab(RootAbstractEndpoint.class).serve(method, path, req, resp);
+        }
     }
 }

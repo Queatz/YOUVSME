@@ -67,7 +67,6 @@ public class GameEndpoint implements Api {
 
                     final GameModel game = ModelService.create(GameModel.class);
                     game.setUsers(ImmutableList.of(ModelService.ref(me), ModelService.ref(opponent)));
-                    game.setActive(true);
                     game.setWager(wager);
                     game.setWagerNote(wagerNote);
                     ModelService.save(game);
@@ -129,6 +128,11 @@ public class GameEndpoint implements Api {
                                 return;
                             }
 
+                            if (question.getChosenAnswer() != null) {
+                                resp.setStatus(HttpServletResponse.SC_NOT_FOUND);
+                                return;
+                            }
+
                             question.setChosenAnswer(Integer.parseInt(path.get(3)));
                             ModelService.save(question);
 
@@ -141,6 +145,11 @@ public class GameEndpoint implements Api {
 
                             // Authenticate
                             if (question == null || !question.getGame().get().getUsers().contains(ModelService.ref(me))) {
+                                resp.setStatus(HttpServletResponse.SC_NOT_FOUND);
+                                return;
+                            }
+
+                            if (question.getOpponentsGuess() != null) {
                                 resp.setStatus(HttpServletResponse.SC_NOT_FOUND);
                                 return;
                             }
@@ -162,43 +171,45 @@ public class GameEndpoint implements Api {
         List<GameQuestionModel> questions = ModelService.get(GameQuestionModel.class)
                 .filter("game", game).list();
 
-        boolean isComplete = true;
-        boolean anyGuessed = false;
-        boolean opponentStarted = false;
+        boolean meDoneGuessing = true;
+        boolean opDoneChoosing = true;
+        boolean opDoneGuessing = true;
 
         for (GameQuestionModel q : questions) {
             if (me.getId().equals(q.getUser().getKey().getName())) {
                 if(q.getChosenAnswer() == null) {
-                    // Not done choosing yet
+                    // Not at least done choosing mine yet
                     return;
                 }
 
                 if (q.getOpponentsGuess() != null) {
-                    opponentStarted = true;
+                    opDoneGuessing = false;
                 }
             } else {
                 if (q.getOpponentsGuess() == null) {
-                    isComplete = false;
-                } else {
-                    anyGuessed = true;
+                    meDoneGuessing = false;
                 }
 
                 if (q.getChosenAnswer() != null) {
-                    opponentStarted = true;
+                    opDoneChoosing = false;
                 }
             }
         }
 
-        if (anyGuessed && !isComplete) {
-            return;
-        }
-
         Push push;
 
-        if (!opponentStarted) {
+        // Push (to: opponent) -> I finish choosing -> I challenged you
+        // Push (to: me) -> She finishes choosing and answering -> She finished answering
+        // Push (to: opponent) I finished answering -> See who won
+
+        if (opDoneChoosing && opDoneGuessing && meDoneGuessing) {
+            push = new FinishedAnsweringPush(me.getFirstName(), true);
+        } else if (opDoneChoosing && meDoneGuessing) {
+            push = new FinishedAnsweringPush(me.getFirstName(), false);
+        } else if (!opDoneChoosing) {
             push = new ChallengePush(me.getFirstName(), !Strings.isNullOrEmpty(game.getWager()));
         } else {
-            push = new FinishedAnsweringPush(me.getFirstName(), isComplete);
+            return;
         }
 
         for (Ref<UserModel> opponent : game.getUsers()) {

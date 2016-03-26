@@ -13,18 +13,9 @@ import java.util.List;
 
 @Entity
 public class GameModel extends Model {
-    @Index public boolean active;
     @Index public List<Ref<UserModel>> users;
     public String wager;
     public String wagerNote;
-
-    public boolean isActive() {
-        return active;
-    }
-
-    public void setActive(boolean active) {
-        this.active = active;
-    }
 
     public List<Ref<UserModel>> getUsers() {
         return users;

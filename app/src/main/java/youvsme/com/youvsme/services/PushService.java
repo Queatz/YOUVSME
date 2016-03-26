@@ -88,7 +88,7 @@ public class PushService {
         Intent intent = new Intent(GameService.use().context(), Entrance.class);
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
         PendingIntent pendingIntent = PendingIntent.getActivity(GameService.use().context(), 0, intent,
-                PendingIntent.FLAG_ONE_SHOT);
+                PendingIntent.FLAG_UPDATE_CURRENT);
 
 
         return new NotificationCompat.Builder(GameService.use().context())
