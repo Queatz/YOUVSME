@@ -182,7 +182,7 @@ public class GameEndpoint implements Api {
                     return;
                 }
 
-                if (q.getOpponentsGuess() != null) {
+                if (q.getOpponentsGuess() == null) {
                     opDoneGuessing = false;
                 }
             } else {
@@ -190,7 +190,7 @@ public class GameEndpoint implements Api {
                     meDoneGuessing = false;
                 }
 
-                if (q.getChosenAnswer() != null) {
+                if (q.getChosenAnswer() == null) {
                     opDoneChoosing = false;
                 }
             }
