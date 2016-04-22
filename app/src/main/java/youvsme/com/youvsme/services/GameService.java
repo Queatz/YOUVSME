@@ -10,7 +10,6 @@ import android.widget.Toast;
 
 import com.google.common.collect.ImmutableList;
 import com.loopj.android.http.AsyncHttpResponseHandler;
-import com.loopj.android.http.RequestParams;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -19,7 +18,6 @@ import cz.msebera.android.httpclient.Header;
 import io.realm.Realm;
 import io.realm.RealmResults;
 import io.realm.Sort;
-import youvsme.com.youvsme.R;
 import youvsme.com.youvsme.models.GameModel;
 import youvsme.com.youvsme.models.QuestionModel;
 import youvsme.com.youvsme.models.UserModel;

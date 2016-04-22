@@ -7,7 +7,6 @@ import android.support.v7.app.AppCompatActivity;
 
 import java.util.List;
 
-import io.realm.Realm;
 import youvsme.com.youvsme.R;
 import youvsme.com.youvsme.fragments.FinalResultsFragment;
 import youvsme.com.youvsme.fragments.GameStateFragment;
@@ -19,7 +18,6 @@ import youvsme.com.youvsme.fragments.SendKickInTheFaceFragment;
 import youvsme.com.youvsme.models.GameModel;
 import youvsme.com.youvsme.models.QuestionModel;
 import youvsme.com.youvsme.services.GameService;
-import youvsme.com.youvsme.services.RealmService;
 import youvsme.com.youvsme.services.StateService;
 
 /**

@@ -15,13 +15,17 @@
                 var choiceBInput = $('#choice_b');
                 var choiceCInput = $('#choice_c');
                 var choiceDInput = $('#choice_d');
+                var isVulgar = $('#is_vulgar');
+                var author = $('#author');
 
                 $.post('/api/question', {
                     text: textInput.val(),
+                    author: author.val(),
                     a: choiceAInput.val(),
                     b: choiceBInput.val(),
                     c: choiceCInput.val(),
-                    d: choiceDInput.val()
+                    d: choiceDInput.val(),
+                    vulgar: isVulgar.prop('checked')
                 }, function (data) {
                     Materialize.toast('Question recorded', 3000, 'rounded')
                     textInput.val('');
@@ -84,6 +88,16 @@
                                     </div>
                                     <input id="choice_d" type="text">
                                     <label class="active" for="choice_d">Choice D</label>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="input-field col s6">
+                                    <input type="checkbox" checked="checked" id="is_vulgar">
+                                    <label for="is_vulgar" class="grey-text text-darken-3">This question is vulgar</label>
+                                </div>
+                                <div class="input-field col s6">
+                                    <input id="author" type="text">
+                                    <label class="active" for="author">Author's name</label>
                                 </div>
                             </div>
                         </div>

@@ -14,7 +14,6 @@ import youvsme.com.youvsme.models.GameModel;
 import youvsme.com.youvsme.models.QuestionModel;
 import youvsme.com.youvsme.models.UserModel;
 import youvsme.com.youvsme.services.GameService;
-import youvsme.com.youvsme.services.RealmService;
 import youvsme.com.youvsme.services.StateService;
 import youvsme.com.youvsme.states.GameState;
 
@@ -41,24 +40,19 @@ public class FinalResultsFragment extends GameStateFragment {
             }
         });
 
-        view.post(new Runnable() {
-            @Override
-            public void run() {
-                update();
-            }
-        });
+        update(view);
 
         return view;
     }
 
     @Override
     public void update() {
-        final View view = getView();
-
-        if (view == null) {
-            return;
+        if (getView() != null) {
+            update(getView());
         }
+    }
 
+    public void update(View view) {
         final TextView yourFinalScore = (TextView) view.findViewById(R.id.yourFinalScore);
         final TextView opponentsFinalScore = (TextView) view.findViewById(R.id.opponentsFinalScore);
         final TextView yourName = (TextView) view.findViewById(R.id.yourName);

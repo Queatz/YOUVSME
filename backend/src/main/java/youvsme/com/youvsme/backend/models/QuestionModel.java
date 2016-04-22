@@ -11,6 +11,8 @@ import java.util.List;
 @Entity
 public class QuestionModel extends Model {
     public String text;
+    public String author;
+    public boolean vulgar;
     public List<String> choices;
 
     public String getText() {
@@ -19,6 +21,22 @@ public class QuestionModel extends Model {
 
     public void setText(String text) {
         this.text = text;
+    }
+
+    public String getAuthor() {
+        return author;
+    }
+
+    public void setAuthor(String author) {
+        this.author = author;
+    }
+
+    public boolean isVulgar() {
+        return vulgar;
+    }
+
+    public void setVulgar(boolean vulgar) {
+        this.vulgar = vulgar;
     }
 
     public List<String> getChoices() {

@@ -3,7 +3,6 @@ package youvsme.com.youvsme.services;
 import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
 import android.widget.Toast;
 
 import cz.msebera.android.httpclient.HttpStatus;
@@ -13,7 +12,6 @@ import youvsme.com.youvsme.states.GameState;
 import youvsme.com.youvsme.states.NoUserState;
 import youvsme.com.youvsme.states.SearchForOpponentState;
 import youvsme.com.youvsme.states.State;
-import youvsme.com.youvsme.util.Config;
 import youvsme.com.youvsme.util.RealmObjectResponseHandler;
 
 /**

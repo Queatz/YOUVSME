@@ -1,9 +1,5 @@
 package youvsme.com.youvsme.services;
 
-import com.loopj.android.http.AsyncHttpResponseHandler;
-
-import cz.msebera.android.httpclient.Header;
-
 /**
  * Created by jacob on 2/23/16.
  */

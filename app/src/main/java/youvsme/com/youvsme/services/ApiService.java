@@ -6,9 +6,7 @@ import com.loopj.android.http.RequestParams;
 import com.loopj.android.http.ResponseHandlerInterface;
 
 import cz.msebera.android.httpclient.Header;
-import youvsme.com.youvsme.models.GameModel;
 import youvsme.com.youvsme.util.Config;
-import youvsme.com.youvsme.util.RealmObjectResponseHandler;
 
 /**
  * Created by jacob on 2/27/16.

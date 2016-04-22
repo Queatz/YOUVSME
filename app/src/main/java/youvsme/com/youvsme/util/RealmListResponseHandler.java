@@ -1,18 +1,14 @@
 package youvsme.com.youvsme.util;
 
-import com.google.gson.reflect.TypeToken;
 import com.loopj.android.http.AsyncHttpResponseHandler;
 
 import java.io.UnsupportedEncodingException;
 import java.lang.reflect.ParameterizedType;
-import java.lang.reflect.Type;
-import java.util.ArrayList;
 import java.util.List;
 
 import cz.msebera.android.httpclient.Header;
 import io.realm.Realm;
 import io.realm.RealmObject;
-import youvsme.com.youvsme.services.JsonService;
 import youvsme.com.youvsme.services.RealmService;
 
 /**

@@ -4,8 +4,6 @@ import android.app.Service;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 
-import youvsme.com.youvsme.R;
-
 /**
  * Created by jacob on 2/28/16.
  */

@@ -17,7 +17,6 @@ import youvsme.com.youvsme.fragments.WagerSentFragment;
 import youvsme.com.youvsme.models.GameModel;
 import youvsme.com.youvsme.models.UserModel;
 import youvsme.com.youvsme.services.ApiService;
-import youvsme.com.youvsme.services.GameService;
 import youvsme.com.youvsme.services.StateService;
 import youvsme.com.youvsme.util.Config;
 import youvsme.com.youvsme.util.RealmObjectResponseHandler;

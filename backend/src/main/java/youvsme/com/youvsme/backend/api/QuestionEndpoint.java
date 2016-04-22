@@ -21,6 +21,9 @@ public class QuestionEndpoint implements Api {
     public void serve(String method, List<String> path, HttpServletRequest req, HttpServletResponse resp) throws IOException {
         QuestionModel question = ModelService.create(QuestionModel.class);
         question.setText(req.getParameter("text"));
+        question.setAuthor(req.getParameter("author"));
+        String isVulgar = req.getParameter("vulgar");
+        question.setVulgar(!Strings.isNullOrEmpty(isVulgar) && Boolean.parseBoolean(isVulgar));
 
         if (Strings.isNullOrEmpty(question.getText())) {
             resp.setStatus(HttpServletResponse.SC_BAD_REQUEST);

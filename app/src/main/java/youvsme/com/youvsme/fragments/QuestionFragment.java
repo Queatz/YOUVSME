@@ -2,7 +2,6 @@ package youvsme.com.youvsme.fragments;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.support.v4.app.ActivityCompat;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -11,19 +10,15 @@ import android.widget.TextView;
 
 import com.google.gson.reflect.TypeToken;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import youvsme.com.youvsme.R;
-import youvsme.com.youvsme.activities.Entrance;
 import youvsme.com.youvsme.models.GameModel;
 import youvsme.com.youvsme.models.QuestionModel;
 import youvsme.com.youvsme.services.GameService;
 import youvsme.com.youvsme.services.JsonService;
-import youvsme.com.youvsme.services.RealmService;
 import youvsme.com.youvsme.services.StateService;
 import youvsme.com.youvsme.states.GameState;
-import youvsme.com.youvsme.states.SearchForOpponentState;
 import youvsme.com.youvsme.util.Config;
 
 /**
@@ -78,19 +73,19 @@ public class QuestionFragment extends GameStateFragment {
             }
         });
 
-        view.post(new Runnable() {
-            @Override
-            public void run() {
-                update();
-            }
-        });
+        update(view);
 
         return view;
     }
 
     @Override
     public void update() {
-        final View view = getView();
+        if (getView() != null) {
+            update(getView());
+        }
+    }
+
+    public void update(View view) {
         final GameModel game = GameService.use().latestGame();
 
         if (view == null || game == null) {
