@@ -61,6 +61,10 @@ public class GameService {
         return context;
     }
 
+    public boolean isMyQuestion(QuestionModel question, GameModel game) {
+        return question.getUser().getId().equals(game.getUser().getId());
+    }
+
     public enum GameState {
         /**
          * User is not signed in at all.

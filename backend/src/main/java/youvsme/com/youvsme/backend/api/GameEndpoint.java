@@ -26,6 +26,7 @@ import youvsme.com.youvsme.backend.services.JsonService;
 import youvsme.com.youvsme.backend.services.ModelService;
 import youvsme.com.youvsme.backend.services.PushService;
 import youvsme.com.youvsme.backend.services.UserService;
+import youvsme.com.youvsme.backend.views.CorrectView;
 import youvsme.com.youvsme.backend.views.GameView;
 
 /**
@@ -156,6 +157,9 @@ public class GameEndpoint implements Api {
 
                             question.setOpponentsGuess(Integer.parseInt(path.get(3)));
                             ModelService.save(question);
+
+                            boolean correct = question.getOpponentsGuess().equals(question.getChosenAnswer());
+                            resp.getWriter().write(Grab.grab(JsonService.class).json(new CorrectView(correct)));
 
                             notifyDone(me, game);
                         }

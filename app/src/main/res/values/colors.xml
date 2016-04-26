@@ -6,6 +6,10 @@
 
     <color name="grayDark">#969B9E</color>
 
+    <color name="incorrect">#ff2223</color>
+    <color name="correct">#4ace0d</color>
+    <color name="pink">#F551A7</color>
+    <color name="pinkred">#C90202</color>
     <color name="red">#CE0D0E</color>
     <color name="white">#EDEEF2</color>
     <color name="grayText">#2F3A3C</color>

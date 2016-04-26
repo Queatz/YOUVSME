@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <LinearLayout
+        android:id="@+id/top"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="@color/white"
+        android:elevation="2dp">
+
+        <!-- TODO: Rounded -->
+        <ImageButton
+            android:id="@+id/backButton"
+            android:background="?android:selectableItemBackground"
+            android:padding="16dp"
+            android:src="@drawable/ic_arrow_back_white_24dp"
+            android:tint="@color/red"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical" />
+
+        <TextView
+            android:padding="16dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:textColor="@color/almostBlack"
+            android:textSize="18sp"
+            android:text="@string/back"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/fragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/bottomLayout"
+        android:layout_below="@+id/top"
+        android:orientation="vertical"
+        android:gravity="center">
+
+        <RelativeLayout
+            android:layout_width="170dp"
+            android:layout_height="170dp">
+
+            <FrameLayout
+                android:id="@+id/waiting"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/waiting" />
+
+            <com.makeramen.roundedimageview.RoundedImageView
+                android:id="@+id/opponentPicture"
+                android:layout_width="154dp"
+                android:layout_height="154dp"
+                android:layout_centerInParent="true"
+                app:riv_corner_radius="154dp"
+                android:src="@drawable/red_button"
+                app:riv_border_color="@color/lightGrayText" />
+
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/opponentName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:textAlignment="center"
+            android:text="Waiting on Aanxiaoen, Ayoti..."
+            android:textSize="26sp"
+            android:textColor="@color/lightGrayText"
+            android:gravity="center_horizontal" />
+
+    </LinearLayout>
+
+</RelativeLayout>

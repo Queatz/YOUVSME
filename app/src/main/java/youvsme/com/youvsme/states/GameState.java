@@ -4,6 +4,7 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
+import android.widget.Toast;
 
 import java.util.List;
 
@@ -11,10 +12,11 @@ import youvsme.com.youvsme.R;
 import youvsme.com.youvsme.fragments.FinalResultsFragment;
 import youvsme.com.youvsme.fragments.GameStateFragment;
 import youvsme.com.youvsme.fragments.LetsGoFragment;
+import youvsme.com.youvsme.fragments.NowWaitForOpponentFragment;
 import youvsme.com.youvsme.fragments.QuestionFragment;
-import youvsme.com.youvsme.fragments.ScaredOpponentFragment;
 import youvsme.com.youvsme.fragments.SeeWhoWonFragment;
 import youvsme.com.youvsme.fragments.SendKickInTheFaceFragment;
+import youvsme.com.youvsme.fragments.WagerReviewFragment;
 import youvsme.com.youvsme.models.GameModel;
 import youvsme.com.youvsme.models.QuestionModel;
 import youvsme.com.youvsme.services.GameService;
@@ -29,9 +31,10 @@ public class GameState implements State {
 
     private FinalResultsFragment finalResultsFragment = new FinalResultsFragment();
     private LetsGoFragment letsGoFragment = new LetsGoFragment();
+    private NowWaitForOpponentFragment waitingForMai = new NowWaitForOpponentFragment();
     private QuestionFragment questionFragment = new QuestionFragment();
-    private ScaredOpponentFragment scaredOpponentFragment = new ScaredOpponentFragment();
     private SeeWhoWonFragment seeWhoWonFragment = new SeeWhoWonFragment();
+    private WagerReviewFragment theWagerIsSet = new WagerReviewFragment();
     private SendKickInTheFaceFragment sendKickInTheFaceFragment = new SendKickInTheFaceFragment();
     private AppCompatActivity activity;
 
@@ -52,9 +55,11 @@ public class GameState implements State {
 
         switch (GameService.use().inferGameState()) {
             case GameService.GAME_STATE_STARTED:
-                if (GameService.use().myQuestionsRemaining().size() == 0
-                        && GameService.use().opponentsQuestionsRemaining().size() != 0) {
-                    //showFragment(theWagerIsSet);
+                if (game.getWager() != null
+                        && game.getWager().length() > 0
+                        && GameService.use().myQuestionsRemaining().size() == 5
+                        && GameService.use().opponentsQuestionsRemaining().size() == 0) {
+                    showFragment(theWagerIsSet);
                 } else {
                     showFragment(questionFragment);
                 }
@@ -89,15 +94,11 @@ public class GameState implements State {
      * User is ready for the next question.
      */
     public void answerQuestion(QuestionModel question, int answer) {
-        boolean isMine = question.getUser().getId().equals(game.getUser().getId());
-
-        if (isMine) {
+        if (GameService.use().isMyQuestion(question, game)) {
             GameService.use().answerQuestion(question, answer);
         } else {
             GameService.use().guessAnswer(question, answer);
         }
-
-        next();
     }
 
     /**
@@ -130,9 +131,9 @@ public class GameState implements State {
         if (opponentsAnswersUnguessed.size() == 5) {
             showFragment(letsGoFragment);
         } else if (opponentsQuestionsRemaining.size() > 0) {
-            showFragment(sendKickInTheFaceFragment);
+            showFragment(waitingForMai);
         } else if (opponentsAnswersUnguessed.size() == 0 && myAnswersUnguessed.size() > 0) {
-            showFragment(sendKickInTheFaceFragment);
+            showFragment(waitingForMai);
         } else {
             showFragment(questionFragment);
         }
@@ -146,10 +147,12 @@ public class GameState implements State {
             return;
         }
 
+        Toast.makeText(activity, activity.getString(R.string.bam), Toast.LENGTH_SHORT).show();
+
         GameService.use().sendKickInTheFaceReminder(game, new Runnable() {
             @Override
             public void run() {
-                showFragment(scaredOpponentFragment);
+
             }
         });
     }
@@ -168,7 +171,7 @@ public class GameState implements State {
      */
     public void letsGo() {
         if (GameService.use().opponentsQuestionsRemaining().size() > 0) {
-            showFragment(sendKickInTheFaceFragment);
+            showFragment(waitingForMai);
         } else {
             showFragment(questionFragment);
         }

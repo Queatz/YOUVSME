@@ -2,25 +2,200 @@
 <items version="2" >
 
     <item
-        jar="/home/jacob/Documents/Projects/YOUVSME/app/build/intermediates/transforms/instantRunSlicer/debug/jars/1/5/main_slice.jar"
-        jumboMode="false"
+        jar="/home/jacob/Documents/Projects/YOUVSME/app/build/intermediates/exploded-aar/com.android.support/customtabs/23.2.1/jars/classes.jar"
+        jumboMode="true"
         revision="23.0.2"
-        sha1="73f11efd5b233b77eed84ea7e01f5470cff43025">
-        <dex dex="/home/jacob/Documents/Projects/YOUVSME/app/build/intermediates/transforms/dex/debug/folders/1000/5/main_slice_fd302a1e233dfcafd67bf9523bde875599bd7599/classes.dex" />
+        sha1="0e5a66a941515d873a34065fe44fbba6ef422a1b">
+        <dex dex="/home/jacob/Documents/Projects/YOUVSME/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-customtabs-23.2.1_d27f03be7d401e3fdc6bd98886696cd6b4e1ab27/classes.dex" />
     </item>
     <item
-        jar="/home/jacob/Documents/Projects/YOUVSME/app/build/intermediates/transforms/instantRunSlicer/debug/jars/1/1a/dependencies.jar"
-        jumboMode="false"
+        jar="/home/jacob/.gradle/caches/modules-2/files-2.1/com.parse.bolts/bolts-tasks/1.4.0/d85884acf6810a3bbbecb587f239005cbc846dc4/bolts-tasks-1.4.0.jar"
+        jumboMode="true"
         revision="23.0.2"
-        sha1="b4ea78255372134b4a864661710f75d1e888574a">
-        <dex dex="/home/jacob/Documents/Projects/YOUVSME/app/build/intermediates/transforms/dex/debug/folders/1000/1a/dependencies_b21c12e04a1e4fdde28d50b23d70513f4d363048/classes.dex" />
+        sha1="d85884acf6810a3bbbecb587f239005cbc846dc4">
+        <dex dex="/home/jacob/Documents/Projects/YOUVSME/app/build/intermediates/transforms/dex/debug/folders/1000/10/bolts-tasks-1.4.0_535d5abfc32380dfb5e52046a0c6b54e70548439/classes.dex" />
     </item>
     <item
-        jar="/home/jacob/Documents/Projects/YOUVSME/app/build/intermediates/transforms/instantRunSlicer/debug/jars/1/5/main_sliceb.jar"
-        jumboMode="false"
+        jar="/home/jacob/Documents/Projects/YOUVSME/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.2.1/jars/libs/internal_impl-23.2.1.jar"
+        jumboMode="true"
         revision="23.0.2"
-        sha1="5ae33d38773dd31e6d429e0e8e7c99f0f768a940">
-        <dex dex="/home/jacob/Documents/Projects/YOUVSME/app/build/intermediates/transforms/dex/debug/folders/1000/5/main_sliceb_46aa9688991a471657f0cadc9eab634185bb1173/classes.dex" />
+        sha1="607a3d0b8013b4ccbfeb0b7cb293351994e021fb">
+        <dex dex="/home/jacob/Documents/Projects/YOUVSME/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-23.2.1_ab6cb21e6af851cde90c9b993b0901f1a8f73a71/classes.dex" />
+    </item>
+    <item
+        jar="/home/jacob/Documents/Projects/YOUVSME/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="64cc3cdfe4576009fd2b970fdfd9ecaa5b828897">
+        <dex dex="/home/jacob/Documents/Projects/YOUVSME/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run-bootstrap_9a1e784e7386b90be056bf2048d21a061ea505a4/classes.dex" />
+    </item>
+    <item
+        jar="/home/jacob/Documents/Projects/YOUVSME/app/build/intermediates/exploded-aar/com.facebook.android/facebook-android-sdk/4.11.0/jars/classes.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="86da97c30f50a67ddabe2cf7040713ad17153fce">
+        <dex dex="/home/jacob/Documents/Projects/YOUVSME/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.facebook.android-facebook-android-sdk-4.11.0_20a89574051c55e4cd7782c1e25298ef5aa7f022/classes.dex" />
+    </item>
+    <item
+        jar="/home/jacob/Documents/Projects/YOUVSME/app/build/intermediates/incremental-runtime-classes/debug/instant-run.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="ae0f088ef18727e8f4863278ec773bdbff9114c0">
+        <dex dex="/home/jacob/Documents/Projects/YOUVSME/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run_0281eddb50a61ba0d677ec68353dd19f640787f8/classes.dex" />
+    </item>
+    <item
+        jar="/home/jacob/.gradle/caches/modules-2/files-2.1/com.google.code.gson/gson/2.4/695b63d702f505b9b916e02272e3b6381bade7f/gson-2.4.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="0695b63d702f505b9b916e02272e3b6381bade7f">
+        <dex dex="/home/jacob/Documents/Projects/YOUVSME/app/build/intermediates/transforms/dex/debug/folders/1000/10/gson-2.4_6c05f6a42a01a23daa28170947947090c3838af6/classes.dex" />
+    </item>
+    <item
+        jar="/home/jacob/Documents/Projects/YOUVSME/app/build/intermediates/exploded-aar/com.android.support/support-vector-drawable/23.2.1/jars/classes.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="673d77a5bbddd766037f088e775df525c46407f0">
+        <dex dex="/home/jacob/Documents/Projects/YOUVSME/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-vector-drawable-23.2.1_9ff65f9fca9bc54e5ab6a7e086926d29c4bd9a6c/classes.dex" />
+    </item>
+    <item
+        jar="/home/jacob/.gradle/caches/modules-2/files-2.1/com.squareup.picasso/picasso/2.5.2/7446d06ec8d4f7ffcc53f1da37c95f200dcb9387/picasso-2.5.2.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="7446d06ec8d4f7ffcc53f1da37c95f200dcb9387">
+        <dex dex="/home/jacob/Documents/Projects/YOUVSME/app/build/intermediates/transforms/dex/debug/folders/1000/10/picasso-2.5.2_c4a682b0ac8948925405c81d35cbde12b1f168e9/classes.dex" />
+    </item>
+    <item
+        jar="/home/jacob/Documents/Projects/YOUVSME/app/build/intermediates/exploded-aar/com.android.support/recyclerview-v7/23.2.1/jars/classes.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="e3885783ff8926ed9e2fdcd16816c2e1e73e7aee">
+        <dex dex="/home/jacob/Documents/Projects/YOUVSME/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-recyclerview-v7-23.2.1_a35b3ecf9ede2142e8c0f0c2cb02a7b12d3da258/classes.dex" />
+    </item>
+    <item
+        jar="/home/jacob/Documents/Projects/YOUVSME/app/build/intermediates/exploded-aar/com.android.support/design/23.2.1/jars/classes.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="72961d8b453b46e277702f18de9d210bc019e36e">
+        <dex dex="/home/jacob/Documents/Projects/YOUVSME/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-design-23.2.1_f3475254cd8e5c8f8e0c246416ad441c0d9b170d/classes.dex" />
+    </item>
+    <item
+        jar="/home/jacob/Documents/Projects/YOUVSME/app/build/intermediates/exploded-aar/com.android.support/animated-vector-drawable/23.2.1/jars/classes.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="3469cb457f10f74c28cbc05f069b6c894f6cbdd0">
+        <dex dex="/home/jacob/Documents/Projects/YOUVSME/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-animated-vector-drawable-23.2.1_fc366c93b633c4edea29ad7166d0a3eacca2962d/classes.dex" />
+    </item>
+    <item
+        jar="/home/jacob/Documents/Projects/YOUVSME/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/8.4.0/jars/classes.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="fef2b3e4b6b1b0e5fe7b69fa137a5fa55a3182ab">
+        <dex dex="/home/jacob/Documents/Projects/YOUVSME/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-base-8.4.0_71d17e1ad435141be67203c38a5d4a55516a0da2/classes.dex" />
+    </item>
+    <item
+        jar="/home/jacob/.gradle/caches/modules-2/files-2.1/cz.msebera.android/httpclient/4.3.6/526a9f794eab830eae4f23a62c572878b3f491ab/httpclient-4.3.6.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="526a9f794eab830eae4f23a62c572878b3f491ab">
+        <dex dex="/home/jacob/Documents/Projects/YOUVSME/app/build/intermediates/transforms/dex/debug/folders/1000/10/httpclient-4.3.6_e5a4db2f251391d818e728b42b311e5a185bfd9e/classes.dex" />
+    </item>
+    <item
+        jar="/home/jacob/Documents/Projects/YOUVSME/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-gcm/8.4.0/jars/classes.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="2d7fe76982677315c4dc4edfb459c8ca718a9d4c">
+        <dex dex="/home/jacob/Documents/Projects/YOUVSME/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-gcm-8.4.0_af1afb1882f77c670d55facc6d782d9fc73a528b/classes.dex" />
+    </item>
+    <item
+        jar="/home/jacob/Documents/Projects/YOUVSME/app/build/intermediates/exploded-aar/com.android.support/multidex/1.0.1/jars/classes.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="78ea232052df889856dcb7b7b542707c89bb3bfb">
+        <dex dex="/home/jacob/Documents/Projects/YOUVSME/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-multidex-1.0.1_dbab915042d90f688a57f88690e80da1a6988648/classes.dex" />
+    </item>
+    <item
+        jar="/home/jacob/Documents/Projects/YOUVSME/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.2.1/jars/classes.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="e4d0cbb0b999604b349062f0214a0a228a7fd151">
+        <dex dex="/home/jacob/Documents/Projects/YOUVSME/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-appcompat-v7-23.2.1_ba520aca7bb4fdf008f348686f091813a71be56f/classes.dex" />
+    </item>
+    <item
+        jar="/home/jacob/.gradle/caches/modules-2/files-2.1/com.google.guava/guava/19.0/6ce200f6b23222af3d8abb6b6459e6c44f4bb0e9/guava-19.0.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="6ce200f6b23222af3d8abb6b6459e6c44f4bb0e9">
+        <dex dex="/home/jacob/Documents/Projects/YOUVSME/app/build/intermediates/transforms/dex/debug/folders/1000/10/guava-19.0_fa2725225ae0e4e1ce92702c5579f92b6c0c6348/classes.dex" />
+    </item>
+    <item
+        jar="/home/jacob/.gradle/caches/modules-2/files-2.1/com.parse.bolts/bolts-applinks/1.4.0/8ad21bf21784dacce5f2043afb97218cc377e835/bolts-applinks-1.4.0.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="8ad21bf21784dacce5f2043afb97218cc377e835">
+        <dex dex="/home/jacob/Documents/Projects/YOUVSME/app/build/intermediates/transforms/dex/debug/folders/1000/10/bolts-applinks-1.4.0_5f55e5595195eadfa758d2df55ac94f7d1260f83/classes.dex" />
+    </item>
+    <item
+        jar="/home/jacob/.gradle/caches/modules-2/files-2.1/io.realm/realm-annotations/0.88.2/62142d422aaf1a4619035612aaa396df63bbf974/realm-annotations-0.88.2.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="62142d422aaf1a4619035612aaa396df63bbf974">
+        <dex dex="/home/jacob/Documents/Projects/YOUVSME/app/build/intermediates/transforms/dex/debug/folders/1000/10/realm-annotations-0.88.2_ed6a393ad5a6195d179abe10ecaa9426e6c3c16b/classes.dex" />
+    </item>
+    <item
+        jar="/home/jacob/Documents/Projects/YOUVSME/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.2.1/jars/classes.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="3be474b1b21b31cf2fa93fe6bd641ae108d96452">
+        <dex dex="/home/jacob/Documents/Projects/YOUVSME/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-v4-23.2.1_5bf8543c7c07010e9c178475a159948ef10d3692/classes.dex" />
+    </item>
+    <item
+        jar="/home/jacob/.gradle/caches/modules-2/files-2.1/com.loopj.android/android-async-http/1.4.9/386a4339ffe52d5d63e80f9bed8d2b1d1a418249/android-async-http-1.4.9.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="386a4339ffe52d5d63e80f9bed8d2b1d1a418249">
+        <dex dex="/home/jacob/Documents/Projects/YOUVSME/app/build/intermediates/transforms/dex/debug/folders/1000/10/android-async-http-1.4.9_90e8e7f5470b1876891659100737381db405e2ed/classes.dex" />
+    </item>
+    <item
+        jar="/home/jacob/Documents/Projects/YOUVSME/app/build/intermediates/exploded-aar/io.realm/realm-android-library/0.88.2/jars/classes.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="43ae35fb2ebd6bac5b6fb4d041c94a35a34dbfc0">
+        <dex dex="/home/jacob/Documents/Projects/YOUVSME/app/build/intermediates/transforms/dex/debug/folders/1000/10/io.realm-realm-android-library-0.88.2_099ade81ef546faad7635ada7a6ee467da94f22b/classes.dex" />
+    </item>
+    <item
+        jar="/home/jacob/Documents/Projects/YOUVSME/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-basement/8.4.0/jars/classes.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="8e673cdfadd8f2d98fdb2fda2285c30f6e449782">
+        <dex dex="/home/jacob/Documents/Projects/YOUVSME/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-basement-8.4.0_d1109e08dbf6d520d906ca7c05c219b35a366d82/classes.dex" />
+    </item>
+    <item
+        jar="/home/jacob/Android/Sdk/extras/android/m2repository/com/android/support/support-annotations/23.2.1/support-annotations-23.2.1.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="ccb693bc0774fcb637246f7360de25b4af7df318">
+        <dex dex="/home/jacob/Documents/Projects/YOUVSME/app/build/intermediates/transforms/dex/debug/folders/1000/10/support-annotations-23.2.1_0ec1ffb852267b7b3ef274bf9b89b80055f84be0/classes.dex" />
+    </item>
+    <item
+        jar="/home/jacob/Documents/Projects/YOUVSME/app/build/intermediates/exploded-aar/com.makeramen/roundedimageview/2.2.1/jars/classes.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="814fc0c3ec69a944add398217d90077301501a74">
+        <dex dex="/home/jacob/Documents/Projects/YOUVSME/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.makeramen-roundedimageview-2.2.1_7a91a38df2dea3fd7f774a472df775ea35b5973d/classes.dex" />
+    </item>
+    <item
+        jar="/home/jacob/Documents/Projects/YOUVSME/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-measurement/8.4.0/jars/classes.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="613298b7aa012f121ce542881c0a599ebd8078f2">
+        <dex dex="/home/jacob/Documents/Projects/YOUVSME/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-measurement-8.4.0_d608bb4dcd07197930d8fdf150f3fdbb81eef718/classes.dex" />
+    </item>
+    <item
+        jar="/home/jacob/Documents/Projects/YOUVSME/app/build/intermediates/exploded-aar/com.android.support/cardview-v7/23.2.1/jars/classes.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="cb86970df0f0f25f766d320b279c7858c1ca0003">
+        <dex dex="/home/jacob/Documents/Projects/YOUVSME/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-cardview-v7-23.2.1_ce25192d1433f61f579088d4dee892b694bf4528/classes.dex" />
     </item>
 
 </items>

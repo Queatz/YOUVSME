@@ -39,11 +39,11 @@ public class MakeAWagerFragment extends Fragment {
                 ((SearchForOpponentState) StateService.use().getState()).setWager(wagerWhat, wagerNote);
             }
         });
-
+ 
         view.findViewById(R.id.backButton).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                ((SearchForOpponentState) StateService.use().getState()).backPressed();
+                StateService.use().getState().backPressed();
             }
         });
 
@@ -53,8 +53,6 @@ public class MakeAWagerFragment extends Fragment {
                 ((SearchForOpponentState) StateService.use().getState()).skipWager();
             }
         });
-
-        Helpers.keyboard(view.findViewById(R.id.wagerWhat), true);
 
         return view;
     }

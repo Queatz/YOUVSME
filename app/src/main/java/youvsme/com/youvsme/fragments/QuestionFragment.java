@@ -6,10 +6,12 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.Animation;
 import android.widget.TextView;
 
 import com.google.gson.reflect.TypeToken;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import youvsme.com.youvsme.R;
@@ -19,7 +21,9 @@ import youvsme.com.youvsme.services.GameService;
 import youvsme.com.youvsme.services.JsonService;
 import youvsme.com.youvsme.services.StateService;
 import youvsme.com.youvsme.states.GameState;
+import youvsme.com.youvsme.util.BackgroundAnimator;
 import youvsme.com.youvsme.util.Config;
+import youvsme.com.youvsme.util.CorrectCallback;
 
 /**
  * Created by jacob on 3/5/16.
@@ -141,7 +145,19 @@ public class QuestionFragment extends GameStateFragment {
         choiceDText.setText(choices.get(3));
     }
 
-    private void choose(int choice) {
+    private void choose(final int choice) {
+        View view = getView();
+
+        if (view == null) {
+            return;
+        }
+
+        final List<View> textViews = new ArrayList<>();
+        textViews.add(view.findViewById(R.id.choiceAView));
+        textViews.add(view.findViewById(R.id.choiceBView));
+        textViews.add(view.findViewById(R.id.choiceCView));
+        textViews.add(view.findViewById(R.id.choiceDView));
+
         if (question == null) {
             Log.w(Config.LOGGER, "Tried to answer without a question, skipping.");
             ((GameState) StateService.use().getState()).next();
@@ -149,6 +165,21 @@ public class QuestionFragment extends GameStateFragment {
         }
 
         ((GameState) StateService.use().getState()).answerQuestion(question, choice);
+
+        if (!GameService.use().isMyQuestion(question, GameService.use().latestGame())) {
+            flash(textViews.get(choice), question.getChosenAnswer().equals(choice));
+        } else {
+            ((GameState) StateService.use().getState()).next();
+        }
+    }
+
+    private void flash(View view, boolean correct) {
+        new BackgroundAnimator(view, correct ? R.color.correct : R.color.incorrect) {
+            @Override
+            public void onComplete() {
+                ((GameState) StateService.use().getState()).next();
+            }
+        };
     }
 
     private String nameInject(String text, String name) {
