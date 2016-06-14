@@ -10,9 +10,11 @@
 
     <static-files>
         <include path="img/*" />
+        <include path="*.html" />
     </static-files>
 
     <resource-files>
         <include path="img/*" />
+        <include path="*.html" />
     </resource-files>
 </appengine-web-app>
