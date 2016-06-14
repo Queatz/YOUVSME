@@ -24,4 +24,5 @@ public class Config {
     public static final String PUSH_NEW_CHALLENGE = "newChallenge";
     public static final String PUSH_KICK_IN_THE_FACE = "kickInTheFace";
     public static final String PUSH_FINISHED_ANSWERING = "finishedAnswering";
+    public static final String INVITE_URL = "https://play.google.com/store/apps/details?id=youvsme.com.youvsme";
 }

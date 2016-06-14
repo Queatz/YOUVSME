@@ -39,16 +39,18 @@ public class StateService {
     public void setActivity(final AppCompatActivity activity) {
         this.activity = activity;
 
-        loadInitialState();
+        loadInitialState(null);
 
         Intent intent = new Intent(activity, RegistrationIntentService.class);
         activity.startService(intent);
+    }
 
+    public void openGameId(String id) {
         if (GameService.use().currentUser() != null) {
-            GameService.use().loadGame(new RealmObjectResponseHandler<GameModel>() {
+            GameService.use().loadGame(id, new RealmObjectResponseHandler<GameModel>() {
                 @Override
-                public void success(GameModel response) {
-                    loadInitialState();
+                public void success(GameModel game) {
+                    loadInitialState(game);
                 }
 
                 @Override
@@ -64,7 +66,7 @@ public class StateService {
         }
     }
 
-    public void loadInitialState() {
+    public void loadInitialState(GameModel game) {
         State state = null;
 
         switch (GameService.use().getState()) {
@@ -76,7 +78,11 @@ public class StateService {
                 break;
             case IN_GAME:
             case LAST_GAME_FINISHED:
-                state = new GameState();
+                if (game != null) {
+                    state = new GameState(game);
+                } else {
+                    state = new SearchForOpponentState();
+                }
                 break;
         }
 

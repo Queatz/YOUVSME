@@ -9,8 +9,8 @@ public class ChallengePush extends Push {
     public String user;
     public boolean isWager;
 
-    public ChallengePush(String user, boolean isWager) {
-        super(Config.PUSH_NEW_CHALLENGE);
+    public ChallengePush(String game, String user, boolean isWager) {
+        super(Config.PUSH_NEW_CHALLENGE, game);
         this.user = user;
         this.isWager = isWager;
     }

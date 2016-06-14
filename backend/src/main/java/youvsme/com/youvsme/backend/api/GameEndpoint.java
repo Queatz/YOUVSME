@@ -6,8 +6,10 @@ import com.google.common.collect.ImmutableList;
 import com.googlecode.objectify.Ref;
 
 import java.io.IOException;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Random;
+import java.util.Set;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -75,11 +77,30 @@ public class GameEndpoint implements Api {
                     // Add questions
 
                     int totalQuestions = ModelService.get(QuestionModel.class).count();
+                    int randomTries = 0;
+                    Set<Integer> pickedQuestions = new HashSet<>();
 
                     // TODO not fail-safe, demands existence of all question IDs 0-count
                     for (int i = 0; i < 5; i++) {
+                        int random = new Random().nextInt(totalQuestions);
+
+                        if (pickedQuestions.contains(random)) {
+                            // Give up trying to get 5 uniquely random questions
+                            // If this happens, the game will not have 5 questions in it
+                            if (randomTries > 10) {
+                                break;
+                            }
+
+                            randomTries++;
+
+                            continue;
+                        }
+
+                        pickedQuestions.add(random);
+                        randomTries = 0;
+
                         QuestionModel question = ModelService
-                                .get(QuestionModel.class, Integer.toString(new Random().nextInt(totalQuestions)));
+                                .get(QuestionModel.class, Integer.toString(random));
 
                         for (UserModel user : new UserModel[] {me, opponent}) {
                             GameQuestionModel answer = ModelService.create(GameQuestionModel.class);
@@ -107,7 +128,7 @@ public class GameEndpoint implements Api {
 
                     if (path.size() > 1) {
                         if ("kick-in-the-face".equals(path.get(1))) {
-                            Push push = new KickInTheFacePush(me.getFirstName());
+                            Push push = new KickInTheFacePush(game.getId(), me.getFirstName());
 
                             for (Ref<UserModel> opponent : game.getUsers()) {
                                 if (me.getId().equals(opponent.getKey().getName())) {
@@ -207,11 +228,11 @@ public class GameEndpoint implements Api {
         // Push (to: opponent) I finished answering -> See who won
 
         if (opDoneChoosing && opDoneGuessing && meDoneGuessing) {
-            push = new FinishedAnsweringPush(me.getFirstName(), true);
+            push = new FinishedAnsweringPush(game.getId(), me.getFirstName(), true);
         } else if (opDoneChoosing && meDoneGuessing) {
-            push = new FinishedAnsweringPush(me.getFirstName(), false);
+            push = new FinishedAnsweringPush(game.getId(), me.getFirstName(), false);
         } else if (!opDoneChoosing) {
-            push = new ChallengePush(me.getFirstName(), !Strings.isNullOrEmpty(game.getWager()));
+            push = new ChallengePush(game.getId(), me.getFirstName(), !Strings.isNullOrEmpty(game.getWager()));
         } else {
             return;
         }

@@ -57,7 +57,7 @@ public class WagerReviewFragment extends GameStateFragment {
     }
 
     private void update(View view) {
-        final GameModel game = GameService.use().latestGame();
+        final GameModel game = ((GameState) StateService.use().getState()).getGame();
 
         if (view == null || game == null) {
             return;

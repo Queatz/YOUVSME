@@ -37,6 +37,7 @@ public class PushService {
         }
 
         String action = push.get("action").getAsString();
+        String game = push.get("game").getAsString();
 
         if (action == null) {
             return;
@@ -48,7 +49,7 @@ public class PushService {
 
         switch (action) {
             case Config.PUSH_NEW_CHALLENGE:
-                notification = nn().setContentTitle(context.getString(
+                notification = nn(game).setContentTitle(context.getString(
                         push.get("isWager").getAsBoolean()
                                 ? R.string.they_challenged_you_to_a_wager
                                 : R.string.they_challenged_you, opponentName)).build();
@@ -62,13 +63,13 @@ public class PushService {
                     resource = R.string.now_answer_theirs_subtext;
                 }
 
-                notification = nn()
+                notification = nn(game)
                         .setContentTitle(context.getString(R.string.they_finished, opponentName))
                         .setContentText(context.getString(resource))
                         .build();
                 break;
             case Config.PUSH_KICK_IN_THE_FACE:
-                notification = nn()
+                notification = nn(game)
                         .setContentTitle(context.getString(R.string.they_have_thrown_the_gauntlet_down, opponentName))
                         .build();
                 break;
@@ -84,9 +85,11 @@ public class PushService {
                 .notify("YOUVSME", notification.hashCode(), notification);
     }
 
-    private NotificationCompat.Builder nn() {
+    private NotificationCompat.Builder nn(String game) {
         Intent intent = new Intent(GameService.use().context(), Entrance.class);
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        intent.putExtra("game", game);
+
         PendingIntent pendingIntent = PendingIntent.getActivity(GameService.use().context(), 0, intent,
                 PendingIntent.FLAG_UPDATE_CURRENT);
 

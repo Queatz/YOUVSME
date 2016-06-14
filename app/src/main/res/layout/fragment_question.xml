@@ -1,9 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
     android:layout_height="match_parent">
 
     <LinearLayout
+        android:id="@+id/topLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical">
@@ -25,6 +28,17 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical" />
 
+            <com.makeramen.roundedimageview.RoundedImageView
+                android:id="@+id/opponentPicture"
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                android:layout_margin="8dp"
+                android:layout_gravity="center_vertical"
+                app:riv_corner_radius="72dp"
+                android:src="@drawable/ic_arrow_back_white_24dp"
+                app:riv_border_width="1dp"
+                app:riv_border_color="@color/lightGrayText" />
+
             <TextView
                 android:id="@+id/title"
                 android:padding="16dp"
@@ -37,6 +51,14 @@
 
         </LinearLayout>
 
+    </LinearLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/bottomLayout"
+        android:layout_below="@id/topLayout">
+
         <TextView
             android:id="@+id/questionText"
             android:layout_width="match_parent"
@@ -45,11 +67,12 @@
             android:textSize="22sp"
             android:textStyle="bold"
             android:textColor="@color/almostBlack"
-            android:text="As a child you were inducted into one of the world's most infamous street gangs. Over the years you came to master one weapon.  What did you master?" />
+            android:text="As a child you were inducted into one of the world's most infamous street gangs. Over the years you came to master one weapon.  What did you master?As a child you were inducted into one of the world's most infamous street gangs. Over the years you came to master one weapon.  What did you master?" />
 
-    </LinearLayout>
+    </ScrollView>
 
     <LinearLayout
+        android:id="@+id/bottomLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"

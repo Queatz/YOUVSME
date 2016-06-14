@@ -5,8 +5,10 @@ package youvsme.com.youvsme.backend.push;
  */
 public class Push {
     public String action;
+    public String game;
 
-    public Push(String action) {
+    public Push(String action, String game) {
         this.action = action;
+        this.game = game;
     }
 }

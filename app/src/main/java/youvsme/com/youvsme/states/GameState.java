@@ -15,7 +15,6 @@ import youvsme.com.youvsme.fragments.LetsGoFragment;
 import youvsme.com.youvsme.fragments.NowWaitForOpponentFragment;
 import youvsme.com.youvsme.fragments.QuestionFragment;
 import youvsme.com.youvsme.fragments.SeeWhoWonFragment;
-import youvsme.com.youvsme.fragments.SendKickInTheFaceFragment;
 import youvsme.com.youvsme.fragments.WagerReviewFragment;
 import youvsme.com.youvsme.models.GameModel;
 import youvsme.com.youvsme.models.QuestionModel;
@@ -35,17 +34,18 @@ public class GameState implements State {
     private QuestionFragment questionFragment = new QuestionFragment();
     private SeeWhoWonFragment seeWhoWonFragment = new SeeWhoWonFragment();
     private WagerReviewFragment theWagerIsSet = new WagerReviewFragment();
-    private SendKickInTheFaceFragment sendKickInTheFaceFragment = new SendKickInTheFaceFragment();
     private AppCompatActivity activity;
 
     private GameModel game;
+
+    public GameState(GameModel game) {
+        this.game = game;
+    }
 
     @Override
     public void show(AppCompatActivity activity) {
         this.activity = activity;
         activity.setContentView(R.layout.activity_search_for_opponent);
-
-        game = GameService.use().latestGame();
 
         if (game == null) {
             return;
@@ -53,19 +53,20 @@ public class GameState implements State {
 
         GameService.use().setUserHasClickedPlayAgain(false);
 
-        switch (GameService.use().inferGameState()) {
+        switch (GameService.use().inferGameState(game)) {
             case GameService.GAME_STATE_STARTED:
                 if (game.getWager() != null
                         && game.getWager().length() > 0
-                        && GameService.use().myQuestionsRemaining().size() == 5
-                        && GameService.use().opponentsQuestionsRemaining().size() == 0) {
+                        && GameService.use().myQuestionsRemaining(game).size() == GameService.use().numberOfQuestions(game)
+                        && GameService.use().opponentsQuestionsRemaining(game).size() == 0) {
                     showFragment(theWagerIsSet);
                 } else {
                     showFragment(questionFragment);
                 }
                 break;
             case GameService.GAME_STATE_WAITING_FOR_OPPONENT:
-                showFragment(sendKickInTheFaceFragment);
+                waitingForMai.setInitial(false);
+                showFragment(waitingForMai);
                 break;
             case GameService.GAME_STATE_GUESSING_OPPONENTS_ANSWERS:
                 showFragment(questionFragment);
@@ -95,9 +96,9 @@ public class GameState implements State {
      */
     public void answerQuestion(QuestionModel question, int answer) {
         if (GameService.use().isMyQuestion(question, game)) {
-            GameService.use().answerQuestion(question, answer);
+            GameService.use().answerQuestion(game, question, answer);
         } else {
-            GameService.use().guessAnswer(question, answer);
+            GameService.use().guessAnswer(game, question, answer);
         }
     }
 
@@ -105,10 +106,10 @@ public class GameState implements State {
      * User wants to move forward.
      */
     public void next() {
-        List<QuestionModel> myQuestionsRemaining = GameService.use().myQuestionsRemaining();
-        List<QuestionModel> opponentsQuestionsRemaining = GameService.use().opponentsQuestionsRemaining();
-        List<QuestionModel> myAnswersUnguessed = GameService.use().myAnswersUnguessed();
-        List<QuestionModel> opponentsAnswersUnguessed = GameService.use().opponentsAnswersUnguessed();
+        List<QuestionModel> myQuestionsRemaining = GameService.use().myQuestionsRemaining(game);
+        List<QuestionModel> opponentsQuestionsRemaining = GameService.use().opponentsQuestionsRemaining(game);
+        List<QuestionModel> myAnswersUnguessed = GameService.use().myAnswersUnguessed(game);
+        List<QuestionModel> opponentsAnswersUnguessed = GameService.use().opponentsAnswersUnguessed(game);
 
         // TODO don't show my opponent's answers at all until they have finished all of them
         // TODO could be done on the server
@@ -128,11 +129,13 @@ public class GameState implements State {
             return;
         }
 
-        if (opponentsAnswersUnguessed.size() == 5) {
+        if (opponentsAnswersUnguessed.size() == GameService.use().numberOfQuestions(game)) {
             showFragment(letsGoFragment);
         } else if (opponentsQuestionsRemaining.size() > 0) {
+            waitingForMai.setInitial(true);
             showFragment(waitingForMai);
         } else if (opponentsAnswersUnguessed.size() == 0 && myAnswersUnguessed.size() > 0) {
+            waitingForMai.setInitial(true);
             showFragment(waitingForMai);
         } else {
             showFragment(questionFragment);
@@ -170,7 +173,8 @@ public class GameState implements State {
      * User wants to gooooooo.
      */
     public void letsGo() {
-        if (GameService.use().opponentsQuestionsRemaining().size() > 0) {
+        if (GameService.use().opponentsQuestionsRemaining(game).size() > 0) {
+            waitingForMai.setInitial(true);
             showFragment(waitingForMai);
         } else {
             showFragment(questionFragment);
@@ -188,7 +192,8 @@ public class GameState implements State {
 
     @Override
     public boolean back() {
-        return false;
+        StateService.use().go(new SearchForOpponentState());
+        return true;
     }
 
     public void playAgain() {
@@ -201,5 +206,9 @@ public class GameState implements State {
         if(!back()) {
             activity.onBackPressed();
         }
+    }
+
+    public GameModel getGame() {
+        return game;
     }
 }

@@ -1,0 +1,190 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>YOUVSME Question Contest</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/css/materialize.min.css">
+    <script src="http://code.jquery.com/jquery-2.2.2.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/js/materialize.min.js"></script>
+    <script>
+            function check(input) {
+                return !input.val().trim().length;
+            }
+
+            function save() {
+                var textInput = $('#question_text');
+                var choiceAInput = $('#choice_a');
+                var choiceBInput = $('#choice_b');
+                var choiceCInput = $('#choice_c');
+                var choiceDInput = $('#choice_d');
+                var author = $('#author');
+
+                if (check(author)) {
+                    alert('Hey! We need your email to reach out to you if you win.');
+                    return;
+                }
+
+                if (check(textInput) || check(choiceAInput) || check(choiceBInput) || check(choiceCInput) || check(choiceDInput)) {
+                    alert('Hey! You left something blank.');
+                    return;
+                }
+
+                $.post('/api/question', {
+                    text: textInput.val(),
+                    author: author.val(),
+                    a: choiceAInput.val(),
+                    b: choiceBInput.val(),
+                    c: choiceCInput.val(),
+                    d: choiceDInput.val()
+                }, function (data) {
+                    $('.message').html('Thanks! We\'ll be in touch shortly.');
+                    $('.row').hide();
+                }, 'text');
+            }
+        </script>
+    <style>
+        @import url(https://fonts.googleapis.com/css?family=Raleway:400,800);
+
+        body {
+            background: url('./img/large.jpg') center fixed no-repeat;
+            background-size: 100%;
+            background-size: cover;
+            padding-bottom: 8em;
+        }
+
+        .message {
+            font-family: Raleway;
+            background: rgba(89, 110, 166, 0.882353);
+            padding: 1em;
+            border-radius: 24px;
+            color: white;
+            font-size: 20pt;
+            font-weight: 800;
+            max-width: 600px;
+            margin: auto;
+        }
+
+        .important {
+            background: yellow;
+            color: black;
+            border-radius: 3px;
+            font-size: 85%;
+            padding: .5em;
+        }
+
+        .sample {
+            font-size: 66%;
+            background: rgba(255, 255, 255, .25);
+            padding: 1em;
+            border-radius: 16px;
+            font-weight: 400;
+            line-height: 2em;
+        }
+
+        .r {
+            font-family: Raleway;
+            text-transform: initial;
+            font-size: 20pt;
+            padding: .5em 1em;
+            height: 2.25em;
+            font-weight: bold;
+        }
+
+    </style>
+</head>
+
+<body class="grey lighten-4">
+<div class="container">
+    <br />
+    <div class="center-align">
+        <img width="512px" src="./img/contest_youvsme_logo.png" />
+
+        <div class="message">
+            <p>
+                We're building a new question based  app and we'd love your help!<br /><br />
+                Enter your best question and 4 multiple choice answers to be entered in the contest!<br /><br />
+                Top 3 questions will each get a $25.00 gift card to Amazon!
+            </p>
+            <p class="important">
+                <small>Questions must fall into one or all of the following categories:
+                funny, sexy, strange, vulgar, or thought provoking.</small>
+            </p>
+            <p class="sample">
+                <b>Sample Question 1:</b> Your partner tells you they want to start gettingkinky in bed, and they ask you to choose the toy. What do you choose? A. Whip , B. Hot Wax, C. Chains, D. Blowtorch.
+            </p>
+            <p class="sample">
+                <b>Sample Question 2:</b> You're riding down an old backroad on your bicycle when you stumble upon a black duffel bag filled with millions of dollars in unmarked bills. You will never be caught for taking the money. What do you do? A. Turn it in to the police, B. Bury it in a secret location, C. Bring it home but only spend a little at a time, D. Immediately begin living like a rapstar
+            </p>
+
+            <center>
+                ▾ &nbsp; Enter Contest Below &nbsp; ▾
+            </center>
+        </div>
+    </div>
+    <br />
+    <div class="row" style="max-width: 600px; margin: auto;">
+        <div class="col s12">
+            <div class="card" style="background: rgba(255, 255, 255, .9);">
+                <div class="card-content">
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <i class="material-icons prefix">mode_edit</i>
+                            <input id="author" type="text">
+                            <label class="active" for="author">Your Email Address *</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <i class="material-icons prefix">mode_edit</i>
+                            <textarea id="question_text" class="materialize-textarea"></textarea>
+                            <label for="question_text">Your Question</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <div class="flow-text prefix red-text">
+                                a.
+                            </div>
+                            <input id="choice_a" type="text">
+                            <label class="active" for="choice_a">Answer A</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <div class="flow-text prefix red-text">
+                                b.
+                            </div>
+                            <input id="choice_b" type="text">
+                            <label class="active" for="choice_b">Answer B</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <div class="flow-text prefix red-text">
+                                c.
+                            </div>
+                            <input id="choice_c" type="text">
+                            <label class="active" for="choice_c">Answer C</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <div class="flow-text prefix red-text">
+                                d.
+                            </div>
+                            <input id="choice_d" type="text">
+                            <label class="active" for="choice_d">Answer D</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-action center-align">
+                    <a class="btn pink r" href="javascript:" onclick="save();">Enter contest!</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

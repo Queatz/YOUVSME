@@ -1,6 +1,8 @@
 package youvsme.com.youvsme.backend.api;
 
 import com.google.api.client.http.HttpMethods;
+import com.google.common.collect.ImmutableList;
+import com.googlecode.objectify.cmd.Query;
 
 import java.io.IOException;
 import java.util.List;
@@ -40,14 +42,20 @@ public class MeGameEndpoint implements Api {
             return;
         }
 
-        GameModel game = ModelService.get(GameModel.class)
-                .order("-created").filter("users", me).first().now();
+
+        GameModel game;
+
+        if (path.size() == 1) {
+            game = ModelService.get(GameModel.class).id(path.get(0)).now();
+        } else {
+            Query<GameModel> query = ModelService.get(GameModel.class);
+            game = query.filter("users", me).order("-created").first().now();;
+        }
 
         if (game == null) {
             resp.setStatus(HttpServletResponse.SC_NOT_FOUND);
             return;
         }
-
 
         resp.getWriter().write(Grab.grab(JsonService.class).json(new GameView(me, game)));
     }

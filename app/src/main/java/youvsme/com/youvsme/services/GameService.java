@@ -1,6 +1,7 @@
 package youvsme.com.youvsme.services;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.preference.PreferenceManager;
 import android.support.annotation.NonNull;
@@ -11,18 +12,27 @@ import android.widget.Toast;
 import com.google.common.collect.ImmutableList;
 import com.loopj.android.http.AsyncHttpResponseHandler;
 
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 
 import cz.msebera.android.httpclient.Header;
+import io.realm.Case;
 import io.realm.Realm;
+import io.realm.RealmQuery;
 import io.realm.RealmResults;
 import io.realm.Sort;
+import youvsme.com.youvsme.R;
 import youvsme.com.youvsme.models.GameModel;
 import youvsme.com.youvsme.models.QuestionModel;
 import youvsme.com.youvsme.models.UserModel;
 import youvsme.com.youvsme.util.Config;
-import youvsme.com.youvsme.util.RealmListResponseHandler;
 import youvsme.com.youvsme.util.RealmObjectResponseHandler;
 
 /**
@@ -63,6 +73,59 @@ public class GameService {
 
     public boolean isMyQuestion(QuestionModel question, GameModel game) {
         return question.getUser().getId().equals(game.getUser().getId());
+    }
+
+    public int numberOfMyGuessesCorrect(GameModel game) {
+        int usersCorrect = 0;
+        List<QuestionModel> opponentsQuestions = GameService.use().opponentsQuestions(game);
+
+        // Aggregate user's correct guesses
+        for (QuestionModel question : opponentsQuestions) {
+            if (question.getOpponentsGuess() == null || question.getChosenAnswer() == null) {
+                return -1;
+            }
+
+            if (question.getOpponentsGuess().equals(question.getChosenAnswer())) {
+                usersCorrect++;
+            }
+        }
+
+        return usersCorrect;
+    }
+
+    public int numberOfOpponentsGuessesCorrect(GameModel game) {
+        int opponentsCorrect = 0;
+        List<QuestionModel> myQuestions = GameService.use().myQuestions(game);
+
+        // Aggregate opponents correct guesses
+        for (QuestionModel question : myQuestions) {
+            if (question.getOpponentsGuess() == null || question.getChosenAnswer() == null) {
+                return 0;
+            }
+
+            if (question.getOpponentsGuess().equals(question.getChosenAnswer())) {
+                opponentsCorrect++;
+            }
+        }
+
+        return opponentsCorrect;
+    }
+
+    public int numberOfQuestions(GameModel game) {
+        return game.getQuestions().size() / 2;
+    }
+
+    public void invite() {
+        String text = context.getString(R.string.invite_message) + " " + Config.INVITE_URL;
+        Intent sharingIntent = new Intent(android.content.Intent.ACTION_SEND);
+        sharingIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        sharingIntent.setType("text/plain");
+        sharingIntent.putExtra(Intent.EXTRA_TEXT, text);
+
+        Intent chooserIntent = Intent.createChooser(sharingIntent, context().getResources().getString(R.string.share_using));
+        chooserIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+
+        context().startActivity(chooserIntent);
     }
 
     public enum GameState {
@@ -124,9 +187,7 @@ public class GameService {
         }
     }
 
-    public String inferGameState() {
-        GameModel game = latestGame();
-
+    public String inferGameState(GameModel game) {
         if (game == null) {
             return null;
         }
@@ -183,8 +244,8 @@ public class GameService {
 
     // How many out of the 5 questions I need to pick answers for I have left
     @NonNull
-    public List<QuestionModel> myQuestionsRemaining() {
-        return filterQuestions(new QuestionFilter() {
+    public List<QuestionModel> myQuestionsRemaining(GameModel game) {
+        return filterQuestions(game, new QuestionFilter() {
             @Override
             public boolean pass(GameModel game, QuestionModel question) {
                 return question.getUser().getId().equals(game.getUser().getId())
@@ -195,8 +256,8 @@ public class GameService {
 
     // How many out of the 5 questions my opponent needs to pick answers for they have left
     @NonNull
-    public List<QuestionModel> opponentsQuestionsRemaining() {
-        return filterQuestions(new QuestionFilter() {
+    public List<QuestionModel> opponentsQuestionsRemaining(GameModel game) {
+        return filterQuestions(game, new QuestionFilter() {
             @Override
             public boolean pass(GameModel game, QuestionModel question) {
                 return !question.getUser().getId().equals(game.getUser().getId())
@@ -207,8 +268,8 @@ public class GameService {
 
     // How many questions out of my 5 questions the opponent hasn't guessed yet
     @NonNull
-    public List<QuestionModel> myAnswersUnguessed() {
-        return filterQuestions(new QuestionFilter() {
+    public List<QuestionModel> myAnswersUnguessed(GameModel game) {
+        return filterQuestions(game, new QuestionFilter() {
             @Override
             public boolean pass(GameModel game, QuestionModel question) {
                 return question.getUser().getId().equals(game.getUser().getId())
@@ -219,8 +280,8 @@ public class GameService {
 
     // How many questions out of their 5 questions I haven't guessed yet
     @NonNull
-    public List<QuestionModel> opponentsAnswersUnguessed() {
-        return filterQuestions(new QuestionFilter() {
+    public List<QuestionModel> opponentsAnswersUnguessed(GameModel game) {
+        return filterQuestions(game, new QuestionFilter() {
             @Override
             public boolean pass(GameModel game, QuestionModel question) {
                 return !question.getUser().getId().equals(game.getUser().getId())
@@ -230,8 +291,8 @@ public class GameService {
     }
 
     @NonNull
-    public List<QuestionModel> myQuestions() {
-        return filterQuestions(new QuestionFilter() {
+    public List<QuestionModel> myQuestions(GameModel game) {
+        return filterQuestions(game, new QuestionFilter() {
             @Override
             public boolean pass(GameModel game, QuestionModel question) {
                 return question.getUser().getId().equals(game.getUser().getId());
@@ -240,8 +301,8 @@ public class GameService {
     }
 
     @NonNull
-    public List<QuestionModel> opponentsQuestions() {
-        return filterQuestions(new QuestionFilter() {
+    public List<QuestionModel> opponentsQuestions(GameModel game) {
+        return filterQuestions(game, new QuestionFilter() {
             @Override
             public boolean pass(GameModel game, QuestionModel question) {
                 return !question.getUser().getId().equals(game.getUser().getId());
@@ -254,9 +315,7 @@ public class GameService {
     }
 
     @NonNull
-    private List<QuestionModel> filterQuestions(QuestionFilter filter) {
-        final GameModel game = latestGame();
-
+    private List<QuestionModel> filterQuestions(GameModel game, QuestionFilter filter) {
         if (game == null) {
             return ImmutableList.of();
         }
@@ -268,6 +327,18 @@ public class GameService {
                 questions.add(question);
             }
         }
+
+        // Make sure questions appear in the same order for both players
+        Collections.sort(questions, new Comparator<QuestionModel>() {
+            @Override
+            public int compare(QuestionModel lhs, QuestionModel rhs) {
+                if (lhs.getId().equals(rhs.getId())) {
+                    return 0;
+                }
+
+                return lhs.getId().hashCode() < rhs.getId().hashCode() ? -1 : 1;
+            }
+        });
 
         return questions;
 
@@ -303,18 +374,18 @@ public class GameService {
         });
     }
 
-    public void loadGame(final RealmObjectResponseHandler<GameModel> callback) {
-        ApiService.use().get("me/game", null, callback);
+    public void loadGame(String id, final RealmObjectResponseHandler<GameModel> callback) {
+        ApiService.use().get("me/game/" + id, null, callback);
     }
 
-    public void answerQuestion(QuestionModel question, int answer) {
+    public void answerQuestion(GameModel game, QuestionModel question, int answer) {
         Realm realm = RealmService.use().get();
 
         realm.beginTransaction();
         question.setChosenAnswer(answer);
         realm.commitTransaction();
 
-        ApiService.use().post("game/" + latestGame().getId() + "/answer/" + question.getId() + "/" + answer, null, new AsyncHttpResponseHandler() {
+        ApiService.use().post("game/" + game.getId() + "/answer/" + question.getId() + "/" + answer, null, new AsyncHttpResponseHandler() {
             @Override
             public void onSuccess(int statusCode, Header[] headers, byte[] responseBody) {
             }
@@ -325,14 +396,14 @@ public class GameService {
         });
     }
 
-    public void guessAnswer(QuestionModel question, int guess) {
+    public void guessAnswer(GameModel game, QuestionModel question, int guess) {
         Realm realm = RealmService.use().get();
 
         realm.beginTransaction();
         question.setOpponentsGuess(guess);
         realm.commitTransaction();
 
-        ApiService.use().post("game/" + latestGame().getId() + "/guess/" + question.getId() + "/" + guess, null, new AsyncHttpResponseHandler() {
+        ApiService.use().post("game/" + game.getId() + "/guess/" + question.getId() + "/" + guess, null, new AsyncHttpResponseHandler() {
             @Override
             public void onSuccess(int statusCode, Header[] headers, byte[] responseBody) {
             }
@@ -344,21 +415,57 @@ public class GameService {
     }
 
     @Nullable
+    public RealmResults<UserModel> filterFriends(String like) {
+        return RealmService.use().get()
+                .where(UserModel.class)
+                .notEqualTo("id", myUserId())
+                .beginGroup()
+                    .contains("firstName", like, Case.INSENSITIVE)
+                    .or()
+                    .contains("lastName", like, Case.INSENSITIVE)
+                .endGroup()
+                .findAllSorted("firstName", Sort.ASCENDING);
+    }
+
+    @Nullable
     public RealmResults<UserModel> getFriends() {
         if (myUserId() == null) {
             Log.w(Config.LOGGER, "Tried to get friends but no user");
             return null;
         }
 
-        ApiService.use().get("me/friends", null, new RealmListResponseHandler<UserModel>() {
+        ApiService.use().get("me/friends", null, new AsyncHttpResponseHandler() {
             @Override
-            public void success(List<UserModel> user) {
-                Log.w(Config.LOGGER, "found users");
-                // They'll've been added to the realm by here
+            public void onSuccess(int statusCode, Header[] headers, byte[] responseBody) {
+                if (responseBody == null || responseBody.length == 0) {
+
+                } else {
+                    try {
+                        String string = new String(responseBody, "UTF-8");
+
+                        JSONArray jsonArray = new JSONArray(string);
+                        Realm realm = RealmService.use().get();
+
+                        realm.beginTransaction();
+
+                        for (int i = 0; i < jsonArray.length(); i++) {
+                            JSONObject jsonObject = jsonArray.getJSONObject(i);
+                            realm.createOrUpdateObjectFromJson(UserModel.class, jsonObject.getJSONObject("user"));
+                            realm.createOrUpdateObjectFromJson(GameModel.class, jsonObject.getJSONObject("game"));
+                        }
+
+                        realm.commitTransaction();
+
+                        // They are now added and the UI will automatically update!
+                    } catch (JSONException | UnsupportedEncodingException e) {
+                        e.printStackTrace();
+                        onFailure(-1, null, null, null);
+                    }
+                }
             }
 
             @Override
-            public void failure(int statusCode, String response) {
+            public void onFailure(int statusCode, Header[] headers, byte[] responseBody, Throwable error) {
                 Toast.makeText(GameService.use().context(), "There was an error. Bummer.", Toast.LENGTH_SHORT).show();
             }
         });
@@ -371,14 +478,24 @@ public class GameService {
 
     @Nullable
     public GameModel latestGame() {
+        return latestGameWith(null);
+    }
+
+    @Nullable
+    public GameModel latestGameWith(UserModel user) {
         if (myUserId() == null) {
             return null;
         }
 
-        RealmResults<GameModel> games = RealmService.use().get()
+        RealmQuery<GameModel> gamesQuery = RealmService.use().get()
                 .where(GameModel.class)
-                .equalTo("user.id", myUserId())
-                .findAllSorted("created", Sort.DESCENDING);
+                .equalTo("user.id", myUserId());
+
+        if (user != null) {
+            gamesQuery.equalTo("opponent.id", user.getId());
+        }
+
+        RealmResults<GameModel> games = gamesQuery.findAllSorted("created", Sort.DESCENDING);
 
         if (games.isEmpty()) {
             return null;

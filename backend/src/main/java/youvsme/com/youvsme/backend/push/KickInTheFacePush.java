@@ -8,8 +8,8 @@ import youvsme.com.youvsme.backend.Config;
 public class KickInTheFacePush extends Push {
     public String user;
 
-    public KickInTheFacePush(String user) {
-        super(Config.PUSH_KICK_IN_THE_FACE);
+    public KickInTheFacePush(String game, String user) {
+        super(Config.PUSH_KICK_IN_THE_FACE, game);
         this.user = user;
     }
 }

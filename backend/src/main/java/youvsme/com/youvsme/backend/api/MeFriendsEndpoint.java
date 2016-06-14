@@ -15,9 +15,12 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import youvsme.com.youvsme.backend.Grab;
+import youvsme.com.youvsme.backend.models.GameModel;
 import youvsme.com.youvsme.backend.models.UserModel;
+import youvsme.com.youvsme.backend.services.GameService;
 import youvsme.com.youvsme.backend.services.JsonService;
 import youvsme.com.youvsme.backend.services.UserService;
+import youvsme.com.youvsme.backend.views.UserGameView;
 import youvsme.com.youvsme.backend.views.UserView;
 
 /**
@@ -40,12 +43,14 @@ public class MeFriendsEndpoint implements Api {
         Connection<User> facebookFriends = facebookClient.fetchConnection("me/friends", User.class,
                 Parameter.with("fields", "id,first_name,last_name,gender,picture.width(512).height(512)"));
 
-        List<UserView> friends = new ArrayList<>();
+        List<UserGameView> friends = new ArrayList<>();
 
         for(User facebookFriend : facebookFriends.getData()) {
             UserModel user = userService.userFromFacebookUser(facebookFriend);
 
-            friends.add(new UserView(user));
+            GameModel game = Grab.grab(GameService.class).latestGameBetween(me, user);
+
+            friends.add(new UserGameView(me, user, game));
         }
 
         resp.getWriter().write(Grab.grab(JsonService.class).json(friends));

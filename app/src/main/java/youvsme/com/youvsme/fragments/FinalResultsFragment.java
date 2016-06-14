@@ -60,7 +60,7 @@ public class FinalResultsFragment extends GameStateFragment {
         final TextView winnerText = (TextView) view.findViewById(R.id.winnerText);
         final TextView loserText = (TextView) view.findViewById(R.id.loserText);
 
-        final GameModel game = GameService.use().latestGame();
+        final GameModel game = ((GameState) StateService.use().getState()).getGame();
 
         if (game == null) {
             return;
@@ -75,34 +75,8 @@ public class FinalResultsFragment extends GameStateFragment {
             return;
         }
 
-        int usersCorrect = 0;
-        int opponentsCorrect = 0;
-
-        List<QuestionModel> myQuestions = GameService.use().myQuestions();
-
-        List<QuestionModel> opponentsQuestions = GameService.use().opponentsQuestions();
-
-        // Aggregate user's correct guesses
-        for (QuestionModel question : opponentsQuestions) {
-            if (question.getOpponentsGuess() == null || question.getChosenAnswer() == null) {
-                return;
-            }
-
-            if (question.getOpponentsGuess().equals(question.getChosenAnswer())) {
-                usersCorrect++;
-            }
-        }
-
-        // Aggregate opponents correct guesses
-        for (QuestionModel question : myQuestions) {
-            if (question.getOpponentsGuess() == null || question.getChosenAnswer() == null) {
-                return;
-            }
-
-            if (question.getOpponentsGuess().equals(question.getChosenAnswer())) {
-                opponentsCorrect++;
-            }
-        }
+        int usersCorrect = GameService.use().numberOfMyGuessesCorrect(game);
+        int opponentsCorrect = GameService.use().numberOfOpponentsGuessesCorrect(game);
 
         yourFinalScore.setText("0" + usersCorrect);
         opponentsFinalScore.setText("0" + opponentsCorrect);

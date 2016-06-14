@@ -17,6 +17,7 @@ import youvsme.com.youvsme.fragments.WagerSentFragment;
 import youvsme.com.youvsme.models.GameModel;
 import youvsme.com.youvsme.models.UserModel;
 import youvsme.com.youvsme.services.ApiService;
+import youvsme.com.youvsme.services.GameService;
 import youvsme.com.youvsme.services.StateService;
 import youvsme.com.youvsme.util.Config;
 import youvsme.com.youvsme.util.RealmObjectResponseHandler;
@@ -35,6 +36,7 @@ public class SearchForOpponentState implements State {
     private AppCompatActivity activity;
 
     private UserModel opponent;
+    private GameModel game;
 
     @Override
     public void show(AppCompatActivity activity) {
@@ -64,8 +66,15 @@ public class SearchForOpponentState implements State {
 
     public void selectOpponent(UserModel opponent) {
         this.opponent = opponent;
-        battleThisOpponentFragment.setOpponent(opponent);
-        showFragment(battleThisOpponentFragment);
+
+        String stakes = GameService.use().inferGameState(GameService.use().latestGameWith(opponent));
+
+        if (stakes == null || GameService.GAME_STATE_FINISHED.equals(stakes)) {
+            battleThisOpponentFragment.setOpponent(opponent);
+            showFragment(battleThisOpponentFragment);
+        } else {
+            StateService.use().go(new GameState(GameService.use().latestGameWith(opponent)));
+        }
     }
 
     public void confirmBattleOpponent() {
@@ -89,7 +98,9 @@ public class SearchForOpponentState implements State {
 
         ApiService.use().post("game", params, new RealmObjectResponseHandler<GameModel>() {
             @Override
-            public void success(GameModel response) {
+            public void success(GameModel game) {
+                SearchForOpponentState.this.game = game;
+
                 if (Strings.isNullOrEmpty(what)) {
                     beginGame();
                 } else {
@@ -105,7 +116,11 @@ public class SearchForOpponentState implements State {
     }
 
     public void beginGame() {
-        GameState gameState = new GameState();
+        if (game == null) {
+            return;
+        }
+
+        GameState gameState = new GameState(game);
         gameState.itBegins();
         StateService.use().go(gameState);
     }

@@ -44,11 +44,10 @@ public class MyServlet extends HttpServlet {
         }
 
         if ("add-question".equals(pathRaw[1])) {
-            String relativeWebPath = "./add-question.html";
-            String absoluteFilePath = getServletContext().getRealPath(relativeWebPath);
-            File file = new File(absoluteFilePath);
-            IOUtils.copy(new FileInputStream(file), resp.getOutputStream());
-            resp.setContentType("text/html");
+            raw("./add-question.html", resp);
+
+        } else if ("contest".equals(pathRaw[1])) {
+            raw("./contest.html", resp);
 
         } else if("api".equals(pathRaw[1])) {
             if (pathRaw.length < 3) {
@@ -62,6 +61,15 @@ public class MyServlet extends HttpServlet {
             List<String> path = Arrays.asList(pathRaw).subList(2, pathRaw.length);
 
             Grab.grab(RootAbstractEndpoint.class).serve(method, path, req, resp);
+        } else {
+            raw("./index.html", resp);
         }
+    }
+
+    private void raw(String relativeWebPath, HttpServletResponse resp) throws IOException {
+        String absoluteFilePath = getServletContext().getRealPath(relativeWebPath);
+        File file = new File(absoluteFilePath);
+        IOUtils.copy(new FileInputStream(file), resp.getOutputStream());
+        resp.setContentType("text/html");
     }
 }

@@ -93,21 +93,7 @@ public class UserService {
     }
 
     private void playGames() {
-        GameService.use().loadGame(new RealmObjectResponseHandler<GameModel>() {
-            @Override
-            public void success(GameModel response) {
-                if (response == null || response.getId() == null) {
-                    StateService.use().go(new SearchForOpponentState());
-                } else {
-                    StateService.use().go(new GameState());
-                }
-            }
-
-            @Override
-            public void failure(int statusCode, String response) {
-                StateService.use().go(new SearchForOpponentState());
-            }
-        });
+        StateService.use().go(new SearchForOpponentState());
     }
 
     public void facebookLogin(Activity activity) {

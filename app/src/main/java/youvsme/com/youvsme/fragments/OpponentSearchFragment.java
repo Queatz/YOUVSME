@@ -3,11 +3,15 @@ package youvsme.com.youvsme.fragments;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
+import android.widget.EditText;
 import android.widget.ListView;
+import android.widget.TextView;
 
 import io.realm.RealmResults;
 import youvsme.com.youvsme.R;
@@ -33,25 +37,43 @@ public class OpponentSearchFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         final View view = inflater.inflate(R.layout.fragment_opponent_search, null);
 
-        final View opponentSearch = view.findViewById(R.id.opponentSearch);
+        final EditText opponentSearch = (EditText) view.findViewById(R.id.opponentSearch);
+        final ListView opponents = (ListView) view.findViewById(R.id.opponentsList);
 
-        opponentSearch.setOnClickListener(new View.OnClickListener() {
+        opponentSearch.addTextChangedListener(new TextWatcher() {
             @Override
-            public void onClick(View v) {
-                // filter list
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+                RealmResults<UserModel> friends = GameService.use().filterFriends(s.toString());
+                opponents.setAdapter(new FriendsAdapter(GameService.use().context(), friends));
             }
         });
 
         view.findViewById(R.id.backButton).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                ((SearchForOpponentState) StateService.use().getState()).backPressed();
+                StateService.use().getState().backPressed();
+            }
+        });
+
+        view.findViewById(R.id.invite).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                GameService.use().invite();
             }
         });
 
         Helpers.keyboard(opponentSearch, true);
 
-        final ListView opponents = (ListView) view.findViewById(R.id.opponentsList);
         RealmResults<UserModel> friends = GameService.use().getFriends();
         opponents.setAdapter(new FriendsAdapter(GameService.use().context(), friends));
 

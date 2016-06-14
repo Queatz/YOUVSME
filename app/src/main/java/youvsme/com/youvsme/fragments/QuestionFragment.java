@@ -3,13 +3,16 @@ package youvsme.com.youvsme.fragments;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.util.Log;
+import android.util.TypedValue;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.Animation;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.google.gson.reflect.TypeToken;
+import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -90,33 +93,32 @@ public class QuestionFragment extends GameStateFragment {
     }
 
     public void update(View view) {
-        final GameModel game = GameService.use().latestGame();
+        final GameModel game = ((GameState) StateService.use().getState()).getGame();
 
         if (view == null || game == null) {
             return;
         }
 
+        final View top = view.findViewById(R.id.top);
         final TextView title = (TextView) view.findViewById(R.id.title);
+        final ImageView picture = (ImageView) view.findViewById(R.id.opponentPicture);
         final TextView questionText = (TextView) view.findViewById(R.id.questionText);
         final TextView choiceAText = (TextView) view.findViewById(R.id.choiceAText);
         final TextView choiceBText = (TextView) view.findViewById(R.id.choiceBText);
         final TextView choiceCText = (TextView) view.findViewById(R.id.choiceCText);
         final TextView choiceDText = (TextView) view.findViewById(R.id.choiceDText);
 
-        List<QuestionModel> myQuestionsRemaining = GameService.use().myQuestionsRemaining();
-        List<QuestionModel> opponentsAnswersUnguessed = GameService.use().opponentsAnswersUnguessed();
+        List<QuestionModel> myQuestionsRemaining = GameService.use().myQuestionsRemaining(game);
+        List<QuestionModel> opponentsAnswersUnguessed = GameService.use().opponentsAnswersUnguessed(game);
 
         boolean isMyQuestion;
-        int questionNumber;
 
         if (myQuestionsRemaining.size() != 0) {
             question = myQuestionsRemaining.get(0);
             isMyQuestion = true;
-            questionNumber = 5 - myQuestionsRemaining.size() + 1;
         } else if (opponentsAnswersUnguessed.size() != 0) {
             question = opponentsAnswersUnguessed.get(0);
             isMyQuestion = false;
-            questionNumber = 5 - opponentsAnswersUnguessed.size() + 1;
         } else {
             Log.w(Config.LOGGER, "Nothing to do here, skipping.");
             ((GameState) StateService.use().getState()).next();
@@ -132,17 +134,36 @@ public class QuestionFragment extends GameStateFragment {
         }
 
         if (isMyQuestion) {
-            title.setText(getString(R.string.question_x, questionNumber));
+            title.setText(getString(R.string.yourQuestions));
+            picture.setVisibility(View.GONE);
             questionText.setText(nameInject(question.getText(), null));
+            top.setBackgroundColor(getResources().getColor(R.color.colorPrimaryDark));
         } else {
-            title.setText(getString(R.string.answer_x, questionNumber));
+            title.setText(getString(R.string.theirQuestions, game.getOpponent().getFirstName()));
+            picture.setVisibility(View.VISIBLE);
+            Picasso.with(getContext()).load(game.getOpponent().getPictureUrl()).into(picture);
             questionText.setText(nameInject(question.getText(), game.getOpponent().getFirstName()));
+            top.setBackgroundColor(getResources().getColor(R.color.colorPrimary));
         }
 
         choiceAText.setText(choices.get(0));
         choiceBText.setText(choices.get(1));
         choiceCText.setText(choices.get(2));
         choiceDText.setText(choices.get(3));
+
+        // Shrink long texts' text sizes
+
+        int textSize = 22;
+
+        for (TextView textView : new TextView[] {choiceAText, choiceBText, choiceCText, choiceDText}) {
+            textSize = Math.min(textSize, textView.getText().toString().length() < 48 ? 22 : 16);
+        }
+
+        for (TextView textView : new TextView[] {choiceAText, choiceBText, choiceCText, choiceDText}) {
+            textView.setTextSize(TypedValue.COMPLEX_UNIT_SP, textSize);
+        }
+
+        questionText.setTextSize(TypedValue.COMPLEX_UNIT_SP, textSize);
     }
 
     private void choose(final int choice) {
@@ -166,7 +187,9 @@ public class QuestionFragment extends GameStateFragment {
 
         ((GameState) StateService.use().getState()).answerQuestion(question, choice);
 
-        if (!GameService.use().isMyQuestion(question, GameService.use().latestGame())) {
+        GameModel game = ((GameState) StateService.use().getState()).getGame();
+
+        if (!GameService.use().isMyQuestion(question, game)) {
             flash(textViews.get(choice), question.getChosenAnswer().equals(choice));
         } else {
             ((GameState) StateService.use().getState()).next();

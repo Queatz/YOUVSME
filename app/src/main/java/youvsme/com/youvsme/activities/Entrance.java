@@ -19,6 +19,14 @@ public class Entrance extends AppCompatActivity
         super.onCreate(savedInstanceState);
 
         StateService.use().setActivity(this);
+
+        if (getIntent() != null) {
+            String game = getIntent().getStringExtra("game");
+
+            if (game != null) {
+                StateService.use().openGameId(game);
+            }
+        }
     }
 
     @Override
