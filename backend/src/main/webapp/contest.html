@@ -21,6 +21,11 @@
                 var choiceDInput = $('#choice_d');
                 var author = $('#author');
 
+                if (!$('#agree-tos')[0].checked) {
+                    alert('You must agree to the Terms & Conditions first.');
+                    return;
+                }
+
                 if (check(author)) {
                     alert('Hey! We need your email to reach out to you if you win.');
                     return;
@@ -43,6 +48,15 @@
                     $('.row').hide();
                 }, 'text');
             }
+
+            $(function () {
+                $('#tos').click(function (event) {
+                    event.preventDefault();
+                    event.stopPropagation();
+
+                    $('.read-tos').slideDown();
+                });
+            });
         </script>
     <style>
         @import url(https://fonts.googleapis.com/css?family=Raleway:400,800);
@@ -92,6 +106,15 @@
             font-weight: bold;
         }
 
+        #tos {
+            cursor: pointer;
+        }
+
+        .read-tos {
+            display: none;
+            white-space: pre-wrap;
+        }
+
     </style>
 </head>
 
@@ -105,7 +128,8 @@
             <p>
                 We're building a new question based  app and we'd love your help!<br /><br />
                 Enter your best question and 4 multiple choice answers to be entered in the contest!<br /><br />
-                Top 3 questions will each get a $25.00 gift card to Amazon!
+                Top 3 questions will each get a $50.00 gift card to Amazon!<br /><br />
+                The contest will end on <u>July 15th!</u>
             </p>
             <p class="important">
                 <small>Questions must fall into one or all of the following categories:
@@ -176,6 +200,39 @@
                             </div>
                             <input id="choice_d" type="text">
                             <label class="active" for="choice_d">Answer D</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="read-tos col s12">
+1. ENTRY:  No purchase necessary to enter or win. Contestants will enter by submitting questions to http://youvsmeapp.com/contest
+
+2. ELIGIBILITY: This contest is open only to legal U.S. residents, over the age of 18. Void where prohibited by law. Contestants residing in those areas where the contest is void may participate in the contest but may not win any prizes.
+
+3. WINNER SELECTION:  Employees of YOUVSME will judge the contest. Submissions will be judged on their creativity and originality. All decisions of the judges are final.
+
+4. PRIZES:  Winners will receive Motley Fool merchandise, with a maximum value of less than $25 in Amazon Gift Cards.
+
+5. WINNER NOTIFICATION: Winners will be notified within 14 days after the determination date. Inability to contact a winner may result in disqualification and selection of an alternate winner.
+
+6. GENERAL CONDITIONS:
+
+a. Participants hereby grant YOUVSME a non-exclusive, perpetual, worldwide license to broadcast, publish, store, reproduce, distribute, syndicate, and otherwise use and exhibit the Submission (along with their names, voices, performance and/or likenesses) in all media now known and later come into being for purposes of trade or advertising without further compensation. Particpants represent and warrant that they have full legal right, power and authority to grant YOUVSME the foregoing license and if applicable, have secured all necessary rights from any particpants in, and contributors to, their Submission in order to grant such a license.
+
+b. YOUVSME is under no oblication to use any Submission or return the Submissions to particpants.
+
+7. USE OF CONTEST INFORMATION: All entries become the property of YOUVSME. YOUVSME reserves the right to use any and all information related to the contest, including submissions provided by the contestants, for editorial, marketing and any other purpose, unless prohibited by law.
+
+8. NOT ENDORSED BY FACEBOOK: By participating in this contest, you acknowledge that this contest is in no way sponsored, endorsed or administered by, or associated with, Facebook and release Facebook from any and all liability arising from or related to this contest. The information you are providing for this contest is being provided to YOUVSME and not to Facebook, and will be used to notify you if you have won, and to inform you about special offers from YOUVSME and our trusted partners.
+
+9. CONDUCT: All contest participants agree to be bound by these Official Rules.  YOUVSME in its sole discretion, reserves the right to disqualify any person it finds to be tampering with the entry process, the operation of its web site or is otherwise in violation of these rules.
+
+10. LIMITATIONS OF LIABILITY: YOUVSME is not responsible for late, lost or misdirected email or for any computer, online, telephone or technical malfunctions that may occur.  If for any reason, the contest is not capable of running as planned, including infection by computer virus, bugs, tampering, unauthorized intervention or technical failures of any sort, YOUVSME may cancel, terminate, modify or suspend the contest.  Entrants further agree to release YOUVSME from any liability resulting from, or related to participation in the contest.
+
+11. WINNERS LIST: The names of the winner may be obtained by emailing: jrlange@gmail.com
+                        </div>
+                        <div class="input-field col s12 center-align">
+                            <input type="checkbox" id="agree-tos">
+                            <label for="agree-tos" class="grey-text text-darken-3">Yes, I agree to the <span class="teal-text" id="tos">Terms & Conditions</span></label>
                         </div>
                     </div>
                 </div>
