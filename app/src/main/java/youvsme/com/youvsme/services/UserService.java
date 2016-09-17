@@ -17,6 +17,7 @@ import com.loopj.android.http.RequestParams;
 import youvsme.com.youvsme.models.GameModel;
 import youvsme.com.youvsme.models.UserModel;
 import youvsme.com.youvsme.states.GameState;
+import youvsme.com.youvsme.states.NoUserState;
 import youvsme.com.youvsme.states.SearchForOpponentState;
 import youvsme.com.youvsme.util.Config;
 import youvsme.com.youvsme.util.RealmObjectResponseHandler;
@@ -109,5 +110,9 @@ public class UserService {
 
     public void initialize() {
         prepareForFacebookLogin();
+    }
+
+    public void logout() {
+        StateService.use().go(new NoUserState());
     }
 }

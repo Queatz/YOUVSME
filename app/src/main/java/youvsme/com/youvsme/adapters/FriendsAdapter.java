@@ -21,7 +21,7 @@ import youvsme.com.youvsme.services.GameService;
  */
 public class FriendsAdapter extends RealmBaseAdapter<UserModel> {
     public FriendsAdapter(Context context, RealmResults<UserModel> realmResults) {
-        super(context, realmResults, true);
+        super(context, realmResults);
     }
 
     @Override

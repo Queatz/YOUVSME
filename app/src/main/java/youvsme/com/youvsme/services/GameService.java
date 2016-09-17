@@ -23,6 +23,7 @@ import java.util.Comparator;
 import java.util.List;
 
 import cz.msebera.android.httpclient.Header;
+import cz.msebera.android.httpclient.HttpStatus;
 import io.realm.Case;
 import io.realm.Realm;
 import io.realm.RealmQuery;
@@ -440,33 +441,41 @@ public class GameService {
                 if (responseBody == null || responseBody.length == 0) {
 
                 } else {
+                    Realm realm = RealmService.use().get();
+
                     try {
                         String string = new String(responseBody, "UTF-8");
 
                         JSONArray jsonArray = new JSONArray(string);
-                        Realm realm = RealmService.use().get();
 
                         realm.beginTransaction();
 
                         for (int i = 0; i < jsonArray.length(); i++) {
                             JSONObject jsonObject = jsonArray.getJSONObject(i);
                             realm.createOrUpdateObjectFromJson(UserModel.class, jsonObject.getJSONObject("user"));
-                            realm.createOrUpdateObjectFromJson(GameModel.class, jsonObject.getJSONObject("game"));
+
+                            if (jsonObject.has("game")) {
+                                realm.createOrUpdateObjectFromJson(GameModel.class, jsonObject.getJSONObject("game"));
+                            }
                         }
-
-                        realm.commitTransaction();
-
                         // They are now added and the UI will automatically update!
                     } catch (JSONException | UnsupportedEncodingException e) {
                         e.printStackTrace();
                         onFailure(-1, null, null, null);
+                    } finally {
+                        realm.commitTransaction();
                     }
                 }
             }
 
             @Override
             public void onFailure(int statusCode, Header[] headers, byte[] responseBody, Throwable error) {
-                Toast.makeText(GameService.use().context(), "There was an error. Bummer.", Toast.LENGTH_SHORT).show();
+                if (HttpStatus.SC_UNAUTHORIZED == statusCode) {
+                    UserService.use().logout();
+                    Toast.makeText(GameService.use().context(), "Log in required.", Toast.LENGTH_SHORT).show();
+                } else {
+                    Toast.makeText(GameService.use().context(), "There was an error. Bummer.", Toast.LENGTH_SHORT).show();
+                }
             }
         });
 

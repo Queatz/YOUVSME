@@ -56,6 +56,13 @@
 
                     $('.read-tos').slideDown();
                 });
+
+                $('#view-samples').click(function (event) {
+                    event.preventDefault();
+                    event.stopPropagation();
+
+                    $('.sample').slideDown();
+                });
             });
         </script>
     <style>
@@ -70,7 +77,7 @@
 
         .message {
             font-family: Raleway;
-            background: rgba(89, 110, 166, 0.882353);
+            background: rgba(0, 0, 0, 0.67);
             padding: 1em;
             border-radius: 24px;
             color: white;
@@ -81,7 +88,7 @@
         }
 
         .important {
-            background: yellow;
+            background: #F8991C;
             color: black;
             border-radius: 3px;
             font-size: 85%;
@@ -90,11 +97,12 @@
 
         .sample {
             font-size: 66%;
-            background: rgba(255, 255, 255, .25);
+            background: rgba(128, 128, 128, .66);
             padding: 1em;
             border-radius: 16px;
             font-weight: 400;
             line-height: 2em;
+            display: none;
         }
 
         .r {
@@ -115,6 +123,18 @@
             white-space: pre-wrap;
         }
 
+        .notes {
+            cursor: pointer;
+            font-size: 12pt;
+            font-weight: initial;
+            padding: 1em;
+        }
+
+        #view-samples {
+            color: #FF4695;
+            font-weight: bold;
+        }
+
     </style>
 </head>
 
@@ -122,18 +142,19 @@
 <div class="container">
     <br />
     <div class="center-align">
-        <img width="512px" src="./img/contest_youvsme_logo.png" />
+        <img width="300px" src="./img/contest_youvsme_logo.png" />
 
         <div class="message">
             <p>
-                We're building a new question based  app and we'd love your help!<br /><br />
-                Enter your best question and 4 multiple choice answers to be entered in the contest!<br /><br />
-                Top 3 questions will each get a $50.00 gift card to Amazon!<br /><br />
-                The contest will end on <u>July 15th!</u>
+                Write <u>one question</u>. Make <u>millions laugh</u>!<br /><br />
+                WIN a <u style="color: #F8991C;">$50.00 Amazon giftcard</u> for the best question!
             </p>
             <p class="important">
                 <small>Questions must fall into one or all of the following categories:
                 funny, sexy, strange, vulgar, or thought provoking.</small>
+            </p>
+            <p class="notes">
+                Contest ends: July 15th &bull; <span id="view-samples"><u>View Sample Questions</u></span>
             </p>
             <p class="sample">
                 <b>Sample Question 1:</b> Your partner tells you they want to start getting kinky in bed, and they ask you to choose the toy. What do you choose? A. Whip , B. Hot Wax, C. Chains, D. Blowtorch.
@@ -157,6 +178,9 @@
                             <i class="material-icons prefix">mode_edit</i>
                             <input id="author" type="text">
                             <label class="active" for="author">Your Email Address *</label>
+                        </div>
+                        <div class="center-align grey-text">
+                            Your email is never shared with anyone.
                         </div>
                     </div>
                     <div class="row">

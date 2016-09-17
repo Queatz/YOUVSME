@@ -14,7 +14,7 @@
             android:id="@+id/backButton"
             android:background="?android:selectableItemBackground"
             android:padding="16dp"
-            android:src="@drawable/ic_arrow_back_white_24dp"
+            android:src="@drawable/ic_history_white_24dp"
             android:tint="@color/red"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -40,12 +40,26 @@
         android:dividerHeight="0dp"
         android:layout_below="@+id/top" />
 
+    <TextView
+        android:id="@+id/invitePartner"
+        android:visibility="gone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:padding="16dp"
+        android:textSize="24sp"
+        android:textAlignment="center"
+        android:gravity="center"
+        android:textColor="@color/colorPrimaryDark"
+        android:text="@string/invite_your_partner_and_they_will_show_up_here"/>
+
     <android.support.design.widget.FloatingActionButton
         android:id="@+id/invite"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_alignParentRight="true"
+        android:fitsSystemWindows="true"
         android:layout_margin="16dp"
         android:src="@drawable/ic_person_add_white_24dp" />
 

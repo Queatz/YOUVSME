@@ -4,6 +4,7 @@ import com.restfb.DefaultFacebookClient;
 import com.restfb.FacebookClient;
 import com.restfb.Parameter;
 import com.restfb.Version;
+import com.restfb.exception.FacebookException;
 import com.restfb.types.User;
 
 import javax.annotation.Nullable;
@@ -38,7 +39,7 @@ public class UserService {
 
             if (user != null) {
                 return user;
-            } else {
+            } else try {
                 FacebookClient facebookClient = new DefaultFacebookClient(facebookToken, Version.VERSION_2_5);
 
                 User facebookUser = facebookClient.fetchObject("me", User.class,
@@ -54,6 +55,9 @@ public class UserService {
                 ModelService.save(newUser);
 
                 return newUser;
+            } catch (FacebookException e) {
+                e.printStackTrace();
+                return null;
             }
         }
 

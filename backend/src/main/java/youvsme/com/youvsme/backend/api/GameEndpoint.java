@@ -24,6 +24,7 @@ import youvsme.com.youvsme.backend.push.ChallengePush;
 import youvsme.com.youvsme.backend.push.FinishedAnsweringPush;
 import youvsme.com.youvsme.backend.push.KickInTheFacePush;
 import youvsme.com.youvsme.backend.push.Push;
+import youvsme.com.youvsme.backend.services.GameService;
 import youvsme.com.youvsme.backend.services.JsonService;
 import youvsme.com.youvsme.backend.services.ModelService;
 import youvsme.com.youvsme.backend.services.PushService;
@@ -67,6 +68,18 @@ public class GameEndpoint implements Api {
                     }
 
                     // TODO check that they are friends?
+
+                    GameService gameService = Grab.grab(GameService.class);
+                    GameModel activeGame = gameService.latestGameBetween(me, opponent);
+
+                    // If there's an active game between these people, just return it and don't
+                    // create a new one.  This does mean that the wager is dismissed, but normally
+                    // they should not be able to get into this state where they can create a game.
+                    if (activeGame != null && gameService.questionsRemaining(activeGame) > 0) {
+                        resp.getWriter().write(Grab.grab(JsonService.class).json(new GameView(me, activeGame)));
+                        return;
+                    }
+
 
                     final GameModel game = ModelService.create(GameModel.class);
                     game.setUsers(ImmutableList.of(ModelService.ref(me), ModelService.ref(opponent)));

@@ -7,7 +7,7 @@ android {
 
     defaultConfig {
         applicationId "youvsme.com.youvsme"
-        versionCode 4
+        versionCode 7
         versionName "1.0"
 
         minSdkVersion 16
@@ -38,6 +38,7 @@ dependencies {
     compile 'com.makeramen:roundedimageview:2.2.1'
     compile 'com.squareup.picasso:picasso:2.5.2'
     compile 'com.android.support:multidex:1.0.1'
+    compile 'io.realm:android-adapters:1.0.1'
 }
 
 apply plugin: 'com.google.gms.google-services'

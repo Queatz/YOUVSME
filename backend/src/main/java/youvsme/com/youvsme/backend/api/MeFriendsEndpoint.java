@@ -5,6 +5,7 @@ import com.restfb.DefaultFacebookClient;
 import com.restfb.FacebookClient;
 import com.restfb.Parameter;
 import com.restfb.Version;
+import com.restfb.exception.FacebookException;
 import com.restfb.types.User;
 
 import java.io.IOException;
@@ -38,21 +39,26 @@ public class MeFriendsEndpoint implements Api {
             return;
         }
 
-        // TODO don't hit facebook again if we refreshed their friends within the minute already
-        FacebookClient facebookClient = new DefaultFacebookClient(me.getFacebookToken(), Version.LATEST);
-        Connection<User> facebookFriends = facebookClient.fetchConnection("me/friends", User.class,
-                Parameter.with("fields", "id,first_name,last_name,gender,picture.width(512).height(512)"));
+        try {
+            // TODO don't hit facebook again if we refreshed their friends within the minute already
+            FacebookClient facebookClient = new DefaultFacebookClient(me.getFacebookToken(), Version.LATEST);
+            Connection<User> facebookFriends = facebookClient.fetchConnection("me/friends", User.class,
+                    Parameter.with("fields", "id,first_name,last_name,gender,picture.width(512).height(512)"));
 
-        List<UserGameView> friends = new ArrayList<>();
+            List<UserGameView> friends = new ArrayList<>();
 
-        for(User facebookFriend : facebookFriends.getData()) {
-            UserModel user = userService.userFromFacebookUser(facebookFriend);
+            for (User facebookFriend : facebookFriends.getData()) {
+                UserModel user = userService.userFromFacebookUser(facebookFriend);
 
-            GameModel game = Grab.grab(GameService.class).latestGameBetween(me, user);
+                GameModel game = Grab.grab(GameService.class).latestGameBetween(me, user);
 
-            friends.add(new UserGameView(me, user, game));
+                friends.add(new UserGameView(me, user, game));
+            }
+
+            resp.getWriter().write(Grab.grab(JsonService.class).json(friends));
+        } catch (FacebookException e) {
+            resp.setStatus(HttpServletResponse.SC_UNAUTHORIZED);
+            e.printStackTrace();
         }
-
-        resp.getWriter().write(Grab.grab(JsonService.class).json(friends));
     }
 }

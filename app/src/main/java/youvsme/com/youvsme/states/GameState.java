@@ -20,6 +20,7 @@ import youvsme.com.youvsme.models.GameModel;
 import youvsme.com.youvsme.models.QuestionModel;
 import youvsme.com.youvsme.services.GameService;
 import youvsme.com.youvsme.services.StateService;
+import youvsme.com.youvsme.util.Helpers;
 
 /**
  * Created by jacob on 3/5/16.
@@ -46,6 +47,7 @@ public class GameState implements State {
     public void show(AppCompatActivity activity) {
         this.activity = activity;
         activity.setContentView(R.layout.activity_search_for_opponent);
+        Helpers.keyboard(activity.findViewById(android.R.id.content), false);
 
         if (game == null) {
             return;
@@ -57,8 +59,7 @@ public class GameState implements State {
             case GameService.GAME_STATE_STARTED:
                 if (game.getWager() != null
                         && game.getWager().length() > 0
-                        && GameService.use().myQuestionsRemaining(game).size() == GameService.use().numberOfQuestions(game)
-                        && GameService.use().opponentsQuestionsRemaining(game).size() == 0) {
+                        && GameService.use().myQuestionsRemaining(game).size() == GameService.use().numberOfQuestions(game)) {
                     showFragment(theWagerIsSet);
                 } else {
                     showFragment(questionFragment);
@@ -173,7 +174,8 @@ public class GameState implements State {
      * User wants to gooooooo.
      */
     public void letsGo() {
-        if (GameService.use().opponentsQuestionsRemaining(game).size() > 0) {
+        if (GameService.use().myQuestionsRemaining(game).size() == 0 &&
+                GameService.use().opponentsQuestionsRemaining(game).size() > 0) {
             waitingForMai.setInitial(true);
             showFragment(waitingForMai);
         } else {

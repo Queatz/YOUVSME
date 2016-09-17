@@ -12,6 +12,7 @@ import youvsme.com.youvsme.states.GameState;
 import youvsme.com.youvsme.states.NoUserState;
 import youvsme.com.youvsme.states.SearchForOpponentState;
 import youvsme.com.youvsme.states.State;
+import youvsme.com.youvsme.util.Helpers;
 import youvsme.com.youvsme.util.RealmObjectResponseHandler;
 
 /**

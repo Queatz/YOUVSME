@@ -20,6 +20,9 @@ public class Entrance extends AppCompatActivity
 
         StateService.use().setActivity(this);
 
+        // Do this so you don't see the game icon when the keyboard opens
+        getWindow().setBackgroundDrawableResource(R.color.placeholder);
+
         if (getIntent() != null) {
             String game = getIntent().getStringExtra("game");
 

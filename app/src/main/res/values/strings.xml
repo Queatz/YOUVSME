@@ -55,5 +55,7 @@
     <string name="last_game_lost">Last Game Lost</string>
     <string name="last_game_tied">Last Game Tied</string>
     <string name="share_using">Share using…</string>
-    <string name="invite_message">Prepare for battle.</string>
+    <string name="invite_message">INSTALL THIS APP NOW</string>
+    <string name="no_wager_was_set">No wager was set.</string>
+    <string name="invite_your_partner_and_they_will_show_up_here">Invite your partner and they will show up here</string>
 </resources>

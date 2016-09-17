@@ -25,11 +25,14 @@ public class MakeAWagerFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         final View view = inflater.inflate(R.layout.fragment_make_a_wager, null);
 
+        final EditText wagerWhatView = (EditText) view.findViewById(R.id.wagerWhat);
+        final EditText wagerNoteView = (EditText) view.findViewById(R.id.wagerNote);
+
         view.findViewById(R.id.sendWagerButton).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                final String wagerWhat = ((EditText) view.findViewById(R.id.wagerWhat)).getText().toString();
-                final String wagerNote = ((EditText) view.findViewById(R.id.wagerNote)).getText().toString();
+                final String wagerWhat = wagerWhatView.getText().toString();
+                final String wagerNote = wagerNoteView.getText().toString();
 
                 if (Strings.isNullOrEmpty(wagerWhat)) {
                     Toast.makeText(getContext(), getString(R.string.no_wager), Toast.LENGTH_SHORT).show();
@@ -39,7 +42,20 @@ public class MakeAWagerFragment extends Fragment {
                 ((SearchForOpponentState) StateService.use().getState()).setWager(wagerWhat, wagerNote);
             }
         });
- 
+
+        view.addOnLayoutChangeListener(new View.OnLayoutChangeListener() {
+            @Override
+            public void onLayoutChange(View v, int left, int top, int right, int bottom, int oldLeft, int oldTop, int oldRight, int oldBottom) {
+                boolean hide = bottom - top < right - left;
+
+                view.findViewById(R.id.skipWagerButton).setVisibility(
+                        hide ? View.GONE : View.VISIBLE
+                );
+
+                view.findViewById(R.id.bottomLayout).requestLayout();
+            }
+        });
+
         view.findViewById(R.id.backButton).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:elevation="2dp"
+        android:background="@color/white"
+        android:layout_margin="4dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingLeft="16dp"
+            android:paddingRight="16dp"
+            android:layout_marginBottom="16dp">
+
+            <LinearLayout
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/yourFinalScore"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:textSize="84sp"
+                    android:text="09"
+                    android:textStyle="bold"
+                    android:textColor="@color/almostBlack" />
+
+                <TextView
+                    android:id="@+id/yourName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:textSize="18sp"
+                    android:text="Aanxiaoben"
+                    android:textColor="@color/almostBlack" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/opponentsFinalScore"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:textSize="84sp"
+                    android:text="07"
+                    android:textStyle="bold"
+                    android:textColor="@color/almostBlack" />
+
+                <TextView
+                    android:id="@+id/opponentsName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:textSize="18sp"
+                    android:text="Kevin"
+                    android:textColor="@color/almostBlack" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <com.makeramen.roundedimageview.RoundedImageView
+            android:id="@+id/opponentPicture"
+            android:layout_width="154dp"
+            android:layout_height="154dp"
+            android:layout_margin="16dp"
+            app:riv_corner_radius="154dp"
+            android:src="@drawable/red_button"
+            app:riv_border_width="6dp"
+            app:riv_border_color="@color/lightGrayText" />
+
+        <LinearLayout
+            android:id="@+id/fragment"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:paddingLeft="16dp"
+            android:paddingRight="16dp"
+            android:gravity="center">
+
+            <TextView
+                android:id="@+id/wagerWhat"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAlignment="center"
+                android:text="Wager Main Text"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                android:textColor="@color/almostBlack"
+                android:gravity="center" />
+
+            <TextView
+                android:id="@+id/wagerNote"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAlignment="center"
+                android:paddingTop="16dp"
+                android:paddingBottom="16dp"
+                android:text="Wager Note Text"
+                android:textSize="18sp"
+                android:textColor="@color/almostBlack"
+                android:gravity="center" />
+
+            <TextView
+                android:id="@+id/wagerNone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAlignment="center"
+                android:textStyle="italic"
+                android:paddingBottom="16dp"
+                android:text="@string/no_wager_was_set"
+                android:textSize="18sp"
+                android:textColor="@color/grayDark"
+                android:gravity="center" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+</FrameLayout>
