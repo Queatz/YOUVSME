@@ -34,8 +34,7 @@
                 android:layout_height="36dp"
                 android:layout_margin="8dp"
                 android:layout_gravity="center_vertical"
-                app:riv_corner_radius="72dp"
-                android:src="@drawable/ic_arrow_back_white_24dp"
+                app:riv_corner_radius="128dp"
                 app:riv_border_width="1dp"
                 app:riv_border_color="@color/lightGrayText" />
 
@@ -46,30 +45,32 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
                 android:textColor="@color/white"
-                android:textSize="18sp"
+                android:textStyle="bold"
+                android:textSize="16sp"
                 android:text="Question 1"/>
 
         </LinearLayout>
 
     </LinearLayout>
 
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_above="@id/bottomLayout"
-        android:layout_below="@id/topLayout">
-
-        <TextView
-            android:id="@+id/questionText"
+        <ScrollView
+            android:id="@+id/scrollMe"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="32dp"
-            android:textSize="22sp"
-            android:textStyle="bold"
-            android:textColor="@color/almostBlack"
-            android:text="As a child you were inducted into one of the world's most infamous street gangs. Over the years you came to master one weapon.  What did you master?As a child you were inducted into one of the world's most infamous street gangs. Over the years you came to master one weapon.  What did you master?" />
+            android:layout_above="@id/bottomLayout"
+            android:layout_below="@id/topLayout">
 
-    </ScrollView>
+            <TextView
+                android:id="@+id/questionText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="32dp"
+                android:textSize="22sp"
+                android:textStyle="bold"
+                android:textColor="@color/almostBlack"
+                android:text="As a child you were inducted into one of the world's most infamous street gangs. Over the years you came to master one weapon.  What did you master?As a child you were inducted into one of the world's most infamous street gangs. Over the years you came to master one weapon.  What did you master?" />
+
+        </ScrollView>
 
     <LinearLayout
         android:id="@+id/bottomLayout"
@@ -112,7 +113,7 @@
             android:layout_height="1dp"
             android:layout_marginLeft="72dp"
             android:layout_marginRight="16dp"
-            android:background="@color/lightGrayText"/>
+            android:background="@color/placeholder"/>
 
         <LinearLayout
             android:id="@+id/choiceBView"
@@ -147,7 +148,7 @@
             android:layout_height="1dp"
             android:layout_marginLeft="72dp"
             android:layout_marginRight="16dp"
-            android:background="@color/lightGrayText"/>
+            android:background="@color/placeholder"/>
 
         <LinearLayout
             android:id="@+id/choiceCView"
@@ -182,7 +183,7 @@
             android:layout_height="1dp"
             android:layout_marginLeft="72dp"
             android:layout_marginRight="16dp"
-            android:background="@color/lightGrayText"/>
+            android:background="@color/placeholder"/>
 
         <LinearLayout
             android:id="@+id/choiceDView"

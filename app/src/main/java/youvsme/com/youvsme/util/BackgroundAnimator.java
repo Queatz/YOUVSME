@@ -14,8 +14,8 @@ public abstract class BackgroundAnimator {
     public BackgroundAnimator(final View view, int toColor) {
         int colorFrom = Color.TRANSPARENT;
         int colorTo = view.getContext().getResources().getColor(toColor);
-        ValueAnimator colorAnimation = ValueAnimator.ofObject(new ArgbEvaluator(), colorFrom, colorTo, colorFrom);
-        colorAnimation.setDuration(250);
+        ValueAnimator colorAnimation = ValueAnimator.ofObject(new ArgbEvaluator(), colorFrom, colorTo, colorFrom, colorTo, colorFrom);
+        colorAnimation.setDuration(425);
         colorAnimation.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
             @Override
             public void onAnimationUpdate(ValueAnimator animator) {

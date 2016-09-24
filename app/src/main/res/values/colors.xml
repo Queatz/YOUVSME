@@ -12,9 +12,18 @@
     <color name="pinkRed">#C90202</color>
     <color name="red">#CE0D0E</color>
     <color name="white">#EDEEF2</color>
+    <color name="white50">#88EDEEF2</color>
+    <color name="white80">#ccEDEEF2</color>
+    <color name="whiteTransparent">#00EDEEF2</color>
     <color name="grayText">#2F3A3C</color>
     <color name="placeholder">#DCDCDC</color>
     <color name="lightGrayText">#B1B1B1</color>
     <color name="lightGrayHeader">#BDC2C5</color>
     <color name="almostBlack">#303B3D</color>
+    <color name="green">#4ace0d</color>
+
+    <color name="shadow">#00000000</color>
+    <color name="shadowTransp">#18000000</color>
+    <color name="black">#000000</color>
+    <color name="navy">#001232</color>
 </resources>

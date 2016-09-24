@@ -4,7 +4,13 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".activities.Entrance"
-    android:background="@color/white">
+    android:background="@drawable/sex">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:src="@drawable/bkg"
+        android:adjustViewBounds="true"/>
 
     <FrameLayout
         android:id="@+id/fragment"
@@ -26,7 +32,8 @@
             android:background="@drawable/red_button"
             android:drawableLeft="@drawable/facebook"
             android:text="Log in with Facebook"
-            android:padding="16dp"
+            android:paddingTop="15.5dp"
+            android:paddingBottom="16.5dp"
             android:textSize="24sp"
             android:textAlignment="center"
             android:textColor="@color/white"
@@ -39,7 +46,7 @@
             android:layout_height="wrap_content"
             android:layout_above="@+id/facebookButton"
             android:layout_margin="20dp"
-            android:textColor="@color/grayText"
+            android:textColor="@color/white50"
             android:text="HOW DOES IT WORK?"
             android:textSize="14sp"
             android:textStyle="bold"

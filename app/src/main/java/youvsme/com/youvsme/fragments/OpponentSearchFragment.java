@@ -1,5 +1,6 @@
 package youvsme.com.youvsme.fragments;
 
+import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -62,7 +63,6 @@ public class OpponentSearchFragment extends Fragment {
                 Helpers.keyboard(opponentSearch, false);
             }
         });
-
         view.findViewById(R.id.invite).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

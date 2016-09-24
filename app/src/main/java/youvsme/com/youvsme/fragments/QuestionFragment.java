@@ -9,6 +9,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.Animation;
 import android.widget.ImageView;
+import android.widget.ScrollView;
 import android.widget.TextView;
 
 import com.google.gson.reflect.TypeToken;
@@ -92,7 +93,7 @@ public class QuestionFragment extends GameStateFragment {
         }
     }
 
-    public void update(View view) {
+    public void update(final View view) {
         final GameModel game = ((GameState) StateService.use().getState()).getGame();
 
         if (view == null || game == null) {
@@ -145,6 +146,14 @@ public class QuestionFragment extends GameStateFragment {
             questionText.setText(nameInject(question.getText(), game.getOpponent().getFirstName()));
             top.setBackgroundColor(getResources().getColor(R.color.colorPrimary));
         }
+
+        view.findViewById(R.id.scrollMe).postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                ((ScrollView) view.findViewById(R.id.scrollMe)).smoothScrollBy(0, 32);
+
+            }
+        }, 100);
 
         choiceAText.setText(choices.get(0));
         choiceBText.setText(choices.get(1));

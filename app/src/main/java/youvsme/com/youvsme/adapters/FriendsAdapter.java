@@ -75,11 +75,11 @@ public class FriendsAdapter extends RealmBaseAdapter<UserModel> {
                 case GameService.GAME_STATE_GUESSING_OPPONENTS_ANSWERS:
                 case GameService.GAME_STATE_STARTED:
                     stakesStringId = R.string.waiting_on_you;
-                    stakesColorId = R.color.red;
+                    stakesColorId = R.color.green;
                     break;
                 case GameService.GAME_STATE_WAITING_FOR_OPPONENT:
                     stakesStringId = R.string.waiting_on_them;
-                    stakesColorId = R.color.grayDark;
+                    stakesColorId = R.color.red;
                     break;
             }
         }
