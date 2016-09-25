@@ -67,7 +67,7 @@
                 android:padding="32dp"
                 android:textSize="22sp"
                 android:textStyle="bold"
-                android:textColor="@color/almostBlack"
+                android:textColor="@color/white"
                 android:text="As a child you were inducted into one of the world's most infamous street gangs. Over the years you came to master one weapon.  What did you master?As a child you were inducted into one of the world's most infamous street gangs. Over the years you came to master one weapon.  What did you master?" />
 
         </ScrollView>
@@ -80,11 +80,10 @@
         android:layout_alignParentBottom="true"
         android:paddingBottom="16dp">
 
-        <LinearLayout
+        <LinearLayout style="@style/SelectableItemBackground"
             android:id="@+id/choiceAView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="?attr/selectableItemBackground"
             android:orientation="horizontal">
 
             <TextView
@@ -103,7 +102,7 @@
                 android:paddingBottom="32dp"
                 android:gravity="left"
                 android:text="Nunchucks"
-                android:textColor="@color/almostBlack"
+                android:textColor="@color/white"
                 android:textSize="22sp" />
 
         </LinearLayout>
@@ -113,13 +112,12 @@
             android:layout_height="1dp"
             android:layout_marginLeft="72dp"
             android:layout_marginRight="16dp"
-            android:background="@color/placeholder"/>
+            android:background="@color/white25"/>
 
-        <LinearLayout
+        <LinearLayout style="@style/SelectableItemBackground"
             android:id="@+id/choiceBView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="?attr/selectableItemBackground"
             android:orientation="horizontal">
 
             <TextView
@@ -138,7 +136,7 @@
                 android:paddingBottom="32dp"
                 android:gravity="left"
                 android:text="Bow Staff"
-                android:textColor="@color/almostBlack"
+                android:textColor="@color/white"
                 android:textSize="22sp" />
 
         </LinearLayout>
@@ -148,13 +146,12 @@
             android:layout_height="1dp"
             android:layout_marginLeft="72dp"
             android:layout_marginRight="16dp"
-            android:background="@color/placeholder"/>
+            android:background="@color/white25"/>
 
-        <LinearLayout
+        <LinearLayout style="@style/SelectableItemBackground"
             android:id="@+id/choiceCView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="?attr/selectableItemBackground"
             android:orientation="horizontal">
 
             <TextView
@@ -173,7 +170,7 @@
                 android:paddingBottom="32dp"
                 android:gravity="left"
                 android:text="Sword"
-                android:textColor="@color/almostBlack"
+                android:textColor="@color/white"
                 android:textSize="22sp" />
 
         </LinearLayout>
@@ -183,13 +180,12 @@
             android:layout_height="1dp"
             android:layout_marginLeft="72dp"
             android:layout_marginRight="16dp"
-            android:background="@color/placeholder"/>
+            android:background="@color/white25"/>
 
-        <LinearLayout
+        <LinearLayout style="@style/SelectableItemBackground"
             android:id="@+id/choiceDView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="?attr/selectableItemBackground"
             android:orientation="horizontal">
 
             <TextView
@@ -208,7 +204,7 @@
                 android:paddingBottom="32dp"
                 android:gravity="left"
                 android:text="BB Gun"
-                android:textColor="@color/almostBlack"
+                android:textColor="@color/white"
                 android:textSize="22sp" />
 
         </LinearLayout>

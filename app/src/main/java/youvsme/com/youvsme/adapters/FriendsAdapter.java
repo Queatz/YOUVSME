@@ -31,6 +31,7 @@ public class FriendsAdapter extends RealmBaseAdapter<UserModel> {
         }
 
         final TextView friendName = (TextView) convertView.findViewById(R.id.name);
+        final View action = convertView.findViewById(R.id.action);
         final TextView stakes = (TextView) convertView.findViewById(R.id.stakes);
         final TextView letterView = (TextView) convertView.findViewById(R.id.letter);
         final ImageView pictureView = (ImageView) convertView.findViewById(R.id.picture);
@@ -70,16 +71,16 @@ public class FriendsAdapter extends RealmBaseAdapter<UserModel> {
                         stakesStringId = R.string.last_game_tied;
                     }
 
-                    stakesColorId = R.color.grayDark;
+                    stakesColorId = 0;
                     break;
                 case GameService.GAME_STATE_GUESSING_OPPONENTS_ANSWERS:
                 case GameService.GAME_STATE_STARTED:
                     stakesStringId = R.string.waiting_on_you;
-                    stakesColorId = R.color.green;
+                    stakesColorId = R.drawable.action_yes;
                     break;
                 case GameService.GAME_STATE_WAITING_FOR_OPPONENT:
                     stakesStringId = R.string.waiting_on_them;
-                    stakesColorId = R.color.red;
+                    stakesColorId = R.drawable.action_no;
                     break;
             }
         }
@@ -89,7 +90,9 @@ public class FriendsAdapter extends RealmBaseAdapter<UserModel> {
         }
 
         if (stakesColorId != 0) {
-            stakes.setTextColor(context.getResources().getColor(stakesColorId));
+            action.setBackgroundResource(stakesColorId);
+        } else {
+            action.setBackground(null);
         }
 
         return convertView;

@@ -40,5 +40,4 @@ public class RegistrationIntentService extends IntentService {
         params.put(Config.PARAM_DEVICE_TOKEN, token);
         ApiService.use().post("me/device", params, null);
     }
-
 }

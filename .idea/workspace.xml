@@ -12,29 +12,27 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c789285b-450f-4eaa-b7d1-8af4358b1bea" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/more_below.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/red_button_rounded_with_icon.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/sex.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/layout/sex.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/drawable/bkg.png" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/bkg.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/mipmap/youvsme.png" afterPath="$PROJECT_DIR$/app/src/main/res/mipmap/youvsme.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/mipmap/youvsme_64.png" afterPath="$PROJECT_DIR$/app/src/main/res/mipmap/youvsme_64.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/action_no.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/action_yes.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/app.iml" afterPath="$PROJECT_DIR$/app/app.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/youvsme/com/youvsme/RegistrationIntentService.java" afterPath="$PROJECT_DIR$/app/src/main/java/youvsme/com/youvsme/RegistrationIntentService.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/youvsme/com/youvsme/adapters/FriendsAdapter.java" afterPath="$PROJECT_DIR$/app/src/main/java/youvsme/com/youvsme/adapters/FriendsAdapter.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/youvsme/com/youvsme/fragments/OpponentSearchFragment.java" afterPath="$PROJECT_DIR$/app/src/main/java/youvsme/com/youvsme/fragments/OpponentSearchFragment.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/youvsme/com/youvsme/fragments/QuestionFragment.java" afterPath="$PROJECT_DIR$/app/src/main/java/youvsme/com/youvsme/fragments/QuestionFragment.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/youvsme/com/youvsme/util/BackgroundAnimator.java" afterPath="$PROJECT_DIR$/app/src/main/java/youvsme/com/youvsme/util/BackgroundAnimator.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/drawable/splash.xml" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/splash.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_entrance.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_entrance.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/youvsme/com/youvsme/services/PushService.java" afterPath="$PROJECT_DIR$/app/src/main/java/youvsme/com/youvsme/services/PushService.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/drawable/waiting.xml" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/waiting.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_search_for_opponent.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_search_for_opponent.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/adapter_item_friend.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/adapter_item_friend.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_entrance.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_entrance.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_how_it_work.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_how_it_work.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_battle_this_opponent.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_battle_this_opponent.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_final_results.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_final_results.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_lets_go.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_lets_go.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_make_a_wager.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_make_a_wager.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_now_wait_for_opponent.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_now_wait_for_opponent.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_opponent_search.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_opponent_search.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_question.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_question.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_recent_games.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_recent_games.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_see_who_won.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_see_who_won.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/values-v21/styles.xml" afterPath="$PROJECT_DIR$/app/src/main/res/values-v21/styles.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/values/colors.xml" afterPath="$PROJECT_DIR$/app/src/main/res/values/colors.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" afterPath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/backend/backend.iml" afterPath="$PROJECT_DIR$/backend/backend.iml" />
     </list>
     <ignored path="YOUVSME.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -67,23 +65,98 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="QuestionFragment.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/youvsme/com/youvsme/fragments/QuestionFragment.java">
+      <file leaf-file-name="colors.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/res/values/colors.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="629">
-              <caret line="208" column="28" selection-start-line="208" selection-start-column="28" selection-end-line="208" selection-end-column="28" />
+            <state relative-caret-position="210">
+              <caret line="14" column="26" selection-start-line="14" selection-start-column="26" selection-end-line="14" selection-end-column="35" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="BackgroundAnimator.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/youvsme/com/youvsme/util/BackgroundAnimator.java">
+      <file leaf-file-name="fragment_lets_go.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_lets_go.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="17" column="38" selection-start-line="17" selection-start-column="38" selection-end-line="17" selection-end-column="38" />
+            <state relative-caret-position="300">
+              <caret line="47" column="23" selection-start-line="47" selection-start-column="23" selection-end-line="47" selection-end-column="23" />
               <folding />
             </state>
+          </provider>
+          <provider editor-type-id="android-designer2">
+            <state />
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="waiting.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable/waiting.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="60">
+              <caret line="4" column="56" selection-start-line="4" selection-start-column="56" selection-end-line="4" selection-end-column="56" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="fragment_now_wait_for_opponent.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_now_wait_for_opponent.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="60">
+              <caret line="4" column="2" selection-start-line="4" selection-start-column="2" selection-end-line="4" selection-end-column="2" />
+              <folding />
+            </state>
+          </provider>
+          <provider editor-type-id="android-designer2">
+            <state />
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="fragment_question.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_question.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="370">
+              <caret line="126" column="40" selection-start-line="126" selection-start-column="40" selection-end-line="126" selection-end-column="40" />
+              <folding />
+            </state>
+          </provider>
+          <provider editor-type-id="android-designer2">
+            <state />
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="styles.xml" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/src/main/res/values-v21/styles.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="120">
+              <caret line="8" column="8" selection-start-line="8" selection-start-column="8" selection-end-line="8" selection-end-column="8" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="fragment_final_results.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_final_results.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="121">
+              <caret line="119" column="48" selection-start-line="119" selection-start-column="48" selection-end-line="119" selection-end-column="48" />
+              <folding />
+            </state>
+          </provider>
+          <provider editor-type-id="android-designer2">
+            <state />
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="fragment_make_a_wager.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_make_a_wager.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="452">
+              <caret line="135" column="42" selection-start-line="135" selection-start-column="42" selection-end-line="135" selection-end-column="42" />
+              <folding />
+            </state>
+          </provider>
+          <provider editor-type-id="android-designer2">
+            <state />
           </provider>
         </entry>
       </file>
@@ -2690,20 +2763,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/fragment_see_who_won.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/java/youvsme/com/youvsme/fragments/MakeAWagerFragment.java" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/fragment_final_results.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/fragment_now_wait_for_opponent.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/fragment_wager_sent.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/java/youvsme/com/youvsme/states/SearchForOpponentState.java" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/fragment_battle_this_opponent.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/java/youvsme/com/youvsme/models/GameModel.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/youvsme/com/youvsme/states/RecentGamesState.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/youvsme/com/youvsme/fragments/RecentGamesFragment.java" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/fragment_recent_games.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/adapter_item_recent_game.xml" />
-        <option value="$PROJECT_DIR$/build.gradle" />
-        <option value="$PROJECT_DIR$/app/src/main/java/youvsme/com/youvsme/adapters/RecentGamesAdapter.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/youvsme/com/youvsme/services/RealmService.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/youvsme/com/youvsme/util/RealmObjectResponseHandler.java" />
         <option value="$PROJECT_DIR$/backend/src/main/java/youvsme/com/youvsme/backend/services/JsonService.java" />
@@ -2714,7 +2773,6 @@
         <option value="$PROJECT_DIR$/backend/src/main/java/youvsme/com/youvsme/backend/api/MeFriendsEndpoint.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/youvsme/com/youvsme/services/UserService.java" />
         <option value="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/res/values-v21/styles.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/values/styles.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/youvsme/com/youvsme/util/Helpers.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/youvsme/com/youvsme/activities/Entrance.java" />
@@ -2724,29 +2782,44 @@
         <option value="$PROJECT_DIR$/app/src/main/java/youvsme/com/youvsme/services/GameService.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/youvsme/com/youvsme/fragments/WagerReviewFragment.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/youvsme/com/youvsme/states/GameState.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/youvsme/com/youvsme/adapters/FriendsAdapter.java" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/adapter_item_friend.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/youvsme/com/youvsme/fragments/OpponentSearchFragment.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/drawable/red_button_rounded_with_icon.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/fragment_opponent_search.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/values/strings.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/drawable/more_below.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/java/youvsme/com/youvsme/fragments/QuestionFragment.java" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/fragment_question.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_entrance.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/sex.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/drawable/sex.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/res/values/colors.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/fragment_how_it_work.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/fragment_entrance.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/drawable/splash.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/youvsme/com/youvsme/util/BackgroundAnimator.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/youvsme/com/youvsme/RegistrationIntentService.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/youvsme/com/youvsme/services/PushService.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/youvsme/com/youvsme/fragments/QuestionFragment.java" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/fragment_recent_games.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/drawable/action_no.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/drawable/action_yes.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/adapter_item_friend.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/youvsme/com/youvsme/adapters/FriendsAdapter.java" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/fragment_opponent_search.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_search_for_opponent.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/fragment_battle_this_opponent.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/fragment_see_who_won.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/drawable/red_button.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/fragment_final_results.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/fragment_make_a_wager.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/fragment_lets_go.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/values/colors.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/drawable/waiting.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/fragment_now_wait_for_opponent.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/fragment_question.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/values-v21/styles.xml" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="93" />
-    <option name="y" value="47" />
+    <option name="x" value="96" />
+    <option name="y" value="30" />
     <option name="width" value="1717" />
     <option name="height" value="955" />
   </component>
@@ -3709,6 +3782,40 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="adapters" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="YOUVSME" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="YOUVSME" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="youvsme" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="activities" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -3909,12 +4016,12 @@
   <component name="PropertiesComponent">
     <property name="settings.editor.selected.configurable" value="instant.run" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
-    <property name="SearchEverywhereHistoryKey" value="Ques&#9;FILE&#9;file:///home/jacob/Documents/Projects/YOUVSME/app/src/main/java/youvsme/com/youvsme/fragments/QuestionFragment.java&#10;color&#9;FILE&#9;file:///home/jacob/Documents/Projects/YOUVSME/app/src/main/res/values/colors.xml&#10;QuesFr&#9;PSI&#9;JAVA://youvsme.com.youvsme.fragments.QuestionFragment&#10;strings&#9;FILE&#9;file:///home/jacob/Documents/Projects/YOUVSME/app/src/main/res/values/strings.xml&#10;Oppo&#9;FILE&#9;file:///home/jacob/Documents/Projects/YOUVSME/app/src/main/java/youvsme/com/youvsme/fragments/OpponentSearchFragment.java&#10;searchfor&#9;FILE&#9;file:///home/jacob/Documents/Projects/YOUVSME/app/src/main/java/youvsme/com/youvsme/states/SearchForOpponentState.java&#10;friendada&#9;FILE&#9;file:///home/jacob/Documents/Projects/YOUVSME/app/src/main/java/youvsme/com/youvsme/adapters/FriendsAdapter.java&#10;AndroidMan&#9;FILE&#9;file:///home/jacob/Documents/Projects/YOUVSME/app/src/main/AndroidManifest.xml&#10;build&#9;FILE&#9;file:///home/jacob/Documents/Projects/YOUVSME/app/build.gradle&#10;And&#9;FILE&#9;file:///home/jacob/Documents/Projects/YOUVSME/app/src/main/AndroidManifest.xml&#10;gameser&#9;FILE&#9;file:///home/jacob/Documents/Projects/YOUVSME/app/src/main/java/youvsme/com/youvsme/services/GameService.java&#10;recentga&#9;FILE&#9;file:///home/jacob/Documents/Projects/YOUVSME/app/src/main/java/youvsme/com/youvsme/adapters/RecentGamesAdapter.java&#10;ada&#9;FILE&#9;file:///home/jacob/Documents/Projects/YOUVSME/app/src/main/res/layout/adapter_item_recent_game.xml&#10;letsgo&#9;FILE&#9;file:///home/jacob/Documents/Projects/YOUVSME/app/src/main/res/layout/fragment_lets_go.xml&#10;gamemode&#9;FILE&#9;file:///home/jacob/Documents/Projects/YOUVSME/app/src/main/java/youvsme/com/youvsme/models/GameModel.java&#10;game&#9;FILE&#9;file:///home/jacob/Documents/Projects/YOUVSME/app/src/main/java/youvsme/com/youvsme/services/GameService.java&#10;stateser&#9;PSI&#9;JAVA://youvsme.com.youvsme.services.StateService&#10;gamem&#9;FILE&#9;file:///home/jacob/Documents/Projects/YOUVSME/app/src/main/java/youvsme/com/youvsme/models/GameModel.java&#10;search&#9;FILE&#9;file:///home/jacob/Documents/Projects/YOUVSME/app/src/main/java/youvsme/com/youvsme/fragments/OpponentSearchFragment.java&#10;and&#9;FILE&#9;file:///home/jacob/Documents/Projects/YOUVSME/app/src/main/AndroidManifest.xml&#10;opponent&#9;FILE&#9;file:///home/jacob/Documents/Projects/YOUVSME/app/src/main/res/layout/fragment_opponent_search.xml&#10;android&#9;FILE&#9;file:///home/jacob/Documents/Projects/YOUVSME/app/src/main/AndroidManifest.xml&#10;build.gr&#9;FILE&#9;file:///home/jacob/Documents/Projects/YOUVSME/app/build.gradle&#10;AndroidMa&#9;FILE&#9;file:///home/jacob/Documents/Projects/YOUVSME/app/src/main/AndroidManifest.xml&#10;fragmentsea&#9;FILE&#9;file:///home/jacob/Documents/Projects/YOUVSME/app/src/main/res/layout/fragment_opponent_search.xml&#10;question&#9;FILE&#9;file:///home/jacob/Documents/Projects/YOUVSME/app/src/main/java/youvsme/com/youvsme/fragments/QuestionFragment.java&#10;challenge&#9;FILE&#9;file:///home/jacob/Documents/Projects/YOUVSME/backend/src/main/java/youvsme/com/youvsme/backend/push/ChallengePush.java&#10;colors&#9;FILE&#9;file:///home/jacob/Documents/Projects/YOUVSME/app/src/main/res/values/colors.xml&#10;gamestate&#9;FILE&#9;file:///home/jacob/Documents/Projects/YOUVSME/app/src/main/java/youvsme/com/youvsme/states/GameState.java&#10;build.gra&#9;FILE&#9;file:///home/jacob/Documents/Projects/YOUVSME/build.gradle&#10;Gra&#9;PSI&#9;JAVA://youvsme.com.youvsme.backend.Grab" />
+    <property name="SearchEverywhereHistoryKey" value="color&#9;FILE&#9;file:///home/jacob/Documents/Projects/YOUVSME/app/src/main/res/values/colors.xml&#10;Ques&#9;FILE&#9;file:///home/jacob/Documents/Projects/YOUVSME/app/src/main/java/youvsme/com/youvsme/fragments/QuestionFragment.java&#10;QuesFr&#9;PSI&#9;JAVA://youvsme.com.youvsme.fragments.QuestionFragment&#10;strings&#9;FILE&#9;file:///home/jacob/Documents/Projects/YOUVSME/app/src/main/res/values/strings.xml&#10;Oppo&#9;FILE&#9;file:///home/jacob/Documents/Projects/YOUVSME/app/src/main/java/youvsme/com/youvsme/fragments/OpponentSearchFragment.java&#10;searchfor&#9;FILE&#9;file:///home/jacob/Documents/Projects/YOUVSME/app/src/main/java/youvsme/com/youvsme/states/SearchForOpponentState.java&#10;friendada&#9;FILE&#9;file:///home/jacob/Documents/Projects/YOUVSME/app/src/main/java/youvsme/com/youvsme/adapters/FriendsAdapter.java&#10;AndroidMan&#9;FILE&#9;file:///home/jacob/Documents/Projects/YOUVSME/app/src/main/AndroidManifest.xml&#10;build&#9;FILE&#9;file:///home/jacob/Documents/Projects/YOUVSME/app/build.gradle&#10;And&#9;FILE&#9;file:///home/jacob/Documents/Projects/YOUVSME/app/src/main/AndroidManifest.xml&#10;gameser&#9;FILE&#9;file:///home/jacob/Documents/Projects/YOUVSME/app/src/main/java/youvsme/com/youvsme/services/GameService.java&#10;recentga&#9;FILE&#9;file:///home/jacob/Documents/Projects/YOUVSME/app/src/main/java/youvsme/com/youvsme/adapters/RecentGamesAdapter.java&#10;ada&#9;FILE&#9;file:///home/jacob/Documents/Projects/YOUVSME/app/src/main/res/layout/adapter_item_recent_game.xml&#10;letsgo&#9;FILE&#9;file:///home/jacob/Documents/Projects/YOUVSME/app/src/main/res/layout/fragment_lets_go.xml&#10;gamemode&#9;FILE&#9;file:///home/jacob/Documents/Projects/YOUVSME/app/src/main/java/youvsme/com/youvsme/models/GameModel.java&#10;game&#9;FILE&#9;file:///home/jacob/Documents/Projects/YOUVSME/app/src/main/java/youvsme/com/youvsme/services/GameService.java&#10;stateser&#9;PSI&#9;JAVA://youvsme.com.youvsme.services.StateService&#10;gamem&#9;FILE&#9;file:///home/jacob/Documents/Projects/YOUVSME/app/src/main/java/youvsme/com/youvsme/models/GameModel.java&#10;search&#9;FILE&#9;file:///home/jacob/Documents/Projects/YOUVSME/app/src/main/java/youvsme/com/youvsme/fragments/OpponentSearchFragment.java&#10;and&#9;FILE&#9;file:///home/jacob/Documents/Projects/YOUVSME/app/src/main/AndroidManifest.xml&#10;opponent&#9;FILE&#9;file:///home/jacob/Documents/Projects/YOUVSME/app/src/main/res/layout/fragment_opponent_search.xml&#10;android&#9;FILE&#9;file:///home/jacob/Documents/Projects/YOUVSME/app/src/main/AndroidManifest.xml&#10;build.gr&#9;FILE&#9;file:///home/jacob/Documents/Projects/YOUVSME/app/build.gradle&#10;AndroidMa&#9;FILE&#9;file:///home/jacob/Documents/Projects/YOUVSME/app/src/main/AndroidManifest.xml&#10;fragmentsea&#9;FILE&#9;file:///home/jacob/Documents/Projects/YOUVSME/app/src/main/res/layout/fragment_opponent_search.xml&#10;question&#9;FILE&#9;file:///home/jacob/Documents/Projects/YOUVSME/app/src/main/java/youvsme/com/youvsme/fragments/QuestionFragment.java&#10;challenge&#9;FILE&#9;file:///home/jacob/Documents/Projects/YOUVSME/backend/src/main/java/youvsme/com/youvsme/backend/push/ChallengePush.java&#10;colors&#9;FILE&#9;file:///home/jacob/Documents/Projects/YOUVSME/app/src/main/res/values/colors.xml&#10;gamestate&#9;FILE&#9;file:///home/jacob/Documents/Projects/YOUVSME/app/src/main/java/youvsme/com/youvsme/states/GameState.java&#10;build.gra&#9;FILE&#9;file:///home/jacob/Documents/Projects/YOUVSME/build.gradle&#10;Gra&#9;PSI&#9;JAVA://youvsme.com.youvsme.backend.Grab" />
     <property name="android.sdk.path" value="$USER_HOME$/Android/Sdk" />
     <property name="android.project.structure.last.selected" value="app" />
     <property name="android.project.structure.proportion" value="0.15" />
-    <property name="device.picker.selection" value="JDM5T15A06005626" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../SlimeQuest/settings.gradle" />
+    <property name="device.picker.selection" value="0123456789ABCDEF" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/app/src" />
     <property name="ExportApk.ApkPath" value="$PROJECT_DIR$/app" />
     <property name="ExportApk.Flavors" value="" />
     <property name="ExportApk.BuildType" value="release" />
@@ -4352,7 +4459,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="93" y="47" width="1717" height="955" extended-state="0" />
+    <frame x="96" y="30" width="1717" height="955" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -4373,11 +4480,11 @@
       <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32953864" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.22767295" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32955974" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.48301888" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.13333334" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Captures" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="true" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24625525" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.14339623" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.14339623" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="true" content_ui="tabs" />
@@ -4426,135 +4533,6 @@
     </watches-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/youvsme/com/youvsme/services/RealmService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="450">
-          <caret line="34" column="28" selection-start-line="34" selection-start-column="28" selection-end-line="34" selection-end-column="28" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.restfb/restfb/1.20.0/3c8bf8348ddb3c03a5f76222e381144daae91641/restfb-1.20.0-sources.jar!/com/restfb/FacebookClient.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="254">
-          <caret line="143" column="20" selection-start-line="143" selection-start-column="20" selection-end-line="143" selection-end-column="20" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.restfb/restfb/1.20.0/3c8bf8348ddb3c03a5f76222e381144daae91641/restfb-1.20.0-sources.jar!/com/restfb/DefaultFacebookClient.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="254">
-          <caret line="219" column="9" selection-start-line="219" selection-start-column="9" selection-end-line="219" selection-end-column="9" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="0" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/youvsme/com/youvsme/services/UserService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="538">
-          <caret line="118" column="0" selection-start-line="118" selection-start-column="0" selection-end-line="118" selection-end-column="0" />
-          <folding>
-            <element signature="e#4023#4024#0" expanded="false" />
-            <element signature="e#4079#4080#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/backend/src/main/java/youvsme/com/youvsme/backend/api/MeEndpoint.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="297">
-          <caret line="44" column="0" selection-start-line="44" selection-start-column="0" selection-end-line="44" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/backend/src/main/java/youvsme/com/youvsme/backend/api/MeFriendsEndpoint.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="465">
-          <caret line="59" column="62" selection-start-line="59" selection-start-column="62" selection-end-line="59" selection-end-column="62" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/youvsme/com/youvsme/services/ApiService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="16" column="29" selection-start-line="16" selection-start-column="29" selection-end-line="16" selection-end-column="29" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/backend/src/main/java/youvsme/com/youvsme/backend/services/UserService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="570">
-          <caret line="59" column="28" selection-start-line="59" selection-start-column="28" selection-end-line="59" selection-end-column="28" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/youvsme/com/youvsme/activities/Entrance.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="23" column="2" selection-start-line="23" selection-start-column="2" selection-end-line="23" selection-end-column="2" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/youvsme/com/youvsme/util/Helpers.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="11" column="23" selection-start-line="11" selection-start-column="23" selection-end-line="11" selection-end-column="23" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/styles.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="13" column="28" selection-start-line="13" selection-start-column="28" selection-end-line="13" selection-end-column="28" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="22" column="48" selection-start-line="22" selection-start-column="48" selection-end-line="22" selection-end-column="48" />
-          <folding />
-        </state>
-      </provider>
-      <provider editor-type-id="android-manifest">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/youvsme/com/youvsme/services/StateService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="254">
-          <caret line="39" column="16" selection-start-line="39" selection-start-column="16" selection-end-line="39" selection-end-column="16" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_wager_review.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="465">
-          <caret line="56" column="14" selection-start-line="56" selection-start-column="14" selection-end-line="56" selection-end-column="14" />
-          <folding />
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer2">
-        <state />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/backend/src/main/java/youvsme/com/youvsme/backend/services/ModelService.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="252">
@@ -4593,17 +4571,6 @@
           <caret line="48" column="15" selection-start-line="48" selection-start-column="15" selection-end-line="48" selection-end-column="15" />
           <folding />
         </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/adapter_item_recent_game.xml">
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="1890">
-          <caret line="126" column="0" selection-start-line="126" selection-start-column="0" selection-end-line="126" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-      <provider selected="true" editor-type-id="android-designer2">
-        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/youvsme/com/youvsme/models/QuestionModel.java">
@@ -4654,44 +4621,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_search_for_opponent.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="14" column="0" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer2">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable/red_button.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="8" column="11" selection-start-line="8" selection-start-column="11" selection-end-line="8" selection-end-column="11" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_opponent_search.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="226">
-          <caret line="51" column="8" selection-start-line="51" selection-start-column="8" selection-end-line="51" selection-end-column="8" />
-          <folding />
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer2">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable/red_button_rounded_with_icon.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="8" column="11" selection-start-line="8" selection-start-column="11" selection-end-line="8" selection-end-column="11" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/youvsme/com/youvsme/states/SearchForOpponentState.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="510">
@@ -4711,25 +4640,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/adapter_item_friend.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-179">
-          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer2">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/youvsme/com/youvsme/adapters/FriendsAdapter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="600">
-          <caret line="77" column="47" selection-start-line="77" selection-start-column="47" selection-end-line="77" selection-end-column="47" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable/more_below.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="75">
@@ -4741,14 +4651,6 @@
     <entry file="file://$PROJECT_DIR$/app/src/main/res/mipmap/youvsme.png">
       <provider selected="true" editor-type-id="images">
         <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/values-v21/styles.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" column="20" selection-start-line="7" selection-start-column="20" selection-end-line="7" selection-end-column="28" />
-          <folding />
-        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/mipmap/youvsme_64.png">
@@ -4796,6 +4698,62 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/youvsme/com/youvsme/util/BackgroundAnimator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="31" column="21" selection-start-line="31" selection-start-column="21" selection-end-line="31" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/youvsme/com/youvsme/RegistrationIntentService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="435">
+          <caret line="41" column="5" selection-start-line="41" selection-start-column="5" selection-end-line="41" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/youvsme/com/youvsme/MyGcmListenerService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="13" column="13" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/youvsme/com/youvsme/MyInstanceIDListenerService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable/w-only-logo.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/youvsme/com/youvsme/services/PushService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="252">
+          <caret line="76" column="23" selection-start-line="76" selection-start-column="23" selection-end-line="76" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/youvsme/com/youvsme/fragments/QuestionFragment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="447">
+          <caret line="206" column="71" selection-start-line="206" selection-start-column="71" selection-end-line="206" selection-end-column="71" />
+          <folding>
+            <element signature="e#7394#7576#0" expanded="true" />
+            <element signature="e#7575#7576#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_entrance.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="375">
@@ -4807,10 +4765,10 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_question.xml">
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_recent_games.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="185" column="50" selection-start-line="185" selection-start-column="50" selection-end-line="185" selection-end-column="50" />
+        <state relative-caret-position="375">
+          <caret line="25" column="34" selection-start-line="25" selection-start-column="34" selection-end-line="25" selection-end-column="34" />
           <folding />
         </state>
       </provider>
@@ -4818,10 +4776,88 @@
         <state />
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable/red_button_rounded_with_icon.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="8" column="11" selection-start-line="0" selection-start-column="0" selection-end-line="8" selection-end-column="11" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable/action_yes.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="7" column="11" selection-start-line="7" selection-start-column="11" selection-end-line="7" selection-end-column="11" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable/action_no.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="7" column="11" selection-start-line="7" selection-start-column="11" selection-end-line="7" selection-end-column="11" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_opponent_search.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="510">
+          <caret line="34" column="25" selection-start-line="34" selection-start-column="25" selection-end-line="34" selection-end-column="25" />
+          <folding>
+            <element signature="e#1369#1403#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/adapter_item_friend.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="14" column="39" selection-start-line="14" selection-start-column="34" selection-end-line="14" selection-end-column="39" />
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/youvsme/com/youvsme/adapters/FriendsAdapter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="675">
+          <caret line="92" column="40" selection-start-line="92" selection-start-column="32" selection-end-line="92" selection-end-column="40" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_search_for_opponent.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="12" column="25" selection-start-line="12" selection-start-column="25" selection-end-line="12" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/adapter_item_recent_game.xml">
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="1890">
+          <caret line="126" column="0" selection-start-line="126" selection-start-column="0" selection-end-line="126" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="android-designer2">
+        <state />
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_entrance.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="6" column="36" selection-start-line="6" selection-start-column="36" selection-end-line="6" selection-end-column="36" />
+        <state relative-caret-position="225">
+          <caret line="15" column="29" selection-start-line="15" selection-start-column="29" selection-end-line="15" selection-end-column="29" />
           <folding />
         </state>
       </provider>
@@ -4831,8 +4867,71 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_how_it_work.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="301">
-          <caret line="53" column="0" selection-start-line="53" selection-start-column="0" selection-end-line="53" selection-end-column="0" />
+        <state relative-caret-position="325">
+          <caret line="30" column="35" selection-start-line="30" selection-start-column="35" selection-end-line="30" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_battle_this_opponent.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="420">
+          <caret line="28" column="43" selection-start-line="28" selection-start-column="43" selection-end-line="28" selection-end-column="43" />
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable/red_button.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="53" selection-start-line="5" selection-start-column="53" selection-end-line="5" selection-end-column="53" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_see_who_won.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="481">
+          <caret line="78" column="48" selection-start-line="78" selection-start-column="42" selection-end-line="78" selection-end-column="52" />
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_final_results.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="121">
+          <caret line="119" column="48" selection-start-line="119" selection-start-column="48" selection-end-line="119" selection-end-column="48" />
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_make_a_wager.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="452">
+          <caret line="135" column="42" selection-start-line="135" selection-start-column="42" selection-end-line="135" selection-end-column="42" />
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_lets_go.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="47" column="23" selection-start-line="47" selection-start-column="23" selection-end-line="47" selection-end-column="23" />
           <folding />
         </state>
       </provider>
@@ -4842,24 +4941,46 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/values/colors.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="18" column="27" selection-start-line="18" selection-start-column="27" selection-end-line="18" selection-end-column="27" />
+        <state relative-caret-position="210">
+          <caret line="14" column="26" selection-start-line="14" selection-start-column="26" selection-end-line="14" selection-end-column="35" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/youvsme/com/youvsme/fragments/QuestionFragment.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable/waiting.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="629">
-          <caret line="208" column="28" selection-start-line="208" selection-start-column="28" selection-end-line="208" selection-end-column="28" />
+        <state relative-caret-position="60">
+          <caret line="4" column="56" selection-start-line="4" selection-start-column="56" selection-end-line="4" selection-end-column="56" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/youvsme/com/youvsme/util/BackgroundAnimator.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_now_wait_for_opponent.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="17" column="38" selection-start-line="17" selection-start-column="38" selection-end-line="17" selection-end-column="38" />
+        <state relative-caret-position="60">
+          <caret line="4" column="2" selection-start-line="4" selection-start-column="2" selection-end-line="4" selection-end-column="2" />
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_question.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="370">
+          <caret line="126" column="40" selection-start-line="126" selection-start-column="40" selection-end-line="126" selection-end-column="40" />
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/values-v21/styles.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="8" column="8" selection-start-line="8" selection-start-column="8" selection-end-line="8" selection-end-column="8" />
           <folding />
         </state>
       </provider>

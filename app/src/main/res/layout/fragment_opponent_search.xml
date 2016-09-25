@@ -10,7 +10,6 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:background="@color/white"
         android:elevation="2dp">
 
         <ImageButton
@@ -20,7 +19,7 @@
             android:src="@drawable/ic_history_white_24dp"
             android:scaleX="1.5"
             android:scaleY="1.5"
-            android:tint="@color/red"
+            android:tint="@color/pinkRed"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical" />

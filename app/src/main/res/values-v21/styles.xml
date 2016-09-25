@@ -1,5 +1,14 @@
 <resources>
 
+    <style name="SelectableItemTheme">
+        <item name="colorControlHighlight">@color/white50</item>
+    </style>
+
+    <style name="SelectableItemBackground">
+        <item name="android:theme">@style/SelectableItemTheme</item>
+        <item name="android:background">?attr/selectableItemBackground</item>
+    </style>
+
     <style name="AppTheme.NoActionBar">
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>

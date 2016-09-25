@@ -12,6 +12,7 @@
     <color name="pinkRed">#C90202</color>
     <color name="red">#CE0D0E</color>
     <color name="white">#EDEEF2</color>
+    <color name="white25">#44EDEEF2</color>
     <color name="white50">#88EDEEF2</color>
     <color name="white80">#ccEDEEF2</color>
     <color name="whiteTransparent">#00EDEEF2</color>

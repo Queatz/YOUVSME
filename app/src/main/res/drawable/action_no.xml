@@ -2,9 +2,7 @@
 <selector xmlns:android="http://schemas.android.com/apk/res/android">
     <item>
         <shape android:shape="oval">
-            <gradient android:startColor="@color/white25"
-                android:endColor="@color/white"
-                android:type="sweep"/>
+            <solid android:color="@color/red" />
         </shape>
     </item>
 </selector>

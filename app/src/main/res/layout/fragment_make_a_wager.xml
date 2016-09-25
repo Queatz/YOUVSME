@@ -8,7 +8,6 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:background="@color/white"
         android:elevation="2dp">
 
         <ImageButton
@@ -16,7 +15,7 @@
             android:background="?android:selectableItemBackground"
             android:padding="16dp"
             android:src="@drawable/ic_arrow_back_white_24dp"
-            android:tint="@color/red"
+            android:tint="@color/white"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical" />
@@ -26,7 +25,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
-            android:textColor="@color/almostBlack"
+            android:textColor="@color/white"
             android:textSize="18sp"
             android:text="@string/make_a_wager"/>
 
@@ -53,7 +52,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/what"
-                android:textColor="@color/almostBlack"
+                android:textColor="@color/white"
                 android:width="72dp"
                 android:padding="12dp"
                 android:gravity="right" />
@@ -66,7 +65,7 @@
                 android:paddingTop="24dp"
                 android:paddingBottom="18dp"
                 android:inputType="textCapSentences"
-                android:textColorHint="@color/lightGrayText"
+                android:textColorHint="@color/white50"
                 android:textColor="@color/almostBlack"
                 android:textAlignment="gravity"
                 android:gravity="top"
@@ -85,7 +84,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/note"
-                android:textColor="@color/almostBlack"
+                android:textColor="@color/white"
                 android:width="72dp"
                 android:padding="12dp"
                 android:gravity="right" />
@@ -98,7 +97,7 @@
                 android:paddingTop="24dp"
                 android:paddingBottom="18dp"
                 android:inputType="textCapSentences|textMultiLine"
-                android:textColorHint="@color/lightGrayText"
+                android:textColorHint="@color/white50"
                 android:textColor="@color/almostBlack"
                 android:textAlignment="gravity"
                 android:gravity="top"
@@ -136,7 +135,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="10dp"
-            android:textColor="@color/grayText"
+            android:textColor="@color/white"
             android:text="SKIP WAGER"
             android:textSize="14sp"
             android:textStyle="bold"

@@ -201,7 +201,12 @@ public class QuestionFragment extends GameStateFragment {
         if (!GameService.use().isMyQuestion(question, game)) {
             flash(textViews.get(choice), question.getChosenAnswer().equals(choice));
         } else {
-            ((GameState) StateService.use().getState()).next();
+            view.postDelayed(new Runnable() {
+                @Override
+                public void run() {
+                    ((GameState) StateService.use().getState()).next();
+                }
+            }, 425);
         }
     }
 

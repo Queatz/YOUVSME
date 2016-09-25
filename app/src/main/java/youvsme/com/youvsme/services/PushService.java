@@ -97,7 +97,7 @@ public class PushService {
         return new NotificationCompat.Builder(GameService.use().context())
                 .setDefaults(Notification.DEFAULT_ALL)
                 .setAutoCancel(true)
-                .setSmallIcon(R.mipmap.youvsme)
+                .setSmallIcon(R.drawable.w_only_logo)
                 .setPriority(Notification.PRIORITY_DEFAULT)
                 .setContentIntent(pendingIntent);
     }
