@@ -23,6 +23,7 @@ import youvsme.com.youvsme.models.GameModel;
 import youvsme.com.youvsme.models.QuestionModel;
 import youvsme.com.youvsme.services.GameService;
 import youvsme.com.youvsme.services.JsonService;
+import youvsme.com.youvsme.services.SoundService;
 import youvsme.com.youvsme.services.StateService;
 import youvsme.com.youvsme.states.GameState;
 import youvsme.com.youvsme.util.BackgroundAnimator;
@@ -199,7 +200,9 @@ public class QuestionFragment extends GameStateFragment {
         GameModel game = ((GameState) StateService.use().getState()).getGame();
 
         if (!GameService.use().isMyQuestion(question, game)) {
-            flash(textViews.get(choice), question.getChosenAnswer().equals(choice));
+            boolean correct = question.getChosenAnswer().equals(choice);
+            flash(textViews.get(choice), correct);
+            SoundService.use().play(correct ? R.raw.correct : R.raw.wronganswer);
         } else {
             view.postDelayed(new Runnable() {
                 @Override

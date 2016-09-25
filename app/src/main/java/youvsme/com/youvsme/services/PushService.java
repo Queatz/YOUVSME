@@ -5,6 +5,7 @@ import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Color;
 import android.support.v4.app.NotificationCompat;
 
 import com.google.gson.JsonObject;
@@ -99,6 +100,7 @@ public class PushService {
                 .setAutoCancel(true)
                 .setSmallIcon(R.drawable.w_only_logo)
                 .setPriority(Notification.PRIORITY_DEFAULT)
+                .setColor(Color.BLACK)
                 .setContentIntent(pendingIntent);
     }
 }

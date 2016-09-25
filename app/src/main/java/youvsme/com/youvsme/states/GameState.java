@@ -19,6 +19,7 @@ import youvsme.com.youvsme.fragments.WagerReviewFragment;
 import youvsme.com.youvsme.models.GameModel;
 import youvsme.com.youvsme.models.QuestionModel;
 import youvsme.com.youvsme.services.GameService;
+import youvsme.com.youvsme.services.SoundService;
 import youvsme.com.youvsme.services.StateService;
 import youvsme.com.youvsme.util.Helpers;
 
@@ -132,6 +133,8 @@ public class GameState implements State {
 
         if (opponentsAnswersUnguessed.size() == GameService.use().numberOfQuestions(game)) {
             showFragment(letsGoFragment);
+            SoundService.use().play(R.raw.nowansweropponentsquestions);
+
         } else if (opponentsQuestionsRemaining.size() > 0) {
             waitingForMai.setInitial(true);
             showFragment(waitingForMai);

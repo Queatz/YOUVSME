@@ -14,6 +14,7 @@ import youvsme.com.youvsme.models.GameModel;
 import youvsme.com.youvsme.models.QuestionModel;
 import youvsme.com.youvsme.models.UserModel;
 import youvsme.com.youvsme.services.GameService;
+import youvsme.com.youvsme.services.SoundService;
 import youvsme.com.youvsme.services.StateService;
 import youvsme.com.youvsme.states.GameState;
 
@@ -85,12 +86,16 @@ public class FinalResultsFragment extends GameStateFragment {
         opponentsName.setText(opponent.getFirstName());
 
         if (usersCorrect > opponentsCorrect) {
+            SoundService.use().play(R.raw.youwon);
+
             winnerText.setText(getString(R.string.you_defeated_them, opponent.getFirstName()));
             loserText.setText(getString(R.string.no_match, pronounFromGender(opponent.getGender())));
         } else if (opponentsCorrect > usersCorrect) {
+            SoundService.use().play(R.raw.youlostthebattle);
             winnerText.setText(getString(R.string.they_smoked_you, opponent.getFirstName()));
             loserText.setText(getString(R.string.your_time_will_come));
         } else {
+            SoundService.use().play(R.raw.correct);
             winnerText.setText(getString(R.string.youve_tied));
             loserText.setText(getString(R.string.equilibrium));
         }
