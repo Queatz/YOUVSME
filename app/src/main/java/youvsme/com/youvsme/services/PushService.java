@@ -79,6 +79,8 @@ public class PushService {
         }
 
         show(notification);
+
+        GameService.use().refreshGamesList();
     }
 
     private void show(Notification notification) {

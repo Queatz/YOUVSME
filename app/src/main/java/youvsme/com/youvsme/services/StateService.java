@@ -68,6 +68,7 @@ public class StateService {
     }
 
     public void loadInitialState(GameModel game) {
+        this.activeState = null;
         State state = null;
 
         switch (GameService.use().getState()) {
@@ -95,8 +96,8 @@ public class StateService {
     }
 
     public void go(@NonNull final State state) {
+        state.show(activity);
         activeState = state;
-        activeState.show(activity);
     }
 
     public boolean back() {

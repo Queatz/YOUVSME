@@ -5,4 +5,10 @@
         <property name="users" direction="asc"/>
         <property name="created" direction="desc"/>
     </datastore-index>
+
+    <datastore-index kind="GameModel" ancestor="false" source="manual">
+        <property name="complete"/>
+        <property name="users"/>
+        <property name="created" direction="desc"/>
+    </datastore-index>
 </datastore-indexes>

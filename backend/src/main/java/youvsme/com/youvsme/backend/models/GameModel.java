@@ -16,6 +16,7 @@ public class GameModel extends Model {
     @Index public List<Ref<UserModel>> users;
     public String wager;
     public String wagerNote;
+    public boolean complete;
 
     public List<Ref<UserModel>> getUsers() {
         return users;
@@ -39,5 +40,13 @@ public class GameModel extends Model {
 
     public void setWagerNote(String wagerNote) {
         this.wagerNote = wagerNote;
+    }
+
+    public void setComplete(boolean complete) {
+        this.complete = complete;
+    }
+
+    public boolean isComplete() {
+        return complete;
     }
 }

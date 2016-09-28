@@ -72,6 +72,7 @@
         android:layout_weight="0"
         android:layout_margin="8dp"
         android:scaleType="centerCrop"
+        app:riv_oval="true"
         android:src="@color/placeholder"
         app:riv_corner_radius="48dp" />
 

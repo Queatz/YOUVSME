@@ -9,7 +9,6 @@
         android:layout_height="match_parent"
         android:gravity="center"
         android:elevation="2dp"
-        android:background="@color/white"
         android:layout_margin="4dp">
 
         <LinearLayout
@@ -33,8 +32,7 @@
                     android:gravity="center"
                     android:textSize="84sp"
                     android:text="09"
-                    android:textStyle="bold"
-                    android:textColor="@color/almostBlack" />
+                    android:textColor="@color/white" />
 
                 <TextView
                     android:id="@+id/yourName"
@@ -43,7 +41,7 @@
                     android:gravity="center"
                     android:textSize="18sp"
                     android:text="Aanxiaoben"
-                    android:textColor="@color/almostBlack" />
+                    android:textColor="@color/white" />
 
             </LinearLayout>
 
@@ -60,8 +58,7 @@
                     android:gravity="center"
                     android:textSize="84sp"
                     android:text="07"
-                    android:textStyle="bold"
-                    android:textColor="@color/almostBlack" />
+                    android:textColor="@color/white" />
 
                 <TextView
                     android:id="@+id/opponentsName"
@@ -70,7 +67,7 @@
                     android:gravity="center"
                     android:textSize="18sp"
                     android:text="Kevin"
-                    android:textColor="@color/almostBlack" />
+                    android:textColor="@color/white" />
 
             </LinearLayout>
 
@@ -81,10 +78,11 @@
             android:layout_width="154dp"
             android:layout_height="154dp"
             android:layout_margin="16dp"
-            app:riv_corner_radius="154dp"
+            android:scaleType="centerCrop"
+            app:riv_oval="true"
             android:src="@drawable/red_button"
             app:riv_border_width="6dp"
-            app:riv_border_color="@color/lightGrayText" />
+            app:riv_border_color="@color/white" />
 
         <LinearLayout
             android:id="@+id/fragment"
@@ -103,7 +101,7 @@
                 android:text="Wager Main Text"
                 android:textSize="24sp"
                 android:textStyle="bold"
-                android:textColor="@color/almostBlack"
+                android:textColor="@color/white"
                 android:gravity="center" />
 
             <TextView
@@ -115,7 +113,7 @@
                 android:paddingBottom="16dp"
                 android:text="Wager Note Text"
                 android:textSize="18sp"
-                android:textColor="@color/almostBlack"
+                android:textColor="@color/white"
                 android:gravity="center" />
 
             <TextView

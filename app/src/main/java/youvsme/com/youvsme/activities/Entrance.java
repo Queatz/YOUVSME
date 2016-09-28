@@ -8,6 +8,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 
 import youvsme.com.youvsme.R;
+import youvsme.com.youvsme.services.GameService;
 import youvsme.com.youvsme.services.StateService;
 import youvsme.com.youvsme.services.UserService;
 
@@ -30,6 +31,8 @@ public class Entrance extends AppCompatActivity
                 StateService.use().openGameId(game);
             }
         }
+
+        GameService.use().refreshGamesList();
     }
 
     @Override

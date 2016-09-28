@@ -39,6 +39,7 @@ public class GameState implements State {
     private AppCompatActivity activity;
 
     private GameModel game;
+    private boolean skipWagerReview;
 
     public GameState(GameModel game) {
         this.game = game;
@@ -58,11 +59,13 @@ public class GameState implements State {
 
         switch (GameService.use().inferGameState(game)) {
             case GameService.GAME_STATE_STARTED:
-                if (game.getWager() != null
+                if (!skipWagerReview
+                        && game.getWager() != null
                         && game.getWager().length() > 0
                         && GameService.use().myQuestionsRemaining(game).size() == GameService.use().numberOfQuestions(game)) {
                     showFragment(theWagerIsSet);
                 } else {
+                    skipWagerReview = false;
                     showFragment(questionFragment);
                 }
                 break;
@@ -91,6 +94,7 @@ public class GameState implements State {
     public void itBegins() {
         GameService.use().setUserHasSeenFinalResults(false);
         GameService.use().setUserHasClickedPlayAgain(false);
+        skipWagerReview = true;
     }
 
     /**
@@ -190,6 +194,7 @@ public class GameState implements State {
         currentFragment = fragment;
         FragmentManager fm = activity.getSupportFragmentManager();
         FragmentTransaction transaction = fm.beginTransaction();
+        transaction.setCustomAnimations(android.R.anim.fade_in, 0);
         transaction.replace(R.id.fragment, fragment);
         transaction.commit();
         fragment.update();

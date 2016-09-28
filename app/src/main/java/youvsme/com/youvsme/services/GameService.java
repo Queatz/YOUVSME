@@ -379,6 +379,10 @@ public class GameService {
         ApiService.use().get("me/game/" + id, null, callback);
     }
 
+    public void refreshGamesList() {
+        ApiService.use().get("me/games", null, null);
+    }
+
     public void answerQuestion(GameModel game, QuestionModel question, int answer) {
         Realm realm = RealmService.use().get();
 

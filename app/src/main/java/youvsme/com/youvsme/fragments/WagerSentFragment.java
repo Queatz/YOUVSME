@@ -10,6 +10,7 @@ import android.view.ViewGroup;
 import youvsme.com.youvsme.R;
 import youvsme.com.youvsme.services.StateService;
 import youvsme.com.youvsme.states.SearchForOpponentState;
+import youvsme.com.youvsme.util.ViewUtil;
 
 /**
  * Created by jacob on 2/28/16.
@@ -33,6 +34,10 @@ public class WagerSentFragment extends Fragment {
                 ((SearchForOpponentState) StateService.use().getState()).beginGame();
             }
         });
+
+        ViewUtil.battle(view.findViewById(R.id.wagerSentIcon), 0);
+        ViewUtil.battle(view.findViewById(R.id.wagerSentText), 150);
+        ViewUtil.battle(view.findViewById(R.id.beginGameButton), 250);
 
         return view;
     }

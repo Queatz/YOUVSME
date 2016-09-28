@@ -33,4 +33,9 @@ public class GameService {
 
         return remaining;
     }
+
+    public void markGameAsComplete(GameModel game) {
+        game.setComplete(true);
+        ModelService.save(game);
+    }
 }

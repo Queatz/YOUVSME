@@ -1,11 +1,15 @@
 package youvsme.com.youvsme.fragments;
 
+import android.content.Context;
 import android.os.Bundle;
+import android.os.Vibrator;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.AlphaAnimation;
+import android.view.animation.BounceInterpolator;
 import android.widget.TextView;
 
 import com.makeramen.roundedimageview.RoundedImageView;
@@ -15,6 +19,7 @@ import youvsme.com.youvsme.R;
 import youvsme.com.youvsme.models.UserModel;
 import youvsme.com.youvsme.services.StateService;
 import youvsme.com.youvsme.states.SearchForOpponentState;
+import youvsme.com.youvsme.util.ViewUtil;
 
 /**
  * Created by jacob on 2/28/16.
@@ -34,7 +39,9 @@ public class BattleThisOpponentFragment extends Fragment {
             }
         });
 
-        view.findViewById(R.id.battleButton).setOnClickListener(new View.OnClickListener() {
+        View battleButt = view.findViewById(R.id.battleButton);
+
+        battleButt.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 ((SearchForOpponentState) StateService.use().getState()).confirmBattleOpponent();
@@ -42,6 +49,9 @@ public class BattleThisOpponentFragment extends Fragment {
         });
 
         decorateView(view);
+        ViewUtil.battle(battleButt, 250);
+
+        ((Vibrator) getActivity().getSystemService(Context.VIBRATOR_SERVICE)).vibrate(75);
 
         return view;
     }
@@ -65,5 +75,10 @@ public class BattleThisOpponentFragment extends Fragment {
         RoundedImageView opponentPicture = (RoundedImageView) view.findViewById(R.id.opponentPicture);
         Picasso.with(getContext()).load(opponent.getPictureUrl()).into(opponentPicture);
         // TODO when tapping on the opponent picture, anticipate slow-motion explosion thereof
+
+
+        ViewUtil.battle(opponentPicture, 0);
+        ViewUtil.battle(opponentName, 150);
+
     }
 }

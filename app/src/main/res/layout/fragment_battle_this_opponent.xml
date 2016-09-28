@@ -47,9 +47,11 @@
             android:layout_height="154dp"
             android:layout_margin="16dp"
             app:riv_corner_radius="154dp"
+            android:scaleType="centerCrop"
+            app:riv_oval="true"
             android:src="@drawable/red_button"
-            app:riv_border_width="12dp"
-            app:riv_border_color="@color/lightGrayText" />
+            app:riv_border_width="6dp"
+            app:riv_border_color="@color/white" />
 
         <TextView
             android:id="@+id/opponentName"
@@ -58,7 +60,6 @@
             android:textAlignment="center"
             android:text="Aanxiaoen, Ayoti"
             android:textSize="36sp"
-            android:textStyle="bold"
             android:textColor="@color/white"
             android:gravity="center_horizontal" />
 
@@ -69,6 +70,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
+        android:clipToPadding="false"
         android:paddingBottom="24dp"
         android:paddingLeft="24dp"
         android:paddingRight="24dp"

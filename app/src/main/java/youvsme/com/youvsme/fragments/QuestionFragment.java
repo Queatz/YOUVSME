@@ -1,13 +1,14 @@
 package youvsme.com.youvsme.fragments;
 
+import android.content.Context;
 import android.os.Bundle;
+import android.os.Vibrator;
 import android.support.annotation.Nullable;
 import android.util.Log;
 import android.util.TypedValue;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.animation.Animation;
 import android.widget.ImageView;
 import android.widget.ScrollView;
 import android.widget.TextView;
@@ -28,7 +29,6 @@ import youvsme.com.youvsme.services.StateService;
 import youvsme.com.youvsme.states.GameState;
 import youvsme.com.youvsme.util.BackgroundAnimator;
 import youvsme.com.youvsme.util.Config;
-import youvsme.com.youvsme.util.CorrectCallback;
 
 /**
  * Created by jacob on 3/5/16.
@@ -36,12 +36,14 @@ import youvsme.com.youvsme.util.CorrectCallback;
 public class QuestionFragment extends GameStateFragment {
 
     private QuestionModel question;
+    private Vibrator vibrateor;
 
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         final View view = inflater.inflate(R.layout.fragment_question, null);
 
+        vibrateor = (Vibrator) getActivity().getSystemService(Context.VIBRATOR_SERVICE);
         view.findViewById(R.id.backButton).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -135,18 +137,27 @@ public class QuestionFragment extends GameStateFragment {
             return;
         }
 
+        String userNameInject = game.getUser().getFirstName();
+        String opponentNameInject = game.getOpponent().getFirstName();
+
         if (isMyQuestion) {
             title.setText(getString(R.string.yourQuestions));
             picture.setVisibility(View.GONE);
-            questionText.setText(nameInject(question.getText(), null));
-            top.setBackgroundColor(getResources().getColor(R.color.colorPrimaryDark));
+            questionText.setText(nameInject(question.getText(), userNameInject, opponentNameInject));
+            top.setBackgroundColor(getResources().getColor(android.R.color.transparent));
         } else {
+            String nameSwitch = opponentNameInject;
+            opponentNameInject = userNameInject;
+            userNameInject = nameSwitch;
+
             title.setText(getString(R.string.theirQuestions, game.getOpponent().getFirstName()));
             picture.setVisibility(View.VISIBLE);
             Picasso.with(getContext()).load(game.getOpponent().getPictureUrl()).into(picture);
-            questionText.setText(nameInject(question.getText(), game.getOpponent().getFirstName()));
+            questionText.setText(nameInject(question.getText(), userNameInject, opponentNameInject));
             top.setBackgroundColor(getResources().getColor(R.color.colorPrimary));
         }
+
+        view.findViewById(R.id.scrollMe).setScrollY(0);
 
         view.findViewById(R.id.scrollMe).postDelayed(new Runnable() {
             @Override
@@ -156,10 +167,10 @@ public class QuestionFragment extends GameStateFragment {
             }
         }, 100);
 
-        choiceAText.setText(choices.get(0));
-        choiceBText.setText(choices.get(1));
-        choiceCText.setText(choices.get(2));
-        choiceDText.setText(choices.get(3));
+        choiceAText.setText(nameInject(choices.get(0), userNameInject, opponentNameInject));
+        choiceBText.setText(nameInject(choices.get(1), userNameInject, opponentNameInject));
+        choiceCText.setText(nameInject(choices.get(2), userNameInject, opponentNameInject));
+        choiceDText.setText(nameInject(choices.get(3), userNameInject, opponentNameInject));
 
         // Shrink long texts' text sizes
 
@@ -214,6 +225,10 @@ public class QuestionFragment extends GameStateFragment {
     }
 
     private void flash(View view, boolean correct) {
+        if (!correct) {
+            vibrateor.vibrate(425);
+        }
+
         new BackgroundAnimator(view, correct ? R.color.correct : R.color.incorrect) {
             @Override
             public void onComplete() {
@@ -222,7 +237,7 @@ public class QuestionFragment extends GameStateFragment {
         };
     }
 
-    private String nameInject(String text, String name) {
-        return text;
+    private String nameInject(String text, String user, String opponent) {
+        return text.replace("{me}", user).replace("{opponent}", opponent);
     }
 }

@@ -60,7 +60,6 @@
                     android:gravity="center"
                     android:textSize="84sp"
                     android:text="09"
-                    android:textStyle="bold"
                     android:textColor="@color/white" />
 
                 <TextView
@@ -87,7 +86,6 @@
                     android:gravity="center"
                     android:textSize="84sp"
                     android:text="07"
-                    android:textStyle="bold"
                     android:textColor="@color/white" />
 
                 <TextView

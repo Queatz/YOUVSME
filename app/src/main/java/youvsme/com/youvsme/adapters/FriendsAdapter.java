@@ -56,7 +56,6 @@ public class FriendsAdapter extends RealmBaseAdapter<UserModel> {
 
         if (game == null) {
             stakesStringId = R.string.no_games_played;
-            stakesColorId = R.color.grayDark;
         } else {
             switch (GameService.use().inferGameState(game)) {
                 case GameService.GAME_STATE_FINISHED:

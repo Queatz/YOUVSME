@@ -35,6 +35,7 @@ public class RecentGamesState implements State {
     private void showFragment(Fragment fragment) {
         FragmentManager fm = activity.getSupportFragmentManager();
         FragmentTransaction transaction = fm.beginTransaction();
+        transaction.setCustomAnimations(android.R.anim.fade_in, 0);
         transaction.replace(R.id.fragment, fragment);
         transaction.commit();
     }

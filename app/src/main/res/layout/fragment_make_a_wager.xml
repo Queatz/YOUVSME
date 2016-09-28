@@ -66,7 +66,7 @@
                 android:paddingBottom="18dp"
                 android:inputType="textCapSentences"
                 android:textColorHint="@color/white50"
-                android:textColor="@color/almostBlack"
+                android:textColor="@color/white"
                 android:textAlignment="gravity"
                 android:gravity="top"
                 android:hint="Ex. Loser buys cheetos" />
@@ -98,7 +98,7 @@
                 android:paddingBottom="18dp"
                 android:inputType="textCapSentences|textMultiLine"
                 android:textColorHint="@color/white50"
-                android:textColor="@color/almostBlack"
+                android:textColor="@color/white"
                 android:textAlignment="gravity"
                 android:gravity="top"
                 android:hint="Ex. I'm talking the big bag.  You know the one.  The real deal." />

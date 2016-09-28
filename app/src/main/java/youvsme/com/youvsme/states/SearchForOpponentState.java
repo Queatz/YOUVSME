@@ -5,6 +5,9 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
+import android.view.View;
+import android.view.animation.AccelerateInterpolator;
+import android.view.animation.BounceInterpolator;
 
 import com.google.common.base.Strings;
 import com.loopj.android.http.RequestParams;
@@ -43,6 +46,26 @@ public class SearchForOpponentState implements State {
         this.activity = activity;
         activity.setContentView(R.layout.activity_search_for_opponent);
 
+        // Show splash on first run
+        if (StateService.use().getState() == null) {
+            final View splashnimation = activity.findViewById(R.id.splashnimation);
+
+            splashnimation.setVisibility(View.VISIBLE);
+            splashnimation.animate()
+                    .setInterpolator(new AccelerateInterpolator())
+                    .alpha(0.f)
+                    .setStartDelay(50)
+                    .scaleX(3.f).scaleY(3.f)
+                    .setDuration(425)
+                    .withEndAction(new Runnable() {
+                        @Override
+                        public void run() {
+                            splashnimation.setVisibility(View.GONE);
+                        }
+                    })
+                    .start();
+        }
+
         showFragment(opponentSearchFragment);
     }
 
@@ -60,6 +83,7 @@ public class SearchForOpponentState implements State {
         currentFragment = fragment;
         FragmentManager fm = activity.getSupportFragmentManager();
         FragmentTransaction transaction = fm.beginTransaction();
+        transaction.setCustomAnimations(android.R.anim.fade_in, 0);
         transaction.replace(R.id.fragment, fragment);
         transaction.commit();
     }

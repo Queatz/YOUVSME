@@ -27,6 +27,7 @@ public class MeEndpoint implements Api {
         mappings.put("friends", Grab.grab(MeFriendsEndpoint.class));
         mappings.put("device", Grab.grab(MeDeviceEndpoint.class));
         mappings.put("game", Grab.grab(MeGameEndpoint.class));
+        mappings.put("games", Grab.grab(MeGamesEndpoint.class));
     }
 
     private boolean mapped(String method, List<String> path, HttpServletRequest req, HttpServletResponse resp) {

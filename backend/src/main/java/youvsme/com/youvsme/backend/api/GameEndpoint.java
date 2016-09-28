@@ -241,6 +241,7 @@ public class GameEndpoint implements Api {
         // Push (to: opponent) I finished answering -> See who won
 
         if (opDoneChoosing && opDoneGuessing && meDoneGuessing) {
+            Grab.grab(GameService.class).markGameAsComplete(game);
             push = new FinishedAnsweringPush(game.getId(), me.getFirstName(), true);
         } else if (opDoneChoosing && meDoneGuessing) {
             push = new FinishedAnsweringPush(game.getId(), me.getFirstName(), false);
