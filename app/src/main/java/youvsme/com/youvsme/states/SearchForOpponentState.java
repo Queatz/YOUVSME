@@ -7,11 +7,12 @@ import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.view.animation.AccelerateInterpolator;
-import android.view.animation.BounceInterpolator;
 
 import com.google.common.base.Strings;
+import com.loopj.android.http.HttpGet;
 import com.loopj.android.http.RequestParams;
 
+import cz.msebera.android.httpclient.HttpStatus;
 import youvsme.com.youvsme.R;
 import youvsme.com.youvsme.fragments.BattleThisOpponentFragment;
 import youvsme.com.youvsme.fragments.MakeAWagerFragment;
@@ -22,6 +23,7 @@ import youvsme.com.youvsme.models.UserModel;
 import youvsme.com.youvsme.services.ApiService;
 import youvsme.com.youvsme.services.GameService;
 import youvsme.com.youvsme.services.StateService;
+import youvsme.com.youvsme.services.UserService;
 import youvsme.com.youvsme.util.Config;
 import youvsme.com.youvsme.util.RealmObjectResponseHandler;
 
@@ -134,6 +136,10 @@ public class SearchForOpponentState implements State {
 
             @Override
             public void failure(int statusCode, String response) {
+                if (statusCode == HttpStatus.SC_UNAUTHORIZED) {
+                    UserService.use().logout();
+                }
+
                 Log.w(Config.LOGGER, "Could not send wager");
             }
         });

@@ -16,7 +16,7 @@ public class GameModel extends Model {
     @Index public List<Ref<UserModel>> users;
     public String wager;
     public String wagerNote;
-    public boolean complete;
+    @Index public boolean complete;
 
     public List<Ref<UserModel>> getUsers() {
         return users;

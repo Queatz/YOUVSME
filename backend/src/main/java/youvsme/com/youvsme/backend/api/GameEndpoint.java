@@ -43,7 +43,7 @@ public class GameEndpoint implements Api {
         UserModel me = Grab.grab(UserService.class).userFromToken(req.getParameter(Config.PARAM_TOKEN));
 
         if (me == null) {
-            resp.setStatus(HttpServletResponse.SC_NOT_FOUND);
+            resp.setStatus(HttpServletResponse.SC_UNAUTHORIZED);
             return;
         }
 

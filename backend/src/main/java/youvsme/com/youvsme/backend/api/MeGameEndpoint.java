@@ -49,7 +49,7 @@ public class MeGameEndpoint implements Api {
             game = ModelService.get(GameModel.class).id(path.get(0)).now();
         } else {
             Query<GameModel> query = ModelService.get(GameModel.class);
-            game = query.filter("users", me).order("-created").first().now();;
+            game = query.filter("users", me).order("-created").first().now();
         }
 
         if (game == null) {
