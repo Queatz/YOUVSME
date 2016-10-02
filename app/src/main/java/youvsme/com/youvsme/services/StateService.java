@@ -40,7 +40,12 @@ public class StateService {
     public void setActivity(final AppCompatActivity activity) {
         this.activity = activity;
 
-        loadInitialState(null);
+        activity.runOnUiThread(new Runnable() {
+            @Override
+            public void run() {
+                loadInitialState(null);
+            }
+        });
 
         Intent intent = new Intent(activity, RegistrationIntentService.class);
         activity.startService(intent);
@@ -110,5 +115,9 @@ public class StateService {
 
     public State getState() {
         return activeState;
+    }
+
+    public boolean is(Class<? extends State> clazz) {
+        return getState() != null && clazz.isAssignableFrom(getState().getClass());
     }
 }

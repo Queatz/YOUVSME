@@ -40,6 +40,7 @@ public class UserService {
         return instance;
     }
 
+    Runnable callback;
     CallbackManager facebookCallbackManager = null;
 
     private void prepareForFacebookLogin() {
@@ -54,6 +55,8 @@ public class UserService {
                 new FacebookCallback<LoginResult>() {
                     @Override
                     public void onSuccess(LoginResult loginResult) {
+                        callback.run();
+                        callback = null;
                         // App code
                         Log.d(Config.LOGGER, "Logged in: " + loginResult.getAccessToken());
 
@@ -74,6 +77,8 @@ public class UserService {
 
                             @Override
                             public void failure(int statusCode, String response) {
+                                callback.run();
+                                callback = null;
                                 Toast.makeText(GameService.use().context(), "There was an error. Bummer.", Toast.LENGTH_SHORT).show();
                             }
                         });
@@ -81,12 +86,16 @@ public class UserService {
 
                     @Override
                     public void onCancel() {
+                        callback.run();
+                        callback = null;
                         Log.d("YOUVSME", "Log in canceled by user");
                         // App code
                     }
 
                     @Override
                     public void onError(FacebookException exception) {
+                        callback.run();
+                        callback = null;
                         Log.d("YOUVSME", "Log in error: " + exception);
                         // App code
                     }
@@ -97,7 +106,8 @@ public class UserService {
         StateService.use().go(new SearchForOpponentState());
     }
 
-    public void facebookLogin(Activity activity) {
+    public void facebookLogin(Activity activity, Runnable callback) {
+        this.callback = callback;
         prepareForFacebookLogin();
 
         LoginManager.getInstance().logInWithReadPermissions(activity,

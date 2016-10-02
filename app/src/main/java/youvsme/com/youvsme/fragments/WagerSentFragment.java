@@ -6,6 +6,7 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.AccelerateInterpolator;
 
 import youvsme.com.youvsme.R;
 import youvsme.com.youvsme.services.StateService;
@@ -19,7 +20,7 @@ public class WagerSentFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_wager_sent, null);
+        final View view = inflater.inflate(R.layout.fragment_wager_sent, null);
 
         view.findViewById(R.id.backButton).setOnClickListener(new View.OnClickListener() {
             @Override
@@ -31,7 +32,20 @@ public class WagerSentFragment extends Fragment {
         view.findViewById(R.id.beginGameButton).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                ((SearchForOpponentState) StateService.use().getState()).beginGame();
+                view.findViewById(R.id.beginGameButton).setOnClickListener(null);
+
+                view.findViewById(R.id.wagerSentIcon)
+                        .animate()
+                        .translationXBy(view.getWidth())
+                        .setInterpolator(new AccelerateInterpolator())
+                        .setDuration(625)
+                        .withEndAction(new Runnable() {
+                            @Override
+                            public void run() {
+                                ((SearchForOpponentState) StateService.use().getState()).beginGame();
+                            }
+                        })
+                        .start();
             }
         });
 

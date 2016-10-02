@@ -1,6 +1,9 @@
 package youvsme.com.youvsme.util;
 
 import android.app.Service;
+import android.content.Context;
+import android.content.res.Resources;
+import android.util.TypedValue;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 
@@ -24,5 +27,10 @@ public class Helpers {
             }
         });
 
+    }
+
+    public static int px(Context context, int dp) {
+        Resources r = context.getResources();
+        return (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, dp, r.getDisplayMetrics());
     }
 }

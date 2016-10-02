@@ -9,6 +9,7 @@ import android.view.ViewGroup;
 import youvsme.com.youvsme.R;
 import youvsme.com.youvsme.services.StateService;
 import youvsme.com.youvsme.states.GameState;
+import youvsme.com.youvsme.util.ViewUtil;
 
 /**
  * Created by jacob on 3/5/16.
@@ -38,6 +39,11 @@ public class LetsGoFragment extends GameStateFragment {
 
     @Override
     public void update() {
+        if (getView() == null) {
+            return;
+        }
 
+        ViewUtil.battle(getView().findViewById(R.id.nowGuess), 0);
+        ViewUtil.battle(getView().findViewById(R.id.letsGoButton), 150);
     }
 }

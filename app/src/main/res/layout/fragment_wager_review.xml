@@ -75,6 +75,7 @@
         android:layout_alignParentBottom="true"
         android:orientation="vertical"
         android:gravity="center_horizontal"
+        android:clipToPadding="false"
         android:paddingLeft="24dp"
         android:paddingRight="24dp"
         android:paddingTop="24dp">

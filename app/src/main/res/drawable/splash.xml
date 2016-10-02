@@ -4,10 +4,4 @@
     <item
         android:drawable="@color/black"/>
 
-    <item>
-        <bitmap
-            android:gravity="center"
-            android:src="@mipmap/youvsme_64"/>
-    </item>
-
 </layer-list>

@@ -10,6 +10,7 @@ import youvsme.com.youvsme.R;
 import youvsme.com.youvsme.fragments.EntranceFragment;
 import youvsme.com.youvsme.fragments.HowItWorksFragment;
 import youvsme.com.youvsme.services.UserService;
+import youvsme.com.youvsme.util.ViewUtil;
 
 /**
  * Created by jacob on 2/28/16.
@@ -19,6 +20,8 @@ public class NoUserState implements State {
     private Fragment howItWorksFragment = new HowItWorksFragment();
     private boolean backToEntranceFragment;
     private AppCompatActivity activity;
+    private View.OnClickListener clickListener;
+    private View facebookButton;
 
     @Override
     public void show(final AppCompatActivity activity) {
@@ -36,18 +39,35 @@ public class NoUserState implements State {
             }
         });
 
-        View facebookButton = activity.findViewById(R.id.facebookButton);
+        facebookButton = activity.findViewById(R.id.facebookButton);
 
         UserService.use().initialize();
 
-        facebookButton.setOnClickListener(new View.OnClickListener() {
+        clickListener = new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                UserService.use().facebookLogin(activity);
+                facebookButton.setOnClickListener(null);
+                facebookButton.setAlpha(.5f);
+                login();
             }
-        });
+        };
+
+        facebookButton.setOnClickListener(clickListener);
+
+        ViewUtil.battle(howItWorksButton, 1000);
+        ViewUtil.battle(facebookButton, 1125);
 
         showFragment(entranceFragment);
+    }
+
+    private void login() {
+        UserService.use().facebookLogin(activity, new Runnable() {
+            @Override
+            public void run() {
+                facebookButton.setOnClickListener(clickListener);
+                facebookButton.setAlpha(1f);
+            }
+        });
     }
 
     @Override

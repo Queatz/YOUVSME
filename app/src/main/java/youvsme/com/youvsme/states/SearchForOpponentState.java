@@ -7,6 +7,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.view.animation.AccelerateInterpolator;
+import android.view.animation.DecelerateInterpolator;
+import android.view.animation.LinearInterpolator;
 
 import com.google.common.base.Strings;
 import com.loopj.android.http.HttpGet;
@@ -56,19 +58,25 @@ public class SearchForOpponentState implements State {
             splashnimation.animate()
                     .setInterpolator(new AccelerateInterpolator())
                     .alpha(0.f)
-                    .setStartDelay(50)
-                    .scaleX(3.f).scaleY(3.f)
+                    .scaleX(4.2f)
+                    .scaleY(4.2f)
+                    .setStartDelay(325)
                     .setDuration(425)
                     .withEndAction(new Runnable() {
                         @Override
                         public void run() {
                             splashnimation.setVisibility(View.GONE);
+
+                            // Need to check again so that if the app state changes it doesn't steal
+                            if (currentFragment == null) {
+                                showFragment(opponentSearchFragment);
+                            }
                         }
                     })
                     .start();
+        } else {
+            showFragment(opponentSearchFragment);
         }
-
-        showFragment(opponentSearchFragment);
     }
 
     @Override

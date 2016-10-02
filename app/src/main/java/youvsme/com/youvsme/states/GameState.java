@@ -22,6 +22,7 @@ import youvsme.com.youvsme.services.GameService;
 import youvsme.com.youvsme.services.SoundService;
 import youvsme.com.youvsme.services.StateService;
 import youvsme.com.youvsme.util.Helpers;
+import youvsme.com.youvsme.util.ViewUtil;
 
 /**
  * Created by jacob on 3/5/16.
@@ -56,6 +57,11 @@ public class GameState implements State {
         }
 
         GameService.use().setUserHasClickedPlayAgain(false);
+
+        if (true) {
+            showFragment(finalResultsFragment);
+            return;
+        }
 
         switch (GameService.use().inferGameState(game)) {
             case GameService.GAME_STATE_STARTED:
@@ -158,14 +164,9 @@ public class GameState implements State {
             return;
         }
 
-        Toast.makeText(activity, activity.getString(R.string.bam), Toast.LENGTH_SHORT).show();
+        SoundService.use().play(R.raw.wronganswer);
 
-        GameService.use().sendKickInTheFaceReminder(game, new Runnable() {
-            @Override
-            public void run() {
-
-            }
-        });
+        GameService.use().sendKickInTheFaceReminder(game, null);
     }
 
     /**

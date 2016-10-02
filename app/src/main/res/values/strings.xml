@@ -42,7 +42,7 @@
     <string name="they_finished">%1$s finished answering</string>
     <string name="now_answer_theirs_subtext">Now answer theirs</string>
     <string name="see_who_won_subtext">See who won</string>
-    <string name="they_have_thrown_the_gauntlet_down">%1$s has thrown the gauntlet down</string>
+    <string name="they_have_thrown_the_gauntlet_down">%1$s has kicked you</string>
     <string name="bam">Bam!</string>
     <string name="accept_challenge">Accept Challenge</string>
     <string name="waiting_on_opponent">Waiting on %1$s…</string>

@@ -22,6 +22,7 @@ import youvsme.com.youvsme.adapters.FriendsAdapter;
 import youvsme.com.youvsme.models.UserModel;
 import youvsme.com.youvsme.services.GameService;
 import youvsme.com.youvsme.services.StateService;
+import youvsme.com.youvsme.states.GameState;
 import youvsme.com.youvsme.states.RecentGamesState;
 import youvsme.com.youvsme.states.SearchForOpponentState;
 import youvsme.com.youvsme.util.Helpers;
@@ -97,10 +98,13 @@ public class OpponentSearchFragment extends Fragment {
 
         }
 
-
         opponents.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                if (!StateService.use().is(SearchForOpponentState.class)) {
+                    return;
+                }
+
                 ((SearchForOpponentState) StateService.use().getState()).selectOpponent((UserModel) opponents.getAdapter().getItem(position));
                 Helpers.keyboard(opponentSearch, false);
             }

@@ -12,6 +12,7 @@ import youvsme.com.youvsme.models.GameModel;
 import youvsme.com.youvsme.services.GameService;
 import youvsme.com.youvsme.services.StateService;
 import youvsme.com.youvsme.states.GameState;
+import youvsme.com.youvsme.util.ViewUtil;
 
 /**
  * Created by jacob on 3/5/16.
@@ -65,5 +66,10 @@ public class WagerReviewFragment extends GameStateFragment {
 
         ((TextView) view.findViewById(R.id.wagerWhat)).setText(game.getWager());
         ((TextView) view.findViewById(R.id.wagerNote)).setText(game.getWagerNote());
+
+        ViewUtil.battle(view.findViewById(R.id.wagerNote), 150);
+        ViewUtil.battle(view.findViewById(R.id.wagerWhat), 0);
+        ViewUtil.battle(view.findViewById(R.id.acceptChallengeButton), 250);
+        ViewUtil.battle(view.findViewById(R.id.acceptDefeatButton), 425);
     }
 }

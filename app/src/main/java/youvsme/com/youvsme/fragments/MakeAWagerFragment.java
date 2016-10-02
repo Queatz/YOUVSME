@@ -39,6 +39,8 @@ public class MakeAWagerFragment extends Fragment {
                     return;
                 }
 
+                disable();
+
                 ((SearchForOpponentState) StateService.use().getState()).setWager(wagerWhat, wagerNote);
             }
         });
@@ -66,10 +68,23 @@ public class MakeAWagerFragment extends Fragment {
         view.findViewById(R.id.skipWagerButton).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                disable();
                 ((SearchForOpponentState) StateService.use().getState()).skipWager();
             }
         });
 
         return view;
+    }
+
+    private void disable() {
+        if (getView() == null) {
+            return;
+        }
+
+        getView().findViewById(R.id.sendWagerButton).setOnClickListener(null);
+        getView().findViewById(R.id.skipWagerButton).setOnClickListener(null);
+
+        getView().findViewById(R.id.sendWagerButton).setAlpha(.5f);
+        getView().findViewById(R.id.skipWagerButton).setAlpha(.5f);
     }
 }

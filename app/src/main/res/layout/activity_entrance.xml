@@ -4,6 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".activities.Entrance"
+    android:id="@+id/sex"
     android:background="@drawable/sex">
 
     <ImageView
@@ -20,6 +21,7 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:clipToPadding="false"
         android:paddingBottom="24dp"
         android:paddingLeft="24dp"
         android:paddingRight="24dp"

@@ -8,8 +8,6 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.animation.AlphaAnimation;
-import android.view.animation.BounceInterpolator;
 import android.widget.TextView;
 
 import com.makeramen.roundedimageview.RoundedImageView;

@@ -15,7 +15,6 @@ import youvsme.com.youvsme.services.RealmService;
  * Created by jacob on 2/28/16.
  */
 public abstract class RealmListResponseHandler<T extends RealmObject> extends AsyncHttpResponseHandler {
-
     @Override
     @SuppressWarnings("unchecked")
     public final void onSuccess(int statusCode, Header[] headers, byte[] responseBody) {

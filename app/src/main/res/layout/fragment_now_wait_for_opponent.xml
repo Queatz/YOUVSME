@@ -91,6 +91,7 @@
         android:orientation="vertical"
         android:gravity="center_horizontal"
         android:layout_alignParentBottom="true"
+        android:clipToPadding="false"
         android:paddingLeft="24dp"
         android:paddingRight="24dp"
         android:paddingTop="24dp"
@@ -108,5 +109,14 @@
             android:textColor="@android:color/white"/>
 
     </LinearLayout>
+
+    <ImageView
+        android:id="@+id/doge"
+        android:visibility="gone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:src="@drawable/doge" />
 
 </RelativeLayout>

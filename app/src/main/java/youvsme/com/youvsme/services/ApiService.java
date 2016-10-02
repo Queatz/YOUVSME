@@ -31,6 +31,7 @@ public class ApiService {
     AsyncHttpClient client;
 
     private static ResponseHandlerInterface doNothingHandler = new AsyncHttpResponseHandler() {
+
         @Override
         public void onSuccess(int statusCode, Header[] headers, byte[] responseBody) {
 

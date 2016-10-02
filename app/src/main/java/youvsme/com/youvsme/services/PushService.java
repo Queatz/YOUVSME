@@ -6,6 +6,8 @@ import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
+import android.os.Handler;
+import android.os.Looper;
 import android.support.v4.app.NotificationCompat;
 
 import com.google.gson.JsonObject;
@@ -80,7 +82,12 @@ public class PushService {
 
         show(notification);
 
-        GameService.use().refreshGamesList();
+        new Handler(Looper.getMainLooper()).post(new Runnable() {
+            @Override
+            public void run() {
+                GameService.use().refreshGamesList();
+            }
+        });
     }
 
     private void show(Notification notification) {

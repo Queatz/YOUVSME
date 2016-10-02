@@ -34,6 +34,7 @@ import youvsme.com.youvsme.models.GameModel;
 import youvsme.com.youvsme.models.QuestionModel;
 import youvsme.com.youvsme.models.UserModel;
 import youvsme.com.youvsme.util.Config;
+import youvsme.com.youvsme.util.RealmListResponseHandler;
 import youvsme.com.youvsme.util.RealmObjectResponseHandler;
 
 /**
@@ -64,7 +65,12 @@ public class GameService {
     private SharedPreferences preferences;
 
     public void initialize(Context context) {
+
         this.context = context;
+
+        // Ensure realm is initialized on the main thread
+        RealmService.use().get();
+
         preferences = PreferenceManager.getDefaultSharedPreferences(context);
     }
 
@@ -365,7 +371,9 @@ public class GameService {
         ApiService.use().post("game/" + game.getId() + "/kick-in-the-face", null, new AsyncHttpResponseHandler() {
             @Override
             public void onSuccess(int statusCode, Header[] headers, byte[] responseBody) {
-                callback.run();
+                if (callback != null) {
+                    callback.run();
+                }
             }
 
             @Override
@@ -380,7 +388,16 @@ public class GameService {
     }
 
     public void refreshGamesList() {
-        ApiService.use().get("me/games", null, null);
+        ApiService.use().get("me/games", null, new RealmListResponseHandler<GameModel>() {
+            @Override
+            public void success(List<GameModel> response) {
+            }
+
+            @Override
+            public void failure(int statusCode, String response) {
+
+            }
+        });
     }
 
     public void answerQuestion(GameModel game, QuestionModel question, int answer) {

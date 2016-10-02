@@ -1,5 +1,7 @@
 package youvsme.com.youvsme.services;
 
+import android.os.Looper;
+
 import io.realm.DynamicRealm;
 import io.realm.Realm;
 import io.realm.RealmConfiguration;
@@ -12,6 +14,8 @@ import io.realm.exceptions.RealmMigrationNeededException;
 public class RealmService {
 
     private static RealmService instance;
+    private Realm realm = null;
+
     public static RealmService use() {
         if (instance == null) {
             synchronized (RealmService.class) {
@@ -23,8 +27,6 @@ public class RealmService {
 
         return instance;
     }
-
-    private Realm realm = null;
 
     public Realm get() {
         if (realm == null || realm.isClosed()) {
