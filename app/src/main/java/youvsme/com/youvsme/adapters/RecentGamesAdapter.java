@@ -20,8 +20,11 @@ import youvsme.com.youvsme.services.GameService;
  * Created by jacob on 7/8/16.
  */
 public class RecentGamesAdapter extends RealmBaseAdapter<GameModel> {
+    private final Context context;
+
     public RecentGamesAdapter(Context context, RealmResults<GameModel> realmResults) {
-        super(context, realmResults);
+        super(realmResults);
+        this.context = context;
     }
 
     @Override
@@ -55,8 +58,8 @@ public class RecentGamesAdapter extends RealmBaseAdapter<GameModel> {
 
         convertView.findViewById(R.id.wagerNone).setVisibility(wagerPresent ? View.GONE : View.VISIBLE);
 
-        ImageView opponentPicture = (ImageView) convertView.findViewById(R.id.opponentPicture);
-        Picasso.with(context).load(game.getOpponent().getPictureUrl()).into(opponentPicture);
+        ImageView opponentPicture = convertView.findViewById(R.id.opponentPicture);
+        Picasso.get().load(game.getOpponent().getPictureUrl()).into(opponentPicture);
 
         int usersCorrect = GameService.use().numberOfMyGuessesCorrect(game);
         int opponentsCorrect = GameService.use().numberOfOpponentsGuessesCorrect(game);

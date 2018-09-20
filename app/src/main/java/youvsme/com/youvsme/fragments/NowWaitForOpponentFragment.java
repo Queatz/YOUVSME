@@ -9,11 +9,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.AccelerateDecelerateInterpolator;
 import android.view.animation.Animation;
-import android.view.animation.BounceInterpolator;
 import android.view.animation.LinearInterpolator;
 import android.view.animation.RotateAnimation;
 import android.view.animation.TranslateAnimation;
-import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -23,7 +21,6 @@ import java.util.Date;
 
 import youvsme.com.youvsme.R;
 import youvsme.com.youvsme.models.GameModel;
-import youvsme.com.youvsme.services.GameService;
 import youvsme.com.youvsme.services.SoundService;
 import youvsme.com.youvsme.services.StateService;
 import youvsme.com.youvsme.states.GameState;
@@ -108,7 +105,7 @@ public class NowWaitForOpponentFragment extends GameStateFragment {
         view.findViewById(R.id.waiting).startAnimation(animation);
 
         final ImageView opponentPicture = ((ImageView) view.findViewById(R.id.opponentPicture));
-        Picasso.with(getContext()).load(game.getOpponent().getPictureUrl()).into(opponentPicture);
+        Picasso.get().load(game.getOpponent().getPictureUrl()).into(opponentPicture);
 
         opponentPicture.setOnClickListener(new View.OnClickListener() {
             @Override

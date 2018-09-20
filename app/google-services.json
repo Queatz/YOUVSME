@@ -1,43 +1,42 @@
 {
   "project_info": {
-    "project_id": "you--vs--me",
     "project_number": "395534640827",
-    "name": "youvsme"
+    "firebase_url": "https://you-vs-me.firebaseio.com",
+    "project_id": "you--vs--me",
+    "storage_bucket": "you--vs--me.appspot.com"
   },
   "client": [
     {
       "client_info": {
         "mobilesdk_app_id": "1:395534640827:android:6787f0f0e87c42e9",
-        "client_id": "android:youvsme.com.youvsme",
-        "client_type": 1,
         "android_client_info": {
-          "package_name": "youvsme.com.youvsme",
-          "certificate_hash": []
+          "package_name": "youvsme.com.youvsme"
         }
       },
-      "oauth_client": [],
-      "api_key": [],
+      "oauth_client": [
+        {
+          "client_id": "395534640827-m2kp5p7kb7giqb5lbkdhp6iud5m8bb62.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDt0PdsRn9JBBu1mGD21Dmqoa8MoMYIaA4"
+        }
+      ],
       "services": {
         "analytics_service": {
           "status": 1
-        },
-        "cloud_messaging_service": {
-          "status": 2,
-          "apns_config": []
         },
         "appinvite_service": {
           "status": 1,
           "other_platform_oauth_client": []
         },
-        "google_signin_service": {
-          "status": 1
-        },
         "ads_service": {
-          "status": 1
+          "status": 2
         }
       }
     }
   ],
-  "client_info": [],
-  "ARTIFACT_VERSION": "1"
+  "configuration_version": "1"
 }

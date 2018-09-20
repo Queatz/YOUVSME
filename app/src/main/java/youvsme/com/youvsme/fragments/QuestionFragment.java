@@ -152,7 +152,7 @@ public class QuestionFragment extends GameStateFragment {
 
             title.setText(getString(R.string.theirQuestions, game.getOpponent().getFirstName()));
             picture.setVisibility(View.VISIBLE);
-            Picasso.with(getContext()).load(game.getOpponent().getPictureUrl()).into(picture);
+            Picasso.get().load(game.getOpponent().getPictureUrl()).into(picture);
             questionText.setText(nameInject(question.getText(), userNameInject, opponentNameInject));
             top.setBackgroundColor(getResources().getColor(R.color.colorPrimary));
         }

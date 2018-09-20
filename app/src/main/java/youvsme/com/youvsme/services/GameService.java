@@ -9,7 +9,6 @@ import android.support.annotation.Nullable;
 import android.util.Log;
 import android.widget.Toast;
 
-import com.google.common.collect.ImmutableList;
 import com.loopj.android.http.AsyncHttpResponseHandler;
 
 import org.json.JSONArray;
@@ -324,7 +323,7 @@ public class GameService {
     @NonNull
     private List<QuestionModel> filterQuestions(GameModel game, QuestionFilter filter) {
         if (game == null) {
-            return ImmutableList.of();
+            return new ArrayList<>();
         }
 
         final List<QuestionModel> questions = new ArrayList<>();

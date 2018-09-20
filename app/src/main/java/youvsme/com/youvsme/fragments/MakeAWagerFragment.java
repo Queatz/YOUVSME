@@ -9,12 +9,11 @@ import android.view.ViewGroup;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import com.google.common.base.Strings;
-
 import youvsme.com.youvsme.R;
 import youvsme.com.youvsme.services.StateService;
 import youvsme.com.youvsme.states.SearchForOpponentState;
-import youvsme.com.youvsme.util.Helpers;
+
+import static com.facebook.internal.Utility.isNullOrEmpty;
 
 /**
  * Created by jacob on 2/28/16.
@@ -34,7 +33,7 @@ public class MakeAWagerFragment extends Fragment {
                 final String wagerWhat = wagerWhatView.getText().toString();
                 final String wagerNote = wagerNoteView.getText().toString();
 
-                if (Strings.isNullOrEmpty(wagerWhat)) {
+                if (isNullOrEmpty(wagerWhat)) {
                     Toast.makeText(getContext(), getString(R.string.no_wager), Toast.LENGTH_SHORT).show();
                     return;
                 }

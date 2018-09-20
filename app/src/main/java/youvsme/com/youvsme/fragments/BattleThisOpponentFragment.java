@@ -71,7 +71,7 @@ public class BattleThisOpponentFragment extends Fragment {
         opponentName.setText(getString(R.string.fullname, opponent.getFirstName(), opponent.getLastName()));
 
         RoundedImageView opponentPicture = (RoundedImageView) view.findViewById(R.id.opponentPicture);
-        Picasso.with(getContext()).load(opponent.getPictureUrl()).into(opponentPicture);
+        Picasso.get().load(opponent.getPictureUrl()).into(opponentPicture);
         // TODO when tapping on the opponent picture, anticipate slow-motion explosion thereof
 
 

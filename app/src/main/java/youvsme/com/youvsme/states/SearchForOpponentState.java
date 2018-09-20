@@ -7,11 +7,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.view.animation.AccelerateInterpolator;
-import android.view.animation.DecelerateInterpolator;
-import android.view.animation.LinearInterpolator;
 
-import com.google.common.base.Strings;
-import com.loopj.android.http.HttpGet;
 import com.loopj.android.http.RequestParams;
 
 import cz.msebera.android.httpclient.HttpStatus;
@@ -28,6 +24,8 @@ import youvsme.com.youvsme.services.StateService;
 import youvsme.com.youvsme.services.UserService;
 import youvsme.com.youvsme.util.Config;
 import youvsme.com.youvsme.util.RealmObjectResponseHandler;
+
+import static com.facebook.internal.Utility.isNullOrEmpty;
 
 /**
  * Created by jacob on 2/28/16.
@@ -135,7 +133,7 @@ public class SearchForOpponentState implements State {
             public void success(GameModel game) {
                 SearchForOpponentState.this.game = game;
 
-                if (Strings.isNullOrEmpty(what)) {
+                if (isNullOrEmpty(what)) {
                     beginGame();
                 } else {
                     showFragment(wagerSentFragment);

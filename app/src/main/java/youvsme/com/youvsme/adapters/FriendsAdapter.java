@@ -20,8 +20,12 @@ import youvsme.com.youvsme.services.GameService;
  * Created by jacob on 2/29/16.
  */
 public class FriendsAdapter extends RealmBaseAdapter<UserModel> {
+
+    private final Context context;
+
     public FriendsAdapter(Context context, RealmResults<UserModel> realmResults) {
-        super(context, realmResults);
+        super(realmResults);
+        this.context = context;
     }
 
     @Override
@@ -47,7 +51,7 @@ public class FriendsAdapter extends RealmBaseAdapter<UserModel> {
         }
 
         friendName.setText(context.getString(R.string.fullname, friend.getFirstName(), friend.getLastName()));
-        Picasso.with(context).load(friend.getPictureUrl()).into(pictureView);
+        Picasso.get().load(friend.getPictureUrl()).into(pictureView);
 
         int stakesStringId = 0;
         int stakesColorId = 0;

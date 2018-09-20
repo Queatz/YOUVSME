@@ -11,12 +11,12 @@ import com.facebook.FacebookException;
 import com.facebook.FacebookSdk;
 import com.facebook.login.LoginManager;
 import com.facebook.login.LoginResult;
-import com.google.common.collect.ImmutableSet;
 import com.loopj.android.http.RequestParams;
 
-import youvsme.com.youvsme.models.GameModel;
+import java.util.HashSet;
+import java.util.Set;
+
 import youvsme.com.youvsme.models.UserModel;
-import youvsme.com.youvsme.states.GameState;
 import youvsme.com.youvsme.states.NoUserState;
 import youvsme.com.youvsme.states.SearchForOpponentState;
 import youvsme.com.youvsme.util.Config;
@@ -110,8 +110,11 @@ public class UserService {
         this.callback = callback;
         prepareForFacebookLogin();
 
-        LoginManager.getInstance().logInWithReadPermissions(activity,
-                ImmutableSet.of("public_profile", "user_friends"));
+        Set<String> permissions = new HashSet<>();
+        permissions.add("public_profile");
+        permissions.add("user_friends");
+
+        LoginManager.getInstance().logInWithReadPermissions(activity, permissions);
     }
 
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
